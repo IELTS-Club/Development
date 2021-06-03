@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آیلتس کلاب | آزمون تعیین سطح</title>
+    <link rel="stylesheet" href="dist/css/main.min.css" />
+    <style>
+      .right {
+        color: green;
+      }
+
+      .wrong {
+        color: red;
+      }
+
+      button:disabled {
+        background-color: #bbb !important;
+        color: #777 !important;
+      }
+    </style>
+    <style>
+
+      #loader-wrapper {
+        position:fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:1000;
+      }
+      
+      #loader-wrapper .loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10001;
+        width:300px;
+        height:150px;
+      }
+      
+      #loader-wrapper .loader h2 {
+      
+        font-size: 30px;
+        font-family: Kalameh-Black;
+        color: #fff;
+      
+      
+      }
+      
+      
+      @-webkit-keyframes spin {
+        0%   { 
+          -webkit-transform: rotate(0deg); 
+            -ms-transform: rotate(0deg); 
+                transform: rotate(0deg);
+        }
+        100% { 
+          -webkit-transform: rotate(360deg); 
+            -ms-transform: rotate(360deg); 
+                transform: rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        0%   { 
+          -webkit-transform: rotate(0deg); 
+            -ms-transform: rotate(0deg); 
+                transform: rotate(0deg);
+        }
+        100% { 
+          -webkit-transform: rotate(360deg); 
+            -ms-transform: rotate(360deg); 
+                transform: rotate(360deg);
+        }
+      }
+      
+      #loader-wrapper .loader-section {
+        position:fixed;
+        top:0;
+        background-image: linear-gradient(#258c93,#1D3C4E);
+        width:51%;
+        height:100%;
+        z-index:1000;
+      }
+      
+      #loader-wrapper .loader-section.section-left {
+        left:0
+      }
+      #loader-wrapper .loader-section.section-right {
+        right:0;
+      }
+      
+      /* Loaded Styles */
+      .loaded #loader-wrapper .loader-section.section-left {
+        transform: translateX(-100%);
+        transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+      }
+      .loaded #loader-wrapper .loader-section.section-right {
+        transform: translateX(100%);
+        transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+      }
+      .loaded #loader {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+      .loaded #loader-wrapper {
+        visibility: hidden;
+        transform:translateY(-100%);
+        transition: all 0.3s 1s ease-out;
+      }
+      
+        </style>
+        <!--BEGIN RAYCHAT CODE--> 
+  <script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="50b0f0b4-8bbe-472d-94a5-ecbbaac0b985";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script> 
+  <!--END RAYCHAT CODE-->
+  </head>
+  <body>
+    <main class="quiz-container">
+      <div class="quiz-start-box">
+       <div class="start-inner">
+        <div class="quiz-header">
+          <h3>Ielts Dr.N Placement Test</h3>
+          <span>50:00</span>
+        </div>
+
+        <div class="quiz-content">
+          <p>
+            <span
+              >Welcome to fully mechanical online placement test of ielts club
+              complex.</span
+            >
+
+            You can assess your English proficiency within a short span of time
+            and get prepared for your classes. It takes you 50 minutes to answer
+            all questions. Therefore, you need to manage your time within this
+            limited length of time. With the best wishes,
+          </p>
+        </div>
+
+        <div class="quiz-footer">
+          <button class="exit-quiz icdrn-btn" type="submit" ><a href="/" style="color: white;">Exit Quiz!</a></button>
+          <button id="start" class="icdrn-btn" type="submit">Start Quiz</button>
+        </div>
+       </div>
+      </div>
+
+      <div class="quiz-box">
+        <div class="quiz-header">
+          <h3>English Placement Test</h3>
+          <span id="time"></span>
+        </div>
+
+        <div class="quiz-content">
+          <h3 class="question"></h3>
+          <form id="answers-container"></form>
+        </div>
+
+        <div class="quiz-footer">
+          <span class="location"></span>
+          <button id="submit" class="icdrn-btn" type="submit">Submit</button>
+          <button
+            id="next"
+            class="icdrn-btn"
+            style="display: none;"
+            type="submit"
+          >
+            Next Question
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <section class="icdrn-modal" id="placementTimeOut">
+      <div class="icdrn-modal-content">
+  
+        <span class="modal-close">
+          &times;
+        </span>
+  
+        <img src="../images/Quiz-TimeOut-pic.svg" class="modal-img" alt="ایلتس کلاب  دکتر نورزاد">
+  
+  
+  
+        <h3>
+         زمانت تموم شد رفیق!
+        </h3>
+  
+        <p>
+          وقت تموم شد
+        </p>
+
+        <p>
+          <span class="res-label">تعداد سوالات صحیح:</span>
+          <span id="correctAnswerLabelT"></span>
+        </p>
+
+        <p>
+          <span class="res-label">سطح شما:</span>
+          <span id="levelLabelT"></span>
+        </p>
+
+  
+        <button type="submit" class="icdrn-btn" id="checkAgain">
+          <a href="/panel/class-registration">
+          آمادگی برای دوره ها
+        </a>
+        </button>
+  
+      </div>
+    </section>
+
+    <section class="icdrn-modal" id="placementResult">
+      <div class="icdrn-modal-content">
+  
+        <span class="modal-close">
+          &times;
+        </span>
+  
+        <img src="../images/Quiz-Done-pic.svg" class="modal-img" alt="ایلتس کلاب  دکتر نورزاد">
+  
+  
+  
+        <h3>
+         نتیجه تعیین سطحت آمادست :)
+        </h3>
+  
+        <p>
+          <span class="res-label">تعداد سوالات صحیح:</span>
+          <span id="correctAnswerLabel"></span>
+        </p>
+
+        <p>
+          <span class="res-label">سطح شما:</span>
+          <span id="levelLabel"></span>
+        </p>
+
+  
+        <button type="submit" class="icdrn-btn" id="checkAgain">
+          <a href="/panel/class-registration">
+          آمادگی برای دوره ها
+        </a>
+        </button>
+  
+      </div>
+    </section>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left">
+    
+      </div>
+      <div class="loader-section section-right"></div>
+      <div class="loader">
+        <img src="../images/loading.svg" alt="ایلتس کلاب  دکتر نورزاد">
+        <h2>سایت در حال بارگذاریه!</h2>
+      </div>
+    </div>
+    
+    
+      <script src="app/js/app.js"></script>
+      <script src="app/js/placementTestModal.js"></script>
+      <script src="app/js/mockQuizModal.js"></script>
+    
+      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    
+    
+      <script>
+    
+        //For Live Projects
+            window.addEventListener('load',function(){
+              document.querySelector('body').classList.add("loaded")  
+            });
+        
+        
+          </script>
+    
+    <script src="app/js/question.js"></script>
+    <script src="app/js/Icdrn-Quiz.js"></script>
+  </body>
+</html>

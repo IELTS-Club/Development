@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود | اساتید</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="../../images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="../../images/Favicon/manifest.json">
+  <link rel="stylesheet" href="../../dist/css/main.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <style>
+
+    #loader-wrapper {
+      position:fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width:300px;
+      height:150px;
+    }
+    
+    #loader-wrapper .loader h2 {
+    
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
+    
+    
+    }
+    
+    
+    @-webkit-keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    
+    #loader-wrapper .loader-section {
+      position:fixed;
+      top:0;
+      background-image: linear-gradient(#258c93,#1D3C4E);
+      width:51%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader-section.section-left {
+      left:0
+    }
+    #loader-wrapper .loader-section.section-right {
+      right:0;
+    }
+    
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader-wrapper .loader-section.section-right {
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      transform:translateY(-100%);
+      transition: all 0.3s 1s ease-out;
+    }
+    
+      </style>
+
+</head>
+<body>
+
+  
+  <section class="teachers-login">
+
+    <div class="teachers-login-grid">
+
+      <div class="register-img">
+        <img src="../../images/Login-Img.svg" alt="">
+      </div>
+
+
+      <div class="login-form container">
+
+        <div class="icdrn-title">
+
+          <h2>ورود اساتید</h2>
+         <a href="/login">
+          <button type="submit" class="icdrn-btn">ورود دانشجویان</button>
+        </a>
+
+        </div>
+
+        <form method="POST" action="/login/teachers">
+          <div class="login-form-inner">
+  
+  
+    
+            <div class="username-box">
+              <label class="icdrn-label" for="">نام کاربری (ایمیل)</label>
+            <input type="email" class="icdrn-input full-input" placeholder="آدرس ایمیل خود را وارد کنید" name="email" required>
+            </div>
+  
+  
+  
+            <div class="password-box">
+              <label class="icdrn-label" for="">گذرواژه</label>
+            <input type="password" class="icdrn-input full-input" id="passowrdInput" placeholder="گذرواژه خود را وارد کنید" name="password" required>
+            </div>
+            
+
+            <div class="show-password-box">
+              <label for="icdrn-label">
+              نمایش گذرواژه
+              </label>
+              
+              <form action="">
+              <input type="checkbox" id="showPassowrdInput" >
+              
+              </form>
+              
+              </div> 
+   
+  
+            <div class="login-btn-box">
+  
+              
+                <button type="submit" class="register-btn full-btn" id="loginBtn">
+                 ورود به پنل اساتید
+                </button>
+              
+  
+            </div>
+  
+            <div class="login-guid-box">
+  
+              <p>
+  
+                هنوز در سایت اکانت ندارید؟
+                <a href="/register">ثبت نام کنید!</a>
+  
+              </p>
+  
+  
+            </div>
+  
+            <div class="forget-password-guid-box">
+  
+           <p>
+             <a href="/forgetpassword">          گذرواژه عبور خود را فراموش کرده اید؟
+            </a>
+           </p>
+  
+  
+            </div>
+  
+            
+  
+  
+          </div>
+        </form>
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+  <section class="icdrn-modal" id="LoginErrorModal">
+    <div class="icdrn-modal-content">
+
+      <span class="modal-close" id="modalClose">
+        &times;
+      </span>
+
+      <img src="../images/auth-err-pic.svg" class="modal-img" alt="">
+
+
+
+      <h3>
+       <%= error %>
+      </h3>
+
+      <p>
+
+        لطفا اطلاعاتی که وارد کردی 
+        <br>
+        رو یه بار دیگه با دقت بیشتر مرور کن!
+
+      </p>
+
+      <button type="submit" class="icdrn-btn" id="checkAgain">
+
+        برسی دوباره فرم
+
+      </button>
+
+    </div>
+  </section>
+ 
+
+  <script src="app/js/app.js"></script>
+  <!-- <script src="../app/js/loginErrorModal.js"></script> -->
+  <% if(error){ %>
+     
+  <script type="text/javascript">
+
+    const getLoginErrorModal = document.querySelector('#LoginErrorModal');
+    
+    const getCheckAgain = document.querySelector('#checkAgain');
+
+    const getmodalClose = document.querySelector('#modalClose');
+
+    getLoginErrorModal.style.display = "flex";
+   
+    getCheckAgain.addEventListener('click', ()=> {
+
+      getLoginErrorModal.style.display = "none";
+
+    })
+
+    getmodalClose.addEventListener("click",()=>{
+  
+    getLoginErrorModal.style.display = "none";
+
+    });
+     </script>
+      
+      
+     <% } %>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left">
+  
+    </div>
+    <div class="loader-section section-right"></div>
+    <div class="loader">
+      <img src="../images/loading.svg" alt="">
+      <h2>سایت در حال بارگذاریه!</h2>
+    </div>
+  </div>
+  
+  <script>
+    
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")  
+        });
+    
+    
+      </script> 
+      <script src="../../app/js/showPassword.js"></script>
+</body>
+
+  <script src="app/js/app.js"></script>
+
+</body>
+</html>

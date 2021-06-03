@@ -1,0 +1,5 @@
+# Group 1
+User-agent: *
+Allow: /
+
+Sitemap: https://www.ieltsdrn.com/sitemap(1).xml

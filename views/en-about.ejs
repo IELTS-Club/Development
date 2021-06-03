@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | IELTS Club</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="/en/images/Favicon/manifest.json">
+  <link rel="stylesheet" href="/en/dist/css/main.min.css">
+  <link rel="stylesheet" href="/en/dist/css/loader.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+<!--BEGIN RAYCHAT CODE--> 
+<script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="50b0f0b4-8bbe-472d-94a5-ecbbaac0b985";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script> 
+<!--END RAYCHAT CODE-->
+
+</head>
+<body>
+
+  <section class="welcome-label">
+
+    <h4>Hi, Welcom to IELTS Club Website!</h4>
+    <a href="https://guide.IELTSdrn.com/english.html"><button class="icdrn-btn" type="submit"> Website Guid</button></a>
+
+  </section>
+
+  <header class="header container">
+    <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+       <ul class="overlay-menu">
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en">Home</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/courses">Online Classes</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/blog">Learning Videos</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/about">About us</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/contact">Contact us</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/privacy-policy">Privacy Policy</a></li>
+          <% if(authed==true){ %>
+            <% if(isTeacher==true) {%> 
+              <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+                user panel 
+                </button>
+                </a>
+              <% }else{ %>
+  
+                <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+                  user panel 
+                  </button>
+                  </a>
+                <%} %> 
+            <% }else{ %>  
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/register"> <button class="nav-cta-btn icdrn-btn " type="submit"> 
+            Register  </button> </a></li>
+
+              <li class="overlay-menu-item bounceInLeft"> <a href="/en/login"> 
+                Login  </a></li>
+                <% } %> 
+       </ul>
+    </div>
+    <nav class="header-nav flex flex-jc-sb flex-ai-c">
+       <a href="#" class="nav-logo"> <img src="/en/images/ICDRN-Navbar-Logo.svg" alt="IELTS-DRN-Logo"> </a>
+       <ul class="nav-menu-links hide-for-phone">
+          <li class="nav-menu-links-item"><a href="/en">Home</a></li>
+          <li class="nav-menu-links-item"><a href="/en/courses">Online Classes</a></li>
+          <li class="nav-menu-links-item"><a href="/en/blog">Learning Videos</a></li>
+          <li class="nav-menu-links-item"><a href="/en/about">About us</a></li>
+          <li class="nav-menu-links-item"><a href="/en/contact">Contact us</a></li>
+          <li class="nav-menu-links-item"><a href="/en/privacy-policy">Privacy Policy</a></li>
+       </ul>
+       <div class="language-switcher-box hide-for-phone">
+          <div class="language-dropdown">
+             <div class="default-language"> <img src="/en/images/united-kingdom-flag.svg" alt=""> <i class="fas fa-chevron-down"></i></div>
+             <ul>
+                <a href="/en/about">
+                  <li> <img src="/en/images/united-kingdom-flag.svg" alt=""> <span>English</span></li>
+                </a>
+                <a href="/about">
+                  <li> <img src="/en/images/Iran-flag.svg" alt=""> <span>Persian</span></li>
+                </a>
+             </ul>
+          </div>
+       </div>
+       <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn"> <span></span> <span></span> <span></span> </a>
+       <% if(authed==true){ %>
+        <% if(isTeacher==true) {%> 
+          <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+            user panel 
+            </button>
+            </a>
+          <% }else{ %>
+
+            <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+              user panel 
+              </button>
+              </a>
+            <%} %> 
+
+       <% }else{ %> 
+       <div class="nav-action">
+
+        <a class="login-link hide-for-phone" href="/en/login">Login
+        </a>
+        
+        <a href="/en/register"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+        Register
+        </button>
+        </a>
+        </div>
+        <% } %> 
+        
+    </nav>
+ </header>
+
+
+
+  <section class="about container">
+
+    <div class="nourzad-grid">
+
+      <div class="nourzad-about-pic">
+
+        <img src="/en/images/About-Nourzad.png" alt="">
+
+      </div>
+
+      <div class="nourzad-about-text">
+
+        <h2>
+
+          Dr. Pezhman Nourzad (IELTS Dr.N's Founder)
+
+        </h2>
+
+        <p>
+
+          This is Pezhmn Nourzad a PHD graduate in Teaching English as a Foreign Language (TEFL) who has decided to establish IELTS Club with my team of professionals  to help you learn English passionately and accurately. I have started teaching at institutes in different levels from elementary to advanced since I was 17 and also I have started teaching at universities as a tutor since I was 25 , a PHD undergraduate candidate. I have been teaching IELTS , TOEFL , PTE , GRE , CAE , CPE , Duolingo professionally for 15 years. I have participated in a raft of international exams and my highest score in IELTS was 9 out of 9 (Listening=9 Reading=9 Writing=8.5 Speaking=9 ) and my highest score in TOEFL is 120 out of 120 (Listening=30 Reading=30 Speakers=30 Writing=30)
+          I have also had the experience in managing different language centers as an Educational Manager and Chief Administrator in curriculum and material development. I believe that language learning is an absolute and natural right for every single individual if he / she does it in the right way. Our mission in IELTS Club complex is to prepare an atmosphere free from social class differences for everybody even those miles away. Thus , we provide the most advanced methodological accompanied by the most appropriate psychological and theoretical trends in the realm of education and learning.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="teachers-part">
+
+      <div class="haniye-grid">
+
+        <div class="haniye-pic">
+          <img src="/en/images/About-Haniyeh.png" alt="">
+        </div>
+
+        <div class="haniye-text">
+
+          <h2>Haniye Bahrami (English Teacher)</h2>
+
+          <p>
+
+            This is Haniye. I’ve been busy with learning English ever since I can remember. I’ve started teaching English since I was 16. Teaching has opened my eyes to a new world in which I say yes to changes. I got 7 (IELTS Academic Module) and now I’m here to help you learn English from every corner of the world and remain highly optimistic.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="zahra-grid">
+
+        <div class="zahra-pic">
+          <img src="/en/images/About-Zahra.png" alt="">
+        </div>
+
+        <div class="zahra-text">
+
+          <h2>
+            Zahra Rafiee (English Teacher)
+          </h2>
+
+          <p>
+            Hey 
+            this is Zahra a university senior English translation student.
+            As i have a penchant for teaching English. I have started it since  I was 15 .
+            I got 7( IELTS Academic Module).
+              I have also been an  interpreter in Iran International Fair.
+            I am  intensely interested in working with people from  different social classes to be more productive.
+            If you are planning to embark on learning a new language, do not  hesitate for a moment as you have taken the right path.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="arezoo-grid">
+
+        <div class="arezoo-pic">
+          <img src="/en/images/About-Arezoo.png" alt="">
+        </div>
+
+        <div class="arezoo-text">
+
+          <h2>Arezoo Zolfaghari (English Teacher)</h2>
+
+          <p>
+
+            Hi 
+This is Arezoo being in love with the life which has been more colorful by Architecture and English.
+I have started teaching English since I was 18 with the score 7 (IELTS Academic Module) 
+I’m here to teach you how to paint a rosy picture of English.
+            
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="mina-grid">
+
+        <div class="mina-pic">
+          <img src="/en/images/About-Mina.png" alt="">
+        </div>
+
+        <div class="mina-text">
+
+          <h2>Mina Nouri (English Teacher)</h2>
+
+          <p>
+
+            Hi 
+            I have started English since I was 8.I have always wanted to be an English tutor.So I have fulfilled my dream 
+            and graduated from university in the field of Translation (B.A)
+            I’ve been teaching kids,teenagers and adults for 6 years .I’m also a translator.I got 7 (IELTS Academic Module).
+            I’m here to help you and say how to relish the opportunity to learn English .
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="javad-grid">
+
+        <div class="javad-pic">
+          <img src="/en/images/About-Javad.png" alt="">
+        </div>
+
+        <div class="javad-text">
+
+          <h2>Javad Jadidi (English Teacher)</h2>
+
+          <p>
+
+            Hi
+            This is Javad. I've been teaching English from very young ages and I got 7.5 (IELTS  Academic Module) when I was 16. It was not the end though. I have kept on learning English. I am keen to help you learn and enjoy English.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="footer">
+
+    <div class="footer-grid">
+  
+      <div class="footer-about">
+  
+        <h4>
+   
+           About our complex  
+  
+        </h4>
+        <p>
+          IELTS Club Dr.N is here to simply tell you there is no obstacle for acquiring a new language even with any geographical distance. Do remember you don’t need to have any background in English language , so it is the right time and the right place to start from all around the globe.
+        </p>
+  
+      </div>
+  
+      <div class="footer-fast-access-menu">
+        <h4>
+          Quick Access
+        </h4>
+        <ul>
+          <li>
+            <a href="/en/courses"style="color:#fff;">Online Classes</a>
+          </li>
+          <li>
+            <a href="/en/contact"style="color:#fff;">Quick Conatct</a>
+          </li>
+          <li>
+            <a href="/en/privacy-policy"style="color:#fff;">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="/en/about"style="color:#fff;">Complex Team</a>
+          </li>
+          <li>
+            <a href="/en/contact"style="color:#fff;">Support Center</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="footer-newsletter">
+        <h4>
+          electronic trust symbol
+        </h4>
+  
+        <!-- <div class="newsletter-box">
+          <input type="text" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">ارسال</button>
+        </div> -->
+  
+  
+        <div class="newsletter-box">
+         <div class="enamad-inner">  <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"><img referrerpolicy="origin" src="/images/star1.png"></a></div>
+  
+          
+        </div>
+  
+  
+  
+      </div>
+  
+    </div>
+  
+  </footer>
+  
+  
+  
+  
+  <section class="codecamp-label">
+    <h4> 2020 IELTS Club Dr.N. All Rights Reserved.</h4>
+  </section>
+  
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left">
+
+    </div>
+    <div class="loader-section section-right"></div>
+    <div class="loader">
+      <img src="/images/loading.svg" alt="">
+      <h2>Website is loading...!</h2>
+    </div>
+  </div>
+
+
+  <script src="/en/app/js/app.js"></script>
+
+  <script>
+
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")  
+        });
+
+
+        //language Swticher
+
+        let getDefaultLanguage = document.querySelector('.default-language')
+        let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+      getDefaultLanguage.addEventListener('click', () => {
+        
+        getLanguageDropdown.classList.toggle('active');
+
+      })
+    
+      </script>
+
+</body>
+</html>

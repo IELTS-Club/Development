@@ -1,0 +1,6 @@
+{
+    "DBname":"DBname",
+    "private-key":"jwtPrivateKey",
+    "email-pass":"emailPass",
+    "secret-key":"secretKey"
+}

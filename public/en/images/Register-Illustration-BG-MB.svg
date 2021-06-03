@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="289" height="355" viewBox="0 0 289 355">
+  <defs>
+    <clipPath id="clip-Register-Illustration-BG-MB">
+      <rect width="289" height="355"/>
+    </clipPath>
+  </defs>
+  <g id="Register-Illustration-BG-MB" clip-path="url(#clip-Register-Illustration-BG-MB)">
+    <rect width="289" height="355" fill="#fff"/>
+    <g id="Group_299" data-name="Group 299" transform="matrix(0.259, 0.966, -0.966, 0.259, 261.619, -168.081)">
+      <g id="Group_296" data-name="Group 296" transform="translate(-207.284 -63.468)">
+        <rect id="Rectangle_97" data-name="Rectangle 97" width="490.961" height="476.031" fill="#51a4aa"/>
+        <path id="wave" d="M0,4.631,26.451,2.391c26.451-2.408,79.353-6.634,132.255,9s105.8,51.971,158.706,63.084c52.9,11.282,105.8-2.239,132.255-9l26.451-6.76V99.277H0Z" transform="translate(572.601 -18.859) rotate(90)" fill="#51a4aa"/>
+      </g>
+      <g id="Group_295" data-name="Group 295" transform="translate(-152.134 -38.305)">
+        <rect id="Rectangle_97-2" data-name="Rectangle 97" width="413.966" height="414.518" fill="#258c93"/>
+        <path id="wave-2" data-name="wave" d="M0,3.9,23.016,2.017C46.032-.014,92.064-3.577,138.1,9.606s92.064,43.825,138.1,53.2c46.032,9.513,92.064-1.888,115.08-7.589l23.016-5.7v34.2H0Z" transform="translate(491.946 0.228) rotate(90)" fill="#258c93"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آیلتس کلاب | قوانین و مقررات</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="images/Favicon/manifest.json">
+  <link rel="stylesheet" href="dist/css/main.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <style>
+
+    #loader-wrapper {
+      position:fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width:300px;
+      height:150px;
+    }
+    
+    #loader-wrapper .loader h2 {
+    
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
+    
+    
+    }
+    
+    
+    @-webkit-keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    
+    #loader-wrapper .loader-section {
+      position:fixed;
+      top:0;
+      background-image: linear-gradient(#258c93,#1D3C4E);
+      width:51%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader-section.section-left {
+      left:0
+    }
+    #loader-wrapper .loader-section.section-right {
+      right:0;
+    }
+    
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader-wrapper .loader-section.section-right {
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      transform:translateY(-100%);
+      transition: all 0.3s 1s ease-out;
+    }
+    
+      </style>
+  <!--BEGIN RAYCHAT CODE--> 
+  <script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="50b0f0b4-8bbe-472d-94a5-ecbbaac0b985";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script> 
+  <!--END RAYCHAT CODE-->
+</head>
+<body>
+
+  <section class="welcome-label">
+
+    <h4>
+      سلام، به وب سایت آیلتس کلاب خوش اومدی!
+    </h4>
+
+    <a href="https://guide.ieltsdrn.com"><button class="icdrn-btn" type="submit"> راهنمای استفاده </button></a>
+
+  </section>
+
+  <header class="header container">
+
+    <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+
+    <ul class="overlay-menu">
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/">خانه</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/courses">کلاس های آنلاین</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/blog">ویدئو آموزشی</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/about">درباره ما</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/contact">تماس با ما</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft"> <a href="/privacy-policy">قوانین و مقررات</a></li>
+      <% if(authed==true){ %>
+        <% if(isTeacher==true) {%> 
+          <a href="/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">پنل کاربری</button>
+          </a>
+          <% }else{ %>
+            <a href="/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">پنل کاربری</button>
+            </a>
+          <%} %> 
+    <%  }else{ %> 
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/register">
+          <button class="nav-cta-btn icdrn-btn " type="submit">
+            ثبت نام
+          </button> 
+        </a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/login"> ورود
+        
+        </a>
+        </li>
+        <% } %> 
+    </ul>
+
+    </div>
+
+    <nav class="header-nav flex flex-jc-sb flex-ai-c">
+      <a href="#" class="nav-logo">
+        <img src="images/ICDRN-Navbar-Logo.svg" alt="Ielts-DRN-Logo">
+      </a>
+    
+      <ul class="nav-menu-links hide-for-phone">
+        <li class="nav-menu-links-item"><a href="/">خانه</a></li>
+        <li class="nav-menu-links-item"><a href="/courses">کلاس های آنلاین</a></li>
+        <li class="nav-menu-links-item"><a href="/blog">ویدئو آموزشی</a></li>
+        <li class="nav-menu-links-item"><a href="/about">درباره ما</a></li>
+        <li class="nav-menu-links-item"><a href="/contact" >تماس با ما</a></li>
+        <li class="nav-menu-links-item"><a href="/privacy-policy">قوانین و مقررات</a></li>
+      </ul>
+      
+
+      <div class="language-switcher-box  hide-for-phone">
+
+        <div class="language-dropdown">
+          <div class="default-language">
+            <img src="images/Iran-flag.svg" alt="ایلتس کلاب  دکتر نورزاد">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <ul>
+            <a href="/privacy-policy"> <li> <img src="images/Iran-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <span>فارسی</span></li></a>
+                 <a href="/en/privacy-policy"><li> <img src="images/united-kingdom-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <span>English</span></li></a> 
+          </ul>
+        </div>
+
+      </div>
+
+      <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn">
+        <span class="humburger-line"></span>
+        <span class="humburger-line"></span>
+        <span class="humburger-line"></span>
+      </a>
+      <% if(authed==true){ %> 
+        <% if(isTeacher==true) {%> 
+          <a href="/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">پنل کاربری</button>
+          </a>
+          <% }else{ %>
+            <a href="/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">پنل کاربری</button>
+            </a>
+          <%} %> 
+        <% }else{ %> 
+      <div class="nav-action">
+        <a href="/register"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit"> ثبت نام</button>
+        </a>
+        <a class="login-link hide-for-phone" href="/login">ورود
+        </a>
+        </div>
+        <% } %> 
+    </nav>
+  </header>
+
+
+
+  <section class="privacy container">
+
+    <div class="icdrn-title">
+      <h2>
+        قوانین و 
+        <span>
+          مقررات
+        </span>
+        وب سایت
+      </h2>
+    </div>
+
+    <p>
+      ورود کاربران به وب‏‌سایت آکادمی آموزشی آیلتس کلاب هنگام استفاده از پروفایل شخصی و سایر خدمات ارائه شده توسط مجموعه آنلاین آیلتس کلاب به معنای آگاه بودن و پذیرفتن شرایط، قوانین و همچنین نحوه استفاده از سرویس‌‏ها و خدمات است. توجه داشته باشید که ثبت نام در هرگونه کلاس آنلاین و خرید بسته های متعدد آموزش زبان نیز در هر زمان به معنی پذیرفتن کامل کلیه شرایط و قوانین از سوی کاربر است.
+
+      <br>
+      <br>
+
+      لطفا تمامی اطلاعات خود را در حین پرکردن فرم ثبت نام سایت به دقت وارد کنید چرا که این اطلاعات در راستای ثبت نام شما در کلاس های آنلاین آیلتس کلاب استفاده خواهد شد. 
+
+      <br>
+      <br>
+
+      تمامی فایل ها، خدمات و کلاس های آنلاین خریداری شده مختص شخص حقیقی ثبت نام کننده می‌باشد و اشتراک این موارد با افراد دیگر غیر مجاز می‌باشد. 
+
+      <br>
+      <br>
+
+      استفاده از تمامی نام های اختصاصی ثبت شده در مجموعه آیلتس کلاب در مجموعه ها و آموزشگاه های دیگر غیر مجاز می‌باشد. 
+
+      <br>
+      <br>
+
+      لطفا در حفظ اطلاعات شخصی مرتبط به ورود به پنل کاربری خودتان دقت به عمل آورید و مجموعه آیلتس کلاب نیز ملزم به این موضوع می‌باشد که از تمامی اطلاعات شخصی شما در بستری امن حفاظت کند.  
+
+      <br>
+      <br>
+
+      خرید تمامی خدمات و بسته های آموزشی در بستر آیلتس کلاب به معنای درخواست آن نوع خدمت یا بسته از سمت شما کاربران محترم است و برگرداندن هزینه آن مطلب صورت نخواهد گرفت پس لطفا از خرید خود مطمئن شوید بعد آن را نهایی کنید.
+
+      <br>
+      <br>
+
+      نحوه ورود به کلاس های آنلاین در یک مقاله بصورت مفصل توضیح داده شده است، لطفا قبل از فرارسیدن زمان جلسات کلاس هایتان از این لینک روند ورود به کلاس ها را به دقت پیگیری نمائید. 
+
+      <br>
+      <br>
+
+      قبل از اینکه در هرگونه کلاس آنلاین ثبت نام کنید،  روند ثبت نام نهایی شما وابسته به سطح مشخص شده شما در سیستم تمام اتوماتیک تعیین سطح آنلاین آیلتس کلاب است.  شما می‌توانید از طریق پنل کاربری خودتان و بخش «تعیین سطح آنلاین» در صفحه اصلی سایت اقدام به این فرایند کنید. 
+
+      <br>
+      <br>
+
+      پس از مشخص شدن سطح شما در زبان انگلیسی،  در صورت علاقه می‌توانید در اولین کلاس آنلاین خودتان ثبت نام کنید که این امکان بصورت تمام هوشمند از پنل کاربری شما امکان پذیر خواهد بود،  بعد از تنظیم مشخصات کلی خود سیستمِ قیمت گذاری هوشمند آیلتس کلاب بر اساس مشخصات وارد شده (استاد، نوع کلاس آنلاین و...) که می‌توانند دارای شرایط مختلفی باشد، قیمت نهایی کلاس آنلاین را به شما نمایش می‌دهد.  
+
+      <br>
+      <br>
+
+      پس از مشخص شدن قیمت دوره می‌توانید مبلغ وارد شده را در بستر و پلتفرم کاملا امن درگاه به پرداخت ملت تسویه و مراحل ثبت نام خودتان را در کلاس آنلاین مربوطه نهایی کنید،  همکاران ما در اسرع وقت برای شما کلاس مورد نظر را ایجاد می‌کنند و بعد از این مراحل شما می‌توانید با شرکت در کلاس آنلاین خود در هر نقطه ای از جهان لذت ببرید و یاد بگیرید.  
+
+      <br>
+      <br>
+
+    <span class="our-honor">
+      ما در تیم آیلتس کلاب،  مفتخریم که میزبان دانشجویانی هستیم که نسبت به تمامی قوانین فوق دقت به عمل می‌آورند.
+
+    </span>
+
+    </p>
+
+  </section>
+
+
+  <footer class="footer">
+
+    <div class="footer-grid">
+  
+      <div class="footer-about">
+  
+        <h4>
+   
+           درباره مجموعه ما   
+  
+        </h4>
+        <p>
+          لورم ایپـــسوم متن سـاختگی با تولــید سـادگی
+          نامفهوم از صنعت چاپ و با استفاده از طـراحان
+          گرافیک است  چاپگــرها و متون بلکه روزنامـه و 
+          مجله در ستــون و سـطر آنچنان که لازم است  و 
+          برای شرایط فعلی تکنولوژی مورد نیاز
+        </p>
+  
+      </div>
+  
+      <div class="footer-fast-access-menu">
+        <h4>
+          دسترسی سریع
+        </h4>
+        <ul>
+          <li>
+            کلاس های آنلاین
+          </li>
+          <li>
+            ارتباط سریع با مجوعه
+          </li>
+          <li>
+            قوانین و حریم شخصی
+          </li>
+          <li>
+            تیم تخصصی مجموعه
+          </li>
+          <li>
+            پشتیبانی و پیگیری
+          </li>
+        </ul>
+      </div>
+  
+      <div class="footer-newsletter">
+        <h4>
+          نماد اعتماد الکترونیک
+        </h4>
+  
+        <!-- <div class="newsletter-box">
+          <input type="text" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">ارسال</button>
+        </div> -->
+  
+  
+        <div class="newsletter-box">
+         <div class="enamad-inner"> <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"><img referrerpolicy="origin" src="/images/star1.png"></a></div>
+  
+          
+        </div>
+  
+  
+      </div>
+  
+    </div>
+  
+  </footer>
+
+  <section class="codecamp-label">
+    <h4>تمامی حقوق برای برند آیلتس کلاب دکتر نورزاد محفوظ است</h4>
+  </section>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left">
+
+    </div>
+    <div class="loader-section section-right"></div>
+    <div class="loader">
+      <img src="../images/loading.svg" alt="ایلتس کلاب  دکتر نورزاد">
+      <h2>سایت در حال بارگذاریه!</h2>
+    </div>
+  </div>
+
+  <script src="app/js/app.js"></script>
+
+  <script>
+
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")  
+        });
+    
+        //language Swticher
+
+        let getDefaultLanguage = document.querySelector('.default-language')
+        let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+      getDefaultLanguage.addEventListener('click', () => {
+        
+        getLanguageDropdown.classList.toggle('active');
+
+      })
+  </script>
+
+</body>
+</html>

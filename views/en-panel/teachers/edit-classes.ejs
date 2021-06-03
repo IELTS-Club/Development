@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="/en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>پنل اساتید | ویرایش کلاس</title>
+      <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+      <link rel="manifest" href="/en/images/Favicon/manifest.json">
+      <link rel="stylesheet" href="/en/dist/css/main.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+      <style>
+
+         #loader-wrapper {
+         position:fixed;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         top:0;
+         left:0;
+         width:100%;
+         height:100%;
+         z-index:1000;
+         }
+
+         #loader-wrapper .loader {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         z-index: 10001;
+         width:300px;
+         height:150px;
+         }
+
+         #loader-wrapper .loader h2 {
+         font-size: 30px;
+         font-family: Kalameh-Black;
+         color: #fff;
+         }
+
+         @-webkit-keyframes spin {
+         0%   { 
+         -webkit-transform: rotate(0deg); 
+         -ms-transform: rotate(0deg); 
+         transform: rotate(0deg);
+         }
+         100% { 
+         -webkit-transform: rotate(360deg); 
+         -ms-transform: rotate(360deg); 
+         transform: rotate(360deg);
+         }
+         }
+
+         @keyframes spin {
+         0%   { 
+         -webkit-transform: rotate(0deg); 
+         -ms-transform: rotate(0deg); 
+         transform: rotate(0deg);
+         }
+         100% { 
+         -webkit-transform: rotate(360deg); 
+         -ms-transform: rotate(360deg); 
+         transform: rotate(360deg);
+         }
+         }
+
+         #loader-wrapper .loader-section {
+         position:fixed;
+         top:0;
+         background-image: linear-gradient(#258c93,#1D3C4E);
+         width:51%;
+         height:100%;
+         z-index:1000;
+         }
+
+         #loader-wrapper .loader-section.section-left {
+         left:0
+         }
+
+
+         #loader-wrapper .loader-section.section-right {
+         right:0;
+         }
+         /* Loaded Styles */
+         .loaded #loader-wrapper .loader-section.section-left {
+         transform: translateX(-100%);
+         transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+         }
+         .loaded #loader-wrapper .loader-section.section-right {
+         transform: translateX(100%);
+         transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+         }
+         .loaded #loader {
+         opacity: 0;
+         transition: all 0.3s ease-out;
+         }
+         .loaded #loader-wrapper {
+         visibility: hidden;
+         transform:translateY(-100%);
+         transition: all 0.3s 1s ease-out;
+         }
+         
+      </style>
+   </head>
+   <body>
+      <div class="container-panel   container-teacher-panel-edit-classes">
+         <div class="panel-overlay hide-for-desktop">
+
+            <nav class="panel-overlay-menu">
+       
+             <img src="/en/images/ICDRN-Navbar-Logo.png" alt="" class="logo">
+       
+             <div class="panel-menu-item">
+           
+               <img src="/en/images/Panel-Home-Icon.svg" alt="">
+       
+       
+               <a href="/en/teachers/dashboard">
+         
+         
+                 Dashboard
+               
+               </a>
+       
+             </div>
+       
+         
+       
+             <div class="panel-menu-item">
+       
+               <img src="/en/images/Panel-Classes-Icon.svg" alt="">
+       
+       
+               <a href="/en/teachers/class-list">
+         
+         
+                My Classes
+               
+               </a>
+       
+             </div>
+       
+       
+             <div class="panel-menu-item ">
+       
+               <img src="/en/images/Panel-Classes-Registration-icon.svg" alt="">
+       
+       
+               <a href="/en/teachers/add-class">
+         
+         
+                 Add Class
+               
+               </a>
+       
+             </div>
+       
+             <div class="panel-menu-item">
+       
+               <img src="/en/images/Panel-Placemennt-list-icon.svg" alt="">
+       
+       
+               <a href="/en/teachers/placement-test-list">
+         
+         
+                 Placements History
+               
+               </a>
+       
+             </div>
+       
+             <div class="panel-menu-item">
+       
+               <img src="/en/images/Panel-edit-profile-icon.svg" alt="">
+       
+       
+               <a href="/en/teachers/student-list">
+         
+         
+                 Students List
+               
+               </a>
+       
+             </div>
+       
+             <div class="panel-menu-item">
+       
+               <img src="/en/images/Panel-edit-profile-icon.svg" alt="">
+       
+       
+               <a href="/en/teachers/edit-profile">
+         
+         
+                 Edit Profile
+               
+               </a>
+       
+             </div>
+       
+             <div class="panel-exit-box">
+       
+               <img src="/en/images/Teachers-Illustration.svg" alt="">
+         
+             </div>
+       
+            </nav>
+       
+           </div>
+           <div class="navbar">
+ 
+            <div class="navbar-search">
+      
+              <div class="searchbox">
+                <form method="POST" action="/en/teachers/users">
+                   <div class="search-input-box">
+                     <input type="text" class="search-input" placeholder="search among users" name="name">
+                     <!-- <i class="fas fa-search"></i> -->
+                     <button class="search-btn" type="submit">
+                       جستجو
+                     </button>
+                   </div>
+                 </form> 
+             </div>
+      
+            </div>
+      
+            <div class="navbar-status">
+      
+              <div class="panel-status-bar">
+      
+               <div class="status-icons">
+      
+                <div class="bells">
+          
+                  <img src="/en/images/Panel-Bells.svg" alt="">
+      
+                  <!-- <div class="bells-dropdown">
+                    <h3>
+                      <span>|</span>
+                      IELTS Club system messages
+                    </h3>
+                    <div class="email-list">
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          Forget Password
+                        </span>
+      
+                        click on link!
+      
+                      </p>
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          Special immigration discount
+                        </span>
+      
+                        More Information...
+      
+                      </p>
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          Learn online during the Corona Epidemic!
+                        </span>
+      
+                       So Easy!
+      
+                      </p>
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          Our Social Media Links
+                        </span>
+      
+                       Improve Together
+      
+                      </p>
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          New course invoices
+                        </span>
+      
+                        A completely safe experience!
+      
+                      </p>
+                    </div>
+                   </div> -->
+          
+                </div>
+          
+                <div class="message">
+          
+                  <img src="/en/images/Panel-Messsage.svg" 
+                  alt="">
+      
+                  <!-- <div class="message-dropdown">
+                    <h3>
+                      <span>|</span>
+                    List of your emails           
+                     </h3>
+                    <div class="email-list">
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          Forget Password
+                        </span>
+      
+                        click on link!
+      
+                      </p>
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          Special immigration discount
+                        </span>
+      
+                        More Information...
+      
+                      </p>
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          Learn online during the Corona Epidemic!
+                        </span>
+      
+                        So Easy!
+      
+                      </p>
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          Our Social Media Links
+                        </span>
+      
+                        Improve Together
+      
+                      </p>
+                      <p>
+      
+                        <img src="/en/images/Email-Blob.svg" alt="">
+      
+                        <span class="email-title">
+                          New course invoices
+                        </span>
+      
+                        A completely safe experience!
+      
+                      </p>
+                    </div>
+                   </div> -->
+          
+                </div>
+          
+                <div class="profile">
+          
+                  <img src="/en/images/Panel-Profile.svg" alt="">
+          
+      
+                  <div class="profile-dropdown">
+                   <h3>
+                     <span>|</span>
+                      Welcome Dear <% userName %>! 
+                   </h3>
+                   <form action="/en/logout" method="GET">
+                    <div class="exit-btn">
+                     <input type="image" src="../../images/Logout-Icon.svg" width="40px"/>
+                    <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+                    </div></form>
+                  </div>
+      
+                </div>
+      
+          
+      
+               </div>
+      
+                <div class="panel-humburger hide-for-desktop">
+          
+                  <img src="/en/images/Panel-Burger.svg" alt="">
+          
+                </div>
+                
+          
+              </div>
+      
+            </div>
+      
+      
+          </div>
+      
+         <div class="main">
+            <div class="classes-edit">
+               <div class="classes-edit-title">
+                  <h2>
+                     <span>
+                     |
+                     </span>
+                     Edit Online Classes
+                  </h2>
+               </div>
+               <div class="classes-edit-grid">
+                  <div class="classes-edit-form">
+                     <div class="classes-edit-actions">
+                        <button type="submit" class="icdrn-btn hide-for-phone" id="editInstructorBtn">
+                           Edit Instructor
+                           </button>
+                           <button type="submit" class="icdrn-btn hide-for-phone " id="editTimeBtn">
+                           Change Time
+                           </button>
+
+                        <div class="row hide-for-desktop">
+                           <button type="submit" class="icdrn-btn" id="editInstructorBtn">
+                              Edit Instructor
+                              </button>
+                              <button type="submit" class="icdrn-btn">
+                              change class time
+                              </button>
+                        </div>
+                        <button type="submit" class="icdrn-btn add-students" id="addStudentsBtn">
+                        Add New Student
+                        </button>
+                     </div>
+                     <div class="classes-edit-table-box">
+                        <table>
+                           <tr>
+                              <th>Student Name</th>
+                              <th>Email</th>
+                              <th>Actions</th>
+                           </tr>
+                           <% students.forEach(element => {
+                              
+                            %> 
+
+                            <tr>
+                             <td><%= element.name %></td>
+                             <td><%= element.email %></td>
+                             <td>
+                                <a href="/en/teachers/edit-class/deleteStudent/<%= classId %>/<%= element._id %>"><button type="submit" class="icdrn-btn">
+                                remove
+                                </button></a>
+                             </td>
+                          </tr>
+
+                         <% }); %> 
+                        
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+                  <div class="class-registration-pic">
+                     <img src="../../images/Profile-edit-Pic.svg" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="side-menu hide-for-phone">
+
+            <nav class="panel-menu-list">
+        
+              <div class="panel-logo">
+        
+                <img src="/en/images/ICDRN-Navbar-Logo.png" alt="">
+        
+              </div>
+        
+              <div class="panel-menu-item">
+        
+                <img src="/en/images/Panel-Home-Icon.svg" alt="">
+        
+        
+                <a href="/en/teachers/dashboard">
+          
+          
+                  Dashboard
+                
+                </a>
+        
+              </div>
+        
+          
+        
+              <div class="panel-menu-item">
+        
+                <img src="/en/images/Panel-Classes-Icon.svg" alt="">
+        
+        
+                <a href="/en/teachers/class-list">
+          
+          
+                  My Classes
+                
+                </a>
+        
+              </div>
+        
+        
+              <div class="panel-menu-item active">
+        
+                <img src="/en/images/Panel-Classes-Registration-icon.svg" alt="">
+        
+        
+                <a href="/en/teachers/add-class">
+          
+          
+                  Add Class
+                
+                </a>
+        
+              </div>
+        
+              <div class="panel-menu-item">
+        
+                <img src="/en/images/Panel-Placemennt-list-icon.svg" alt="">
+        
+        
+                <a href="/en/teachers/placement-test-list">
+          
+          
+                  Placements History
+                
+                </a>
+        
+              </div>
+      
+              
+              <div class="panel-menu-item">
+      
+                <img class="panel-menu-item-students" src="/en/images/Panel-Students-list.svg" alt="">
+      
+      
+                <a href="/en/teachers/student-list">
+          
+          
+                  Students List
+                
+                </a>
+      
+              </div>
+            
+              <div class="panel-menu-item">
+        
+                <img src="/en/images/Panel-edit-profile-icon.svg" alt="">
+        
+        
+                <a href="/en/teachers/edit-profile">
+          
+          
+                  Edit Profile
+                
+                </a>
+        
+              </div>
+        
+            </nav>
+        
+            <div class="panel-exit-box">
+        
+               <img src="/en/images/Teachers-Illustration.svg" alt="">
+        
+            </div>
+        
+      
+          </div>
+      </div>
+      <div id="loader-wrapper">
+         <div id="loader"></div>
+         <div class="loader-section section-left">
+         </div>
+         <div class="loader-section section-right"></div>
+         <div class="loader">
+            <img src="../images/loading.svg" alt="">
+            <h2>website is loading ...!</h2>
+         </div>
+      </div>
+
+
+
+
+      <!-- Modals -->
+
+      <section class="icdrn-modal" id="editInstructorModal" style="display: none;">
+
+         <div class="icdrn-modal-content">
+          <form action="/en/teachers/edit-class/<%= classId %>/changeTeacher" method="POST">
+         <a href="/en/teachers/edit-class/<%= classId %>"><span class="modal-close" id="modalCloseA">
+         &times;
+         </span></a>
+         
+         <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="" style="display: none;">
+         
+         
+         
+         <h3>
+         Change Instructor
+         </h3>
+         
+         <div class="courseteacher-box">
+
+            <div class="select">
+              <select id="standard-select" name="classTeacher">
+                <option value="Noorzad">
+                  Dr.Pezhman Noorzad
+                </option>
+                <option value="Bahrami">
+                 Ms.Hanieh Bahrami
+                </option>
+                <option value="Nouri">
+                  Ms.Mina Nouri
+                </option>
+                <option value="Zolfaghari">
+                   Ms.Arezoo Zolfaghari
+                </option>
+                <option value="Mohebiii">
+                  Ms. Atefeh Mohebi
+                </option>
+                <option value="Jadidi">
+                  Mr.Javad Jadidi
+                </option>
+                <option value="Asi">
+                  MS.Nikta Asi Shad
+                </option>
+                <option value="Fallah">
+                  Mr. Mehrshad Fallah
+                 </option>
+                 <option value="Hadavi">
+                   Ms.Maryam Hadavi
+                 </option>
+              </select>
+              <span class="icon"></span>
+            </div>
+            
+          </div>
+         
+         <button type="submit" class="icdrn-btn">
+         
+         Submit Changes
+         
+         </button>
+         
+         </div>
+            
+         </section>
+
+
+
+
+         <section class="icdrn-modal" id="editTimeModal" style="display: none;">
+
+            <div class="icdrn-modal-content">
+              <form action="/teachers/edit-class/<%= classId %>/changeClassTime" method="POST">
+            <a href="/en/teachers/edit-class/<%= classId %>"><span class="modal-close" id="modalCloseA">
+           
+            &times;
+            </span></a>
+            
+            <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="" style="display: none;">
+            
+            
+            
+            <h3>
+           Change Class time
+            </h3>
+            
+            <div class="changedate-box">
+ 
+               <input type="text" class="changedate-input" placeholder="Class Time" name="classTime" required>
+               
+             </div>
+            
+            <button type="submit" class="icdrn-btn">
+            
+            Submit Changes
+            
+            </button>
+          </form>
+            </div>
+               
+         </section>
+
+
+         <section class="icdrn-modal" id="addStudentsModal" style="display: none;">
+
+            <div class="icdrn-modal-content">
+              <form action="/teachers/edit-class/<%= classId %>/addStudent" method="POST">
+            <a href="/en/teachers/edit-class/<%= classId %>"><span class="modal-close" id="modalCloseA">
+            
+            &times;
+            </span></a>
+            
+            <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="" style="display: none;">
+            
+            
+            
+            <h3>
+            Add Student
+            </h3>
+            
+            <div class="add-students-box">
+ 
+               <input type="text" class="add-students-input" placeholder="Change Students' email with ','" required name="classStudents">
+               
+             </div>
+            
+            <button type="submit" class="icdrn-btn">
+            
+            Submit Changes
+            
+            </button>
+          </form>
+
+            </div>
+               
+         </section>
+
+
+         <script>
+
+            const getEditInstructorModal = document.querySelector('#editInstructorModal');
+
+            const getEditInstructorBtn =  document.querySelector('#editInstructorBtn');
+
+            getEditInstructorBtn.addEventListener('click',()=>{
+
+
+               getEditInstructorModal.style.display = "flex";
+
+            })
+
+            const getEditTimeModal = document.querySelector('#editTimeModal');
+
+            const getEditTimeBtn =  document.querySelector('#editTimeBtn');
+
+            getEditTimeBtn.addEventListener('click',()=>{
+
+
+               getEditTimeModal.style.display = "flex";
+
+            })
+
+            const getAddStudentsModal = document.querySelector('#addStudentsModal');
+
+            const getAddStudentseBtn =  document.querySelector('#addStudentsBtn');
+
+            getAddStudentseBtn.addEventListener('click',()=>{
+
+
+               getAddStudentsModal.style.display = "flex";
+
+            })
+
+
+
+         </script>
+
+         </script>
+
+
+      <script src="../../app/js/app.js"></script>
+      <script src="../../app/js/PanelMenuToggle.js"></script>
+
+      <script>
+         //For Live Projects
+             window.addEventListener('load',function(){
+               document.querySelector('body').classList.add("loaded")  
+             });
+      
+      </script>
+
+
+
+   </body>
+</html>

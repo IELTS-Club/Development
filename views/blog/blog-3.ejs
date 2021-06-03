@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آیلتس کلاب | Insomnia</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="../images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="../images/Favicon/manifest.json">
+  <link rel="stylesheet" href="../dist/css/main.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <style>
+
+    #loader-wrapper {
+      position:fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width:300px;
+      height:150px;
+    }
+    
+    #loader-wrapper .loader h2 {
+    
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
+    
+    
+    }
+    
+    
+    @-webkit-keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    
+    #loader-wrapper .loader-section {
+      position:fixed;
+      top:0;
+      background-image: linear-gradient(#258c93,#1D3C4E);
+      width:51%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader-section.section-left {
+      left:0
+    }
+    #loader-wrapper .loader-section.section-right {
+      right:0;
+    }
+    
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader-wrapper .loader-section.section-right {
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      transform:translateY(-100%);
+      transition: all 0.3s 1s ease-out;
+    }
+    
+      </style>
+  
+</head>
+<body>
+
+  <section class="welcome-label">
+
+    <h4>
+      سلام، به وب سایت آیلتس کلاب خوش اومدی!
+    </h4>
+
+    <a href="https://guide.ieltsdrn.com"><button class="icdrn-btn" type="submit"> راهنمای استفاده </button></a>
+
+  </section>
+  
+  <header class="header container">
+
+    <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+
+    <ul class="overlay-menu">
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/">خانه</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/courses">کلاس های آنلاین</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/blog">ویدئو آموزشی</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/about">درباره ما</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/contact">تماس با ما</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft"> <a href="/privacy-policy">قوانین و مقررات</a></li>
+      <% if(authed==true){ %>
+        <% if(isTeacher==true) {%> 
+          <a href="/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">پنل کاربری</button>
+          </a>
+          <% }else{ %>
+            <a href="/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">پنل کاربری</button>
+            </a>
+          <%} %> 
+    <%  }else{ %> 
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/register">
+          <button class="nav-cta-btn icdrn-btn " type="submit">
+            ثبت نام
+          </button> 
+        </a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/login"> ورود
+        
+        </a>
+        </li>
+        <% } %> 
+    </ul>
+
+    </div>
+
+    <nav class="header-nav flex flex-jc-sb flex-ai-c">
+      <a href="#" class="nav-logo">
+        <img src="/images/ICDRN-Navbar-Logo.svg" alt="Ielts-DRN-Logo">
+      </a>
+    
+      <ul class="nav-menu-links hide-for-phone">
+        <li class="nav-menu-links-item"><a href="/">خانه</a></li>
+        <li class="nav-menu-links-item"><a href="/courses">کلاس های آنلاین</a></li>
+        <li class="nav-menu-links-item"><a href="/blog">ویدئو آموزشی</a></li>
+        <li class="nav-menu-links-item"><a href="/about">درباره ما</a></li>
+        <li class="nav-menu-links-item"><a href="/contact" >تماس با ما</a></li>
+        <li class="nav-menu-links-item"><a href="/privacy-policy">قوانین و مقررات</a></li>
+      </ul>
+      
+
+      <div class="language-switcher-box  hide-for-phone">
+
+        <div class="language-dropdown">
+          <div class="default-language">
+            <img src="/images/Iran-flag.svg" alt="ایلتس کلاب  دکتر نورزاد">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <ul>
+            <a href="/blog/blog3"> <li> <img src="/images/Iran-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <span>فارسی</span></li></a>
+                 <a href="/en/blog/blog3"><li> <img src="/images/united-kingdom-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <span>English</span></li></a> 
+          </ul>
+        </div>
+
+      </div>
+
+      <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn">
+        <span class="humburger-line"></span>
+        <span class="humburger-line"></span>
+        <span class="humburger-line"></span>
+      </a>
+      <% if(authed==true){ %> 
+        <% if(isTeacher==true) {%> 
+          <a href="/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">پنل کاربری</button>
+          </a>
+          <% }else{ %>
+            <a href="/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">پنل کاربری</button>
+            </a>
+          <%} %> 
+        <% }else{ %> 
+      <div class="nav-action">
+        <a href="/register"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit"> ثبت نام</button>
+        </a>
+        <a class="login-link hide-for-phone" href="/login">ورود
+        </a>
+        </div>
+        <% } %> 
+    </nav>
+  </header>
+
+
+ <section class="blog-page">
+
+  <div class="blog-page-pic">
+
+    <img src="../images/blog-three-page-pic.png" alt="ایلتس کلاب  دکتر نورزاد">
+
+  </div>
+
+
+  <div class="blog-page-grid">
+
+    <div class="blog-discrption">
+
+      <h2>
+        <span>
+          |
+        </span>
+      ویدئو آموزشی Insomnia
+      </h2>
+  
+  
+  
+      <p>
+        بیخوابی مشکلی هست که ممکنه خیلی هامون باهاش درگیر باشیم که عوامل و پیامدهای مشخصی هم به دنبال داره و خیلی از مواقع هم موضوع سوالات speaking آیلتس ، در رابطه با بیخوابی هست. این ویدیو هم چند اصطلاح و کلمه رو در این مورد بهتون معرفی میکنه.
+      </p>
+    </div>
+
+    <div class="blog-video">
+      <video width="320" height="240" controls>
+        <source src="../videos/Blog-3-video.MP4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+ </section>
+
+<footer class="footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-about">
+
+      <h4>
+ 
+         درباره مجموعه ما   
+
+      </h4>
+      <p>
+        تیم آیلتس کلاب با سرپرستی دکتر پژمان نورزاد اینجاست تا به شما بگه برای یادگیری زبان هیچ مانعی سر راهتون نیست حتی موقعیت جغرافیایی! 
+        یادت باشه برای شروع نیاز به هیچ پیشینه ای نداری! پس همین الان از هر جای دنیا میتونی شروع کنی.
+      </p>
+
+    </div>
+
+    <div class="footer-fast-access-menu">
+      <h4>
+        دسترسی سریع
+      </h4>
+      <ul>
+        <li>
+          <a href="/courses" style="color:white">کلاس های آنلاین</a>
+        </li>
+        <li>
+          <a href="/contact" style="color:white">ارتباط سریع با مجوعه</a>
+        </li>
+        <li>
+          <a href="/privacy-policy" style="color:white"> قوانین و حریم شخصی</a>
+        </li>
+        <li>
+          <a href="/about" style="color:white">تیم تخصصی مجموعه</a>
+        </li>
+        <li>
+          <a href="/contact" style="color:white"> پشتیبانی و پیگیری</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>
+          نماد اعتماد الکترونیک
+        </h4>
+  
+        <!-- <div class="newsletter-box">
+          <input type="text" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">ارسال</button>
+        </div> -->
+  
+  
+        <div class="newsletter-box">
+         <div class="enamad-inner"> <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"><img referrerpolicy="origin" src="/images/star1.png"></a></div>
+  
+          
+        </div>
+  
+  
+
+
+    </div>
+
+  </div>
+
+</footer>
+
+<section class="codecamp-label">
+  <h4>تمامی حقوق برای برند آیلتس کلاب دکتر نورزاد محفوظ است</h4>
+</section>
+
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left">
+
+  </div>
+  <div class="loader-section section-right"></div>
+  <div class="loader">
+    <img src="../images/loading.svg" alt="ایلتس کلاب  دکتر نورزاد">
+    <h2>سایت در حال بارگذاریه!</h2>
+  </div>
+</div>
+
+<script>
+
+  //For Live Projects
+      window.addEventListener('load',function(){
+        document.querySelector('body').classList.add("loaded")  
+      });
+  
+  //language Swticher
+
+  let getDefaultLanguage = document.querySelector('.default-language')
+        let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+      getDefaultLanguage.addEventListener('click', () => {
+        
+        getLanguageDropdown.classList.toggle('active');
+
+      })
+ </script>
+
+
+  <script src="../app/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پنل اساتید | لیست تعینن سطح ها</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="/en/images/Favicon/manifest.json">
+  <link rel="stylesheet" href="/en/dist/css/main.min.css">
+  <link rel="stylesheet" href="/en/dist/css/loader.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+  
+  <div class="container-panel   container-teacher-panel-placementlist">
+
+    <div class="panel-overlay hide-for-desktop">
+
+      <nav class="panel-overlay-menu">
+ 
+       <img src="/en/images/ICDRN-Navbar-Logo.png" alt="" class="logo">
+ 
+       <div class="panel-menu-item">
+     
+         <img src="/en/images/Panel-Home-Icon.svg" alt="">
+ 
+ 
+         <a href="/en/teachers/dashboard">
+   
+   
+           Dashboard
+         
+         </a>
+ 
+       </div>
+ 
+   
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="/en/images/Panel-Classes-Icon.svg" alt="">
+ 
+ 
+         <a href="/en/teachers/class-list">
+   
+   
+          My Classes
+         
+         </a>
+ 
+       </div>
+ 
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="/en/images/Panel-Classes-Registration-icon.svg" alt="">
+ 
+ 
+         <a href="/en/teachers/add-class">
+   
+   
+           Add Class
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item active">
+ 
+         <img src="/en/images/Panel-Placemennt-list-icon.svg" alt="">
+ 
+ 
+         <a href="/en/teachers/placement-test-list">
+   
+   
+           Placements History
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="/en/images/Panel-edit-profile-icon.svg" alt="">
+ 
+ 
+         <a href="/en/teachers/student-list">
+   
+   
+           Students List
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="/en/images/Panel-edit-profile-icon.svg" alt="">
+ 
+ 
+         <a href="/en/teachers/edit-profile">
+   
+   
+           Edit Profile
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-exit-box">
+ 
+         <img src="/en/images/Teachers-Illustration.svg" alt="">
+   
+       </div>
+ 
+      </nav>
+ 
+     </div>
+
+     <div class="navbar">
+ 
+      <div class="navbar-search">
+
+        <div class="searchbox">
+
+          <form method="POST" action="/en/teachers/users">
+            <div class="search-input-box">
+              <input type="text" class="search-input" placeholder="search among users" name="name">
+              <!-- <i class="fas fa-search"></i> -->
+              <button class="search-btn" type="submit">
+                search 
+              </button>
+            </div>
+          </form> 
+          
+        </div>
+
+      </div>
+
+      <div class="navbar-status">
+
+        <div class="panel-status-bar">
+
+         <div class="status-icons">
+
+          <div class="bells">
+    
+            <a href="/en"> <img src="../../images/Panel-home.svg" 
+              alt=""></a>
+
+          <!--   <div class="bells-dropdown">
+              <h3>
+                <span>|</span>
+                IELTS Club system messages
+              </h3>
+              <div class="email-list">
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    Forget Password
+                  </span>
+
+                  click on link!
+
+                </p>
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    Special immigration discount
+                  </span>
+
+                  More Information...
+
+                </p>
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    Learn online during the Corona Epidemic!
+                  </span>
+
+                 So Easy!
+
+                </p>
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    Our Social Media Links
+                  </span>
+
+                 Improve Together
+
+                </p>
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    New course invoices
+                  </span>
+
+                  A completely safe experience!
+
+                </p>
+              </div>
+             </div> -->
+    
+          </div>
+    
+          <div class="message">
+    
+            <img src="/en/images/Panel-Messsage.svg" 
+            alt="">
+
+            <div class="message-dropdown">
+              <h3>
+                <span>|</span>
+              List of your emails           
+               </h3>
+              <!--  <div class="email-list">
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    Forget Password
+                  </span>
+
+                  click on link!
+
+                </p>
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    Special immigration discount
+                  </span>
+
+                  More Information...
+
+                </p>
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    Learn online during the Corona Epidemic!
+                  </span>
+
+                  So Easy!
+
+                </p>
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    Our Social Media Links
+                  </span>
+
+                  Improve Together
+
+                </p>
+                <p>
+
+                  <img src="/en/images/Email-Blob.svg" alt="">
+
+                  <span class="email-title">
+                    New course invoices
+                  </span>
+
+                  A completely safe experience!
+
+                </p>
+              </div>-->
+             </div>
+    
+          </div>
+    
+          <div class="profile">
+    
+            <img src="/en/images/Panel-Profile.svg" alt="">
+    
+
+            <div class="profile-dropdown">
+             <h3>
+               <span>|</span>
+                Welcome Dear Milad!
+             </h3>
+             <form action="/en/logout" method="GET">
+              <div class="exit-btn">
+               <input type="image" src="../../images/Logout-Icon.svg" width="40px"/>
+              <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+              </div></form>
+            </div>
+
+          </div>
+
+    
+
+         </div>
+
+          <div class="panel-humburger hide-for-desktop">
+    
+            <img src="/en/images/Panel-Burger.svg" alt="">
+    
+          </div>
+          
+    
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="main">
+
+      <div class="placementtest-history">
+
+        <div class="placementtest-history-title">
+          <h2>
+            <span>
+              |
+            </span>
+            Placements History
+          </h2>
+          <button type="submit" class="icdrn-btn">
+       
+            New Test
+
+            <span>+</span>
+
+          </button>
+        </div>
+
+        <div class="placementtest-history-table-box">
+
+          <table class="placementtest-history-table">
+
+            <tr>
+              <th>Row</th>
+              <th>Fullname</th>
+              <th>Correct Answer</th>
+              <th>Wrong Answer</th>
+              <th>Student's Level</th>
+              <th>Test Type</th>
+              <th>Result Control</th>
+              <th>Date</th>
+              <th>Payment Status</th>
+              <th>Phone Number</th>
+            </tr>
+
+
+            <%   if(quizes.length != 0){ %> 
+              <% let i=0; %>
+             <%    quizes.forEach(element => { %>
+              <%     i++; 
+              
+             function selectTrueAnswer(){
+               if(element.trueAnswer==null){
+                 return "-"
+               }
+               return element.trueAnswer;
+             }
+             function selectFalseAnswer(){
+               if(element.falseAnswer==null){
+                 return "-"
+               }
+               return element.falseAnswer
+             }
+             function selectLevel(){
+               if(element.level==null){
+                 return "-"
+               }
+               return element.level
+             }
+             function showType() {
+              if(element.quizType=="Written"){
+                return "Written"
+              }else{
+                return "Oral"
+              }}
+              
+              %> 
+              
+
+            <tr>
+              <td><%= i %></td>
+                <td><%= element.name %></td>
+                
+                <td><%= selectTrueAnswer();  %> </td>
+                <td><%= selectFalseAnswer(); %></td>
+                <td><%= selectLevel(); %></td>
+                <td><%= showType(); %></td>
+              <td>
+                <span>
+                  <% if(element.quizType=="Oral"){ %>
+                    <form action="/en/teachers/placement-test-list/<%= element._id %>" method="GET">
+                    <button type="submit" style="outline: 0; border:0; cursor:pointer;" id="reportTest">Submit Score</button></form> 
+                 <% }else{ %> 
+                 
+                  <button  type="submit" style="outline: 0; border:0; "> Automatic</button>
+                  <% } %>  
+                </span>
+            </td>
+              <td><%= element.Date %></td>
+              <td>
+                <span>Paid</span>
+              </td>
+              <td><%= element.phone %></td>
+            </tr>
+
+
+            <%              
+          });
+        }  %>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="side-menu hide-for-phone">
+
+      <nav class="panel-menu-list">
+  
+        <div class="panel-logo">
+  
+          <img src="/en/images/ICDRN-Navbar-Logo.png" alt="">
+  
+        </div>
+  
+        <div class="panel-menu-item">
+  
+          <img src="/en/images/Panel-Home-Icon.svg" alt="">
+  
+  
+          <a href="/en/teachers/dashboard">
+    
+    
+            Dashboard
+          
+          </a>
+  
+        </div>
+  
+    
+  
+        <div class="panel-menu-item">
+  
+          <img src="/en/images/Panel-Classes-Icon.svg" alt="">
+  
+  
+          <a href="/en/teachers/class-list">
+    
+    
+            My Classes
+          
+          </a>
+  
+        </div>
+  
+  
+        <div class="panel-menu-item">
+  
+          <img src="/en/images/Panel-Classes-Registration-icon.svg" alt="">
+  
+  
+          <a href="/en/teachers/add-class">
+    
+    
+            Add Class
+          
+          </a>
+  
+        </div>
+  
+        <div class="panel-menu-item active">
+  
+          <img src="/en/images/Panel-Placemennt-list-icon.svg" alt="">
+  
+  
+          <a href="/en/teachers/placement-test-list">
+    
+    
+            Placements History
+          
+          </a>
+  
+        </div>
+
+        
+        <div class="panel-menu-item">
+
+          <img class="panel-menu-item-students" src="/en/images/Panel-Students-list.svg" alt="">
+
+
+          <a href="/en/teachers/student-list">
+    
+    
+            Students List
+          
+          </a>
+
+        </div>
+      
+        <div class="panel-menu-item">
+  
+          <img src="/en/images/Panel-edit-profile-icon.svg" alt="">
+  
+  
+          <a href="/en/teachers/edit-profile">
+    
+    
+            Edit Profile
+          
+          </a>
+  
+        </div>
+  
+      </nav>
+  
+      <div class="panel-exit-box">
+  
+         <img src="/en/images/Teachers-Illustration.svg" alt="">
+  
+      </div>
+  
+
+    </div>
+
+  </div>
+
+  <section class="icdrn-modal report-test" id="ReportTest">
+
+    <div class="icdrn-modal-content">
+  
+      <a href="/en/teachers/placement-test-list"><span class="modal-close" >
+        &times;
+      </span></a>
+  
+      <img src="../../images/Comin-soon-pic.svg" class="modal-img" alt="">
+  
+  
+  
+      <h3>
+       
+Manually set the leveling report
+      </h3>
+      <form action="/en/teachers/placement-test-list/changeQuizResult" method="POST" >
+      
+        <input type="text" class="icdrn-input" placeholder="Please enter the final level of the student" name="level" required>
+        
+        <input type="hidden" name="id" value="<%= id %>" style="display: none;"> <br />
+        <button type="submit" class="icdrn-btn">
+          
+          submit score
+          
+        </button>
+      </form>
+  
+    </div>
+  </section>
+  <% if (mustShow==true){ %> 
+  <script> 
+    
+    const getRegisterErrorModal = document.querySelector('#ReportTest');
+   
+    
+    
+    const getmodalClose = document.querySelector('#modalClose');
+
+    
+      getRegisterErrorModal.style.display = "flex";
+    
+    
+  
+
+    
+
+   </script>
+  <% } %>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left">
+
+    </div>
+    <div class="loader-section section-right"></div>
+    <div class="loader">
+      <img src="../images/loading.svg" alt="">
+      <h2>Website is loading...!</h2>
+    </div>
+  </div>
+
+  <script src="/en/app/js/app.js"></script>
+  <script src="/en/app/js/PanelMenuToggle.js"></script>
+
+  <script>
+
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")  
+        });
+    
+    
+      </script>
+
+</body>
+</html>

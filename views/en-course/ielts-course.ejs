@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS course | IELTS Club</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="/en/images/Favicon/manifest.json">
+  <link rel="stylesheet" href="/en/dist/css/main.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/en/dist/css/loader.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+
+  <style>
+
+.swiper-container {
+width: 100%;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+.swiper-slide {
+background-position: center;
+background-size: cover;
+width: 150px;
+
+overflow: hidden;
+
+
+}
+
+certificate-slide {
+
+height: 250px;
+text-align: center;
+
+}
+
+.swiper-slide img {
+
+width: 150px;
+
+}
+
+.swiper-slide p{
+
+text-align: center;
+
+}
+
+
+
+  </style>
+</head>
+<body>
+
+
+  <section class="welcome-label">
+    <h4>Hi, Welcom to IELTS Club Website!</h4>
+    <a href="https://guide.ieltsdrn.com/english.html"><button class="icdrn-btn" type="submit"> Website Guid</button></a>
+ </section>
+ 
+ <header class="header container">
+  <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+     <ul class="overlay-menu">
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en">Home</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/courses">Online Classes</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/blog">Learning Videos</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/about">About us</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/contact">Contact us</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/privacy-policy">Privacy Policy</a></li>
+        <% if(authed==true){ %>
+          <% if(isTeacher==true) {%> 
+            <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+              user panel 
+              </button>
+              </a>
+            <% }else{ %>
+
+              <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+                user panel 
+                </button>
+                </a>
+              <%} %> 
+          <% }else{ %>  
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/register"> <button class="nav-cta-btn icdrn-btn " type="submit"> 
+          Register  </button> </a></li>
+
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en/login"> 
+              Login  </a></li>
+              <% } %> 
+     </ul>
+  </div>
+  <nav class="header-nav flex flex-jc-sb flex-ai-c">
+     <a href="#" class="nav-logo"> <img src="/en/images/ICDRN-Navbar-Logo.svg" alt="IELTS-DRN-Logo"> </a>
+     <ul class="nav-menu-links hide-for-phone">
+        <li class="nav-menu-links-item"><a href="/en">Home</a></li>
+        <li class="nav-menu-links-item"><a href="/en/courses">Online Classes</a></li>
+        <li class="nav-menu-links-item"><a href="/en/blog">Learning Videos</a></li>
+        <li class="nav-menu-links-item"><a href="/en/about">About us</a></li>
+        <li class="nav-menu-links-item"><a href="/en/contact">Contact us</a></li>
+        <li class="nav-menu-links-item"><a href="/en/privacy-policy">Privacy Policy</a></li>
+     </ul>
+     <div class="language-switcher-box hide-for-phone">
+        <div class="language-dropdown">
+           <div class="default-language"> <img src="/en/images/united-kingdom-flag.svg" alt=""> <i class="fas fa-chevron-down"></i></div>
+           <ul>
+              <a href="/en/courses/ielts-course">
+                <li> <img src="/en/images/united-kingdom-flag.svg" alt=""> <span>English</span></li>
+              </a>
+              <a href="/courses/ielts-course">
+                <li> <img src="/en/images/Iran-flag.svg" alt=""> <span>Persian</span></li>
+              </a>
+           </ul>
+        </div>
+     </div>
+     <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn"> <span></span> <span></span> <span></span> </a>
+     <% if(authed==true){ %>
+      <% if(isTeacher==true) {%> 
+        <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+          user panel 
+          </button>
+          </a>
+        <% }else{ %>
+
+          <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+            user panel 
+            </button>
+            </a>
+          <%} %> 
+
+     <% }else{ %> 
+     <div class="nav-action">
+
+      <a class="login-link hide-for-phone" href="/en/login">Login
+      </a>
+      
+      <a href="/en/register"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+      Register
+      </button>
+      </a>
+      </div>
+      <% } %> 
+      
+  </nav>
+</header>
+
+
+  <section class="online-ielts-class container">
+
+    <div class="ielts-class-into-grid">
+
+      <div class="ielts-class-detail">
+
+        <h2>
+          IELTS
+          <span>online</span>
+          course
+        </h2>
+
+        <p>
+          The first question that may happen for all of you is how long it takes to achieve IELTS. In this question , it is very important to pay attention to the level you have in English. However, with the intensive course that we have in IELTS Club , in a span of 8-10 months you can fulfill your target. The plus point of the crash course is not only it is economical but also you can save a lot of time. Each crash course class contains up to 6 students. However, with private classes which are held by one student, you can achieve your goal in a shorter while and even it lasts less than crash course. 
+        </p>
+
+        <div class="course-btn-box">
+          <button type="submit">
+            <a href="/en/login"> Sign up now!</a>
+          </button>
+        </div>
+
+      </div>
+
+    
+
+
+      <div class="ielts-class-pic">
+
+        <img src="/en/images/Ielts-page-pic.png" alt="">
+
+      </div>
+
+    </div>
+
+
+    <section class="course-chart container">
+
+      <div class="icdrn-title">
+        <h2>
+         IELTS
+         <span>chart</span>
+        </h2>
+        <p>
+          All you need to know in the following chart
+
+        </p>
+        <button class="icdrn-btn" type="submit">
+          Download chart!
+        </button>
+      </div>
+    
+      <div class="course-chart-img">
+        <img src="/en/images/Chart-Illustration.svg" alt="">
+      </div>
+    
+    </section>
+
+    <div class="ielts-book">
+
+      <div class="icdrn-title">
+
+        <h2>
+          <span>
+            Books
+          </span> you need
+        </h2>
+    
+      </div>
+
+      
+    <section class="slide-book container">
+
+      <div class="swiper-container">
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            
+              <img src="/en/images/Cutiing-edge-Book.jpg" alt="">
+
+
+          </div>
+
+          <div class="swiper-slide">  
+
+            <img src="/en/images/Active-Book.jpg" style="height: 210px;" alt="">
+
+          </div>
+
+          <div class="swiper-slide">  
+
+            <img src="/en/images/504-book.jpg" alt="">
+
+        </div>
+
+        <div class="swiper-slide">  
+
+          <img src="/en/images/Cambridge-test-14-Book.jpg" alt="">
+
+      </div>
+
+      <div class="swiper-slide">  
+
+        <img src="/en/images/Cambridge-test-15-Book.jpg" alt="">
+
+    </div>
+
+    <div class="swiper-slide">  
+
+      <img src="/en/images/Essentioal-Words-For-Ielts-Book.jpg" alt="">
+
+  </div>
+
+  <div class="swiper-slide">  
+
+      <img src="/en/images/Achive-Ielts-Book.jpg" alt="">
+
+  </div>
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Complet-Ielts-Book.jpg" alt="">
+
+  </div>
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Ielts-Practice-Test-Book.jpg" alt="">
+
+  </div>
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Ielts-Test-Builder(2).jpg" alt="">
+
+  </div>
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Ielts-Test-Builder.jpg" alt="">
+
+  </div>
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Focus-on-Ielts-Book.jpg" alt="">
+
+  </div>
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Vocab-For-Ielts-Book.jpg" alt="">
+
+  </div>
+
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Cambridge-EN-Book.jpg" alt="">
+
+  </div>
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Tactics-for-listening.jpg" alt="">
+
+  </div>
+          
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/New-insight-to-ielts-Book.png" alt="">
+
+
+  </div>
+          
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Essen-words-for-ielts-book.jpg" alt="">
+
+  </div>
+          
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/Barrons-Ielts-Book.jpg" alt="">
+
+  </div>
+          
+
+
+  <div class="swiper-slide">  
+
+    <img src="/en/images/High-impact-ielts-book.jpg" alt="">
+
+  </div>
+          
+
+          
+         
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+    </section>
+
+
+
+    </div>
+
+    <div class="ielts-certificate">
+
+      <div class="icdrn-title">
+
+
+        <h2>
+          Our students certificate
+         </h2>
+    
+      </div>
+
+      
+    <section class="ielts-certificate container">
+
+      <div class="swiper-container">
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide certificate-slide">
+            
+              <img src="/en/images/Ielts-Certificate(2).png" alt="">
+              <p>
+                Score: 8
+              </p>
+
+
+          </div>
+
+          <div class="swiper-slide certificate-slide">  
+
+            <img src="/en/images/Ielts-Certificate(3).png" alt="">
+            <p>
+              Score: 8
+            </p>
+
+          </div>
+
+          <div class="swiper-slide certificate-slide">  
+
+
+            <img src="/en/images/Ielts-Certificate(7).png" alt="">
+            <p>
+              Score: 8
+            </p>
+        
+
+        </div>
+
+        <div class="swiper-slide certificate-slide">  
+
+              
+        <img src="/en/images/Ielts-Certificate(1).png" alt="">
+        <p>
+          Score: 7.5
+        </p>
+
+
+
+
+      </div>
+
+      <div class="swiper-slide certificate-slide">  
+
+        <img src="/en/images/Ielts-Certificate(5).png" alt="">
+        <p>
+          Score: 7
+        </p>
+
+
+    </div>
+
+    <div class="swiper-slide certificate-slide">  
+
+      <img src="/en/images/Ielts-Certificate(6).png" alt="">
+      <p>
+        Score: 7
+      </p>
+
+
+  </div>
+
+  <div class="swiper-slide certificate-slide">  
+
+
+    <img src="/en/images/Ielts-Certificate(4).png" alt="">
+    <p>
+      Score: 7
+    </p>
+
+
+  </div>
+
+  <div class="swiper-slide certificate-slide">  
+
+    <img src="/en/images/Ielts-Certificate(8).png" alt="">
+    <p>
+      Score: 7
+    </p>
+
+
+  </div>
+
+  <div class="swiper-slide certificate-slide">  
+
+    <img src="/en/images/Ielts-Certificate(9).png" alt="">
+    <p>
+      Score: 7
+    </p>
+
+
+  </div>
+
+  <div class="swiper-slide certificate-slide">  
+
+    <img src="/en/images/Ielts-Certificate(10).png" alt="">
+    <p>
+      Score: 6.5
+    </p>
+
+
+  </div>
+          
+         
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+    </section>
+
+
+
+    </div>
+
+      
+    <div class="student-status container">
+
+      <div class="icdrn-title">
+
+        <h2>
+          It is 
+          <span>time</span> to decide
+        </h2>
+    
+      </div>
+
+      <div class="student-status-grid">
+
+        <div class="start-placement">
+
+          <img src="/en/images/Placement-Q!uiz.svg" alt="">
+          <h3>Haven't you had 
+            
+            <span>
+              placement
+            </span>
+
+            test?</h3>
+          <p>
+            Participation in all Online classes of IELTS Club requires a careful analysis of  your English proficiency
+          </p>
+          <button type="submit" class="icdrn-btn">
+            <a href="/en/panel/placement-test-history">Start placement test!</a>
+          </button>
+
+        </div>
+
+        <div class="start-register">
+
+          <img src="/en/images/class-registration-pic.svg" alt="">
+          <h3>Haven't you 
+            <span>
+              sign up
+            </span>
+            for classes?</h3>
+          <p>
+            After you know your proficiency level in English, it is time to go for classes
+          </p>
+          <button type="submit" class="icdrn-btn">
+            <a href="/en/panel/class-registration">Sign up for Class!</a>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+    
+      
+
+  </section>
+  
+
+  
+  <footer class="footer">
+
+    <div class="footer-grid">
+  
+      <div class="footer-about">
+  
+        <h4>
+   
+           About our complex  
+  
+        </h4>
+        <p>
+          IELTS Club Dr.N is here to simply tell you there is no obstacle for acquiring a new language even with any geographical distance. Do remember you don’t need to have any background in English language , so it is the right time and the right place to start from all around the globe.
+        </p>
+  
+      </div>
+  
+      <div class="footer-fast-access-menu" style="color:#fff;">
+      <h4>
+        Quick Access
+      </h4>
+      <ul style="color:#fff;">
+        <li>
+          <a href="/en/courses"style="color:#fff;">Online Classes</a>
+        </li>
+        <li>
+          <a href="/en/contact"style="color:#fff;">Quick Conatct</a>
+        </li>
+        <li>
+          <a href="/en/privacy-policy"style="color:#fff;">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/en/about"style="color:#fff;">Complex Team</a>
+        </li>
+        <li>
+          <a href="/en/contact"style="color:#fff;">Support Center</a>
+        </li>
+      </ul>
+    </div>
+  
+      <div class="footer-newsletter">
+        <h4>
+          electronic trust symbol
+        </h4>
+  
+        <!-- <div class="newsletter-box">
+          <input type="text" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">ارسال</button>
+        </div> -->
+  
+  
+        <div class="newsletter-box">
+         <div class="enamad-inner">  <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"><img referrerpolicy="origin" src="/images/star1.png"></a></div>
+  
+          
+        </div>
+  
+  
+  
+      </div>
+  
+    </div>
+  
+  </footer>
+  
+  
+  <section class="codecamp-label">
+    <h4> 2020 Ielts Club Dr.N. All Rights Reserved.</h4>
+  </section>
+
+  
+
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left">
+
+  </div>
+  <div class="loader-section section-right"></div>
+  <div class="loader">
+    <img src="/en/images/loading.svg" alt="">
+    <h2>Website is loading...!</h2>
+  </div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+  });
+</script>
+
+  <script src="/en/app/js/app.js"></script>
+
+  <script>
+
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")  
+        });
+    
+    //language Swticher
+
+    let getDefaultLanguage = document.querySelector('.default-language')
+        let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+      getDefaultLanguage.addEventListener('click', () => {
+        
+        getLanguageDropdown.classList.toggle('active');
+
+      })
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="/en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آیلتس کلاب | Teaching Ielts techniques</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="/en/images/Favicon/manifest.json">
+  <link rel="stylesheet" href="/en/dist/css/main.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <style>
+
+    #loader-wrapper {
+      position:fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width:300px;
+      height:150px;
+    }
+    
+    #loader-wrapper .loader h2 {
+    
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
+    
+    
+    }
+    
+    
+    @-webkit-keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    
+    #loader-wrapper .loader-section {
+      position:fixed;
+      top:0;
+      background-image: linear-gradient(#258c93,#1D3C4E);
+      width:51%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader-section.section-left {
+      left:0
+    }
+    #loader-wrapper .loader-section.section-right {
+      right:0;
+    }
+    
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader-wrapper .loader-section.section-right {
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      transform:translateY(-100%);
+      transition: all 0.3s 1s ease-out;
+    }
+    
+      </style>
+  
+</head>
+<body>
+
+  <section class="welcome-label">
+
+    <h4>
+      Hi, Welcom to IELTS Club Website!
+    </h4>
+
+    <a href="https://guide.IELTSdrn.com/english.html"><button class="icdrn-btn" type="submit"> Website Guid</button></a>
+
+  </section>
+  
+  <header class="header container">
+    <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+       <ul class="overlay-menu">
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en">Home</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/courses">Online Classes</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/blog">Learning Videos</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/about">About us</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/contact">Contact us</a></li>
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/privacy-policy">Privacy Policy</a></li>
+          <% if(authed==true){ %>
+            <% if(isTeacher==true) {%> 
+              <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+                user panel 
+                </button>
+                </a>
+              <% }else{ %>
+  
+                <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+                  user panel 
+                  </button>
+                  </a>
+                <%} %> 
+            <% }else{ %>  
+          <li class="overlay-menu-item bounceInLeft"> <a href="/en/register"> <button class="nav-cta-btn icdrn-btn " type="submit"> 
+            Register  </button> </a></li>
+
+              <li class="overlay-menu-item bounceInLeft"> <a href="/en/login"> 
+                Login  </a></li>
+                <% } %> 
+       </ul>
+    </div>
+    <nav class="header-nav flex flex-jc-sb flex-ai-c">
+       <a href="#" class="nav-logo"> <img src="/en/images/ICDRN-Navbar-Logo.svg" alt="IELTS-DRN-Logo"> </a>
+       <ul class="nav-menu-links hide-for-phone">
+          <li class="nav-menu-links-item"><a href="/en">Home</a></li>
+          <li class="nav-menu-links-item"><a href="/en/courses">Online Classes</a></li>
+          <li class="nav-menu-links-item"><a href="/en/blog">Learning Videos</a></li>
+          <li class="nav-menu-links-item"><a href="/en/about">About us</a></li>
+          <li class="nav-menu-links-item"><a href="/en/contact">Contact us</a></li>
+          <li class="nav-menu-links-item"><a href="/en/privacy-policy">Privacy Policy</a></li>
+       </ul>
+       <div class="language-switcher-box hide-for-phone">
+          <div class="language-dropdown">
+             <div class="default-language"> <img src="/en/images/united-kingdom-flag.svg" alt=""> <i class="fas fa-chevron-down"></i></div>
+             <ul>
+                <a href="/en/blog/blog2">
+                  <li> <img src="/en/images/united-kingdom-flag.svg" alt=""> <span>English</span></li>
+                </a>
+                <a href="/blog/blog2">
+                  <li> <img src="/en/images/Iran-flag.svg" alt=""> <span>Persian</span></li>
+                </a>
+             </ul>
+          </div>
+       </div>
+       <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn"> <span></span> <span></span> <span></span> </a>
+       <% if(authed==true){ %>
+        <% if(isTeacher==true) {%> 
+          <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+            user panel 
+            </button>
+            </a>
+          <% }else{ %>
+
+            <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+              user panel 
+              </button>
+              </a>
+            <%} %> 
+
+       <% }else{ %> 
+       <div class="nav-action">
+
+        <a class="login-link hide-for-phone" href="/en/login">Login
+        </a>
+        
+        <a href="/en/register"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+        Register
+        </button>
+        </a>
+        </div>
+        <% } %> 
+        
+    </nav>
+ </header>
+
+
+ <section class="blog-page">
+
+  <div class="blog-page-pic">
+
+    <img src="/en/images/blog-two-page-pic.png" alt="">
+
+  </div>
+
+
+  <div class="blog-page-grid">
+
+    <div class="blog-discrption">
+
+      <h2>
+        <span>
+          |
+        </span>
+       Teaching Ielts techniques
+      </h2>
+  
+  
+  
+      <p>
+        Sometimes it may happen that an exciting event or a festival enables you to learn some words and idioms while you are getting involved in them. This method can best portray an event in our mind. In this video with the topic of “Halloween” we will teach you some idioms and words within a horror story.  
+      </p>
+    </div>
+
+    <div class="blog-video">
+      <video width="320" height="240" controls>
+        <source src="/videos/Blog-2-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+ </section>
+
+ <footer class="footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-about">
+
+      <h4>
+ 
+         About our complex  
+
+      </h4>
+      <p>
+        IELTS Club Dr.N is here to simply tell you there is no obstacle for acquiring a new language even with any geographical distance. Do remember you don’t need to have any background in English language , so it is the right time and the right place to start from all around the globe.
+      </p>
+
+    </div>
+
+    <div class="footer-fast-access-menu">
+      <h4>
+        Quick Access
+      </h4>
+      <ul>
+        <li>
+          <a href="/en/courses">Online Classes</a>
+        </li>
+        <li>
+          <a href="/en/contact">Quick Conatct</a>
+        </li>
+        <li>
+          <a href="/en/privacy-policy">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/en/about">Complex Team</a>
+        </li>
+        <li>
+          <a href="/en/contact">Support Center</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>
+        electronic trust symbol
+      </h4>
+
+      <!-- <div class="newsletter-box">
+        <input type="text" class="newsletter-input">
+        <button type="submit" class="newsletter-btn">ارسال</button>
+      </div> -->
+
+
+      <div class="newsletter-box">
+       <div class="enamad-inner">  <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"><img referrerpolicy="origin" src="/images/star1.png"></a></div>
+
+        
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</footer>
+
+<section class="codecamp-label">
+  <h4>تمامی حقوق برای برند آیلتس کلاب دکتر نورزاد محفوط است</h4>
+</section>
+
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left">
+
+  </div>
+  <div class="loader-section section-right"></div>
+  <div class="loader">
+    <img src="/en/images/loading.svg" alt="">
+    <h2>Website is loading...!</h2>
+  </div>
+</div>
+
+<script>
+
+  //For Live Projects
+      window.addEventListener('load',function(){
+        document.querySelector('body').classList.add("loaded")  
+      });
+  //language Swticher
+
+  let getDefaultLanguage = document.querySelector('.default-language')
+        let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+      getDefaultLanguage.addEventListener('click', () => {
+        
+        getLanguageDropdown.classList.toggle('active');
+
+      })
+  
+ </script>
+
+
+  <script src="/en/app/js/app.js"></script>
+
+</body>
+</html>

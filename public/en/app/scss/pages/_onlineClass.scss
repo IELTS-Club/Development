@@ -1,0 +1,428 @@
+.courses-list {
+  
+  text-align: center;
+  margin-bottom: 80px;
+  margin-top: 90px;
+
+  @media #{$tablet} {
+
+    // display: flex;
+    // flex-direction: row;
+  
+  }
+
+@include breakpoint-up(larg){
+
+  display: flex;
+  align-items: center;
+
+}
+
+
+  .icdrn-title {
+
+    position: relative;
+
+    @include breakpoint-up(larg){
+      flex: 1;
+      position: relative;
+    }
+
+    @media #{$tablet} {
+
+      text-align: center;
+      margin-bottom: 50px;
+      
+    }
+
+    .icdrn-btn {
+
+      margin-top: 20px;
+      margin-bottom: 40px;
+
+     @media #{$laptop} {
+
+      margin: 0;
+      position:absolute;
+      top: 130px;
+      left: 140px;
+  
+    }
+
+
+    }
+
+  }
+
+  .courses-list-grid {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    @media #{$tablet} {
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    
+    }
+
+
+    @include breakpoint-up(larg){
+
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas: 
+       "ielts ielts emigration"
+       "conversation toefl toefl"
+       "doulingo doulingo pte"
+       "gre next next"
+      ;
+     flex: 1;
+
+    }
+
+    .courses-item {
+
+      position: relative;
+      height: 185px;
+      text-align: center;
+
+      @media #{$tablet} {
+
+       flex-basis: 40%;
+       margin-right: 20px;
+       background-size: cover;
+      
+      }
+
+      @media #{$laptop} {
+
+        padding: 5px;
+        margin: 0;
+
+  
+      }
+
+      .course-inner {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        h3 {
+
+          font-family: gilmer-bold;
+          font-size: 25px;
+          color: #fff;
+  
+        }
+  
+
+
+      }
+
+    }
+
+    .courses-item:not(:last-child) {
+
+      margin-bottom: 30px;
+
+      @media #{$tablet} {
+
+       margin-bottom: 30px;
+      
+      }
+
+      @media #{$laptop} {
+
+        margin: 0;
+
+  
+      }
+
+    }
+
+    .courses-item:nth-child(1) {
+
+      @media #{$laptop} {
+
+        margin-right: 20px;
+
+  
+      }
+
+    }
+
+    .courses-item:nth-child(4) {
+
+      @media #{$laptop} {
+
+        margin-left: 20px;
+  
+      }
+
+    }
+
+    .ielts-course {
+
+      order: 2;
+      width: 295px;
+      height: 200px;
+      background-image: url(../../images/Ielts-Course-Mobile.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media #{$tablet} {
+
+
+        background-size: contain ;
+      
+      }
+
+
+      @media #{$laptop} {
+
+
+        width: 490px;
+        grid-area: ielts;
+        background-image: url(../../images/Ielts-Course.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+  
+      }
+
+
+
+    }
+
+    .emigration-course {
+
+      order: 1;
+      width: 295px;
+      height: 200px;
+      background-image: url(../../images/Emigration-Course-Mobile.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media #{$tablet} {
+
+        background-size: contain ;
+      
+      }
+
+
+      @media #{$laptop} {
+
+
+        width: 270px;
+        grid-area: emigration;
+        background-image: url(../../images/Emigration-Course.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+  
+      }
+      
+
+
+    }
+
+    .conversation-course {
+
+      order: 3;
+      width: 295px;
+      height: 200px;
+      background-image: url(../../images/Conversation-Course-Mobile.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media #{$tablet} {
+
+        background-size: contain ;
+      
+      }
+
+
+      @media #{$laptop} {
+
+        width: 270px;
+        background-image: url(../../images/Conversation-Course.png);
+        background-repeat: no-repeat;
+        grid-area: conversation;
+        background-size: contain;
+
+  
+      }
+
+
+
+    }
+
+    .toefl-course {
+
+      order: 4;
+      width: 295px;
+      height: 200px;
+      background-image: url(../../images/Toefl-Course-Mobile.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media #{$tablet} {
+
+        background-size: contain ;
+      
+      }
+
+
+      @media #{$laptop} {
+
+        width: 490px;
+        grid-area: toefl;
+        background-image: url(../../images/Toefl-Course.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+  
+      }
+
+
+    }
+
+
+    .doulingo-course {
+
+      order: 5;
+      width: 295px;
+      height: 200px;
+      background-image: url(../../images/PTE-pic-classlist-MB.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media #{$tablet} {
+
+        background-size: contain ;
+      
+      }
+
+
+      @media #{$laptop} {
+
+        width: 490px;
+        grid-area: doulingo;
+        background-image: url(../../images/Doulingo-pic-classlist.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+  
+      }
+
+
+    }
+
+    
+    .pte-course {
+
+      order: 6;
+      width: 295px;
+      height: 200px;
+      background-image: url(../../images/PTE-pic-classlist.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media #{$tablet} {
+
+        background-size: contain ;
+      
+      }
+
+
+      @media #{$laptop} {
+
+        width: 270px;
+        background-image: url(../../images/PTE-pic-classlist.svg);
+        background-repeat: no-repeat;
+        grid-area: pte;
+        background-size: contain;
+
+  
+      }
+
+
+
+    }
+
+    .gre-course {
+
+      order: 7;
+      width: 295px;
+      height: 200px;
+      background-image: url(../../images/Gre-classlist-pic.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media #{$tablet} {
+
+        background-size: contain ;
+      
+      }
+
+
+      @media #{$laptop} {
+
+
+        width: 270px;
+        grid-area: gre;
+        background-image: url(../../images/Gre-classlist-pic.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+  
+      }
+      
+
+
+    }
+
+    .next-course {
+
+      order: 8;
+      width: 295px;
+      height: 200px;
+      background-image: url(../../images/Next-classlist-pic-MB.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media #{$tablet} {
+
+        background-size: contain ;
+      
+      }
+
+
+      @media #{$laptop} {
+
+        width: 490px;
+        background-image: url(../../images/next-classlist-pic.svg);
+        background-repeat: no-repeat;
+        grid-area: next;
+        background-size: contain;
+
+  
+      }
+
+
+
+    }
+
+
+  }
+
+
+}

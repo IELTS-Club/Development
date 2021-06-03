@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44.518" height="44.434" viewBox="0 0 44.518 44.434">
+  <g id="Group_318" data-name="Group 318" transform="translate(-1562.475 -727.475)">
+    <circle id="Ellipse_82" data-name="Ellipse 82" cx="8.5" cy="8.5" r="8.5" transform="translate(1583 754)" fill="#ecb773" opacity="0.35"/>
+    <g id="log-out" transform="translate(1562.975 727.975)">
+      <g id="Group_313" data-name="Group 313" transform="translate(16.288 23.527)">
+        <path id="Path_788" data-name="Path 788" d="M17.144,27.478H9.9a.9.9,0,1,1,0-1.81h7.239a2.718,2.718,0,0,0,2.715-2.715V13.9a.9.9,0,0,1,1.81,0v9.049A4.529,4.529,0,0,1,17.144,27.478Z" transform="translate(-9 -13)" fill="#258c93" stroke="#258c93" stroke-width="1"/>
+      </g>
+      <g id="Group_314" data-name="Group 314" transform="translate(23.527 18.097)">
+        <path id="Path_789" data-name="Path 789" d="M32,11.81H13.9a.9.9,0,0,1,0-1.81H32a.9.9,0,0,1,0,1.81Z" transform="translate(-13 -10)" fill="#258c93" stroke="#258c93" stroke-width="1"/>
+      </g>
+      <g id="Group_315" data-name="Group 315" transform="translate(0)">
+        <path id="Path_790" data-name="Path 790" d="M14.478,43.434a3.448,3.448,0,0,1-1.155-.2L2.483,39.622A3.616,3.616,0,0,1,0,36.195V3.619A3.623,3.623,0,0,1,3.619,0,3.384,3.384,0,0,1,4.776.2L15.614,3.811A3.612,3.612,0,0,1,18.1,7.239V39.814A3.623,3.623,0,0,1,14.478,43.434ZM3.619,1.81a1.812,1.812,0,0,0-1.81,1.81V36.195a1.809,1.809,0,0,0,1.245,1.712l10.858,3.619a1.8,1.8,0,0,0,2.374-1.712V7.239a1.8,1.8,0,0,0-1.245-1.71L4.184,1.909a1.666,1.666,0,0,0-.565-.1Z" transform="translate(0)" fill="#258c93" stroke="#258c93" stroke-width="1"/>
+      </g>
+      <g id="Group_316" data-name="Group 316" transform="translate(2.715)">
+        <path id="Path_791" data-name="Path 791" d="M26.836,14.478a.905.905,0,0,1-.9-.9V4.524A2.718,2.718,0,0,0,23.217,1.81H2.4A.9.9,0,0,1,2.4,0H23.217a4.529,4.529,0,0,1,4.524,4.524v9.049A.905.905,0,0,1,26.836,14.478Z" transform="translate(-1.5 0)" fill="#258c93" stroke="#258c93" stroke-width="1"/>
+      </g>
+      <g id="Group_317" data-name="Group 317" transform="translate(34.384 10.862)">
+        <path id="Path_792" data-name="Path 792" d="M19.905,22.286a.9.9,0,0,1-.641-1.544l6.6-6.6-6.6-6.6a.9.9,0,1,1,1.279-1.279l7.239,7.239a.905.905,0,0,1,0,1.279l-7.239,7.239a.907.907,0,0,1-.639.262Z" transform="translate(-19 -6.002)" fill="#258c93" stroke="#258c93" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

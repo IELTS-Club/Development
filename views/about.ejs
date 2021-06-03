@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آیلتس کلاب | درباره</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="images/Favicon/manifest.json">
+  <link rel="stylesheet" href="dist/css/main.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  
+  <style>
+
+    #loader-wrapper {
+      position:fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width:300px;
+      height:150px;
+    }
+    
+    #loader-wrapper .loader h2 {
+    
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
+    
+    
+    }
+    
+    
+    @-webkit-keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    
+    #loader-wrapper .loader-section {
+      position:fixed;
+      top:0;
+      background-image: linear-gradient(#258c93,#1D3C4E);
+      width:51%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader-section.section-left {
+      left:0
+    }
+    #loader-wrapper .loader-section.section-right {
+      right:0;
+    }
+    
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader-wrapper .loader-section.section-right {
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      transform:translateY(-100%);
+      transition: all 0.3s 1s ease-out;
+    }
+    
+      </style>
+      
+<!--BEGIN RAYCHAT CODE--> 
+<script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="50b0f0b4-8bbe-472d-94a5-ecbbaac0b985";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script> 
+<!--END RAYCHAT CODE-->
+</head>
+<body>
+
+  <section class="welcome-label">
+
+    <h4>
+      سلام، به وب سایت آیلتس کلاب خوش اومدی!
+    </h4>
+
+    <a href="https://guide.ieltsdrn.com"><button class="icdrn-btn" type="submit"> راهنمای استفاده </button></a>
+
+  </section>
+
+  <header class="header container">
+
+    <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+
+    <ul class="overlay-menu">
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/">خانه</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/courses">کلاس های آنلاین</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/blog">ویدئو آموزشی</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/about">درباره ما</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/contact">تماس با ما</a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft"> <a href="/privacy-policy">قوانین و مقررات</a></li>
+      <% if(authed==true){ %>
+        <% if(isTeacher==true) {%> 
+          <a href="/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">پنل کاربری</button>
+          </a>
+          <% }else{ %>
+            <a href="/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">پنل کاربری</button>
+            </a>
+          <%} %> 
+    <%  }else{ %> 
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/register">
+          <button class="nav-cta-btn icdrn-btn " type="submit">
+            ثبت نام
+          </button> 
+        </a>
+      </li>
+      <li class="overlay-menu-item bounceInLeft">
+        <a href="/login"> ورود
+        
+        </a>
+        </li>
+        <% } %> 
+    </ul>
+
+    </div>
+
+    <nav class="header-nav flex flex-jc-sb flex-ai-c">
+      <a href="#" class="nav-logo">
+        <img src="images/ICDRN-Navbar-Logo.svg" alt="Ielts-DRN-Logo">
+      </a>
+    
+      <ul class="nav-menu-links hide-for-phone">
+        <li class="nav-menu-links-item"><a href="/">خانه</a></li>
+        <li class="nav-menu-links-item"><a href="/courses">کلاس های آنلاین</a></li>
+        <li class="nav-menu-links-item"><a href="/blog">ویدئو آموزشی</a></li>
+        <li class="nav-menu-links-item"><a href="/about">درباره ما</a></li>
+        <li class="nav-menu-links-item"><a href="/contact" >تماس با ما</a></li>
+        <li class="nav-menu-links-item"><a href="/privacy-policy">قوانین و مقررات</a></li>
+      </ul>
+      
+
+      <div class="language-switcher-box  hide-for-phone">
+
+        <div class="language-dropdown">
+          <div class="default-language">
+            <img src="images/Iran-flag.svg" alt="ایلتس کلاب  دکتر نورزاد">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <ul>
+            <a href="/about"> <li> <img src="images/Iran-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <span>فارسی</span></li></a>
+                 <a href="/en/about"><li> <img src="images/united-kingdom-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <span>English</span></li></a> 
+          </ul>
+        </div>
+
+      </div>
+
+      <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn">
+        <span class="humburger-line"></span>
+        <span class="humburger-line"></span>
+        <span class="humburger-line"></span>
+      </a>
+      <% if(authed==true){ %> 
+        <% if(isTeacher==true) {%> 
+          <a href="/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">پنل کاربری</button>
+          </a>
+          <% }else{ %>
+            <a href="/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">پنل کاربری</button>
+            </a>
+          <%} %> 
+        <% }else{ %> 
+      <div class="nav-action">
+        <a href="/register"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit"> ثبت نام</button>
+        </a>
+        <a class="login-link hide-for-phone" href="/login">ورود
+        </a>
+        </div>
+        <% } %> 
+    </nav>
+  </header>
+
+
+  <section class="about container">
+
+    <div class="nourzad-grid">
+
+      <div class="nourzad-about-pic">
+
+        <img src="images/About-Nourzad.png" alt="ایلتس کلاب  دکتر نورزاد">
+
+      </div>
+
+      <div class="nourzad-about-text">
+
+        <h2>
+
+          دکتر پژمان نورزاد (بنیانگذار آیلتس کلاب)
+
+        </h2>
+
+        <p>
+
+          من پژمان نورزاد با PHD رشته TEFL 
+          ‏(Teaching English as a Foreign Language) تصمیم گرفتم با تیم خودم مجموعه آیلتس کلاب رو تأسیس کنم تا به شما کمک کنم زبان انگلیسی رو در مسیر درست و دقیقش یاد بگیرین. از ۲۵ سالگی تدریس در دانشگاه و از ۱۷ سالگی تدریس در سطوح مختلف آموزشگاهی رو شروع کردم. الان حدود ۱۵ ساله که تدریس آیلتس(به صورت تخصصی) ، تافل و همچنین PTE (رو از وقتی به ایران اومد) انجام میدم. به دفعات در آزمون آیلتس شرکت کردم و بالاترین نمره overall که گرفتم هم نمره کامل ینی ۹ بوده (Reading 9 / Listening 9 / Speaking 9 / Writing 8.5 )
+          همچنین نمره ۱۲۰ در تافل و حدود ۱۰ سال هم سابقه کار در حوضه مدیریت اجرایی و آموزشی دارم.
+          بنده معتقدم که هر شخصی میتونه زبان رو یاد بگیره فقط اگر از راه درستش پیش بره.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="teachers-part">
+
+      <div class="haniye-grid">
+
+        <div class="haniye-pic">
+          <img src="images/About-Haniyeh.png" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+
+        <div class="haniye-text">
+
+          <h2>هانیه بهرامی (مدرس زبان)</h2>
+
+          <p>
+
+            من هانیه (با هـ دو چشم! ) ، از وقتی یادمه با زبان انگلیسی مشغول بودم و تو ۱۶ سالگی هم رفتم سراغ تدریسش. تدریس و دنیایی که باهاش آشنا شدم بهم یاد داد که از تغییر نترسم. نمره آیلتسم ۷ هست و حالا اینجام تا به شما کمک کنم از هر جایی که هستین زبان رو یاد بگیرین و دنیاتونو تغییر بدین
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="zahra-grid">
+
+        <div class="zahra-pic">
+          <img src="images/About-Zahra.png" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+
+        <div class="zahra-text">
+
+          <h2>
+            زهرا رفیعی (مدرس زبان)
+          </h2>
+
+          <p>
+
+            سلام زهرام  یک عدد دانشجوی مترجمی انگیلیسی عاشق کار و شاگردام و از دوران طفولیت ینی ۱۵سالگی تدریس و شروع کردم
+            از ارتباط برقرار کردن با ادما لذت میبرم و همیشه در تلاشم که دایره ادم های دورمو گسترش بدم و به نحوی مفید باشم.
+            و باید بهتون بگم اگه دنبال یادگیری زبانید شک نکنید که درست اومدین
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="arezoo-grid">
+
+        <div class="arezoo-pic">
+          <img src="images/About-Arezoo.png" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+
+        <div class="arezoo-text">
+
+          <h2>آرزو ذوالفقاری (مدرس زبان)</h2>
+
+          <p>
+
+            سلام من آرزو هستم عاشق دنیایی که با معماری، هنر و زبان رنگی ترش کردم.
+            از ۱۸ سالگی وارد عرصه تدریس شدم با نمره ۷ آیلتس و نهایت لذت رو از کارم میبرم. اینجا هستم که بهتون یاد بدم چطور با زبان انگلیسی بهترین ارتباط رو برقرار کنید .
+            
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="mina-grid">
+
+        <div class="mina-pic">
+          <img src="images/About-Mina.png" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+
+        <div class="mina-text">
+
+          <h2>مینا نوری (مدرس زبان)</h2>
+
+          <p>
+
+            سلام 
+            من ،مينا از سن ۸ سالگی زبان رو شروع کردم و همیشه دوست داشتم که معلم زبان بشم یعنی یکی از رویاهام بود ،مسيرمو پيدا كردمو
+            در دانشگاه رشته مترجمی زبان را ادامه دادم و فارغ التحصیل  شدم
+            عاشق کار کردن با بچه ها هستم و لول کودکان ،نوجوانان و بزرگسالان را تدریس می‌کنم  .۶سال سابقه تدریس و مترجم همزمان و نمره آيلتس ٧ آكادميك .اينجا هستم تا بهتون كمك كنم كه چجوري زبان رو ياد بگيريد.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="javad-grid">
+
+        <div class="javad-pic">
+          <img src="images/About-Javad.png" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+
+        <div class="javad-text">
+
+          <h2>جواد جدیدی (مدرس زبان)</h2>
+
+          <p>
+
+            سلام
+            جواد هستم. از سن خیلی کم تدریس زبان رو شروع کردم و تو سن 16 سالگی نمره 7.5 ایلتس اکادمیک رو گرفتم. اما این پایان راهم نبود و من همچنان ادامه میدم. کمک کردن به بقیه رو دوست دارم و اینجام تا به شما کمک کنم زبان رو بهتر یاد بگیرید و لذت ببرید.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <footer class="footer">
+
+    <div class="footer-grid">
+  
+      <div class="footer-about">
+  
+        <h4>
+   
+           درباره مجموعه ما   
+  
+        </h4>
+        <p>
+          تیم آیلتس کلاب با سرپرستی دکتر پژمان نورزاد اینجاست تا به شما بگه برای یادگیری زبان هیچ مانعی سر راهتون نیست حتی موقعیت جغرافیایی! 
+          یادت باشه برای شروع نیاز به هیچ پیشینه ای نداری! پس همین الان از هر جای دنیا میتونی شروع کنی.
+        </p>
+  
+      </div>
+  
+      <div class="footer-fast-access-menu">
+        <h4>
+          دسترسی سریع
+        </h4>
+        <ul>
+          <li>
+            <a href="/courses" style="color:white">کلاس های آنلاین</a>
+          </li>
+          <li>
+            <a href="/contact" style="color:white">ارتباط سریع با مجوعه</a>
+          </li>
+          <li>
+            <a href="/privacy-policy" style="color:white"> قوانین و حریم شخصی</a>
+          </li>
+          <li>
+            <a href="/about" style="color:white">تیم تخصصی مجموعه</a>
+          </li>
+          <li>
+            <a href="/contact" style="color:white"> پشتیبانی و پیگیری</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="footer-newsletter">
+        <h4>
+          نماد اعتماد الکترونیک
+        </h4>
+  
+        <!-- <div class="newsletter-box">
+          <input type="text" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">ارسال</button>
+        </div> -->
+  
+  
+        <div class="newsletter-box">
+         <div class="enamad-inner"> <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"><img referrerpolicy="origin" src="/images/star1.png"></a></div>
+  
+          
+        </div>
+  
+  
+  
+  
+  
+      </div>
+  
+    </div>
+  
+  </footer>
+
+  <section class="codecamp-label">
+    <h4>تمامی حقوق برای برند آیلتس کلاب دکتر نورزاد محفوظ است</h4>
+  </section>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left">
+  
+    </div>
+    <div class="loader-section section-right"></div>
+    <div class="loader">
+      <img src="../images/loading.svg" alt="ایلتس کلاب  دکتر نورزاد">
+      <h2>سایت در حال بارگذاریه!</h2>
+    </div>
+  </div>
+  
+  <script>
+  
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")  
+        });
+        
+        
+        //language Swticher
+
+        let getDefaultLanguage = document.querySelector('.default-language')
+        let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+      getDefaultLanguage.addEventListener('click', () => {
+        
+        getLanguageDropdown.classList.toggle('active');
+
+      })
+    
+   </script>
+  
+    <script src="app/js/app.js"></script>
+    <script src="app/js/placementTestModal.js"></script>
+    <script src="app/js/mockQuizModal.js"></script>
+
+  <script src="app/js/app.js"></script>
+
+</body>
+</html>

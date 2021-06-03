@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS Club | Home</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="/en/images/Favicon/manifest.json">
+  <link rel="stylesheet" href="/en/dist/css/main.min.css">
+  <link rel="stylesheet" href="/en/dist/css/loader.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+<!--BEGIN RAYCHAT CODE--> 
+<script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="50b0f0b4-8bbe-472d-94a5-ecbbaac0b985";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script> 
+<!--END RAYCHAT CODE-->
+
+  <style>
+
+
+       .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+
+      width: 300px;
+
+    }
+
+    </style>
+ 
+</head>
+<body>
+  <main class="home">
+
+
+    <section class="welcome-label">
+      <h4>Hi, Welcom to IELTS Club Website!</h4>
+    <a href="https://guide.IELTSdrn.com/english.html"><button class="icdrn-btn" type="submit"> Website Guid</button></a>
+   </section>
+   
+   <header class="header container">
+      <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+         <ul class="overlay-menu">
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en">Home</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en/courses">Online Classes</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en/blog">Learning Videos</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en/about">About us</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en/contact">Contact us</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en/privacy-policy">Privacy Policy</a></li>
+            <% if(authed==true){ %>
+              <% if(isTeacher==true) {%> 
+                <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+                  user panel 
+                  </button>
+                  </a>
+                <% }else{ %>
+    
+                  <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+                    user panel 
+                    </button>
+                    </a>
+                  <%} %> 
+              <% }else{ %>  
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en/register"> <button class="nav-cta-btn icdrn-btn " type="submit"> 
+              Register  </button> </a></li>
+
+                <li class="overlay-menu-item bounceInLeft"> <a href="/en/login"> 
+                  Login  </a></li>
+                  <% } %> 
+         </ul>
+      </div>
+      <nav class="header-nav flex flex-jc-sb flex-ai-c">
+         <a href="#" class="nav-logo"> <img src="/en/images/ICDRN-Navbar-Logo.svg" alt="IELTS-DRN-Logo"> </a>
+         <ul class="nav-menu-links hide-for-phone">
+            <li class="nav-menu-links-item"><a href="/en">Home</a></li>
+            <li class="nav-menu-links-item"><a href="/en/courses">Online Classes</a></li>
+            <li class="nav-menu-links-item"><a href="/en/blog">Learning Videos</a></li>
+            <li class="nav-menu-links-item"><a href="/en/about">About us</a></li>
+            <li class="nav-menu-links-item"><a href="/en/contact">Contact us</a></li>
+            <li class="nav-menu-links-item"><a href="/en/privacy-policy">Privacy Policy</a></li>
+         </ul>
+         <div class="language-switcher-box hide-for-phone">
+            <div class="language-dropdown">
+               <div class="default-language"> <img src="/en/images/united-kingdom-flag.svg" alt=""> <i class="fas fa-chevron-down"></i></div>
+               <ul>
+                  <a href="/en">
+                    <li> <img src="/en/images/united-kingdom-flag.svg" alt=""> <span>English</span></li>
+                  </a>
+                  <a href="/">
+                    <li> <img src="/en/images/Iran-flag.svg" alt=""> <span>Persian</span></li>
+                  </a>
+               </ul>
+            </div>
+         </div>
+         <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn"> <span></span> <span></span> <span></span> </a>
+         <% if(authed==true){ %>
+          <% if(isTeacher==true) {%> 
+            <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+              user panel 
+              </button>
+              </a>
+            <% }else{ %>
+
+              <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+                user panel 
+                </button>
+                </a>
+              <%} %> 
+
+         <% }else{ %> 
+         <div class="nav-action">
+
+          <a class="login-link hide-for-phone" href="/en/login">Login
+          </a>
+          
+          <a href="/en/register"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+          Register
+          </button>
+          </a>
+          </div>
+          <% } %> 
+          
+      </nav>
+   </header>
+
+   
+  <section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-text flex flex-dir-c flex-jc-c flex-ai-c container">
+      <h1>
+        Decide and
+        <span> Do</span>
+        , as a Doer.
+      </h1>
+      <div class="container-y">
+        <div class="searchbox">
+
+          <div class="search-dropdown">
+            <div class="default-option">
+              Course
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <ul>
+              <li>Teachers</li>
+              <li>Users</li>
+              <li>Videos</li>
+              <li>Articles</li>
+            </ul>
+          </div>
+          <div class="search-input-box">
+            <input type="text" class="search-input" placeholder="Search in site...!">
+            <!-- <i class="fas fa-search"></i> -->
+            <button class="search-btn" type="submit">
+              Search
+            </button> 
+          </div>
+        </div>
+      </div>
+     
+
+    </div>
+
+  </section>
+
+  <section class="features container">
+    <div class="icdrn-title">
+      <h2>
+
+       Improve
+      
+       <span>Skills</span>
+   
+      </h2>
+
+    </div>
+    <div class="features-grid container-y">
+      <div class="features-item">
+        <div class="features-icon">
+          <img src="/en/images/Writing-icon(Features).svg" alt="">
+        </div>
+        <div class="features-title">
+          Writing
+        </div>
+        <div class="features-subtitle">
+          English Skills
+        </div>
+      </div>
+
+      <div class="features-item">
+        <div class="features-icon">
+          <img src="/en/images/Speaking-icon(Features).svg" alt="">
+        </div>
+        <div class="features-title">
+          Speaking
+        </div>
+        <div class="features-subtitle">
+          English Skills
+        </div>
+      </div>
+
+
+      <div class="features-item">
+        <div class="features-icon">
+          <img src="/en/images/Reading-icon(Features).svg" alt="">
+        </div>
+        <div class="features-title">
+          Reading
+        </div>
+        <div class="features-subtitle">
+          English Skills
+        </div>
+      </div>
+
+      <div class="features-item">
+        <div class="features-icon">
+          <img src="/en/images/Listening-icon(Features).svg" alt="">
+        </div>
+        <div class="features-title">
+          Listening
+        </div>
+        <div class="features-subtitle">
+         English Skills
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses container">
+    <div class="icdrn-title">
+      <h2>
+       Our 
+       <span>
+        Online
+       </span> 
+       Classes
+      </h2>
+      <p>
+        In this part you can see our online courses
+        with the detailed information.
+      </p>
+      <button type="submit" class="icdrn-btn">Courses List</button>
+    </div>
+    <div class="courses-grid">
+        <div class="courses-item ielts-course">
+       <a href="/en/courses/ielts-course">
+
+          <div class="course-inner">
+           <h3> IELTS online course</h3>
+          </div>
+                      
+        </a>
+         </div>
+      <div class="courses-item emigration-course">
+      <a href="/en/courses/emigration-course">
+        <div class="course-inner">
+          <h3>Immigration intensive course</h3>
+         </div></a>
+      </div>
+      <div class="courses-item conversation-course">
+        <a href="/en/courses/conversation-course">
+          <div class="course-inner">
+            <h3> Conversation course</h3>
+           </div>
+        </a>
+      </div>
+      <div class="courses-item toefl-course">
+        <a href="/en/courses/toefl-course">
+        
+          <div class="course-inner">
+            <h3>TOEFL online course</h3>
+          </div>
+
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="online-package container">
+
+  <div class="icdrn-title">
+    <h2>
+      Placement 
+      <span>
+        test
+      </span>
+       notebook
+    <p>
+      You assess your English proficiency from basic to advanced 
+      with IELTS Club assessment Pamphelet and you can realize the 
+       reasons for wrong choices with the answer key section. 
+        You can also have your score from 0 to 150!
+    </p>
+
+    <a href="/en/packages/first">
+      <button type="submit" class="icdrn-btn">
+
+      Buy this pack
+        
+      </button>
+    </a>
+
+  </div>
+
+  <div class="placement-test-img">
+    <img src="/en/images/Online-Package.svg" alt="">
+  </div>
+
+</section>
+
+<section class="blog">
+
+  <div class="icdrn-title">
+    <h2>
+      Recent articles
+    </h2>
+  </div>
+
+  <div class="blogs-grid">
+
+    <div class="blog-item">
+      <img src="/en/images/blog-one-page-pic.png" alt="" class="blog-img">
+      <h3 class="blog-title">
+      Halloween Video
+      </h3>
+      <p class="blog-discription">
+        .sometimes it may happen that an exciting event or a festival...
+      </p>
+      <a href="/en/blog/blog1">
+        <button type="submit" class="icdrn-btn blog-btn">Read More</button>
+      </a>
+    </div>
+
+    <div class="blog-item">
+      <img src="/en/images/blog-two-page-pic.png" alt="" class="blog-img">
+      <h3 class="blog-title">
+        Teaching IELTS techniques 
+      </h3>
+      <p class="blog-discription">
+        one of the common challenges for English learners in answering...
+      </p>
+      <a href="/en/blog/blog2">
+        <button type="submit" class="icdrn-btn blog-btn">Read More</button>
+
+      </a>
+    </div>
+
+    <div class="blog-item">
+      <img src="/en/images/blog-three-page-pic.png" alt="" class="blog-img">
+      <h3 class="blog-title">
+        Video Insomnia 
+      </h3>
+      <p class="blog-discription">
+        Insomnia is a problem that most of us may get entangled in...
+      </p>
+      <a href="/en/blog/blog3">
+        <button type="submit" class="icdrn-btn blog-btn">Read More</button>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<section class="similator-quiz container">
+
+  <div class="icdrn-title">
+    <h2>
+      
+      <span>
+        Mock 
+      </span>
+      exams
+    </h2>
+    <p>
+      Before taking part in real English exams,
+
+       you need a mock exam.
+    </p>
+    <button class="icdrn-btn" type="submit" id="runMockQuizBtn" >
+      Run Quiz!
+    </button>
+  </div>
+
+  <div class="simulator-quiz-img">
+    <img src="/en/images/Similator-Quiz-IMG.svg" alt="">
+  </div>
+
+</section>
+
+
+<section class="placement-test container">
+
+  <div class="icdrn-title">
+    <h2>
+      Online 
+      <span>
+        placement
+      </span>
+      test
+    </h2>
+    <p>
+      If you are interested in learning English, 
+
+      you can have  an accurate assessment of your level in this part
+    </p>
+
+    <button type="submit" class="icdrn-btn" id="startPlacementTestBtn">
+
+    Start Placement Test!
+      
+    </button>
+
+  </div>
+
+  <div class="placement-test-img">
+    <img src="/en/images/Placement-Q!uiz.svg" alt="">
+  </div>
+
+</section>
+
+<!-- Start - Placement Quiz Modlas Steps1 -->
+
+<section class="icdrn-modal-lg placement-test-registration-modal">
+
+      <span class="modal-close">
+      &times;
+    </span>
+
+
+  <div class="icdrn-modal-grid">
+
+    <form action="/en/quiz" method="POST">
+      <div class="modal-content">
+    
+        <h3>
+          ثبت نام جهت تعین سطح
+        </h3>
+    
+        <div class="modal-form">
+          <input type="text" class="icdrn-input" placeholder="نام و نام خانوادگی خود را وارد کنید" name="name" required>
+        <div class="placement-test-mode-box">
+          <div class="select">
+            <select id="standard-select" name="quizType" required>
+              <option disabled selected >روش برگزاری تعیین سطح</option>
+              <option value="Written">
+                کتبی | سیستمی آنلاین
+              </option>
+              <option value="Oral">
+                شفاهی | تماسی پرسش محور
+              </option>
+            </select>
+            <span class="icon"></span>
+          </div>
+        </div>
+         
+        </div>
+    
+        <div class="modal-pricde">
+    
+    
+    
+          <h3 class="modal-price-number">
+            هزینه آزمون
+            :
+          <span>
+            <del> ۲۵.۰۰۰ تومان</del>
+          </span>
+          رایگان
+          </h3>
+    
+        </div>
+    
+        <div class="privacy-policy">
+    
+          <input type="checkbox" name="isChecked" required>
+          <span class="checkmark"></span>
+          <label for="">
+            قوانین و مقررات آیلتس کلاب را می پذیرم.
+          </label>
+    
+        </div>
+    
+    
+    
+      <button type="submit" class="icdrn-btn">
+    
+        ثبت نام در آزمون تعیین سطح
+    
+       </button>
+    
+    
+    </div>
+    </form>
+
+  <div class="modal-img">
+    <img src="/en/images/Placement-Q!uiz.svg" alt="">
+    <div class="modal-img-subtitle hide-for-phone">
+
+     <span>
+
+       لطفا
+     </span>
+      
+      اطلاعات حساب کاربری خود را در پنل کاربری
+      <br>
+     
+     به درستی وارد کنید تا در صورت برقراری کلاس ها، 
+     <br>
+     امکان تماس با شما دوست عزیز فراهم باشد.
+
+
+    </div>
+  </div>
+
+  </div>
+
+</section>
+
+<section class="team container">
+
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="icdrn-title">
+
+    <h2>
+      IELTS 
+      <span>
+        Club
+      </span>
+      Team
+    </h2>
+
+  </div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+           <div class="team-member">
+           <img src="/en/images/Team-Member-1.png" alt="">
+    </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="/en/images/Team-Member-2.png" alt="">
+      </div>
+      <div class="swiper-slide">
+   <div class="team-member">
+      <img src="/en/images/Team-Member-3.png" alt="">
+    </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="/en/images/Team-Member-4.png" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="/en/images/Team-Member-5.png" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="/en/images/Team-Member-6.png" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+        <div class="swiper-slide">
+          <img src="/en/images/Team-Member-7.png" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+        <div class="swiper-slide">
+          <img src="/en/images/Team-Member-8.png" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+        <div class="swiper-slide">
+          <img src="/en/images/Team-Member-9.png" alt="ایلتس کلاب  دکتر نورزاد">
+          </div>
+      </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+
+<footer class="footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-about">
+
+      <h4>
+ 
+         About our complex  
+
+      </h4>
+      <p>
+        IELTS Club Dr.N is here to simply tell you there is no obstacle for acquiring a new language even with any geographical distance. Do remember you don’t need to have any background in English language , so it is the right time and the right place to start from all around the globe.
+      </p>
+
+    </div>
+
+    <div class="footer-fast-access-menu" style="color:#fff;">
+      <h4>
+        Quick Access
+      </h4>
+      <ul style="color:#fff;">
+        <li>
+          <a href="/en/courses"style="color:#fff;">Online Classes</a>
+        </li>
+        <li>
+          <a href="/en/contact"style="color:#fff;">Quick Conatct</a>
+        </li>
+        <li>
+          <a href="/en/privacy-policy"style="color:#fff;">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/en/about"style="color:#fff;">Complex Team</a>
+        </li>
+        <li>
+          <a href="/en/contact"style="color:#fff;">Support Center</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>
+        electronic trust symbol
+      </h4>
+
+      <!-- <div class="newsletter-box">
+        <input type="text" class="newsletter-input">
+        <button type="submit" class="newsletter-btn">ارسال</button>
+      </div> -->
+
+
+      <div class="newsletter-box">
+       <div class="enamad-inner">  <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"><img referrerpolicy="origin" src="/images/star1.png"></a></div>
+
+        
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+
+<section class="codecamp-label">
+  <h4> 2020 IELTS Club Dr.N. All Rights Reserved.</h4>
+</section>
+
+</main>
+
+<section class="placement-test-registration-modal">
+
+  <span class="mock-closer" id="mock-closer">
+  &times;
+</span>
+
+
+<div class="icdrn-modal-grid">
+
+<div class="modal-content">
+
+  <h3>
+    ثبت نام جهت تعین سطح
+  </h3>
+
+  <div class="modal-form">
+
+    <input type="text" class="icdrn-input" placeholder="نام و نام خانوادگی خود را وارد کنید">
+
+  </div>
+
+  <div class="modal-price">
+
+    <img src="/en/images/Price-Icon.svg" class="price-icon" alt="">
+
+
+    <h3 class="modal-price-number">
+      هزینه آزمون
+      : 
+      <ins>۲۵.۰۰۰ تومان</ins>
+      رایگان
+    </h3>
+
+  </div>
+
+  <div class="privacy-policy">
+
+    <input type="checkbox">
+    <span class="checkmark"></span>
+    <label for="">
+      قوانین و مقررات آیلتس کلاب را می پذیرم.
+    </label>
+
+  </div>
+
+
+  <button type="submit" class="icdrn-btn" id="placementRegistrationBtn">
+
+   ثبت نام در آزمون تعیین سطح
+
+  </button>
+
+</div>
+
+<div class="modal-img">
+<img src="/en/images/Placement-Q!uiz.svg" alt="">
+<div class="modal-img-subtitle">
+
+ <span>
+
+   لطفا
+ </span>
+  
+  اطلاعات حساب کاربری خود را در پنل کاربری
+  <br>
+ 
+ به درستی وارد کنید تا در صورت برقراری کلاس ها، 
+ <br>
+ امکان تماس با شما دوست عزیز فراهم باشد.
+
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="icdrn-modal comin-soon-modal" id="comingSoonModal">
+
+  <div class="icdrn-modal-content">
+
+    <span class="modal-close">
+      &times;
+    </span>
+
+    <img src="/en/images/Comin-soon-pic.svg" class="modal-img" alt="">
+
+
+
+    <h3>
+      رفیق، این امکان بزودی اوکی میشه!
+    </h3>
+
+    <p>
+
+      در واقع تیم مجموعه آیلتس کلاب شبانه روز
+ 
+       در حال توسعه این سیستم آنلاین هست!
+
+    </p>
+
+    <button type="submit" class="icdrn-btn" id="comingSoonBtn">
+
+      گرفتم چیشد!
+
+    </button>
+
+  </div>
+</section>
+
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left">
+
+  </div>
+  <div class="loader-section section-right"></div>
+  <div class="loader">
+    <img src="/en/images/loading.svg" alt="">
+    <h2>Website is loading...!</h2>
+  </div>
+</div>
+
+<script src="/en/app/js/mockQuizModal.js"></script>
+
+
+  <script src="/en/app/js/app.js"></script>
+  <script src="/en/app/js/placementTestModal.js"></script>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        breakpoints: {
+           1200: {
+              slidesPerView: 'auto',
+              spaceBetween: 40,
+           },
+           830: {
+              slidesPerView: 'auto',
+              spaceBetween: 10, // <- doesn't work
+           }
+        }
+      },
+    });
+  </script>
+
+  <script>
+
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")  
+        });
+
+
+        //language Swticher
+
+        let getDefaultLanguage = document.querySelector('.default-language')
+        let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+        getDefaultLanguage.addEventListener('click', () => {
+        
+        getLanguageDropdown.classList.toggle('active');
+
+      })
+    
+      </script>
+
+</body>
+</html>

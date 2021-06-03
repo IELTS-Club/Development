@@ -1,0 +1,110 @@
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    width: 0px;
+  }
+  1%{
+    visibility: visible;
+    width: 0px;
+  }
+  to {
+    visibility: visible;
+    width: 100%;
+  }
+}
+
+.fade-in {
+  animation: fade-in 500ms ease-in-out  forwards;
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    width: 100%;
+  }
+  99% {
+    visibility: hidden;
+    width: 0px;
+  }
+  to {
+    visibility: hidden;
+    width: 0px;
+  }
+}
+
+.fade-out {
+  animation: fade-out 5000ms ease-in-out forwards;
+}
+
+
+@keyframes backInLeft {
+  0% {
+    transform: translateX(-2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.backInLeft {
+  animation-name: backInLeft;
+  animation-duration: 1s;
+
+} 
+
+
+@keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInLeft {
+  animation-name: bounceInLeft;
+  animation-duration: 1s;
+  animation-delay: 2s;
+
+} 
+
+
+.animation-dy-1s {
+  animation-delay: 1s;
+}
+
+.animation-dy-2s {
+  animation-delay: 2s;
+}

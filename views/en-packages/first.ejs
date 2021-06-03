@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="/en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PTN | IELTS Club</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="/en/images/Favicon/manifest.json">
+  <link rel="stylesheet" href="/en/dist/css/main.min.css">
+  <link rel="stylesheet" href="/en/dist/css/loader.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+
+
+  <section class="welcome-label">
+    <h4>Hi, Welcom to IELTS Club Website!</h4>
+    <button class="icdrn-btn" type="submit"> Website Guid</button>
+ </section>
+
+
+ <header class="header container">
+  <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+     <ul class="overlay-menu">
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en">Home</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/courses">Online Classes</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/blog">Learning Videos</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/about">About us</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/contact">Contact us</a></li>
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/privacy-policy">Privacy Policy</a></li>
+        <% if(authed==true){ %>
+          <% if(isTeacher==true) {%> 
+            <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+              user panel 
+              </button>
+              </a>
+            <% }else{ %>
+
+              <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit">
+                user panel 
+                </button>
+                </a>
+              <%} %> 
+          <% }else{ %>  
+        <li class="overlay-menu-item bounceInLeft"> <a href="/en/register"> <button class="nav-cta-btn icdrn-btn " type="submit"> 
+          Register  </button> </a></li>
+
+            <li class="overlay-menu-item bounceInLeft"> <a href="/en/login"> 
+              Login  </a></li>
+              <% } %> 
+     </ul>
+  </div>
+  <nav class="header-nav flex flex-jc-sb flex-ai-c">
+     <a href="#" class="nav-logo"> <img src="/en/images/ICDRN-Navbar-Logo.svg" alt="IELTS-DRN-Logo"> </a>
+     <ul class="nav-menu-links hide-for-phone">
+        <li class="nav-menu-links-item"><a href="/en">Home</a></li>
+        <li class="nav-menu-links-item"><a href="/en/courses">Online Classes</a></li>
+        <li class="nav-menu-links-item"><a href="/en/blog">Learning Videos</a></li>
+        <li class="nav-menu-links-item"><a href="/en/about">About us</a></li>
+        <li class="nav-menu-links-item"><a href="/en/contact">Contact us</a></li>
+        <li class="nav-menu-links-item"><a href="/en/privacy-policy">Privacy Policy</a></li>
+     </ul>
+     <div class="language-switcher-box hide-for-phone">
+        <div class="language-dropdown">
+           <div class="default-language"> <img src="/en/images/united-kingdom-flag.svg" alt=""> <i class="fas fa-chevron-down"></i></div>
+           <ul>
+              <a href="/en">
+                <li> <img src="/en/images/united-kingdom-flag.svg" alt=""> <span>English</span></li>
+              </a>
+              <a href="/">
+                <li> <img src="/en/images/Iran-flag.svg" alt=""> <span>Persian</span></li>
+              </a>
+           </ul>
+        </div>
+     </div>
+     <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn"> <span></span> <span></span> <span></span> </a>
+     <% if(authed==true){ %>
+      <% if(isTeacher==true) {%> 
+        <a href="/en/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+          user panel 
+          </button>
+          </a>
+        <% }else{ %>
+
+          <a href="/en/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+            user panel 
+            </button>
+            </a>
+          <%} %> 
+
+     <% }else{ %> 
+     <div class="nav-action">
+
+      <a class="login-link hide-for-phone" href="/en/login">Login
+      </a>
+      
+      <a href="/en/register"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">
+      Register
+      </button>
+      </a>
+      </div>
+      <% } %> 
+      
+  </nav>
+</header>
+
+  <section class="online-package-class container">
+
+    <div class="package-class-into-grid">
+
+      <div class="package-class-detail">
+
+        <h2>
+          Placement test notebook
+        </h2>
+
+        <p>
+          You assess your English proficiency from basic to advanced with ielts club assessment pamphelet and you can realize the reasons for wrong choices with the answer key section. You can also have your score from 0 to 150
+        </p>
+
+        <div class="course-btn-box">
+          <button type="submit">
+           Register Now!
+          </button>
+        </div>
+
+      </div>
+
+
+
+      <div class="package-class-pic">
+
+        <img src="/en/images/Online-Package.svg" alt="">
+
+      </div>
+
+    </div>
+
+
+    <section class="course-chart container">
+
+      <div class="icdrn-title">
+        <h2>
+        Buy Learning Pack
+          <br>
+        </h2>
+        <p>
+          Buy pack easily
+          <br>
+          And use them
+        <h3>
+          Price: 200.000 (T)
+        </h3>
+        <button class="icdrn-btn" type="submit">
+          Buy Pack
+        </button>
+      </div>
+    
+      <div class="course-chart-img">
+        <img src="/en/images/online-ielts-test.svg" alt="">
+      </div>
+    
+    </section>
+      
+
+  </section>
+  
+
+  <footer class="footer">
+
+    <div class="footer-grid">
+  
+      <div class="footer-about">
+  
+        <h4>
+   
+           About our complex  
+  
+        </h4>
+        <p>
+          IELTS Club Dr.N is here to simply tell you there is no obstacle for acquiring a new language even with any geographical distance. Do remember you don’t need to have any background in English language , so it is the right time and the right place to start from all around the globe.
+        </p>
+  
+      </div>
+  
+      <div class="footer-fast-access-menu">
+        <h4>
+          Quick Access
+        </h4>
+        <ul>
+          <li>
+            <a href="/en/courses" style="color: white;">Online Classes</a>
+          </li>
+          <li>
+            <a href="/en/contact"style="color: white;">Quick Conatct</a>
+          </li>
+          <li>
+            <a href="/en/privacy-policy" style="color: white;">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="/en/about" style="color: white;">Complex Team</a>
+          </li>
+          <li>
+            <a href="/en/contact" style="color: white;">Support Center</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="footer-newsletter">
+        <h4>
+          electronic trust symbol
+        </h4>
+  
+        <!-- <div class="newsletter-box">
+          <input type="text" class="newsletter-input">
+          <button type="submit" class="newsletter-btn">ارسال</button>
+        </div> -->
+  
+  
+        <div class="newsletter-box">
+         <div class="enamad-inner">  <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=197785&amp;Code=wDFI7TujPaDzb0CU6EzI"></a></div>
+  
+          
+        </div>
+  
+  
+  
+      </div>
+  
+    </div>
+  
+  </footer>
+  
+  
+  <section class="codecamp-label">
+    <h4> 2020 Ielts Club Dr.N. All Rights Reserved.</h4>
+  </section>
+
+
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left">
+
+  </div>
+  <div class="loader-section section-right"></div>
+  <div class="loader">
+    <img src="/en/images/loading.svg" alt="">
+    <h2>Website is loading...!</h2>
+  </div>
+</div>
+
+  <script src="/en/app/js/app.js"></script>
+
+  <script>
+
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")  
+        });
+    //language Swticher
+
+    let getDefaultLanguage = document.querySelector('.default-language')
+      let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+    getDefaultLanguage.addEventListener('click', () => {
+      
+      getLanguageDropdown.classList.toggle('active');
+
+    })
+    
+      </script>
+
+</body>
+</html>

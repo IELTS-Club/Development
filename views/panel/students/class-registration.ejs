@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پنل دانشجویان | ثبت نام در کلاس جدید
+    
+  </title>
+  <link rel="icon" type="image/png" sizes="94x94" href="../../images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="../../images/Favicon/manifest.json">
+  <link rel="stylesheet" href="../../dist/css/main.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  
+  <style>
+
+
+    .swiper-container {
+   width: 100%;
+   height: 100%;
+ }
+
+ .swiper-slide {
+   text-align: center;
+   font-size: 18px;
+   background: #fff;
+
+   /* Center slide text vertically */
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   -webkit-align-items: center;
+   align-items: center;
+ }
+
+#loader-wrapper {
+position:fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:1000;
+}
+
+#loader-wrapper .loader {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+z-index: 10001;
+width:300px;
+height:150px;
+}
+
+#loader-wrapper .loader h2 {
+
+font-size: 30px;
+font-family: Kalameh-Black;
+color: #fff;
+
+
+}
+
+
+@-webkit-keyframes spin {
+0%   {
+ -webkit-transform: rotate(0deg);
+   -ms-transform: rotate(0deg);
+       transform: rotate(0deg);
+}
+100% {
+ -webkit-transform: rotate(360deg);
+   -ms-transform: rotate(360deg);
+       transform: rotate(360deg);
+}
+}
+@keyframes spin {
+0%   {
+ -webkit-transform: rotate(0deg);
+   -ms-transform: rotate(0deg);
+       transform: rotate(0deg);
+}
+100% {
+ -webkit-transform: rotate(360deg);
+   -ms-transform: rotate(360deg);
+       transform: rotate(360deg);
+}
+}
+
+#loader-wrapper .loader-section {
+position:fixed;
+top:0;
+background-image: linear-gradient(#258c93,#1D3C4E);
+width:51%;
+height:100%;
+z-index:1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+left:0
+}
+#loader-wrapper .loader-section.section-right {
+right:0;
+}
+
+/* Loaded Styles */
+.loaded #loader-wrapper .loader-section.section-left {
+transform: translateX(-100%);
+transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+}
+.loaded #loader-wrapper .loader-section.section-right {
+transform: translateX(100%);
+transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+}
+.loaded #loader {
+opacity: 0;
+transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+visibility: hidden;
+transform:translateY(-100%);
+transition: all 0.3s 1s ease-out;
+}
+
+</style>
+
+  <style>
+
+    #loader-wrapper {
+      position:fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width:300px;
+      height:150px;
+    }
+    
+    #loader-wrapper .loader h2 {
+    
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
+    
+    
+    }
+    
+    
+    @-webkit-keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      0%   { 
+        -webkit-transform: rotate(0deg); 
+          -ms-transform: rotate(0deg); 
+              transform: rotate(0deg);
+      }
+      100% { 
+        -webkit-transform: rotate(360deg); 
+          -ms-transform: rotate(360deg); 
+              transform: rotate(360deg);
+      }
+    }
+    
+    #loader-wrapper .loader-section {
+      position:fixed;
+      top:0;
+      background-image: linear-gradient(#258c93,#1D3C4E);
+      width:51%;
+      height:100%;
+      z-index:1000;
+    }
+    
+    #loader-wrapper .loader-section.section-left {
+      left:0
+    }
+    #loader-wrapper .loader-section.section-right {
+      right:0;
+    }
+    
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader-wrapper .loader-section.section-right {
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      transform:translateY(-100%);
+      transition: all 0.3s 1s ease-out;
+    }
+    
+      </style>
+
+
+</head>
+<body>
+
+  
+  <div class="container-panel container-panel-class-registration">
+
+    <div class="panel-overlay hide-for-desktop">
+
+     <nav class="panel-overlay-menu">
+
+      <img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo">
+
+      <div class="panel-menu-item">
+    
+        <img src="../../images/Panel-Home-Icon.svg" alt="">
+
+
+        <a href="/dashboard">
+  
+  
+          پیشخوان
+        
+        </a>
+
+      </div>
+
+  
+
+      <div class="panel-menu-item">
+
+        <img src="../../images/Panel-Classes-Icon.svg" alt="">
+
+
+        <a href="/panel/class-list">
+  
+  
+          لیست کلاس ها
+        
+        </a>
+
+      </div>
+
+
+      <div class="panel-menu-item active">
+
+        <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+
+
+        <a href="/panel/class-registration">
+  
+  
+          کلاس جدید
+        
+        </a>
+
+      </div>
+
+      <div class="panel-menu-item">
+
+        <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+        <a href="/panel/placement-test-history">
+  
+  
+          تعیین سطح ها
+        
+        </a>
+
+      </div>
+
+      <div class="panel-menu-item">
+
+        <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+        <a href="/panel/profile-edit">
+  
+  
+          ویرایش اطلاعات
+        
+        </a>
+
+      </div>
+
+      <div class="panel-exit-box">
+    
+        <img src="../../images/Panel-Exit.svg" alt="">
+  
+      </div>
+
+     </nav>
+
+    </div>
+
+    <div class="navbar">
+
+      <div class="navbar-search">
+
+        <div class="searchbox">
+
+          <div class="search-input-box">
+            <input type="text" class="search-input" placeholder="بین کلاس ها جستجو کن">
+            <!-- <i class="fas fa-search"></i> -->
+            <button class="search-btn" type="submit">
+              جستجو
+            </button> 
+          </div>
+        </div>
+
+      </div>
+
+      <div class="navbar-status">
+
+        <div class="panel-status-bar">
+
+          <div class="status-icons">
+
+            <div class="bells">
+      
+              <a href="/"> <img src="../../images/Panel-home.svg" 
+                alt=""></a>
+  
+              <!-- <div class="bells-dropdown">
+                <h3>
+                  <span>|</span>
+                    پیام های سیستمی آیلتس کلاب
+                </h3>
+                <div class="email-list">
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      فراموزشی رمز عبور
+                    </span>
+  
+                    روی لینک زیر کلیک کنید...!
+  
+                  </p>
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      تخفیف ویژه مهاجرت
+                    </span>
+  
+                    اطلاعات بیشتر مطالعه...
+  
+                  </p>
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      در دوران کرونا آنلاین بیاموزید
+                    </span>
+  
+                   به راحتی آب..!
+  
+                  </p>
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      شبکه های اجتماعی ما
+                    </span>
+  
+                   در کنار هم پیشرفت..!
+  
+                  </p>
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      صورت حساب دوره جدید 
+                    </span>
+  
+                   تجربه ای کاملا امن.!
+  
+                  </p>
+                </div>
+               </div> -->
+      
+            </div>
+      
+            <div class="message">
+      
+              <img src="../../images/Panel-Messsage.svg" 
+            alt="">
+  
+             <div class="message-dropdown">
+                <h3>
+                  <span>|</span>
+                    لیست ایمیل های شما
+                </h3>
+               <!-- <div class="email-list">
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      فراموزشی رمز عبور
+                    </span>
+  
+                    روی لینک زیر کلیک کنید...!
+  
+                  </p>
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      تخفیف ویژه مهاجرت
+                    </span>
+  
+                    اطلاعات بیشتر مطالعه...
+  
+                  </p>
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      در دوران کرونا آنلاین بیاموزید
+                    </span>
+  
+                   به راحتی آب..!
+  
+                  </p>
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      شبکه های اجتماعی ما
+                    </span>
+  
+                   در کنار هم پیشرفت..!
+  
+                  </p>
+                  <p>
+  
+                    <img src="../../images/Email-Blob.svg" alt="">
+  
+                    <span class="email-title">
+                      صورت حساب دوره جدید 
+                    </span>
+  
+                   تجربه ای کاملا امن.!
+  
+                  </p>
+                </div> -->
+               </div>
+      
+            </div>
+      
+            <div class="profile">
+      
+              <img src="../../images/Panel-Profile.svg" alt="">
+      
+  
+              <div class="profile-dropdown">
+               <h3>
+                 <span>|</span>
+                 <%= userName  %>  خوش اومدی :)
+               </h3>
+               <form action="/logout" method="GET">
+                <div class="exit-btn">
+                 <input type="image" src="../../images/Logout-Icon.svg" width="40px"/>
+                <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+                </div></form>
+              </div>
+  
+            </div>
+  
+      
+  
+           </div>
+
+          <div class="panel-humburger hide-for-desktop">
+    
+            <img src="../../images/Panel-Burger.svg" alt="">
+    
+          </div>
+          
+    
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="main">
+
+      <div class="class-registration">
+
+        <div class="class-registration-title">
+          <h2>
+            <span>
+              |
+            </span>
+            ثبت نام در کلاس جدید
+          </h2>
+        </div>
+        <form action="/panel/class-registration" method="POST" >
+        <div class="class-registration-grid">
+
+          <div class="class-registration-form">
+
+            <div class="coursename-box">
+              
+              <label for="" class="icdrn-label">
+                نام دوره
+              </label>
+
+              <div class="select">
+                <select id="standard-select" name="className">
+                  <option value="Ielts">کلاس آنلاین آموزشی آیلتس</option>
+                  <option value="Toefl">
+                    کلاس آنلاین آموزشی تاقل
+                  </option>
+                  <option value="Emigration">
+                    کلاس آنلاین آموزشی مهاجرت
+                  </option>
+                  <option value="Conversation">
+                    کلاس آنلاین آموزشی مکالمه
+                  </option>
+                  <option value="PTE">
+                    کلاس آنلاین آموزشی PTE
+                  </option>
+                  <option value="Duolingo">
+                    کلاس آموزشی آنلاین دولینگو
+                  </option>
+                </select>
+                <span class="icon"></span>
+              </div>
+
+              
+            </div>
+
+
+
+            <div class="row">
+              <div class="coursemode-box">
+
+                <label for="" class="icdrn-label">
+                  نوع دوره
+                </label>
+  
+                <div class="select">
+                  <select id="standard-select" name="classType">
+                    <option value="Private">خصوصی</option>
+                    <option value="Public">عمومی</option>
+                  </select>
+                  <span class="icon"></span>
+                </div>
+              </div>
+  
+              
+              <div class="courseteacher-box">
+  
+                <label for="" class="icdrn-label">
+                  مدرس
+                </label>
+  
+                <div class="select">
+                  <select id="standard-select" name="classTeacher">
+                    <option value="Noorzad">
+                      دکتر پژمان نورزاد
+                    </option>
+                    <option value="Bahrami">
+                      خانم هاینه بهرامی
+                    </option>
+                    <option value="Nouri">
+                      خانم مینا نوری
+                    </option>
+                    <option value="Zolfaghari">
+                      خانم آرزو ذوالفقاری
+                    </option>
+                    <option value="Rafiea">
+                      خانم زهرا رفیعی
+                    </option>
+                    <option value="Jadidi">
+                      آقای جواد جدیدی
+                    </option>
+                  </select>
+                  <span class="icon"></span>
+                </div>
+                
+              </div>
+            </div>
+
+            
+            <div class="coursedeatil-box">
+
+              <label for="" class="icdrn-label">
+                توضیحات (زمان های پیشنهادی) کمتر از ۵ کلمه
+              </label>
+
+              <input type="text" class="coursedeatil-input" placeholder=" توضیحات دیگر (تایم و...)" name="classDeatails" required>
+              
+            </div>
+
+            <div class="course-register-btn-box">
+
+              <button type="submit" class="icdrn-btn" disabled >
+                تعین شهریه و ثبت نام 
+              </button>
+
+            </div>
+
+          </div>
+        
+          <div class="class-registration-pic">
+
+            <img src="../../images/class-registration-pic.svg" alt="">
+
+          </div>
+
+        </div>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="side-menu hide-for-phone">
+
+        <nav class="panel-menu-list">
+    
+          <div class="panel-logo">
+    
+            <img src="../../images/ICDRN-Navbar-Logo.png" alt="">
+    
+          </div>
+    
+          <div class="panel-menu-item">
+    
+            <img src="../../images/Panel-Home-Icon.svg" alt="">
+    
+    
+            <a href="/dashboard">
+      
+      
+              پیشخوان
+            
+            </a>
+    
+          </div>
+    
+      
+    
+          <div class="panel-menu-item">
+    
+            <img src="../../images/Panel-Classes-Icon.svg" alt="">
+    
+    
+            <a href="/panel/class-list">
+      
+      
+              لیست کلاس ها
+            
+            </a>
+    
+          </div>
+    
+    
+          <div class="panel-menu-item active">
+    
+            <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+    
+    
+            <a href="/panel/class-registration">
+      
+      
+              کلاس جدید
+            
+            </a>
+    
+          </div>
+    
+          <div class="panel-menu-item">
+    
+            <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+    
+    
+            <a href="/panel/placement-test-history">
+      
+      
+              تعیین سطح ها
+            
+            </a>
+    
+          </div>
+    
+          <div class="panel-menu-item">
+    
+            <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+    
+    
+            <a href="/panel/profile-edit">
+      
+      
+              ویرایش اطلاعات
+            
+            </a>
+    
+          </div>
+    
+        </nav>
+    
+        <div class="panel-exit-box">
+    
+          <img src="../../images/Panel-Exit.svg" alt="">
+    
+        </div>
+    
+
+    </div>
+
+  </div>
+
+    <!-- err -->
+
+  <section class="icdrn-modal" id="LoginErrorModal">
+    <div class="icdrn-modal-content">
+
+      <span class="modal-close" id="modalClose">
+        &times;
+      </span>
+
+      <img src="../images/auth-err-pic.svg" class="modal-img" alt="">
+
+
+
+      <h3>
+        <%= error  %> 
+      </h3>
+
+      <p>
+
+        <!-- لطفا اطلاعاتی که وارد کردی 
+        <br>
+        رو یه بار دیگه با دقت بیشتر مرور کن! -->
+
+      </p>
+
+      <a href="/courses"><button type="submit" class="icdrn-btn" >
+
+        لیست کلاس‌ها
+
+      </button></a>
+
+    </div>
+  </section>
+  <section class="icdrn-modal" id="registerSucsesModal">
+    <div class="icdrn-modal-content">
+
+      <span class="modal-close" id="modalCloseA">
+        &times;
+      </span>
+
+      <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="">
+
+
+
+      <h3>
+        <%= quizError %> 
+      </h3>
+
+      <p>
+
+      برای تعیین سطح دادن روی دکمه زیر
+        <br>
+          کلیک کنید     
+      </p>
+
+       <button type="submit" class="icdrn-btn" id="Bastan">
+         <a href="/panel/placement-test-history">
+         تعیین سطح جدید
+        </a>
+      </button> 
+
+    </div>
+  </section>
+
+  <% if (error) { %>  >
+    <script> 
+
+     const getRegisterErrorModal = document.querySelector('#LoginErrorModal');
+    
+     
+     
+     const getmodalClose = document.querySelector('#modalClose');
+
+     const checkAgain=document.querySelector('#checkAgain')
+ 
+     getRegisterErrorModal.style.display = "flex";
+
+     
+
+     getmodalClose.addEventListener("click",()=>{
+
+     getRegisterErrorModal.style.display = "none";
+
+    });
+    checkAgain.addEventListener("click",()=>{
+
+     getRegisterErrorModal.style.display = "none";
+
+    });
+ 
+    </script>
+    <% } %>  
+    <% if (quizError) { %>
+      <script> 
+   
+       const registerSucsesModal = document.querySelector('#registerSucsesModal');
+      
+   
+       
+       const getmodalClose = document.querySelector('#modalCloseA');
+   
+       const getmodalBastan=document.querySelector("#Bastan")
+   
+       registerSucsesModal.style.display = "flex";
+   
+   
+       getmodalClose.addEventListener("click",()=>{
+   
+        registerSucsesModal.style.display = "none";
+   
+      });
+   
+      getmodalBastan.addEventListener("click",()=>{
+       registerSucsesModal.style.display = "none";
+      });
+   
+      </script>
+   <% } %>  
+  <script src="../../app/js/app.js"></script>
+  <script src="../../app/js/PanelMenuToggle.js"></script>
+
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left">
+  
+    </div>
+    <div class="loader-section section-right"></div>
+    <div class="loader">
+      <img src="../images/loading.svg" alt="">
+      <h2>سایت در حال بارگذاریه!</h2>
+    </div>
+  </div>
+  
+  
+    <script src="app/js/app.js"></script>
+    <script src="app/js/placementTestModal.js"></script>
+    <script src="app/js/mockQuizModal.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+  
+  
+    <script>
+  
+      //For Live Projects
+          window.addEventListener('load',function(){
+            document.querySelector('body').classList.add("loaded")  
+          });
+      
+      
+        </script>
+</body>
+</html>

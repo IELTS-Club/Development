@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آیلتس کلاب | خانه</title>
+  <link rel="icon" type="image/png" sizes="94x94" href="images/Favicon/ICDRN-Favicon-(94x94).png">
+  <link rel="manifest" href="images/Favicon/manifest.json">
+  <link rel="stylesheet" href="dist/css/main.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <style>
+
+
+       .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .swiper-slide img {
+      width: 300px;
+    }
+#loader-wrapper {
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:1000;
+}
+
+#loader-wrapper .loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  width:300px;
+  height:150px;
+}
+
+#loader-wrapper .loader h2 {
+
+  font-size: 30px;
+  font-family: Kalameh-Black;
+  color: #fff;
+
+
+}
+
+
+@-webkit-keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+  }
+}
+
+#loader-wrapper .loader-section {
+  position:fixed;
+  top:0;
+  background-image: linear-gradient(#258c93,#1D3C4E);
+  width:51%;
+  height:100%;
+  z-index:1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left:0
+}
+#loader-wrapper .loader-section.section-right {
+  right:0;
+}
+
+/* Loaded Styles */
+.loaded #loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+}
+.loaded #loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+}
+.loaded #loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+  visibility: hidden;
+  transform:translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+
+  </style>
+<!--BEGIN RAYCHAT CODE-->
+<script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="50b0f0b4-8bbe-472d-94a5-ecbbaac0b985";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script>
+<!--END RAYCHAT CODE-->
+</head>
+<body>
+  <main class="home">
+
+
+    <section class="welcome-label">
+      <h4> سلام، به وب سایت آیلتس کلاب خوش اومدی!</h4>
+      <a href="https://guide.ieltsdrn.com"><button class="icdrn-btn" type="submit"> راهنمای استفاده </button></a>
+   </section>
+   <header class="header container">
+      <div class="overlay flex flex-jc-c flex-ai-c hide-for-desktop">
+         <ul class="overlay-menu">
+            <li class="overlay-menu-item bounceInLeft"> <a href="/">خانه</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/courses">کلاس‌های آنلاین</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/blog">ویدئو آموزشی</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/about">درباره ما</a></li>
+            <li class="overlay-menu-item bounceInLeft"> <a href="/contact">تماس با ما</a></li>
+            <% if(isTeacher==true){ %> 
+            <li class="overlay-menu-item bounceInLeft"> <a href="/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit"> پنل کاربری</button> </a></li>
+            <% }else{ %>
+            <li class="overlay-menu-item bounceInLeft"> <a href="dashboard"> <button class="nav-cta-btn icdrn-btn " type="submit"> پنل کاربری</button> </a></li>
+                <% } %>  
+         </ul>
+      </div>
+      <nav class="header-nav flex flex-jc-sb flex-ai-c">
+         <a href="#" class="nav-logo"> <img src="images/ICDRN-Navbar-Logo.svg" alt="Ielts-DRN-Logo"> </a>
+         <ul class="nav-menu-links hide-for-phone">
+            <li class="nav-menu-links-item"><a href="/">خانه</a></li>
+            <li class="nav-menu-links-item"><a href="/courses">کلاس‌های آنلاین</a></li>
+            <li class="nav-menu-links-item"><a href="/blog">ویدئو آموزشی</a></li>
+            <li class="nav-menu-links-item"><a href="/about">درباره ما</a></li>
+            <li class="nav-menu-links-item"><a href="/contact">تماس با ما</a></li>
+         </ul>
+         <div class="language-switcher-box hide-for-phone">
+            <div class="language-dropdown">
+               <div class="default-language"> <img src="images/Iran-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <i class="fas fa-chevron-down"></i></div>
+               <ul>
+                <a href="/panel"> <li> <img src="images/Iran-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <span>فارسی</span></li></a>
+                <a href="/en/panel"><li> <img src="images/united-kingdom-flag.svg" alt="ایلتس کلاب  دکتر نورزاد"> <span>English</span></li></a> 
+               </ul>
+            </div>
+         </div>
+         <% if(isTeacher==true) {%> 
+         <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn"> <span></span> <span></span> <span></span> </a><a href="/teachers/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit"> پنل کاربری</button> </a>
+         <% }else{ %>
+            <a href="#" class="nav-mobile-menu hide-for-desktop" id="humburgerBtn"> <span></span> <span></span> <span></span> </a><a href="/dashboard"> <button class="nav-cta-btn icdrn-btn hide-for-phone" type="submit">پنل کاربری </button> </a> 
+         <%} %> 
+      </nav>
+   </header>
+
+
+  <section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-text flex flex-dir-c flex-jc-c flex-ai-c container">
+      <h1>
+        تصمیم بگیر و
+        <span>
+          انجام
+        </span>
+         بده!
+        <br>
+
+        <span>
+         مثل
+        </span>
+        یه انجام دهنده
+        واقعی
+      </h1>
+      <div class="container-y">
+        <div class="searchbox">
+
+          <div class="search-dropdown">
+            <div class="default-option">
+              دوره
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <ul>
+              <li>مدرسین</li>
+              <li>کاربران</li>
+              <li>ویدئو ها</li>
+              <li>مقالات</li>
+            </ul>
+          </div>
+          <div class="search-input-box">
+            <input type="text" class="search-input" placeholder="دنبال چی میگردی؟">
+            <!-- <i class="fas fa-search"></i> -->
+            <button class="search-btn" type="submit">
+              <a href="/404/notfound">جستجو</a> 
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <section class="features container">
+    <div class="icdrn-title">
+      <h2>
+        ارتقا
+        <span>مهارت</span>
+        ها
+      </h2>
+
+    </div>
+    <div class="features-grid container-y">
+      <div class="features-item">
+        <div class="features-icon">
+          <img src="images/Writing-icon(Features).svg" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+        <div class="features-title">
+          Writing
+        </div>
+        <div class="features-subtitle">
+          «مهارت نوشتاری»
+        </div>
+      </div>
+
+      <div class="features-item">
+        <div class="features-icon">
+          <img src="images/Speaking-icon(Features).svg" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+        <div class="features-title">
+          Speaking
+        </div>
+        <div class="features-subtitle">
+          «مهارت گفتگو»
+        </div>
+      </div>
+
+
+      <div class="features-item">
+        <div class="features-icon">
+          <img src="images/Reading-icon(Features).svg" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+        <div class="features-title">
+          Reading
+        </div>
+        <div class="features-subtitle">
+          «مهارت خواندن»
+        </div>
+      </div>
+
+      <div class="features-item">
+        <div class="features-icon">
+          <img src="images/Listening-icon(Features).svg" alt="ایلتس کلاب  دکتر نورزاد">
+        </div>
+        <div class="features-title">
+          Listening
+        </div>
+        <div class="features-subtitle">
+          «مهارت شنیداری»
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses container">
+    <div class="icdrn-title">
+      <h2>
+        دوره های
+        <span>آنلاین</span>
+        ما
+      </h2>
+      <p>
+        در این قسمت دوره های آنلاین
+        ما را
+        <br>
+        به هـمراه اطـلاعات دقـیـق
+        !آن هــا خواهید دید
+      </p>
+      <a href="/courses"><button type="submit" class="icdrn-btn">لیست دوره ها</button></a>
+    </div>
+    <div class="courses-grid">
+        <div class="courses-item ielts-course">
+       <a href="/courses/ielts-course">
+
+          <div class="course-inner">
+           <h3>دوره آنلاین آموزشی آیلتس</h3>
+           <h4>IELTS online course</h4>
+          </div>
+
+        </a>
+         </div>
+      <div class="courses-item emigration-course">
+      <a href="/courses/emigration-course">
+        <div class="course-inner">
+          <h3>دوره فشرده مهاجرت</h3>
+          <h4>Immigration intensive course</h4>
+         </div></a>
+      </div>
+      <div class="courses-item conversation-course">
+        <a href="/courses/conversation-course">
+          <div class="course-inner">
+            <h3>دوره آموزش مکالمه</h3>
+            <h4>Conversation course</h4>
+           </div>
+        </a>
+      </div>
+      <div class="courses-item toefl-course">
+        <a href="/courses/toefl-course">
+
+          <div class="course-inner">
+            <h3>دوره آنلاین آموزشی تافل</h3>
+          <h4>TOEFL online course</h4>
+          </div>
+
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="online-package container">
+
+  <div class="icdrn-title">
+    <h2>
+      بسته
+        <span>
+          جزوه
+        </span>
+      سنجش
+    <p>
+      با خرید پک سوالی آیلتس کلاب از سطح کاملا مبتدی تا کاملا پیشرفته میتونی خودت رو بسنجی و با بخش پاسخنامه این پک امتحانی میتونی دلیل جوابهای نادرستت را پیدا کنی.
+    </p>
+
+    <a href="/packages/first">
+      <button type="submit" class="icdrn-btn">
+
+      خرید این بسته
+
+      </button>
+    </a>
+
+  </div>
+
+  <div class="placement-test-img">
+    <img src="images/Online-Package.svg" alt="ایلتس کلاب  دکتر نورزاد">
+  </div>
+
+</section>
+
+<section class="blog">
+
+  <div class="icdrn-title">
+    <h2>
+      آخرین
+      <span>مقالات</span>
+      ما
+    </h2>
+  </div>
+
+  <div class="blogs-grid">
+
+    <div class="blog-item">
+      <img src="images/blog-one-page-pic.png" alt="ایلتس کلاب  دکتر نورزاد" class="blog-img">
+      <h3 class="blog-title">
+       ویدئو آموزشی Halloween
+      </h3>
+      <p class="blog-discription">
+        گاهی اوقات میشه به بهونه یک اتفاق هیجان انگیز یا یک مناسبت یک سری کلمه و اصطلاح رو در غالب یک ...
+      </p>
+      <button type="submit" class="icdrn-btn blog-btn"><a href="/blog/blog1">ادامه مقاله</a></button>
+    </div>
+
+    <div class="blog-item">
+      <img src="images/blog-two-page-pic.png" alt="ایلتس کلاب  دکتر نورزاد" class="blog-img">
+      <h3 class="blog-title">
+        Teaching Ielts techniques
+      </h3>
+      <p class="blog-discription">
+        یکی از چالش های رایج زبان آموزان برای پاسخ گویی به سوالات True / False / Not given ,مهارت...
+      </p>
+      <button type="submit" class="icdrn-btn blog-btn"><a href="/blog/blog2">ادامه مقاله</a></button>
+    </div>
+
+    <div class="blog-item">
+      <img src="images/blog-three-page-pic.png" alt="ایلتس کلاب  دکتر نورزاد" class="blog-img">
+      <h3 class="blog-title">
+        ویدئو Insomnia
+      </h3>
+      <p class="blog-discription">
+        بیخوابی مشکلی هست که ممکنه خیلی هامون باهاش درگیر باشیم که عوامل و پیامدهای مشخصی ...
+      </p>
+      <button type="submit" class="icdrn-btn blog-btn"><a href="/blog/blog3">ادامه مقاله</a></button>
+    </div>
+  </div>
+
+</section>
+
+<section class="similator-quiz container" id="similator-quiz">
+
+  <div class="icdrn-title">
+    <h2>
+      <span>آزمون</span>
+      های شبیه ساز
+    </h2>
+    <p>
+      قبل از شرکت در آزمون های اصلی
+      انگلیـــسی
+      <br>
+      بهتر است از آزمــون های
+       (ماک) استفاده کنید.
+    </p>
+    <button class="icdrn-btn" type="submit" id="runMockQuizBtn" >
+      اجرای آزمون
+    </button>
+  </div>
+
+  <div class="simulator-quiz-img">
+    <img src="images/Similator-Quiz-IMG.svg" alt="ایلتس کلاب  دکتر نورزاد">
+  </div>
+
+</section>
+
+
+<section class="placement-test container">
+
+  <div class="icdrn-title">
+    <h2>
+      تعیین
+      <span>سطح</span>
+      آنلاین
+    </h2>
+    <p>
+      اگر عـــلاقه مند به شروع یادگـــیری
+      زبـان انگـلیسی هســتید با اسـتفاده
+      از این بخش می توانید ســـطح خود
+      را بصورت دقیق بسنجید
+    </p>
+
+    <button type="submit" class="icdrn-btn" id="startPlacementTestBtn">
+
+    شروع تعیین سطح
+
+    </button>
+
+  </div>
+
+  <div class="placement-test-img">
+    <img src="images/Placement-Q!uiz.svg" alt="ایلتس کلاب  دکتر نورزاد">
+  </div>
+
+</section>
+
+<!-- Start - Placement Quiz Modlas Steps1 -->
+
+<section class="icdrn-modal-lg placement-test-registration-modal">
+
+      <span class="modal-close">
+      &times;
+    </span>
+
+
+  <div class="icdrn-modal-grid">
+
+    <form action="/quiz" method="POST">
+    <div class="modal-content">
+
+      <h3>
+        ثبت نام جهت تعین سطح
+      </h3>
+
+      <div class="modal-form">
+        <input type="text" class="icdrn-input" placeholder="نام و نام خانوادگی خود را وارد کنید" name="name" required>
+      <div class="placement-test-mode-box">
+        <div class="select">
+          <select id="standard-select" name="quizType" required>
+            <option disabled selected >روش برگزاری تعیین سطح</option>
+            <option value="Written">
+              کتبی | سیستمی آنلاین
+            </option>
+            <option value="Oral">
+              شفاهی | تماسی پرسش محور
+            </option>
+          </select>
+          <span class="icon"></span>
+        </div>
+      </div>
+       
+      </div>
+
+      <div class="modal-pricde">
+
+
+
+        <h3 class="modal-price-number">
+          هزینه آزمون
+          :
+        <span>
+          <del> ۲۵.۰۰۰ تومان</del>
+        </span>
+        رایگان
+        </h3>
+
+      </div>
+
+      <div class="privacy-policy">
+
+        <input type="checkbox" name="isChecked" required>
+        <span class="checkmark"></span>
+        <label for="">
+          قوانین و مقررات آیلتس کلاب را می پذیرم.
+        </label>
+
+      </div>
+
+
+ 
+    <button type="submit" class="icdrn-btn">
+
+      ثبت نام در آزمون تعیین سطح
+
+     </button>
+
+ 
+  </div>
+</form>
+  <div class="modal-img">
+    <img src="images/Placement-Q!uiz.svg" alt="ایلتس کلاب  دکتر نورزاد">
+    <div class="modal-img-subtitle hide-for-phone">
+
+     <span>
+
+       لطفا
+     </span>
+
+      اطلاعات حساب کاربری خود را در پنل کاربری
+      <br>
+
+     به درستی وارد کنید تا در صورت برقراری کلاس ها،
+     <br>
+     امکان تماس با شما دوست عزیز فراهم باشد.
+
+
+    </div>
+  </div>
+
+  </div>
+
+</section>
+
+<section class="team container">
+
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="icdrn-title" style="text-align: center;margin-bottom: 25px;">
+
+    <h2>
+      تیم
+      <span>آیلتس</span>
+      کلاب
+    </h2>
+
+  </div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+           <div class="team-member">
+           <img src="images/Team-Member-1.png" alt="ایلتس کلاب  دکتر نورزاد">
+    </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="images/Team-Member-2.png" alt="ایلتس کلاب  دکتر نورزاد">
+      </div>
+      <div class="swiper-slide">
+   <div class="team-member">
+      <img src="images/Team-Member-3.png" alt="ایلتس کلاب  دکتر نورزاد">
+    </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="images/Team-Member-4.png" alt="ایلتس کلاب  دکتر نورزاد">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/Team-Member-5.png" alt="ایلتس کلاب  دکتر نورزاد">
+      </div>
+      <div class="swiper-slide">
+      <img src="images/Team-Member-6.png" alt="ایلتس کلاب  دکتر نورزاد">
+      </div>
+      </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+
+<!-- End - Placement Quiz Modlas Steps -->
+
+
+<!-- <section class="placement-test-registration-modal">
+
+  <span class="modal-close">
+  &times;
+</span>
+
+
+<div class="icdrn-modal-grid">
+
+<div class="modal-content">
+
+  <h3>
+    ثبت نام جهت تعین سطح
+  </h3>
+
+  <div class="modal-form">
+
+    <input type="text" class="icdrn-input" placeholder="نام و نام خانوادگی خود را وارد کنید">
+
+  </div>
+
+  <div class="modal-price">
+
+    <img src="images/Price-Icon.svg" class="price-icon" alt="ایلتس کلاب  دکتر نورزاد">
+
+
+    <h3 class="modal-price-number">
+      هزینه آزمون
+      :
+      <ins>۲۵.۰۰۰ تومان</ins>
+      رایگان
+    </h3>
+
+  </div>
+
+  <div class="privacy-policy">
+
+    <input type="checkbox">
+    <span class="checkmark"></span>
+    <label for="">
+      قوانین و مقررات آیلتس کلاب را می پذیرم.
+    </label>
+
+  </div>
+
+<a href="placement-quiz.html">
+
+  <button type="submit" class="icdrn-btn">
+
+    ثبت نام در آزمون تعیین سطح
+
+   </button>
+</a>
+
+</div>
+
+<div class="modal-img">
+<img src="images/Placement-Q!uiz.svg" alt="ایلتس کلاب  دکتر نورزاد">
+<div class="modal-img-subtitle">
+
+ <span>
+
+   لطفا
+ </span>
+
+  اطلاعات حساب کاربری خود را در پنل کاربری
+  <br>
+
+ به درستی وارد کنید تا در صورت برقراری کلاس ها،
+ <br>
+ امکان تماس با شما دوست عزیز فراهم باشد.
+
+
+</div>
+</div>
+
+</div>
+
+</section> -->
+
+<!-- start - Placement Quiz Modlas Steps2 -->
+
+
+<!-- <section class="placement-test-pay-antacipate-modal">
+
+  <span class="modal-close">
+  &times;
+  </span>
+
+
+<div class="icdrn-modal-grid">
+
+  <div class="modal-img">
+
+    <img src="images/placement-test-loading.svg" alt="ایلتس کلاب  دکتر نورزاد">
+
+    </div>
+
+<div class="modal-content">
+
+  <h3>
+    اطلاعات شما با موفقیت ثبت شد
+  </h3>
+
+  <p>
+    در حال انتقال به درگاه پرداخت (لطفا شکیبا باشید)...
+  </p>
+
+  <button type="submit" class="icdrn-btn">
+
+    انصراف و بازگشت به خانه
+
+   </button>
+
+</div>
+
+
+</div>
+
+</section> -->
+
+
+<!-- start - Placement Quiz Modlas Steps3 -->
+
+
+<!-- <section class="placement-test-pay-success-modal">
+
+  <span class="modal-close">
+  &times;
+  </span>
+
+
+<div class="icdrn-modal-grid">
+
+  <div class="modal-img">
+
+    <img src="images/placement-test-succues.svg" alt="ایلتس کلاب  دکتر نورزاد">
+
+    </div>
+
+<div class="modal-content">
+
+  <h3>
+    پرداخت شما با موفقیت انجام شد!
+  </h3>
+
+  <p>
+    از اعتماد شما به تیم آیلتس کلاب سپاس گزاریم...
+  </p>
+
+  <button type="submit" class="icdrn-btn">
+
+    شروع برگزاری آزمون
+
+   </button>
+
+</div>
+
+
+</div>
+
+</section> -->
+
+
+
+<!--
+<section class="team container">
+
+  <div class="icdrn-title">
+
+    <h2>
+      تیم
+      <span>آیلتس</span>
+      کلاب
+    </h2>
+
+  </div>
+
+  <div class="team-grid">
+
+    <div class="team-member">
+      <img src="images/Team-Member-1.svg" alt="ایلتس کلاب  دکتر نورزاد">
+      <div class="member-detail">
+        <p>
+          Pezhman Nourzad
+          <br>
+
+        </p>
+
+        <span>
+            Main Founder & CEO
+        </span>
+
+      </div>
+    </div>
+
+    <div class="team-member">
+      <img src="images/Team-Member-2.svg" alt="ایلتس کلاب  دکتر نورزاد">
+      <div class="member-detail">
+        <p>
+          Haniye Bahrami
+        </p>
+        <span>
+          Teacher
+        </span>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <img src="images/Team-Member-3.svg" alt="ایلتس کلاب  دکتر نورزاد">
+      <div class="member-detail">
+        <p>
+          Mina Nouri
+        </p>
+        <span>
+          Teacher
+        </span>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <img src="images/Team-Member-4.svg" alt="ایلتس کلاب  دکتر نورزاد">
+      <div class="member-detail">
+        <p>
+          Arezo Zolfaghari
+         </p>
+         <span>
+          Teacher
+        </span>
+      </div>
+    </div>
+  </div>
+
+</section> -->
+
+<footer class="footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-about">
+
+      <h4>
+
+         درباره مجموعه ما
+
+      </h4>
+      <p>
+        تیم آیلتس کلاب با سرپرستی دکتر پژمان نورزاد اینجاست تا به شما بگه برای یادگیری زبان هیچ مانعی سر راهتون نیست حتی موقعیت جغرافیایی!
+یادت باشه برای شروع نیاز به هیچ پیشینه ای نداری! پس همین الان از هر جای دنیا میتونی شروع کنی.
+      </p>
+
+    </div>
+
+    <div class="footer-fast-access-menu">
+      <h4>
+        دسترسی سریع
+      </h4>
+      <ul>
+        <li>
+          <a href="/courses" style="color:white">کلاس های آنلاین</a>
+        </li>
+        <li>
+          <a href="/contact" style="color:white">ارتباط سریع با مجوعه</a>
+        </li>
+        <li>
+          قوانین و حریم شخصی
+        </li>
+        <li>
+          <a href="/about" style="color:white">تیم تخصصی مجموعه</a>
+        </li>
+        <li>
+          <a href="/contact" style="color:white"> پشتیبانی و پیگیری</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>
+        مشترک شو!
+      </h4>
+
+      <!-- <div class="newsletter-box">
+        <input type="text" class="newsletter-input">
+        <button type="submit" class="newsletter-btn">ارسال</button>
+      </div> -->
+
+
+      <div class="newsletter-box">
+
+        <div class="newsletter-input-box">
+          <input type="text" class="newsletter-input" placeholder="ایمیلت رو وارد کن">
+          <!-- <i class="fas fa-search"></i> -->
+          <button class="newsletter-btn" type="submit">
+            عضویت
+          </button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+
+<section class="codecamp-label">
+  <h4>تمامی حقوق برای برند آیلتس کلاب دکتر نورزاد محفوظ است</h4>
+</section>
+
+</main>
+
+<section class="placement-test-registration-modal">
+
+  <span class="modal-close">
+  &times;
+</span>
+
+
+<div class="icdrn-modal-grid">
+
+<div class="modal-content">
+
+  <h3>
+    ثبت نام جهت تعین سطح
+  </h3>
+
+  <div class="modal-form">
+
+    <input type="text" class="icdrn-input" placeholder="نام و نام خانوادگی خود را وارد کنید">
+
+  </div>
+
+  <div class="modal-price">
+
+    <img src="images/Price-Icon.svg" class="price-icon" alt="ایلتس کلاب  دکتر نورزاد">
+
+
+    <h3 class="modal-price-number">
+      هزینه آزمون
+      :
+      <ins>۲۵.۰۰۰ تومان</ins>
+      رایگان
+    </h3>
+
+  </div>
+
+  <div class="privacy-policy">
+
+    <input type="checkbox">
+    <span class="checkmark"></span>
+    <label for="">
+      قوانین و مقررات آیلتس کلاب را می پذیرم.
+    </label>
+
+  </div>
+
+
+  <button type="submit" class="icdrn-btn" id="placementRegistrationBtn">
+
+   ثبت نام در آزمون تعیین سطح
+
+  </button>
+
+</div>
+
+<div class="modal-img">
+<img src="images/Placement-Q!uiz.svg" alt="ایلتس کلاب  دکتر نورزاد">
+<div class="modal-img-subtitle">
+
+ <span>
+
+   لطفا
+ </span>
+
+  اطلاعات حساب کاربری خود را در پنل کاربری
+  <br>
+
+ به درستی وارد کنید تا در صورت برقراری کلاس ها،
+ <br>
+ امکان تماس با شما دوست عزیز فراهم باشد.
+
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="icdrn-modal" id="comingSoonModal">
+  <div class="icdrn-modal-content">
+
+    <span class="modal-close">
+      &times;
+    </span>
+
+    <img src="../images/Comin-soon-pic.svg" class="modal-img" alt="ایلتس کلاب  دکتر نورزاد">
+
+
+
+    <h3>
+      رفیق، این امکان بزودی اوکی میشه!
+    </h3>
+
+    <p>
+
+      در واقع تیم مجموعه آیلتس کلاب شبانه روز
+      <br>
+       در حال توسعه این سیستم آنلاین هست!
+
+    </p>
+
+    <button type="submit" class="icdrn-btn" id="comingSoonBtn">
+
+      گرفتم چیشد!
+
+    </button>
+
+  </div>
+</section>
+
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left">
+
+  </div>
+  <div class="loader-section section-right"></div>
+  <div class="loader">
+    <img src="../images/loading.svg" alt="ایلتس کلاب  دکتر نورزاد">
+    <h2>سایت در حال بارگذاریه!</h2>
+  </div>
+</div>
+
+
+  <script src="app/js/app.js"></script>
+  <script src="app/js/placementTestModal.js"></script>
+  <script src="app/js/mockQuizModal.js"></script>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        
+      },autoplay: {
+        delay: 2500,
+      disableOnInteraction: false,
+      },
+    });
+  </script>
+
+  <script>
+
+    //For Live Projects
+        window.addEventListener('load',function(){
+          document.querySelector('body').classList.add("loaded")
+        });
+
+        //language Swticher
+
+        let getDefaultLanguage = document.querySelector('.default-language')
+        let getLanguageDropdown = document.querySelector('.language-dropdown ul')
+
+
+      getDefaultLanguage.addEventListener('click', () => {
+        
+        getLanguageDropdown.classList.toggle('active');
+
+      })
+      </script>
+       <script> 
+        const getReportBTN=document.querySelector("#");
+        const getRegisterErrorModal = document.querySelector('#ReportTest');
+       
+        
+        
+        const getmodalClose = document.querySelector('#modalClose');
+    
+        getReportBTN.addEventListener("click",()=>{
+          getRegisterErrorModal.style.display = "flex";
+        })
+        
+      
+    
+        getmodalClose.addEventListener("click",()=>{
+    
+        getRegisterErrorModal.style.display = "none";
+    
+       });
+    
+       </script>
+
+</body>
+</html>

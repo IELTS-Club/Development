@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_225" data-name="Rectangle 225" width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Register-BG" clip-path="url(#clip-path)">
+    <g id="Group_297" data-name="Group 297" transform="translate(-222 -73)">
+      <g id="Group_296" data-name="Group 296">
+        <rect id="Rectangle_97" data-name="Rectangle 97" width="1033" height="1280" transform="translate(0)" fill="#51a4aa"/>
+        <path id="wave" d="M0,9.743,71.121,5.032C142.242-.036,284.485-8.926,426.727,23.968S711.212,133.317,853.455,156.7c142.242,23.737,284.485-4.712,355.606-18.936l71.121-14.224v85.345H0Z" transform="translate(1227.471 0.569) rotate(90)" fill="#51a4aa"/>
+      </g>
+      <g id="Group_295" data-name="Group 295" transform="translate(147 73)">
+        <rect id="Rectangle_97-2" data-name="Rectangle 97" width="871" height="1080" transform="translate(0)" fill="#258c93"/>
+        <path id="wave-2" data-name="wave" d="M0,8.216,59.973,4.243C119.946-.03,239.893-7.527,359.84,20.211S599.733,112.42,719.68,132.136c119.947,20.016,239.893-3.973,299.867-15.968l59.973-11.995v71.968H0Z" transform="translate(1035.071 0.48) rotate(90)" fill="#258c93"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+
+.icdrn-title {
+
+  h2 {
+
+    font-family: gilmer-bold;
+    font-size: 40px;
+    color: $secondaryColor;
+
+    @media #{$phone} {
+
+      font-size: 30px;
+  
+    }
+
+    span {
+
+      color: $primaryColor;
+
+    }
+
+ 
+  }
+
+  p {
+
+    font-family: gilmer-light;
+    font-size: 18px;
+    color: $secondaryColor;
+
+    @media #{$phone} {
+
+      font-size: 16px;
+  
+    }
+    
+
+  }
+
+
+}
