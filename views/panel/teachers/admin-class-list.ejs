@@ -628,7 +628,7 @@
               </ul>
               <div class="class-action">
 
-  <div class="manage-class">
+  <div class="btn-row">
 
   <a href="/teachers/edit-class/<%= element._id %>">
       <button type="submit" class="icdrn-btn">
@@ -644,12 +644,15 @@
 
   </div>
 
-      <div class="access-class">
+      <div class="btn-row">
 
     <a href="<%= element.classLink%>">
          <button type="submit" class="icdrn-btn">
         ورود به اتاق کلاس
         </button>
+    </a>
+    <a href="<%= element.classLink%>">
+      <button type="submit" class="icdrn-btn">مدیریت آزمون</button>
     </a>
 
     </div>
@@ -667,49 +670,53 @@
 
           </div>
 
-          <div class="class-card">
 
-            <div class="class-detail">
 
-              <h3>
-                ۱- کلاس خصوصی آیلتس
-              </h3>
+       
 
-              <ul class="class-info">
+                                              <div class="class-card">
+                                                
+                                                <div class="class-detail">
 
-                <li>
-                  مدرس: دکتر پژمان نورزاد
-                </li>
-                <li>
-                  نوع: خصوصی  |  سطح: مقدماتی
+                                                  <h3>
+                                                    ۱- کلاس خصوصی آیلتس
+                                                  </h3>
 
-                </li>
+                                                  <ul class="class-info">
 
-                <li>
-                  زمان: دوشنبه ها و چهرشنبه ها
-                </li>
+                                                    <li>
+                                                      مدرس: دکتر پژمان نورزاد
+                                                    </li>
+                                                    <li>
+                                                      نوع: خصوصی  |  سطح: مقدماتی
 
-              </ul>
+                                                    </li>
 
-         <div class="btn-row">
-          <button type="button" class="icdrn-btn">ویرایش</button>
-          <button type="button" class="icdrn-btn">حدف</button>
-         </div>
+                                                    <li>
+                                                      زمان: دوشنبه ها و چهرشنبه ها
+                                                    </li>
 
-         <div class="btn-row">
-          <button type="button" class="icdrn-btn">ورود</button>
-          <button type="button" class="icdrn-btn">مدیریت آزمون</button>
-         </div>
+                                                  </ul>
 
-            </div>
+                                            <div class="btn-row">
+                                              <button type="button" class="icdrn-btn">ویرایش</button>
+                                              <button type="button" class="icdrn-btn">حدف</button>
+                                            </div>
 
-            <div class="class-pic">
+                                            <div class="btn-row">
+                                              <button type="button" class="icdrn-btn">ورود</button>
+                                              <button type="button" class="icdrn-btn">مدیریت آزمون</button>
+                                            </div>
 
-              <img src="../../images/Master-Pic-1.png" alt="">
-              
-            </div>
+                                                </div>
 
-          </div>
+                                                <div class="class-pic">
+
+                                                  <img src="../../images/Master-Pic-1.png" alt="">
+                                                  
+                                                </div>
+
+                                              </div> 
 
           
           <%
