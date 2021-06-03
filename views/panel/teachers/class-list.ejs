@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,8 @@
   <link rel="stylesheet" href="../../dist/css/main.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-<style>
-
-
-       .swiper-container {
+  <style>
+    .swiper-container {
       width: 100%;
       height: 100%;
     }
@@ -37,207 +36,214 @@
       align-items: center;
     }
 
-#loader-wrapper {
-  position:fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:1000;
-}
+    #loader-wrapper {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+    }
 
-#loader-wrapper .loader {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 10001;
-  width:300px;
-  height:150px;
-}
+    #loader-wrapper .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width: 300px;
+      height: 150px;
+    }
 
-#loader-wrapper .loader h2 {
+    #loader-wrapper .loader h2 {
 
-  font-size: 30px;
-  font-family: Kalameh-Black;
-  color: #fff;
-
-
-}
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
 
 
-@-webkit-keyframes spin {
-  0%   {
-    -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  0%   {
-    -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-  }
-}
+    }
 
-#loader-wrapper .loader-section {
-  position:fixed;
-  top:0;
-  background-image: linear-gradient(#258c93,#1D3C4E);
-  width:51%;
-  height:100%;
-  z-index:1000;
-}
 
-#loader-wrapper .loader-section.section-left {
-  left:0
-}
-#loader-wrapper .loader-section.section-right {
-  right:0;
-}
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
 
-/* Loaded Styles */
-.loaded #loader-wrapper .loader-section.section-left {
-  transform: translateX(-100%);
-  transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-}
-.loaded #loader-wrapper .loader-section.section-right {
-  transform: translateX(100%);
-  transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-}
-.loaded #loader {
-  opacity: 0;
-  transition: all 0.3s ease-out;
-}
-.loaded #loader-wrapper {
-  visibility: hidden;
-  transform:translateY(-100%);
-  transition: all 0.3s 1s ease-out;
-}
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
 
+    @keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    #loader-wrapper .loader-section {
+      position: fixed;
+      top: 0;
+      background-image: linear-gradient(#258c93, #1D3C4E);
+      width: 51%;
+      height: 100%;
+      z-index: 1000;
+    }
+
+    #loader-wrapper .loader-section.section-left {
+      left: 0
+    }
+
+    #loader-wrapper .loader-section.section-right {
+      right: 0;
+    }
+
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+
+    .loaded #loader-wrapper .loader-section.section-right {
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+
+    .loaded #loader {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: all 0.3s 1s ease-out;
+    }
   </style>
 
 
 </head>
+
 <body>
 
-  
+
   <div class="container-panel   container-teacher-panel-classlist">
 
     <div class="panel-overlay hide-for-desktop">
 
-     <nav class="panel-overlay-menu">
+      <nav class="panel-overlay-menu">
 
-      <a href="/"><img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo"></a>
+        <a href="/"><img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo"></a>
 
-      <div class="panel-menu-item">
-    
-        <img src="../../images/Panel-Home-Icon.svg" alt="">
+        <div class="panel-menu-item">
 
-
-        <a href="/teachers/dashboard">
-  
-  
-          پیشخوان
-        
-        </a>
-
-      </div>
-
-  
-
-      <div class="panel-menu-item active active">
-
-        <img src="../../images/Panel-Classes-Icon.svg" alt="">
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
 
 
-        <a href="/teachers/class-list">
-  
-  
-          کلاس های من
-        
-        </a>
-
-      </div>
+          <a href="/teachers/dashboard">
 
 
-      <div class="panel-menu-item">
+            پیشخوان
 
-        <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+          </a>
 
-
-        <a href="/teachers/add-class">
-  
-  
-          اضافه کردن کلاس
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+        </div>
 
 
-        <a href="/teachers/placement-test-list">
-  
-  
-          تاریخچه تعیین سطح
-        
-        </a>
 
-      </div>
+        <div class="panel-menu-item active active">
 
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Students-list.svg" alt="" style="width: 30px;">
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
 
 
-        <a href="/teachers/student-list">
-  
-  
-          لیست دانشحویان
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+          <a href="/teachers/class-list">
 
 
-        <a href="/teachers/edit-profile">
-  
-  
-          ویرایش اطلاعات
-        
-        </a>
+            کلاس های من
 
-      </div>
+          </a>
 
-      <div class="panel-exit-box">
+        </div>
 
-        <img src="../../images/Teachers-Illustration.svg" alt="">
-  
-      </div>
 
-     </nav>
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+
+
+          <a href="/teachers/add-class">
+
+
+            اضافه کردن کلاس
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+          <a href="/teachers/placement-test-list">
+
+
+            تاریخچه تعیین سطح
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Students-list.svg" alt="" style="width: 30px;">
+
+
+          <a href="/teachers/student-list">
+
+
+            لیست دانشحویان
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+          <a href="/teachers/edit-profile">
+
+
+            ویرایش اطلاعات
+
+          </a>
+
+        </div>
+
+        <div class="panel-exit-box">
+
+          <img src="../../images/Teachers-Illustration.svg" alt="">
+
+        </div>
+
+      </nav>
 
     </div>
 
@@ -255,7 +261,7 @@
                 جستجو
               </button>
             </div>
-          </form> 
+          </form>
         </div>
 
       </div>
@@ -264,14 +270,13 @@
 
         <div class="panel-status-bar">
 
-         <div class="status-icons">
+          <div class="status-icons">
 
-          <div class="bells">
-            <a href="/"> <img src="../../images/Panel-home.svg" 
-              alt=""></a>
+            <div class="bells">
+              <a href="/"> <img src="../../images/Panel-home.svg" alt=""></a>
 
 
-            <!-- <div class="bells-dropdown">
+              <!-- <div class="bells-dropdown">
               <h3>
                 <span>|</span>
                   پیام های سیستمی آیلتس کلاب
@@ -334,20 +339,19 @@
                 </p>
               </div>
              </div> -->
-    
-          </div>
-    
-          <div class="message">
-    
-            <img src="../../images/Panel-Messsage.svg" 
-            alt="">
 
-           <div class="message-dropdown">
-              <h3>
-                <span>|</span>
+            </div>
+
+            <div class="message">
+
+              <img src="../../images/Panel-Messsage.svg" alt="">
+
+              <div class="message-dropdown">
+                <h3>
+                  <span>|</span>
                   لیست ایمیل های شما
-              </h3>
-              <!-- <div class="email-list">
+                </h3>
+                <!-- <div class="email-list">
                 <p>
 
                   <img src="../../images/Email-Blob.svg" alt="">
@@ -404,40 +408,41 @@
 
                 </p>
               </div> -->
-             </div> 
-    
-          </div>
-    
-          <div class="profile">
-    
-            <img src="../../images/Panel-Profile.svg" alt="">
-    
+              </div>
 
-            <div class="profile-dropdown">
-             <h3>
-               <span>|</span>
-                <%= userName %> عزیز خوش اومدی :)
-             </h3>
-             <form action="/logout" method="GET">
-              <div class="exit-btn">
-               <input type="image" src="../../images/Logout-Icon.svg" width="40px"/>
-              <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
-              </div></form>
             </div>
 
+            <div class="profile">
+
+              <img src="../../images/Panel-Profile.svg" alt="">
+
+
+              <div class="profile-dropdown">
+                <h3>
+                  <span>|</span>
+                  <%= userName %> عزیز خوش اومدی :)
+                </h3>
+                <form action="/logout" method="GET">
+                  <div class="exit-btn">
+                    <input type="image" src="../../images/Logout-Icon.svg" width="40px" />
+                    <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+
+
           </div>
-
-    
-
-         </div>
 
           <div class="panel-humburger hide-for-desktop">
-    
+
             <img src="../../images/Panel-Burger.svg" alt="">
-    
+
           </div>
-          
-    
+
+
         </div>
 
       </div>
@@ -452,15 +457,15 @@
             <span>
               |
             </span>
-            لیست کلاس های  شما
+            لیست کلاس های شما
           </h2>
           <a href="/teachers/add-class"><button type="submit" class="icdrn-btn">
-       
-            اضافه کردن کلاس
 
-            <span>+</span>
+              اضافه کردن کلاس
 
-          </button></a>
+              <span>+</span>
+
+            </button></a>
         </div>
         <div class="class-list-cards">
           <% if(classes.length != 0){
@@ -549,7 +554,7 @@
             }
            
                   
-                 %> 
+                 %>
           <div class="class-card">
 
             <div class="class-detail">
@@ -564,181 +569,184 @@
                   مدرس: <%= selectClassTeacher(); %>
                 </li>
                 <li>
-                 <%=   selectClassType(); %>
+                  <%=   selectClassType(); %>
 
                 </li>
 
                 <li>
-                 اطلاعات: <%= element.classTime %>
+                  اطلاعات: <%= element.classTime %>
                 </li>
 
               </ul>
               <div class="class-action">
 
-  <div class="manage-class">
+                <div class="btn-row">
 
-  <a href="/teachers/edit-class/<%= element._id %>">
-      <button type="submit" class="icdrn-btn">
-      ویرایش  
-      </button>
-      </a>
+                  <a href="/teachers/edit-class/<%= element._id %>">
+                    <button type="submit" class="icdrn-btn">
+                      ویرایش
+                    </button>
+                  </a>
 
-    <a href="/teachers/delete-class/<%= element._id %>">
-      <button type="submit" class="icdrn-btn">
-      حذف 
-      </button>
-    </a>
+                  <a href="/teachers/delete-class/<%= element._id %>">
+                    <button type="submit" class="icdrn-btn">
+                      حذف
+                    </button>
+                  </a>
 
-  </div>
+                </div>
 
-      <div class="access-class">
+                <div class="btn-row">
 
-    <a href="<%= element.classLink%>">
-         <button type="submit" class="icdrn-btn">
-        ورود به اتاق کلاس
-        </button>
-    </a>
+                  <a href="<%= element.classLink%>">
+                    <button type="submit" class="icdrn-btn">
+                      ورود به اتاق کلاس
+                    </button>
+                  </a>
+                  <a href="<%= element.classLink%>">
+                    <button type="submit" class="icdrn-btn">مدیریت آزمون</button>
+                  </a>
 
-    </div>
+                </div>
 
-          </div>
-              
-              
+              </div>
+
+
             </div>
 
             <div class="class-pic">
 
               <img src="<%= selectTeacherImage(); %>" alt="">
-              
+
             </div>
 
           </div>
 
-          
+
           <%
       });
           }
-          %>     
-           
+          %>
+
         </div>
 
 
-       
 
 
 
-       
+
+
       </div>
 
     </div>
-    
-    
+
+
     <div class="side-menu hide-for-phone">
 
-        <nav class="panel-menu-list">
-    
-          <div class="panel-logo">
-    
-            <a href="/"><img src="../../images/ICDRN-Navbar-Logo.png" alt=""></a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Home-Icon.svg" alt="">
-    
-    
-            <a href="/teachers/dashboard">
-      
-      
-              پیشخوان
-            
-            </a>
-    
-          </div>
-    
-      
-    
-          <div class="panel-menu-item active">
-    
-            <img src="../../images/Panel-Classes-Icon.svg" alt="">
-    
-    
-            <a href="/teachers/class-list">
-      
-      
-              کلاس های من
-            
-            </a>
-    
-          </div>
-    
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
-    
-    
-            <a href="/teachers/add-class">
-      
-      
-              اضافه کردن کلاس
-            
-            </a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
-    
-    
-            <a href="/teachers/placement-test-list">
-      
-      
-              تعیین سطح ها
-            
-            </a>
-    
-          </div>
+      <nav class="panel-menu-list">
 
-          
-          <div class="panel-menu-item">
+        <div class="panel-logo">
 
-            <img class="panel-menu-item-students" src="../../images/Panel-Students-list.svg" alt="">
+          <a href="/"><img src="../../images/ICDRN-Navbar-Logo.png" alt=""></a>
 
-
-            <a href="/teachers/student-list">
-      
-      
-              لیست دانشحویان
-            
-            </a>
-
-          </div>
-        
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-    
-    
-            <a href="/teachers/edit-profile">
-      
-      
-              ویرایش اطلاعات
-            
-            </a>
-    
-          </div>
-    
-        </nav>
-    
-        <div class="panel-exit-box">
-    
-           <img src="../../images/Teachers-Illustration.svg" alt="">
-    
         </div>
-    
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+
+
+          <a href="/teachers/dashboard">
+
+
+            پیشخوان
+
+          </a>
+
+        </div>
+
+
+
+        <div class="panel-menu-item active">
+
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
+
+
+          <a href="/teachers/class-list">
+
+
+            کلاس های من
+
+          </a>
+
+        </div>
+
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+
+
+          <a href="/teachers/add-class">
+
+
+            اضافه کردن کلاس
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+          <a href="/teachers/placement-test-list">
+
+
+            تعیین سطح ها
+
+          </a>
+
+        </div>
+
+
+        <div class="panel-menu-item">
+
+          <img class="panel-menu-item-students" src="../../images/Panel-Students-list.svg" alt="">
+
+
+          <a href="/teachers/student-list">
+
+
+            لیست دانشحویان
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+          <a href="/teachers/edit-profile">
+
+
+            ویرایش اطلاعات
+
+          </a>
+
+        </div>
+
+      </nav>
+
+      <div class="panel-exit-box">
+
+        <img src="../../images/Teachers-Illustration.svg" alt="">
+
+      </div>
+
 
     </div>
 
@@ -747,36 +755,34 @@
 
 
   <div id="loader-wrapper">
-      <div id="loader"></div>
-      <div class="loader-section section-left">
-    
-      </div>
-      <div class="loader-section section-right"></div>
-      <div class="loader">
-        <img src="../images/loading.svg" alt="">
-        <h2>سایت در حال بارگذاریه!</h2>
-      </div>
+    <div id="loader"></div>
+    <div class="loader-section section-left">
+
     </div>
-    
-    
-      <script src="app/js/app.js"></script>
-      <script src="app/js/placementTestModal.js"></script>
-      <script src="app/js/mockQuizModal.js"></script>
-    
-      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-    
-    
-      <script>
-    
-        //For Live Projects
-            window.addEventListener('load',function(){
-              document.querySelector('body').classList.add("loaded")  
-            });
-        
-        
-          </script>
+    <div class="loader-section section-right"></div>
+    <div class="loader">
+      <img src="../images/loading.svg" alt="">
+      <h2>سایت در حال بارگذاریه!</h2>
+    </div>
+  </div>
+
+
+  <script src="app/js/app.js"></script>
+  <script src="app/js/placementTestModal.js"></script>
+  <script src="app/js/mockQuizModal.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+
+  <script>
+    //For Live Projects
+    window.addEventListener('load', function () {
+      document.querySelector('body').classList.add("loaded")
+    });
+  </script>
   <script src="../../app/js/app.js"></script>
   <script src="../../app/js/PanelMenuToggle.js"></script>
 
 </body>
+
 </html>
