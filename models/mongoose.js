@@ -91,3 +91,44 @@ const studentSchema=new mongoose.Schema({
 })
 const Student=mongoose.model("Student",studentSchema);
 module.exports.Student = Student;
+
+const examsSchema=new mongoose.Schema({
+    Class:{type:mongoose.Schema.Types.ObjectId,ref:Class},
+    Title:{type:String},
+    Type:{type:String},
+    StartDate:{type:String},
+    StopDate:{type:String},
+    QuestionsNumber:{type:Number},
+    QuestionsList:[new mongoose.Schema({
+        questionId:String,
+        questionStructure:String,
+        questionChices:[{type:String,required:function(){
+            if (this.questionStructure=="testi"){
+                return true;
+            }
+            else{
+                return false
+            }
+        }}],
+        trueAnswer:{type:Number,required:function(){
+            if (this.questionStructure=="testi"){
+                return true;
+            }
+            else{
+                return false
+            }
+        }},
+        questionType:String,
+        })],
+    
+    Answers:[{
+        studentId:{type:mongoose.mongoose.Schema.Types.ObjectId,ref:User},
+        answersList:[new mongoose.Schema({
+            questionId:String,
+            answerKey:String
+        })]
+
+    }] 
+});
+const Exam=mongoose.model("Exam",examsSchema);
+module.exports.Exam=Exam;
