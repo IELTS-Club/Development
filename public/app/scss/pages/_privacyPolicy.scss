@@ -1,0 +1,51 @@
+.privacy {
+
+  @media #{$phone} {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+
+  .icdrn-title {
+
+    margin:30px 0 30px;
+
+    h2 {
+
+
+      @media #{$phone} {
+
+        font-size: 35px;
+  
+      }
+      
+    }
+
+  }
+
+  p {
+
+    width: 50%;
+    text-align: justify;
+    line-height: 30px;
+
+    @media #{$phone} {
+
+      width: 100%;
+  
+    }
+    
+
+    .our-honor {
+
+      font-family: Yekan-Bakh-Bold;
+
+    }
+
+  }
+
+}

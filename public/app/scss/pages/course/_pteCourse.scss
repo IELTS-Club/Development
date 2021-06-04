@@ -1,0 +1,354 @@
+
+.online-pte-class {
+
+  width: 100%;
+  margin-top: 60px;
+  box-sizing: border-box;
+
+  @media #{$phone} {
+
+    margin-top: 10px;
+  
+  }
+
+  .pte-class-into-grid {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media #{$phone} {
+
+      flex-direction: column;
+  
+    }
+
+    .pte-class-detail {
+
+      width: 40%;
+      margin-right: 50px;
+      display: flex;
+      flex-direction: column;
+
+      @media #{$phone} {
+
+        width: 100%;
+        margin-right: 0;
+        order: 2;
+  
+      }
+
+      h2 {
+
+        font-size: 30px;
+        font-family: Kalameh-black;
+        color: $secondaryColor;
+        margin-bottom: 30px;
+
+        @media #{$phone} {
+
+          font-size: 27px;
+          margin-bottom: 20px;
+  
+        }
+
+        span {
+
+          color: $primaryColor;
+
+        }
+
+      }
+
+      p {
+
+        font-family: Yekan-Bakh-Thin;
+        text-align: justify;
+        line-height: 26px;
+
+        @media #{$phone} {
+
+          font-size: 14px;
+  
+        }
+
+      }
+
+      .course-btn-box {
+
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+
+        @media #{$phone} {
+
+          justify-content: center;
+  
+        }
+
+        button {
+
+          font-family: Yekan-Bakh-Thin;
+          width: 130px;
+          height: 40px;
+          border: none;
+          border-radius: 10px;
+          background-color: $primaryColor;
+
+        }
+  
+      }
+
+    }
+
+
+
+
+    .pte-class-pic {
+
+      width: 60%;
+      margin-left: 50px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      @media #{$phone} {
+
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+  
+      }
+
+      img {
+
+       width: 500px;
+
+       @media #{$phone} {
+
+        width: 250px;
+        margin-bottom: 30px;
+        order: 1;
+  
+      }
+
+      }
+
+    }
+
+  }
+
+  .pte-certificate {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom:70px;
+
+    @media #{$phone} {
+
+     margin-bottom: 50px;
+
+    }
+
+    .icdrn-title {
+
+      h1 {
+
+        @media #{$phone} {
+
+          font-size: 26px;
+          width: 100%;
+  
+        }
+
+      }
+
+      @media #{$phone} {
+
+        width: 100%;
+        text-align: center;
+
+  
+      }
+
+    }
+
+    .pte-certificate-inner {
+
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+
+        width: 200px;
+
+      }
+
+    }
+
+  }
+  
+ 
+}
+
+
+.student-status {
+
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+
+  .icdrn-title {
+
+    margin-bottom: 30px;
+
+    h2 {
+
+      @media #{$phone} {
+
+        width: 100%;
+
+      }
+
+    }
+
+    @media #{$phone} {
+
+      width: 100%;
+      margin-bottom: 50px;
+      text-align: center;
+
+
+    }
+
+  }
+
+  .student-status-grid {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media #{$phone} {
+
+      flex-direction: column;
+      align-items: center;
+  
+    }
+
+    .start-placement {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 400px;
+      border-left: 1px solid rgb(245, 245, 245);
+
+      @media #{$phone} {
+
+        width: 100%;
+        margin-bottom: 50px;
+  
+      }
+
+      img {
+
+        width: 200px;
+        margin-bottom: 20px;
+
+      }
+
+      h3 {
+
+        font-family: Kalameh-Black;
+        font-size: 28px;
+        color: $secondaryColor;
+        margin-bottom: 10px;
+
+        @media #{$phone} {
+
+          width: 100%;
+          font-size: 26px;
+          text-align: center;
+        }
+      }
+
+      p {
+
+        font-size: 15px;
+        width: 250px;
+        text-align: center;
+        margin-bottom: 20px;
+
+      }
+
+
+    }
+
+    .start-register {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 400px;
+
+      @media #{$phone} {
+
+        width: 100%;
+  
+      }
+
+      img {
+
+        width: 250px;
+        margin-bottom: 20px;
+
+      }
+
+      h3 {
+
+        font-family: Kalameh-Black;
+        font-size: 28px;
+        color: $secondaryColor;
+        margin-bottom: 10px;
+
+        @media #{$phone} {
+
+          width: 100%;
+          font-size: 26px;
+          text-align: center;
+
+        }
+
+
+      }
+
+      p {
+
+        font-size: 15px;
+        width: 250px;
+        text-align: center;
+        margin-bottom: 20px;
+
+      }
+
+    }
+
+  }
+
+
+}

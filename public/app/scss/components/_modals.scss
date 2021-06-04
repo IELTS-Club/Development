@@ -1,0 +1,1133 @@
+
+
+.icdrn-modal {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+
+  &-content {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    max-height: 50%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+
+
+    @media #{$laptop} {
+
+
+      width: 30%;
+      max-height: 70%;
+
+    }
+    
+
+    .modal-close {
+
+      position: absolute;
+      top:20px;
+      left: 20px;
+      font-size:30px;
+      font-weight: 400px;
+      cursor: pointer;
+
+    }
+
+
+    img {
+
+      margin-top: 20px;
+      width: 150px;
+
+      @media #{$laptop} {
+
+        width: 300px;
+  
+      }
+
+    }
+
+    h3 {
+
+      font-family: Kalameh-Black;
+      font-size: 23px;
+      width: 180px;
+      margin: 20px 0;
+      text-align: center;
+      color: $secondaryColor;
+
+
+      @media #{$laptop} {
+
+        width: auto;
+  
+      }
+
+    }
+
+    p {
+
+      font-family: Yekan-Bakh-Thin;
+      font-size: 14px;
+      line-height: 25px;
+      text-align: center;
+      width: 200px;
+      margin-bottom: 20px;
+
+      @media #{$laptop} {
+
+        font-size: 16px;
+        width: auto;
+  
+      }
+
+    }
+
+    button[type="button"] {
+      
+      font-size: 10px;
+      width: 90px;
+
+      @media #{$laptop} {
+
+        font-size: 14px;
+        width: 120px;
+  
+      }
+
+    }
+
+
+  }
+
+
+}
+
+
+
+
+.placement-test-registration-modal {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+  @media #{$phone} {
+
+    flex-direction: column;
+  
+  }
+  
+
+
+  
+  .modal-close {
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size:30px;
+    font-weight: 400px;
+    cursor: pointer;
+
+  }
+
+
+
+  .icdrn-modal-grid {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+    width: 50%;
+    height: 75%;
+    background-color: #fff;
+
+
+    @media #{$phone} {
+
+      
+    width: 78%;
+    height: 550px;
+      flex-direction: column;
+  
+    }
+    
+
+    
+
+.modal-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media #{$phone} {
+
+    order:2;
+  
+  }
+  
+
+  h3 {
+
+    font-family: Kalameh-Black;
+    font-size: 35px;
+    width: auto;
+    margin: 20px 0;
+    text-align: center;
+    color: $secondaryColor;
+
+
+    @media #{$phone} {
+
+      font-size:22px;
+
+      width:180px
+
+    }
+
+  }
+
+  p {
+
+    font-family: Yekan-Bakh-Thin;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+
+    @media #{$laptop} {
+
+      font-size: 16px;
+      width: auto;
+
+    }
+
+  }
+
+  button[type="button"] {
+    
+    font-size: 10px;
+    width: 100%;
+
+    @media #{$laptop} {
+
+      font-size: 14px;
+      width:100%;
+
+    }
+
+  }
+
+  .modal-form {
+
+    .placement-test-mode-box {
+
+      margin-top: 20px;
+      position: relative;
+
+      .select {
+
+        position: relative;
+        width: 100%;
+
+        #standard-select {
+
+          text-align: center;
+          font-family: Yekan-Bakh-Light;
+          width: 100%;
+          height:50px;
+          padding: 10px;
+          border: none;
+          border-radius: 15px;
+          outline: none;
+          background-color:#f3f3f3;
+          box-shadow: 10px 7px 10px #f8f8f8;
+
+        }
+
+        .icon {
+
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50px;
+          height:100%;
+          border-radius: 10px;
+          background-color:#f3f3f3;
+          pointer-events: none;
+
+        }
+
+        .icon::before {
+
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent ;
+          border-top:6px solid rgb(148, 148, 148) ;
+
+
+        }
+
+
+
+      }
+
+
+    }
+
+  }
+
+}
+
+.modal-img {
+
+      @media #{$phone} {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+  img {
+
+    margin-top: 20px;
+    width: 300px;
+
+    @media #{$phone} {
+
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      order: 1;
+
+    }
+
+  }
+
+  .modal-img-subtitle {
+
+    font-family: Yekan-Bakh-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+
+}
+
+}
+
+
+.placement-test-pay-antacipate-modal {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+  
+  .modal-close {
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size:30px;
+    font-weight: 400px;
+    cursor: pointer;
+
+  }
+
+
+
+  .icdrn-modal-grid {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-height: 70%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+
+
+    @media #{$laptop} {
+
+
+      width: 50%;
+      height: 75%;
+
+    }
+    
+
+.modal-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+
+    font-family: Kalameh-Black;
+    font-size: 35px;
+    width: 180px;
+    margin: 20px 0;
+    text-align: center;
+    color: $secondaryColor;
+
+
+    @media #{$laptop} {
+
+      width: auto;
+
+    }
+
+  }
+
+  p {
+
+    font-family: Yekan-Bakh-Thin;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+
+    @media #{$laptop} {
+
+      font-size: 16px;
+      width: auto;
+
+    }
+
+  }
+
+  button[type="button"] {
+    
+    font-size: 10px;
+    width: 90px;
+
+    @media #{$laptop} {
+
+      font-size: 14px;
+      width:100%;
+
+    }
+
+  }
+
+}
+
+.modal-img {
+
+  img {
+
+    margin-top: 20px;
+    width: 150px;
+
+    @media #{$laptop} {
+
+      width: 200px;
+
+    }
+
+  }
+
+  .modal-img-subtitle {
+
+    font-family: Yekan-Bakh-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+
+}
+
+}
+
+
+
+.placement-test-pay-success-modal {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display:none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+  
+  .modal-close {
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size:30px;
+    font-weight: 400px;
+    cursor: pointer;
+
+  }
+
+
+
+  .icdrn-modal-grid {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-height: 70%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+
+
+    @media #{$laptop} {
+
+
+      width: 50%;
+      height: 75%;
+
+    }
+    
+
+.modal-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+
+    font-family: Kalameh-Black;
+    font-size: 35px;
+    width: 180px;
+    margin: 20px 0;
+    text-align: center;
+    color: $secondaryColor;
+
+
+    @media #{$laptop} {
+
+      width: auto;
+
+    }
+
+  }
+
+  p {
+
+    font-family: Yekan-Bakh-Thin;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+
+    @media #{$laptop} {
+
+      font-size: 16px;
+      width: auto;
+
+    }
+
+  }
+
+  button[type="button"] {
+    
+    font-size: 10px;
+    width: 90px;
+
+    @media #{$laptop} {
+
+      font-size: 14px;
+      width:100%;
+
+    }
+
+  }
+
+}
+
+.modal-img {
+
+  img {
+
+    margin-top: 20px;
+    width: 150px;
+
+    @media #{$laptop} {
+
+      width: 200px;
+
+    }
+
+  }
+
+  .modal-img-subtitle {
+
+    font-family: Yekan-Bakh-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+
+}
+
+}
+
+
+.new-quiz-modal {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+  @media #{$phone} {
+
+    flex-direction: column;
+  
+  }
+  
+
+
+  
+  .modal-close {
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size:30px;
+    font-weight: 400px;
+    cursor: pointer;
+
+  }
+
+
+
+  .icdrn-modal-grid {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+    width: 50%;
+    height: 75%;
+    background-color: #fff;
+
+
+    @media #{$phone} {
+
+      
+    width: 78%;
+    height: 550px;
+      flex-direction: column;
+  
+    }
+    
+
+.modal-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media #{$phone} {
+
+    order:2;
+  
+  }
+  
+
+  h3 {
+
+    font-family: Kalameh-Black;
+    font-size: 35px;
+    width: auto;
+    margin: 20px 0;
+    text-align: center;
+    color: $secondaryColor;
+
+
+    @media #{$phone} {
+
+      font-size:22px;
+
+      width:180px
+
+    }
+
+  }
+
+  p {
+
+    font-family: Yekan-Bakh-Thin;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+
+    @media #{$laptop} {
+
+      font-size: 16px;
+      width: auto;
+
+    }
+
+  }
+
+ .modal-form {
+
+
+  input {
+
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+  }
+
+
+  .input-row {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    input {
+
+      margin: auto;
+      width: 48% !important;
+
+    }
+
+    imput:not(:last-child) {
+
+      margin-left: 20px;
+
+    }
+
+  }
+
+  button[type="button"] {
+    
+    font-size: 10px;
+    width: 100%;
+    height: 50px; 
+
+    @media #{$laptop} {
+
+      font-size: 14px;
+      width:100%;
+
+    }
+
+  }
+
+
+ }
+
+}
+
+.modal-img {
+
+      @media #{$phone} {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+  img {
+
+    margin-top: 20px;
+    width: 300px;
+
+    @media #{$phone} {
+
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      order: 1;
+
+    }
+
+  }
+
+  .modal-img-subtitle {
+
+    font-family: Yekan-Bakh-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+
+}
+
+}
+
+.student-quiz-list-modal {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+  @media #{$phone} {
+
+    flex-direction: column;
+  
+  }
+  
+
+
+  
+  .modal-close {
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size:30px;
+    font-weight: 400px;
+    cursor: pointer;
+
+  }
+
+
+
+  .icdrn-modal-grid {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+    width: 60%;
+    height: 75%;
+    background-color: #fff;
+
+
+    @media #{$phone} {
+
+      
+    width: 78%;
+    height: 550px;
+      flex-direction: column;
+  
+    }
+    
+
+    
+
+.modal-content {
+
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  // background-color: #111;
+
+  @media #{$phone} {
+
+    order:2;
+  
+  }
+  
+
+  h3 {
+
+    font-family: Kalameh-Black;
+    font-size: 35px;
+    width: auto;
+    margin: 20px 0;
+    text-align: center;
+    color: $secondaryColor;
+
+
+    @media #{$phone} {
+
+      font-size:22px;
+
+      width:180px
+
+    }
+
+  }
+
+  p {
+
+    font-family: Yekan-Bakh-Thin;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+
+    @media #{$laptop} {
+
+      font-size: 16px;
+      width: auto;
+
+    }
+
+  }
+
+
+  .quiz-list {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    .quiz-item {
+
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 90%;
+      height: 70px;
+      border-radius: 8px;
+      // background: rgb(243, 243, 243);
+     
+      div {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: $richySecondaryColor;
+
+      }
+
+  .quiz-item-btn {
+
+    button {
+
+      width: 100px;
+
+    }
+
+  }
+
+    }
+    
+    .quiz-item:nth-child(odd) {
+
+      background-color: #258c9313;
+
+    }
+
+    .quiz-item:nth-child(even) {
+
+      background-color: #e0a75d2a;
+
+      .quiz-item-btn {
+
+        button {
+    
+          color: #fff;
+         background-color: #258c93;
+    
+        }
+    
+      }
+
+
+    }
+
+    .quiz-item:not(:last-child) {
+
+      margin: 10px;
+
+    }
+
+  }
+
+}
+
+.modal-img {
+
+      @media #{$phone} {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+  img {
+
+    margin-top: 20px;
+    width: 300px;
+
+    @media #{$phone} {
+
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      order: 1;
+
+    }
+
+  }
+
+  .modal-img-subtitle {
+
+    font-family: Yekan-Bakh-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+
+}
+
+}

@@ -1,0 +1,75 @@
+
+.icdrn-input {
+
+     font-family: Yekan-Bakh-Light;
+     width: 80%;
+     height: 40px;
+     padding: 5px 8px;
+     border: none;
+     border-radius: 15px;
+     outline: none;
+    //  margin-left: 20px;
+     background-color:#f3f3f3;
+     box-shadow: 10px 7px 10px #46464607;
+
+     @media #{$laptop} {
+
+    width: 180px;
+     margin-left: 20px;
+
+     }
+
+}
+
+.icdrn-label {
+
+    font-family: Yekan-Bakh-Medium;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+
+}
+
+.full-input {
+
+  width: 80%;
+
+       @media #{$laptop} {
+
+         width: 100%;
+
+       }
+
+}
+
+.full-btn[type="button"] {
+
+  font-family: Yekan-Bakh-Light;
+  width: 100%;
+  height: 50px;
+  margin-top: 40px;
+  border: none;
+  outline: 0;
+  border-radius: 15px;
+  background-color:$primaryColor;
+  box-shadow: 10px 7px 10px #f8f8f8;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+
+  @media #{$laptop} {
+
+    width: 410px;
+    padding: 10px 0;
+
+
+
+  }
+
+
+}
+
+.full-ntm[type="button"]:hover {
+
+  background-color: #e4ad6a;
+
+}

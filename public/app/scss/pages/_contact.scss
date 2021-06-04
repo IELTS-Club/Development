@@ -1,0 +1,337 @@
+
+.contact {
+
+  box-sizing: border-box;
+  width: 100%;
+
+  .contact-grid {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media #{$phone} {
+
+      flex-direction: column;
+  
+    }
+
+    @media #{$tablet} {
+
+      flex-direction: column;
+  
+    }
+
+    .contact-form {
+
+      width: 30%;
+
+      @media #{$phone} {
+
+        width: 90%;
+        order: 2;
+  
+      }
+
+      @media #{$tablet} {
+
+        width: 90%;
+        order: 2;
+    
+      }
+
+
+     .form-inner {
+
+      width: 100%;
+
+      .icdrn-input {
+
+        width: 100%;
+
+      }
+
+      .contact-btn {
+
+        width: 100%;
+        text-align: center;
+
+      }
+
+
+
+      .row {
+
+        width: 100%;
+        display: flex;
+
+        @media #{$phone} {
+
+          flex-direction: column;
+  
+        }
+
+        @media #{$tablet} {
+
+          flex-direction: column;
+  
+        }
+
+        .phone-box {
+
+          width: 100%;
+          margin-left: 30px;
+
+          .phone-input {
+
+            width: 100%;
+    
+          }
+
+        }
+        
+       .email-box {
+
+        width: 100%;
+
+        .email-input {
+  
+          width: 100%;
+  
+        }
+
+       }
+
+      }
+      
+
+     }
+
+    }
+
+    .contact-illustration {
+
+      width: 50%;
+      margin-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media #{$phone} {
+
+        width: 100%;
+        margin-right: 0;
+  
+      }
+
+      @media #{$tablet} {
+
+        width: 100%;
+        margin-right: 0;
+  
+      }
+
+      img {
+
+        width: 400px;
+
+        @media #{$phone} {
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 300px;
+          margin-bottom: 30px;
+  
+        }
+
+        @media #{$tablet} {
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 300px;
+          margin-bottom: 30px;
+  
+        }
+
+      }
+
+
+      .contact-btn-box {
+
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+        @media #{$phone} {
+
+          margin-top: 5px;
+          margin-bottom: 50px;
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+  
+        }
+
+      a {
+
+        button[type="button"] {
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12px;
+          font-family: Yekan-Bakh-Light;
+          width: 80px;
+          height: 35px;
+          border-radius: 10px;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+
+          i {
+
+            margin-right: 5px;
+
+          }
+
+        }
+      }
+      
+      a:nth-child(1) {
+
+        
+        button[type="button"] {
+
+          background: linear-gradient(45deg, #207D84 50%, #185C61 100%); 
+
+          @media #{$phone} {
+
+            width: 100%;
+
+    
+          }
+
+        }
+
+        @media #{$phone} {
+
+          width: 100%;
+          flex-basis: 40%;
+          margin-bottom: 5px;
+          margin-left: 5px;
+
+  
+        }
+
+      }
+
+      a:nth-child(2)  {
+
+        button[type="button"]{
+
+          background: linear-gradient(45deg,#5d80e0 50%, rgb(73, 184, 248) 100%); 
+
+          
+          @media #{$phone} {
+
+            width: 100%;
+
+    
+          }
+
+
+        }
+
+        @media #{$phone} {
+
+          flex-basis: 40%;
+          margin-bottom: 5px;
+
+  
+        }
+
+      }
+
+
+       a:nth-child(3) {
+
+        button[type="button"] {
+          background: linear-gradient(45deg, #C22E65 50%, #E17E2C 100%); 
+
+          
+          @media #{$phone} {
+
+            width: 100%;
+
+    
+          }
+
+
+        }
+
+        
+        @media #{$phone} {
+
+          flex-basis: 40%;
+          margin-left: 5px;
+  
+        }
+
+
+       }
+
+       a:nth-child(4) {
+
+        button[type="button"] {
+
+          background: linear-gradient(45deg, #1AE280 50%, #32BEA4 100%); 
+
+          
+          @media #{$phone} {
+
+            width: 100%;
+    
+          }
+
+
+        }
+
+        @media #{$phone} {
+
+          flex-basis: 40%;
+  
+        }
+
+
+       }
+
+      a:not(:last-child) {
+        
+
+        button[type="button"] {
+
+          margin-left: 10px;
+
+          @media #{$phone} {
+
+            margin-left: 0;
+    
+          }
+  
+
+        }
+      }
+
+      }
+
+    }
+
+  }
+
+}

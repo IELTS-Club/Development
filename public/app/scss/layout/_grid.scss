@@ -1,0 +1,76 @@
+
+
+// to keep Layout Pretty
+
+.container {
+
+  padding: 30px 40px;
+
+                               
+  @include breakpoint-up(larg){
+    padding: 30px 80px;
+
+  }
+
+  &-x {
+    padding-right: 40px;
+    padding-right: 40px;
+  }
+
+  &-y {
+
+    padding-top: 30px;
+    padding-bottom: 60
+    px;
+
+  }
+
+}
+
+
+
+// Pre-define flex Classes
+
+.flex {
+
+  display: flex;
+
+  &-dir-c {
+    flex-direction: column;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-se {
+    justify-content: space-evenly;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+
+
+  
+}
+
+// to hide some parts in Desktop or Mobile
+
+.hide-for-desktop {
+  @include breakpoint-up(larg){
+    display: none;
+  }
+}
+
+.hide-for-phone {
+  @include breakpoint-down(medium){
+    display: none;
+  }
+}
+
+
