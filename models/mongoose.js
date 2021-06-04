@@ -102,7 +102,7 @@ const examsSchema=new mongoose.Schema({
     QuestionsList:[new mongoose.Schema({
         questionId:String,
         questionStructure:String,
-        questionChices:[{type:String,required:function(){
+        questionChoices:[{type:String,required:function(){
             if (this.questionStructure=="testi"){
                 return true;
             }
