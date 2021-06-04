@@ -578,9 +578,10 @@
                 </li>
 
               </ul>
+
               <div class="class-action">
 
-                <div class="btn-row">
+                <div class="manage-class">
 
                   <a href="/teachers/edit-class/<%= element._id %>">
                     <button type="submit" class="icdrn-btn">
@@ -588,23 +589,20 @@
                     </button>
                   </a>
 
-                  <a href="/teachers/delete-class/<%= element._id %>">
+                  <a href="/teachers/quiz-list/<%= element.id %>">
                     <button type="submit" class="icdrn-btn">
-                      حذف
+                      آزمون ها
                     </button>
                   </a>
 
                 </div>
 
-                <div class="btn-row">
+                <div class="access-class">
 
                   <a href="<%= element.classLink%>">
                     <button type="submit" class="icdrn-btn">
                       ورود به اتاق کلاس
                     </button>
-                  </a>
-                  <a href="<%= element.classLink%>">
-                    <button type="submit" class="icdrn-btn">مدیریت آزمون</button>
                   </a>
 
                 </div>
