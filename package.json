@@ -25,6 +25,7 @@
     "nodemailer": "^6.4.17",
     "nodemon": "^2.0.7",
     "password-validator": "^5.1.1",
+    "persian-datepicker": "^1.2.0",
     "sass": "^1.29.0",
     "winston": "^2.4.5"
   },

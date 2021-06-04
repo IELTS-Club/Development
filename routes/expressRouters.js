@@ -21,6 +21,7 @@ const placementTestList=require("../controllers/panel/techers/placementtest-list
 const studentsList=require("../controllers/panel/techers/students-list");
 const searched=require("../controllers/panel/techers/searchUsers");
 const editClass=require("../controllers/panel/techers/edit-class")
+const quizList=require("../controllers/panel/techers/quiz-list");
 const packages=require("./packages/packages");
 
 const blog=require("./blog/blog")
@@ -32,6 +33,7 @@ const quize=require("../controllers/quiz/Quiz");
 const error=require("./error/error");
 
 function expressRouters(app){
+    app.use("/",quizList)
     app.use("/",quize);
     app.use("/",getemail);
     app.use("/",error);
