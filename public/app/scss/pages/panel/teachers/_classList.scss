@@ -1008,7 +1008,92 @@ body {
 
             }
 
+            .class-action {
 
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              height: auto;
+
+              @media #{$phone} {
+
+                justify-content: center;
+                width: 80%;
+  
+              }
+
+
+              .manage-class {
+
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                width: 100%;
+                margin-bottom: 10px;
+
+                @media #{$phone} {
+
+                  flex-direction: column;
+  
+                }
+
+                a {
+
+                  width: 48%;
+                  display: block;
+
+                  @media #{$phone} {
+
+
+                    width: 100%;
+  
+                  }
+
+                 button {
+
+                  width: 100%;
+                  height: 30px;
+
+                 }
+
+                }
+
+                a:nth-child(1) {
+
+                  @media #{$phone} {
+
+                    margin-bottom: 10px;
+
+  
+                  }
+
+                }
+
+              }
+
+              .access-class {
+
+                width: 100%;
+
+                a {
+
+                  display: block;
+                  width: 100%;
+
+                  button {
+
+                  width: 100%;
+                  height: 30px;
+                  color: #fff;
+                  background-color: $secondaryColor;
+
+                  }
+
+                }
+
+              }
+
+            }
       
 
           }
