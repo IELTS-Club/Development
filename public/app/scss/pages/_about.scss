@@ -1,0 +1,593 @@
+.about {
+
+  width: 100%;
+  box-sizing: border-box;
+
+  @media #{$phone} {
+
+    padding: 10px 5px;
+  
+  }
+
+  .nourzad-grid {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+    
+
+
+    @media #{$phone} {
+
+      margin-top: 20px;
+      flex-direction: column;
+  
+    }
+
+    .nourzad-about-pic {
+
+      width: 50%;
+
+      @media #{$phone} {
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+      }
+
+      img {
+
+        width: 400px;
+
+        @media #{$phone} {
+
+          margin: 0 auto;
+          width: 300px;
+  
+        }
+
+      }
+
+    }
+
+    .nourzad-about-text {
+
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      @media #{$phone} {
+
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+  
+      }
+    
+
+      h2 {
+
+        font-size: 25px;
+        font-family: Kalameh-Black;
+        color: $secondaryColor;
+        margin-bottom: 15px;
+
+      }
+
+      p {
+
+        width: 500px;
+        font-family: Yekan-Bakh-Thin;
+        line-height: 25px;
+        color: rgb(133, 133, 133);
+        text-align: justify;
+
+        @media #{$phone} {
+
+          font-size: 15px;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 30px;
+  
+        }
+
+      }
+
+    }
+
+  }
+
+  .teachers-part {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    img {
+
+      width: 350px;
+
+    }
+
+    .haniye-grid {
+
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+
+      @media #{$phone} {
+
+        flex-direction: column;
+    
+      }
+
+      .haniye-pic {
+
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        order: 2;
+
+        @media #{$phone} {
+
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          order: 1;
+          margin-bottom: 20px;
+    
+        }
+
+        img {
+
+          @media #{$phone} {
+
+            width: 250px;
+    
+          }
+
+        }
+
+      }
+
+      .haniye-text {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+
+        @media #{$phone} {
+
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          order: 2;
+    
+        }
+        
+        h2 {
+
+          font-size: 25px;
+          font-family: Kalameh-Black;
+          color: $secondaryColor;
+          margin-bottom: 15px;
+  
+        }
+  
+        p {
+  
+          width: 300px;
+          font-family: Yekan-Bakh-Thin;
+          line-height: 25px;
+          color: rgb(133, 133, 133);
+          text-align: justify;
+
+          @media #{$phone} {
+
+            font-size: 15px;
+            box-sizing: border-box;
+            width: 100%;
+    
+          }
+  
+        }
+
+      }
+
+    }
+
+    .zahra-grid {
+
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+
+      @media #{$phone} {
+
+        flex-direction: column;
+    
+      }
+
+
+      .zahra-pic {
+
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        order: 1;
+
+        @media #{$phone} {
+
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          order: 1;
+          margin-bottom: 20px;
+    
+        }
+
+        img {
+
+          @media #{$phone} {
+
+            width: 250px;
+    
+          }
+
+        }
+
+      }
+
+      .zahra-text {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        order: 2;
+
+        @media #{$phone} {
+
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          order: 2;
+    
+        }
+        
+        h2 {
+
+          font-size: 25px;
+          font-family: Kalameh-Black;
+          color: $secondaryColor;
+          margin-bottom: 15px;
+  
+        }
+  
+        p {
+  
+          width: 300px;
+          font-family: Yekan-Bakh-Thin;
+          line-height: 25px;
+          color: rgb(133, 133, 133);
+          text-align: justify;
+
+          @media #{$phone} {
+
+            font-size: 15px;
+            box-sizing: border-box;
+            width: 100%;
+    
+          }
+  
+        }
+
+      }
+
+    }
+
+    .arezoo-grid {
+
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+
+      @media #{$phone} {
+
+        flex-direction: column;
+    
+      }
+
+
+      .arezoo-pic {
+
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        order: 2;
+
+        @media #{$phone} {
+
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          order: 1;
+          margin-bottom: 20px;
+    
+        }
+
+        img {
+
+          @media #{$phone} {
+
+            width: 250px;
+    
+          }
+
+        }
+
+
+      }
+
+      .arezoo-text {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+
+        
+        @media #{$phone} {
+
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          order: 2;
+    
+        }
+        
+        
+        h2 {
+
+          font-size: 25px;
+          font-family: Kalameh-Black;
+          color: $secondaryColor;
+          margin-bottom: 15px;
+  
+        }
+  
+        p {
+  
+          width: 300px;
+          font-family: Yekan-Bakh-Thin;
+          line-height: 25px;
+          color: rgb(133, 133, 133);
+          text-align: justify;
+
+          @media #{$phone} {
+
+            font-size: 15px;
+            box-sizing: border-box;
+            width: 100%;
+    
+          }
+  
+  
+        }
+
+      }
+
+    }
+
+    .mina-grid {
+
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+
+      @media #{$phone} {
+
+        flex-direction: column;
+    
+      }
+
+
+      .mina-pic {
+
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        order: 1;
+
+        @media #{$phone} {
+
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          order: 1;
+          margin-bottom: 20px;
+    
+        }
+
+        img {
+
+          @media #{$phone} {
+
+            width: 250px;
+    
+          }
+
+        }
+
+      }
+
+      .mina-text {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        order: 2;
+
+        
+        @media #{$phone} {
+
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          order: 2;
+    
+        }
+        
+        h2 {
+
+          font-size: 25px;
+          font-family: Kalameh-Black;
+          color: $secondaryColor;
+          margin-bottom: 15px;
+  
+        }
+  
+        p {
+  
+          width: 300px;
+          font-family: Yekan-Bakh-Thin;
+          line-height: 25px;
+          color: rgb(133, 133, 133);
+          text-align: justify;
+
+          @media #{$phone} {
+
+            font-size: 15px;
+            box-sizing: border-box;
+            width: 100%;
+    
+          }
+  
+  
+        }
+
+      }
+
+    }
+
+    .javad-grid {
+
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      @media #{$phone} {
+
+        flex-direction: column;
+    
+      }
+
+
+      .javad-pic {
+
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        order: 2;
+
+        @media #{$phone} {
+
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          order: 1;
+          margin-bottom: 20px;
+    
+        }
+
+        img {
+
+          @media #{$phone} {
+
+            width: 250px;
+    
+          }
+
+        }
+
+      }
+
+      .javad-text {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+
+        @media #{$phone} {
+
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          order: 2;
+    
+        }
+        
+        h2 {
+
+          font-size: 25px;
+          font-family: Kalameh-Black;
+          color: $secondaryColor;
+          margin-bottom: 15px;
+  
+        }
+  
+        p {
+  
+          width: 300px;
+          font-family: Yekan-Bakh-Thin;
+          line-height: 25px;
+          color: rgb(133, 133, 133);
+          text-align: justify;
+
+          @media #{$phone} {
+
+            font-size: 15px;
+            box-sizing: border-box;
+            width: 100%;
+    
+          }
+  
+  
+        }
+
+      }
+
+    }
+
+  }
+
+}

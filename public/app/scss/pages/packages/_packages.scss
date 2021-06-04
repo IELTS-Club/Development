@@ -1,0 +1,257 @@
+
+.online-package-class {
+
+  width: 100%;
+  margin-top: 60px;
+  box-sizing: border-box;
+
+  @media #{$phone} {
+
+    margin-top: 10px;
+  
+  }
+
+  .package-class-into-grid {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media #{$phone} {
+
+      flex-direction: column;
+  
+    }
+
+    .package-class-detail {
+
+      width: 40%;
+      margin-right: 50px;
+      display: flex;
+      flex-direction: column;
+
+      @media #{$phone} {
+
+        width: 100%;
+        margin-right: 0;
+        order: 2;
+  
+      }
+
+      h2 {
+
+        font-size: 30px;
+        font-family: Kalameh-black;
+        color: $secondaryColor;
+        margin-bottom: 30px;
+
+        @media #{$phone} {
+
+          font-size: 27px;
+          margin-bottom: 20px;
+  
+        }
+
+        span {
+
+          color: $primaryColor;
+
+        }
+
+      }
+
+      p {
+
+        font-family: Yekan-Bakh-Thin;
+        text-align: justify;
+        line-height: 26px;
+
+        @media #{$phone} {
+
+          font-size: 14px;
+  
+        }
+
+      }
+
+      .course-btn-box {
+
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+
+        @media #{$phone} {
+
+          justify-content: center;
+  
+        }
+
+        button {
+
+          font-family: Yekan-Bakh-Thin;
+          width: 130px;
+          height: 40px;
+          border: none;
+          border-radius: 10px;
+          background-color: $primaryColor;
+
+        }
+  
+      }
+
+    }
+
+
+
+
+    .package-class-pic {
+
+      width: 60%;
+      margin-left: 50px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      @media #{$phone} {
+
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+  
+      }
+
+      img {
+
+       width: 500px;
+
+       @media #{$phone} {
+
+        width: 250px;
+        margin-bottom: 30px;
+        order: 1;
+  
+      }
+
+      }
+
+    }
+
+  }
+
+  .course-chart {
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:50px;
+  
+  
+    @media #{$laptop} {
+  
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 80px;
+  
+    }
+  
+    .icdrn-title {
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:100% ;
+      margin-top: 20px;
+      text-align: center;
+      order: 2;
+
+      h2 {
+
+        @media #{$phone} {
+
+          width: 100%;
+          font-size: 26px;
+  
+        }
+
+      }
+  
+      p {
+  
+        width:300px;
+        line-height: 30px;
+        padding-top: 15px;
+        text-align: center;
+  
+      }
+  
+    button {
+  
+      text-align: center;
+      margin-top: 20px;
+  
+  
+    }
+
+    h3 {
+
+      font-family: Kalameh-Black;
+      font-size: 25px;
+      margin-top: 15px;
+      padding: 10px;
+      color: $secondaryColor;
+      background-color:#E5F0F1;
+
+    }
+  
+      @media #{$laptop} {
+  
+        margin-right: 50px;
+    
+      }
+  
+    }
+  
+    .course-chart-img {
+  
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order: 1;
+    
+      @media #{$laptop} {
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;   
+        order: 1;
+    
+      }
+    
+    
+      img {
+        
+        width:250px ;
+        margin-top: 40px;
+    
+        @media #{$laptop} {
+    
+          width: 500px;
+      
+        }
+    
+      }
+    
+    }
+    
+  
+  }
+  
+ 
+}
+
+

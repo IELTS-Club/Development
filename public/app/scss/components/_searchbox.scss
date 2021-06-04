@@ -1,0 +1,146 @@
+
+
+.searchbox {
+
+  display: flex;
+  width: 330px; 
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #FFF;
+  box-shadow: 10px 7px 20px #f8f8f8;
+
+  @include breakpoint-up(larg){
+    width: 430px;
+  }
+
+  .search-dropdown {
+
+    position: relative;
+    width: 110px;
+    border-left: 2px solid rgba(159, 163, 177, 0.2);
+    color: #9fa3b1;
+    cursor: pointer;
+
+    .default-option {
+
+      position: relative;
+      padding: 13px 13px;
+
+      .fa-chevron-down {
+
+        position: absolute;
+        top: 50%;
+        right: 50px;
+        transform: translateY(-50%);
+
+        @include breakpoint-up(larg){
+
+          right: 70px;
+
+        }
+      
+
+      }
+
+    }
+    
+    ul {
+
+      display: none;
+      position:absolute;
+      top: 70px;
+      right: -10px;
+      width: 120px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 8px 6px -10px #b3c6ff;
+      transition: all ease-in-out .2s;
+
+      li {
+
+        padding-bottom: 20px;
+
+      }
+
+      li:last-child {
+        padding-bottom: 0;
+      }
+
+      li:hover {
+        color: #818181;
+
+      }
+
+    }
+
+    ul.active {
+
+      display: block;
+
+    }
+
+  }
+
+/*
+  .search-dropdown::before{
+    content: "";
+    position:absolute ;
+    top: 50%;
+    right: 50px;
+    border: 8px solid;
+    border-color: #848484 transparent transparent transparent;
+    border-radius: 1px;
+  }
+  */
+
+  .search-input-box {
+
+    position: relative;
+    width: 330px;
+    height: 100%;
+
+    .search-input {
+
+      font-size: 16px;
+      width: 90%;
+      height: 100%;
+      padding-right: 15px;
+      border: 0;
+
+    }
+
+    input[type="text"] {
+
+      font-family: Yekan-Bakh-Light;
+
+    }
+
+    .search-btn {
+
+      position: absolute;
+      font-family: Yekan-Bakh-Medium;
+      font-size: 14px;
+      top: 50%;
+      right: 160px;
+      width: 80px;
+      height: 30px;
+      padding: 5px;
+      border: none;
+      border-radius: 10px;
+      background-color: $richyPrimaryColor;
+      color:$richySecondaryColor;
+      cursor: pointer;
+      transform: translateY(-50%);
+
+      @include breakpoint-up(larg){
+        right: 225px;
+      }
+    
+
+    }
+
+  }
+
+}
