@@ -37,12 +37,56 @@ document.querySelector('#glvQS').addEventListener('change', (e)=> {
         document.querySelector('.filling-structure').style.display = "none";
         document.querySelector('.multiple-structure').style.display = "block";
 
-    } else if (e.target.value == "questionStructureFilling") {
+    } else if (e.target.value == "glvQuestionStructureFilling") {
 
         document.querySelector('.multiple-structure').style.display = "none";
         document.querySelector('.filling-structure').style.display = "block";
 
     }
+
+    e.preventDefault();
+
+})
+
+document.querySelector('#rQS').addEventListener('change', (e)=> {
+
+    if(e.target.value == "rQuestionStructureReadingBody") {
+
+        document.querySelector('.writing-box-structure').style.display = "none";
+        document.querySelector('.multiple-structure').style.display = "none";
+        document.querySelector('.filling-structure').style.display = "none";
+        document.querySelector('.reading-box-structure').style.display = "block";
+
+    } else if (e.target.value == "rQuestionStructureMultiple") {
+
+        document.querySelector('.writing-box-structure').style.display = "none";
+        document.querySelector('.reading-box-structure').style.display = "none";
+        document.querySelector('.filling-structure').style.display = "none";
+        document.querySelector('.multiple-structure').style.display = "block";
+
+    } else if (e.target.value == "rQuestionStructureFilling") {
+        
+        document.querySelector('.writing-box-structure').style.display = "none";
+        document.querySelector('.reading-box-structure').style.display = "none";
+        document.querySelector('.multiple-structure').style.display = "none";
+        document.querySelector('.filling-structure').style.display = "block";
+
+    }
+
+    e.preventDefault();
+
+})
+
+document.querySelector('#wQS').addEventListener('change', (e)=> {
+
+    if(e.target.value == "wQuestionStructureWritingBody") {
+
+        document.querySelector('.reading-box-structure').style.display = "none";
+        document.querySelector('.multiple-structure').style.display = "none";
+        document.querySelector('.filling-structure').style.display = "none";
+        document.querySelector('.writing-box-structure').style.display = "block";
+
+    } ;
 
     e.preventDefault();
 
