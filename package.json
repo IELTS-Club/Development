@@ -10,6 +10,7 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "bower": "^1.8.12",
     "config": "^3.3.3",
     "connect-flash": "^0.1.1",
     "connect-mongodb-session": "^2.4.1",
@@ -25,7 +26,6 @@
     "nodemailer": "^6.4.17",
     "nodemon": "^2.0.7",
     "password-validator": "^5.1.1",
-    "persian-datepicker": "^1.2.0",
     "sass": "^1.29.0",
     "winston": "^2.4.5"
   },
