@@ -2,7 +2,7 @@ const mongoose=require("mongoose");
 const config=require("config");
 const winston=require("winston");
 const jwt=require("jsonwebtoken");
-const bcrypt=require("bcrypt");
+
 mongoose.connect(config.get("DBname"),{ useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false  })
 .then(()=>{if (process.env.NODE_ENV=="development")winston.info("connected to icdrn database")})
 .catch( (err)=>winston.error(err));
@@ -92,12 +92,15 @@ const studentSchema=new mongoose.Schema({
 const Student=mongoose.model("Student",studentSchema);
 module.exports.Student = Student;
 
+//Exam
 const examsSchema=new mongoose.Schema({
     Class:{type:mongoose.Schema.Types.ObjectId,ref:Class},
     Title:{type:String},
     Type:{type:String},
     StartDate:{type:String},
+    StartHour:{type:String},
     StopDate:{type:String},
+    StopHour:{type:String},
     QuestionsNumber:{type:Number},
     QuestionsList:[new mongoose.Schema({
         questionId:String,
@@ -122,7 +125,7 @@ const examsSchema=new mongoose.Schema({
         })],
     
     Answers:[{
-        studentId:{type:mongoose.mongoose.Schema.Types.ObjectId,ref:User},
+        studentId:{type:mongoose.Schema.Types.ObjectId,ref:User},
         answersList:[new mongoose.Schema({
             questionId:String,
             answerKey:String

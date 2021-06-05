@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>پنل اساتید | آزمون ها </title>
   
-  <link rel="stylesheet" href="../../date-picker-assets/css/pwt-datepicker.css">
-  <script type="text/javascript" src="http://babakhani.github.io/PersianWebToolkit/doc/lib/persian-date/dist/persian-date.js" ></script>
-  <script type="text/javascript" src="../../date-picker-assets/js/pwt-datepicker-iife.js" ></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
 
@@ -15,6 +12,8 @@
   <link rel="manifest" href="../../images/Favicon/manifest.json">
   <link rel="stylesheet" href="../../dist/css/main.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link type="text/css" rel="stylesheet" href="../../jalaliDatepicker.min.css" />
+  <script type="text/javascript" src="../../jalaliDatepicker.min.js"></script>
 
   <style>
 
@@ -697,21 +696,21 @@
           </h3>
 
 
-        <div class="modal-form">
-
-          <input type="text" class="icdrn-input" placeholder="عنوان آزمون (مثال: میان ترم آیلتس)">
+        <div class="modal-form" id="modal-form">
+        
+          <input type="text" class="icdrn-input" placeholder="عنوان آزمون (مثال: elementry)">
  
           <div class="input-row">
             
-          <input type="text" class="icdrn-input" id="container" placeholder="تاریخ شروع (۷ خرداد)">
-          <input type="number" class="icdrn-input" placeholder="ساعت شروع (۱۵:۰۰)">
+          <input type="text" data-jdp  class="icdrn-input"  placeholder="تاریخ شروع (۷ خرداد)">
+          <input type="time" class="icdrn-input" placeholder="ساعت شروع (۱۵:۰۰)">
 
           </div>
 
           <div class="input-row">
             
-            <input type="text" class="icdrn-input" id="container" placeholder="تاریخ پایان (۸ خرداد)">
-            <input type="number" class="icdrn-input" placeholder="ساعت پایان (۱۷:۰۰)">
+            <input type="text" data-jdp class="icdrn-input"  placeholder="تاریخ پایان (۸ خرداد)">
+            <input type="time" class="icdrn-input" placeholder="ساعت پایان (۱۷:۰۰)">
   
             </div>
   
@@ -719,18 +718,18 @@
           <div class="input-row">
             
             <input type="text" class="icdrn-input" placeholder="نوع آزمون ( میان ترم )">
-            <input type="text" class="icdrn-input" placeholder="تعداد سوالات ( ۶۰ سوال )">
+            <input type="number" class="icdrn-input" placeholder="تعداد سوالات ( ۶۰ سوال )">
   
             </div>
   
 
-          <button type="button" class="icdrn-btn">
+          <button type="button" class="icdrn-btn" >
           اضافه کردن آزمون
           </button>
 
-
+        
         </div>
-
+        
        </div>
 
        <div class="modal-img">
@@ -778,17 +777,35 @@
       </script>
 
       <script>
-
+       jalaliDatepicker.startWatch({});
       document.querySelector('#addQuizBtn').addEventListener('click', () => {
       
       document.querySelector('.container-teacher-panel-quiz-list').style.filter = "blur(7px)";
       document.querySelector('#newQuizModal').style.display = "flex";
 
-
+      
     });
 
       </script>
+<!--script for sending data -->
 
+      <script>
+        const modalform=document.getElementById("modal-form");
+        
+        modalform.getElementsByTagName("button")[0].addEventListener("click",()=>{
+        
+          const examTitle=modalform.getElementsByTagName("input")[0].value;
+          const examStartDate=modalform.getElementsByTagName("input")[1].value;
+          const examStartHour=modalform.getElementsByTagName("input")[2].value;
+          const examStoptDate=modalform.getElementsByTagName("input")[3].value;
+          const examStoptHour=modalform.getElementsByTagName("input")[4].value;
+          const examType=modalform.getElementsByTagName("input")[5].value;
+          const QuestionsNumber=modalform.getElementsByTagName("input")[6].value;
+
+          console.log(examStartHour);
+        })
+        
+      </script>
 
 </body>
 </html>

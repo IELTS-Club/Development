@@ -9,5 +9,8 @@ panel.get("/teachers/quiz-list/:id",[isLogedIn,isConfirmed,isTeacher],async(req,
         userName:req.user.name
     })
 })
+panel.post("/teachers/quiz-list/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+    
+})
 
 module.exports=panel;

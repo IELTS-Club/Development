@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایجاد آزمون</title>
+    <link rel="stylesheet" href="../../public/dist/css/main.min.css">
+
+    <!-- <style>
+
+        ::-webkit-scrollbar {
+
+            width: 20px;
+
+        }
+
+        ::-webkit-scrollbar-track {
+
+            box-shadow: inset 0 0 5px rgba(46, 46, 46, 0.11); 
+            border-radius: 20px;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+
+            background:   linear-gradient(145deg, rgba(37,140,147,1) 0%, rgba(70,174,181,1) 100%);
+            border-radius: 20px;
+
+        }
+
+    </style> -->
+
+</head>
+<body>
+    
+    <div class="conatiner teacher-quiz-page">
+
+        <nav class="teacher-quiz-nav m-quiz-container">
+
+            <div class="teacher-quiz-nav-logo" >
+
+                <img src="../../public/images/ICDRN-Navbar-Logo.png" alt="">
+               
+                <h3>
+                    آزمون هوشمند
+                </h3>
+
+            </div>
+
+            <div class="teacher-quiz-nav-avatar">
+
+                <img src="../../public/images/Quiz-Avatar.svg" alt="">
+
+                <h3>
+
+                    <span>
+                        دانش آموز
+                    </span>
+
+                    میلاد محمدی
+
+                </h3>
+
+            </div>
+
+        </nav>
+
+        <main class="teacher-quiz-body  m-quiz-container">
+
+            <section class="teacher-quiz-questions  m-quiz-container">
+            
+                <article class="category-question-box">
+
+                    <div class="question-setting-row">
+
+
+                        <input type="text" class="question-id-input" placeholder="Question ID">
+
+
+                        <div class="question-type-box">
+          
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Type</option>
+                                <option value="Public">Grammer</option>
+                                <option value="Public">Vocabulary</option>
+                                <option value="Public">Listening</option>
+                                <option value="Public">Reading</option>
+                                <option value="Public">Writing</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+    
+                        <div class="question-structure-box">
+              
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Sturucture</option>
+                                <option value="Public">Mutiple Choice</option>
+                                <option value="Public">Filling</option>
+                                <option value="Public">Essay</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="generate-question-btn">
+                            Generate 
+                        </button>
+
+                    </div>
+
+                    <div class="question-form-row">
+
+                        <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+
+                        <button type="button" class="generate-options-btn">
+                            Finalize
+                        </button>
+
+                    </div>
+
+                </article> 
+
+               <article class="multiple-question-box"> 
+
+                    <div class="question-setting-row">
+
+
+                        <input type="text" class="question-id-input" placeholder="Question ID">
+
+
+                        <div class="question-type-box">
+          
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Type</option>
+                                <option value="Public">Grammer</option>
+                                <option value="Public">Vocabulary</option>
+                                <option value="Public">Listening</option>
+                                <option value="Public">Reading</option>
+                                <option value="Public">Writing</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+    
+                        <div class="question-structure-box">
+              
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Sturucture</option>
+                                <option value="Public">Mutiple Choice</option>
+                                <option value="Public">Filling</option>
+                                <option value="Public">Essay</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="generate-question-btn">
+                            Generate 
+                        </button>
+
+                    </div>
+
+                    <div class="question-form-row">
+
+                        <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+
+                        <button type="button" class="generate-options-btn">
+                            Add Option
+                        </button>
+
+                    </div>
+
+                    <div class="question-options-row">
+
+                        <input type="text" class="question-option-input" placeholder="option A">
+                        <input type="text" class="question-option-input" placeholder="option B">
+                        <input type="text" class="question-option-input" placeholder="option ">
+                        <input type="text" class="question-option-input" placeholder="option ">
+
+                        <div class="right-option-box">
+              
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Key </option>
+                                <option value="Public">A</option>
+                                <option value="Public">B</option>
+                                <option value="Public">C</option>
+                                <option value="Public">D</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+
+                        <button type="button" class="generate-options-btn">
+                            Finalize
+                        </button>
+
+                    </div>
+
+                </article>
+         
+                 <article class="filling-question-box">
+
+                    <div class="question-setting-row">
+
+
+                        <input type="text" class="question-id-input" placeholder="Question ID">
+
+
+                        <div class="question-type-box">
+          
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Type</option>
+                                <option value="Public">Grammer</option>
+                                <option value="Public">Vocabulary</option>
+                                <option value="Public">Listening</option>
+                                <option value="Public">Reading</option>
+                                <option value="Public">Writing</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+    
+                        <div class="question-structure-box">
+              
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Sturucture</option>
+                                <option value="Public">Mutiple Choice</option>
+                                <option value="Public">Filling</option>
+                                <option value="Public">Essay</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="generate-question-btn">
+                            Generate 
+                        </button>
+
+                    </div>
+
+                    <div class="question-form-row">
+
+                        <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+
+                        <button type="button" class="generate-options-btn">
+                            Finalize
+                        </button>
+
+                    </div>
+
+                </article> 
+
+                <article class="reading-body-box">
+
+                    <div class="question-setting-row">
+
+
+                        <input type="text" class="question-id-input" placeholder="Question ID">
+
+
+                        <div class="question-type-box">
+          
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Type</option>
+                                <option value="Public">Grammer</option>
+                                <option value="Public">Vocabulary</option>
+                                <option value="Public">Listening</option>
+                                <option value="Public">Reading</option>
+                                <option value="Public">Writing</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+    
+                        <div class="question-structure-box">
+              
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Sturucture</option>
+                                <option value="Public">Reading Body</option>
+                                <option value="Public">Mutiple Choice</option>
+                                <option value="Public">Filling</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="generate-question-btn">
+                            Generate 
+                        </button>
+
+                    </div>
+
+                    <div class="question-form-row">
+
+                        <textarea name="" class="question-body" id="readingInput" cols="30" rows="10">Start Typing Reading Body!</textarea>
+
+                        <button type="button" class="generate-options-btn">
+                           Finalize
+                        </button>
+
+                    </div>
+
+
+
+                </article> 
+
+                <article class="writing-body-box">
+
+                    <div class="question-setting-row">
+
+
+                        <input type="text" class="question-id-input" placeholder="Question ID">
+
+
+                        <div class="question-type-box">
+          
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Type</option>
+                                <option value="Public">Grammer</option>
+                                <option value="Public">Vocabulary</option>
+                                <option value="Public">Listening</option>
+                                <option value="Public">Reading</option>
+                                <option value="Public">Writing</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+    
+                        <div class="question-structure-box">
+              
+                            <div class="select">
+                              <select id="standard-select" name="classType">
+                                <option value="Private" disabled selected>Quesstion Sturucture</option>
+                                <option value="Public">Writing Body</option>
+                                <option value="Public">Essay</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="generate-question-btn">
+                            Generate 
+                        </button>
+
+                    </div>
+
+                    <div class="question-form-row">
+
+                        <textarea name="" id="" class="question-body" cols="30" rows="10">Start Typing Writing Body!</textarea>
+
+                        <button type="button" class="generate-options-btn">
+                            Finalize
+                        </button>
+
+                    </div>
+
+
+
+                </article>  
+
+                <!-- <article class="writing-body-box"  style="white-space: pre-line" id="readingPlaceHolder">
+                </article>   -->
+
+            </section>
+
+            <aside class="teacher-quiz-sidebar  m-quiz-container">
+
+                <div class="teacher-quiz-sidebar-cover">
+                   
+                    <img src="../../public/images/Quiz-pic.svg" alt="">
+
+                </div>
+
+                
+                <h3 class="teacher-quiz-sidebar-title">
+                    آزمون میان ترم آیلتس | IELTS
+                </h3>
+
+                <div class="teacher-quiz-sidebar-info">
+
+                    <div class="teacher-quiz-sidebar-info-teacher">
+
+                   
+                        <img src="../../public/images/Quiz_Teacher-Icon.svg" alt="">
+                        
+                        <h3>
+                            <span>
+                                مدرس دوره
+                            </span>
+                            دکتر پژمان نورزاد
+                        </h3>
+    
+                    </div>
+
+                    <div class="teacher-quiz-sidebar-info-questions">
+
+                        <img src="../../public/images/Quiz_Questions-Icon.svg" alt="">
+                        
+                        <h3>
+                            <span>
+                               تعداد سوالات
+                            </span>
+                            ۶۵ سوال
+                        </h3>  
+
+                    </div>
+
+                </div>
+           
+                <div class="teacher-quiz-sidebar-time">
+
+                    <span>
+                        زمان باقی مانده: ۳۳:۰۲
+
+                    </span>
+
+                </div>
+
+                <button type="button" class="record-quiz-btn">
+
+                    نهایی سازی آزمون
+
+                </button>
+
+
+            </aside>
+
+        </main>
+
+    </div>
+    
+    <script type="text/javascript">
+
+        document.querySelector('#readingInput').addEventListener('change', (e)=> {
+
+            document.querySelector('#readingPlaceHolder').innerHTML = e.target.value;
+
+            e.preventDefault();
+
+        })
+
+    </script>
+
+</body>
+</html>
