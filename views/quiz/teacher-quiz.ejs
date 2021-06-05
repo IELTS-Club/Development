@@ -55,10 +55,10 @@
                 <h3>
 
                     <span>
-                        دانش آموز
+                        استاد 
                     </span>
 
-                    میلاد محمدی
+                    <%= selectClassTeacher() %>
 
                 </h3>
 
@@ -69,7 +69,7 @@
         <main class="teacher-quiz-body  m-quiz-container">
 
             <section class="teacher-quiz-questions  m-quiz-container">
-            
+            <% for(let i=0;i<=QuestionsNumber;i++){ %> 
                 <article class="section-box category-question-box">
 
                     <div class="question-setting-row">
@@ -253,7 +253,7 @@
                     </div>
 
                 </article> 
-
+            <% } %> 
 
                 <!-- <article class="writing-body-box"  style="white-space: pre-line" id="readingPlaceHolder">
                 </article>   -->
@@ -270,7 +270,7 @@
 
                 
                 <h3 class="teacher-quiz-sidebar-title">
-                    آزمون میان ترم آیلتس | IELTS
+                   <%= Title %>
                 </h3>
 
                 <div class="teacher-quiz-sidebar-info">
@@ -284,7 +284,34 @@
                             <span>
                                 مدرس دوره
                             </span>
-                            دکتر پژمان نورزاد
+                            <% function selectClassTeacher(){
+                                if(Teacher=="Noorzad")
+                                return  "دکتر پژمان نورزاد";
+                              
+                              if(Teacher=="Bahrami")
+                                return "خانم هانیه بهرامی"
+                              
+                              if(Teacher=="Mohebiii")
+                                return "خانم عاطفه محبی"
+                              
+                              if(Teacher=="Nouri")
+                                return "خانم مینا نوری"
+                              
+                              if(Teacher=="Zolfaghari")
+                                return "خانم آرزو ‌‌ذولفقاری"
+                              
+                              if(Teacher=="Jadidi")
+                              return "اقای جواد جدیدی"
+                              if(Teacher=="Asi")
+                              return "خانم نیکتا عاصی‌ شاد"
+                  
+                              if(Teacher=="Fallah")
+                              return "اقای مهرشاد فلاح"
+                  
+                              if(Teacher=="Hadavi")
+                              return "خانم مریم هادوی"
+                              } %> 
+                            <%= selectClassTeacher();  %>
                         </h3>
     
                     </div>
@@ -297,7 +324,7 @@
                             <span>
                                تعداد سوالات
                             </span>
-                            ۶۵ سوال
+                            <%= QuestionsNumber %> سوال
                         </h3>  
 
                     </div>
