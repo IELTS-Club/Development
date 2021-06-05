@@ -793,17 +793,27 @@
         const modalform=document.getElementById("modal-form");
         
         modalform.getElementsByTagName("button")[0].addEventListener("click",()=>{
-        
-          const examTitle=modalform.getElementsByTagName("input")[0].value;
-          const examStartDate=modalform.getElementsByTagName("input")[1].value;
-          const examStartHour=modalform.getElementsByTagName("input")[2].value;
-          const examStoptDate=modalform.getElementsByTagName("input")[3].value;
-          const examStoptHour=modalform.getElementsByTagName("input")[4].value;
-          const examType=modalform.getElementsByTagName("input")[5].value;
-          const QuestionsNumber=modalform.getElementsByTagName("input")[6].value;
-
-          console.log(examStartHour);
+          const quizInfo={
+           examTitle:modalform.getElementsByTagName("input")[0].value,
+           examStartDate:modalform.getElementsByTagName("input")[1].value,
+           examStartHour:modalform.getElementsByTagName("input")[2].value,
+           examStoptDate:modalform.getElementsByTagName("input")[3].value,
+           examStoptHour:modalform.getElementsByTagName("input")[4].value,
+           examType:modalform.getElementsByTagName("input")[5].value,
+           QuestionsNumber:modalform.getElementsByTagName("input")[6].value,
+           
+          }
+          const options={
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(quizInfo)
+      }
+       fetch("/teachers/quiz-list/<%= classId%>",options);
+       window.open("/hello")
         })
+
         
       </script>
 
