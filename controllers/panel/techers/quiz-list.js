@@ -28,7 +28,7 @@ panel.post("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],asyn
     
 });
 
-panel.get("/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+panel.get("/teacher/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
     
     res.render("quiz/teacher-quiz.ejs",{
         
