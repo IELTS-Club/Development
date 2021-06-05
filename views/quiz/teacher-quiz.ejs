@@ -67,11 +67,11 @@
             </div>
 
         </nav>
-
+        
         <main class="teacher-quiz-body  m-quiz-container">
 
             <section class="teacher-quiz-questions  m-quiz-container">
-            <% for(let i=0;i<=QuestionsNumber;i++){ %> 
+            <% for(let i=1;i<=QuestionsNumber;i++){ %> 
                 <article class="section-box category-question-box">
 
                     <div class="question-setting-row">
@@ -83,7 +83,7 @@
                         <div class="question-type-box">
           
                             <div class="select">
-                              <select class="standard-select" name="questionType" id="QT">
+                              <select class="standard-select" name="questionType" id="QT<%= `${i}` %>">
                                 <option value="questionTypeLabel" disabled selected>Quesstion Type</option>
                                 <option value="questionTypeGrammer">Grammer</option>
                                 <option value="questionTypeVocabulary">Vocabulary</option>
@@ -98,7 +98,7 @@
                         <div class="q-structure">
 
                             
-                        <div class="question-structure-box" id="defaultStructure">
+                        <div class="question-structure-box" id="defaultStructure<%= `${i}` %>">
               
                             <div class="select">
                               <select class="standard-select" name="questionStructure" id="QS">
@@ -108,10 +108,10 @@
                             </div>
                         </div>
 
-                        <div class="question-structure-box" id="GvlStructure" style="display: none;">
+                        <div class="question-structure-box" id="GvlStructure<%= `${i}` %>" style="display: none;">
               
                             <div class="select">
-                              <select class="standard-select" name="questionStructure" id="glvQS">
+                              <select class="standard-select" name="questionStructure" id="glvQS<%= `${i}` %>">
                                 <option value="glvQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
                                 <option value="glvQuestionStructureMultiple">Multiple Choice</option>
                                 <option value="glvQuestionStructureFilling">Filling</option>
@@ -120,10 +120,10 @@
                             </div>
                         </div>
 
-                        <div class="question-structure-box" id="readingStructure" style="display: none;">
+                        <div class="question-structure-box" id="readingStructure<%= `${i}` %>" style="display: none;">
               
                             <div class="select">
-                              <select class="standard-select" name="questionStructure" id="rQS">
+                              <select class="standard-select" name="questionStructure" id="rQS<%= `${i}` %>">
                                 <option value="rQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
                                 <option value="rQuestionStructureReadingBody">Reading Body</option>
                                 <option value="rQuestionStructureMultiple">Multiple Choice</option>
@@ -133,10 +133,10 @@
                             </div>
                         </div>
 
-                        <div class="question-structure-box" id="writingStructure" style="display: none;">
+                        <div class="question-structure-box" id="writingStructure<%= `${i}` %>" style="display: none;">
               
                             <div class="select">
-                              <select class="standard-select" name="questionStructure" id="wQS">
+                              <select class="standard-select" name="questionStructure" id="wQS<%= `${i}` %>">
                                 <option value="wQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
                                 <option value="wQuestionStructureWritingBody">Writing Body</option>
                               </select>
@@ -152,21 +152,7 @@
 
                     </div>
 
-                    <div class="category-structure">
-
-                        <div class="category-form-row">
-
-                            <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
-
-                            <button type="button" class="generate-options-btn">
-                                Finalize
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <div class="multiple-structure">
+                    <div class="multiple-structure" id="multiple-structure<%= `${i}` %>">
 
                         <div class="question-form-row">
 
@@ -208,7 +194,7 @@
 
                     </div>
 
-                    <div class="filling-structure">
+                    <div class="filling-structure" id="filling-structure<%= `${i}` %>">
 
                         <div class="question-form-row">
 
@@ -222,7 +208,7 @@
 
                     </div>
 
-                    <div class="reading-box-structure">
+                    <div class="reading-box-structure" id="reading-box-structure<%= `${i}` %>">
 
                         <div class="question-form-row">
 
@@ -238,7 +224,7 @@
 
                     </div>
 
-                    <div class="writing-box-structure">
+                    <div class="writing-box-structure" id="writing-box-structure<%= `${i}` %>">
 
                         <div class="question-form-row">
 
@@ -353,7 +339,10 @@
         </main>
 
     </div>
-    
+    <script>
+        let QuestionsNumber=Number("<%= QuestionsNumber %>")
+        
+    </script>
     <script src="../app/js/structureIdentifier.js"></script>
 </body>
 </html>
