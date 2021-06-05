@@ -8,6 +8,6 @@ panel.get("/teachers/quiz-list/:id",[isLogedIn,isConfirmed,isTeacher],async(req,
     res.render("panel/teachers/quiz-list",{
         userName:req.user.name
     })
-})
+})git 
 
 module.exports=panel;
