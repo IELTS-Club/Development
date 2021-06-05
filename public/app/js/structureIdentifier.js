@@ -56,6 +56,7 @@ document.querySelector('#rQS').addEventListener('change', (e)=> {
         document.querySelector('.multiple-structure').style.display = "none";
         document.querySelector('.filling-structure').style.display = "none";
         document.querySelector('.reading-box-structure').style.display = "block";
+        console.log("dd")
 
     } else if (e.target.value == "rQuestionStructureMultiple") {
 
