@@ -70,7 +70,7 @@
 
             <section class="teacher-quiz-questions  m-quiz-container">
             
-                <article class="category-question-box">
+                <article class="section-box category-question-box">
 
                     <div class="question-setting-row">
 
@@ -81,29 +81,68 @@
                         <div class="question-type-box">
           
                             <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Type</option>
-                                <option value="Public">Grammer</option>
-                                <option value="Public">Vocabulary</option>
-                                <option value="Public">Listening</option>
-                                <option value="Public">Reading</option>
-                                <option value="Public">Writing</option>
+                              <select class="standard-select" name="questionType" id="QT">
+                                <option value="questionTypeLabel" disabled selected>Quesstion Type</option>
+                                <option value="questionTypeGrammer">Grammer</option>
+                                <option value="questionTypeVocabulary">Vocabulary</option>
+                                <option value="questionTypeListening">Listening</option>
+                                <option value="questionTypeReading">Reading</option>
+                                <option value="questionTypeWriting">Writing</option>
                               </select>
                               <span class="icon"></span>
                             </div>
                         </div>
     
-                        <div class="question-structure-box">
+                        <div class="q-structure">
+
+                            
+                        <div class="question-structure-box" id="defaultStructure">
               
                             <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Sturucture</option>
-                                <option value="Public">Mutiple Choice</option>
-                                <option value="Public">Filling</option>
-                                <option value="Public">Essay</option>
+                              <select class="standard-select" name="questionStructure" id="QS">
+                                <option value="questionStructureLabel" disabled selected>Quesstion Sturucture</option>
                               </select>
                               <span class="icon"></span>
                             </div>
+                        </div>
+
+                        <div class="question-structure-box" id="GvlStructure" style="display: none;">
+              
+                            <div class="select">
+                              <select class="standard-select" name="questionStructure" id="glvQS">
+                                <option value="glvQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
+                                <option value="glvQuestionStructureMultiple">Multiple Choice</option>
+                                <option value="glvQuestionStructureFilling">Filling</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <div class="question-structure-box" id="readingStructure" style="display: none;">
+              
+                            <div class="select">
+                              <select class="standard-select" name="questionStructure" id="QS">
+                                <option value="rQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
+                                <option value="rQuestionStructureMultiple">Reading Body</option>
+                                <option value="rQuestionStructureMultiple">Multiple Choice</option>
+                                <option value="rQuestionStructureFilling">Filling</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <div class="question-structure-box" id="writingStructure" style="display: none;">
+              
+                            <div class="select">
+                              <select class="standard-select" name="questionStructure" id="QS">
+                                <option value="wQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
+                                <option value="wQuestionStructureMultiple">Writing Body</option>
+                                <option value="wQuestionStructureFilling">Essay</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
                         </div>
 
                         <button type="button" class="generate-question-btn">
@@ -112,264 +151,109 @@
 
                     </div>
 
-                    <div class="question-form-row">
+                    <div class="category-structure">
 
-                        <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+                        <div class="category-form-row">
 
-                        <button type="button" class="generate-options-btn">
-                            Finalize
-                        </button>
+                            <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+
+                            <button type="button" class="generate-options-btn">
+                                Finalize
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="multiple-structure">
+
+                        <div class="question-form-row">
+
+                            <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+    
+                            <button type="button" class="generate-options-btn">
+                                Add Option
+                            </button>
+    
+                        </div>
+    
+                        <div class="question-options-row">
+    
+                            <input type="text" class="question-option-input" placeholder="option A">
+                            <input type="text" class="question-option-input" placeholder="option B">
+                            <input type="text" class="question-option-input" placeholder="option ">
+                            <input type="text" class="question-option-input" placeholder="option ">
+    
+                            <div class="right-option-box">
+                  
+                                <div class="select">
+                                  <select id="standard-select" name="classType">
+                                    <option value="Private" disabled selected>Key </option>
+                                    <option value="Public">A</option>
+                                    <option value="Public">B</option>
+                                    <option value="Public">C</option>
+                                    <option value="Public">D</option>
+                                  </select>
+                                  <span class="icon"></span>
+                                </div>
+                            </div>
+    
+    
+                            <button type="button" class="generate-options-btn">
+                                Finalize
+                            </button>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="filling-structure">
+
+                        <div class="question-form-row">
+
+                            <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+    
+                            <button type="button" class="generate-options-btn">
+                                Finalize
+                            </button>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="reading-box-structure">
+
+                        <div class="question-form-row">
+
+                            <textarea name="" class="question-body" id="readingInput" cols="30" rows="10">Start Typing Reading Body!</textarea>
+    
+                            <button type="button" class="generate-options-btn">
+                               Finalize
+                            </button>
+    
+                        </div>
+    
+    
+
+                    </div>
+
+                    <div class="writing-box-structure">
+
+                        <div class="question-form-row">
+
+                            <textarea name="" id="" class="question-body" cols="30" rows="10">Start Typing Writing Body!</textarea>
+    
+                            <button type="button" class="generate-options-btn">
+                                Finalize
+                            </button>
+    
+                        </div>
+    
 
                     </div>
 
                 </article> 
 
-               <article class="multiple-question-box"> 
-
-                    <div class="question-setting-row">
-
-
-                        <input type="text" class="question-id-input" placeholder="Question ID">
-
-
-                        <div class="question-type-box">
-          
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Type</option>
-                                <option value="Public">Grammer</option>
-                                <option value="Public">Vocabulary</option>
-                                <option value="Public">Listening</option>
-                                <option value="Public">Reading</option>
-                                <option value="Public">Writing</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-    
-                        <div class="question-structure-box">
-              
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Sturucture</option>
-                                <option value="Public">Mutiple Choice</option>
-                                <option value="Public">Filling</option>
-                                <option value="Public">Essay</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-
-                        <button type="button" class="generate-question-btn">
-                            Generate 
-                        </button>
-
-                    </div>
-
-                    <div class="question-form-row">
-
-                        <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
-
-                        <button type="button" class="generate-options-btn">
-                            Add Option
-                        </button>
-
-                    </div>
-
-                    <div class="question-options-row">
-
-                        <input type="text" class="question-option-input" placeholder="option A">
-                        <input type="text" class="question-option-input" placeholder="option B">
-                        <input type="text" class="question-option-input" placeholder="option ">
-                        <input type="text" class="question-option-input" placeholder="option ">
-
-                        <div class="right-option-box">
-              
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Key </option>
-                                <option value="Public">A</option>
-                                <option value="Public">B</option>
-                                <option value="Public">C</option>
-                                <option value="Public">D</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-
-
-                        <button type="button" class="generate-options-btn">
-                            Finalize
-                        </button>
-
-                    </div>
-
-                </article>
-         
-                 <article class="filling-question-box">
-
-                    <div class="question-setting-row">
-
-
-                        <input type="text" class="question-id-input" placeholder="Question ID">
-
-
-                        <div class="question-type-box">
-          
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Type</option>
-                                <option value="Public">Grammer</option>
-                                <option value="Public">Vocabulary</option>
-                                <option value="Public">Listening</option>
-                                <option value="Public">Reading</option>
-                                <option value="Public">Writing</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-    
-                        <div class="question-structure-box">
-              
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Sturucture</option>
-                                <option value="Public">Mutiple Choice</option>
-                                <option value="Public">Filling</option>
-                                <option value="Public">Essay</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-
-                        <button type="button" class="generate-question-btn">
-                            Generate 
-                        </button>
-
-                    </div>
-
-                    <div class="question-form-row">
-
-                        <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
-
-                        <button type="button" class="generate-options-btn">
-                            Finalize
-                        </button>
-
-                    </div>
-
-                </article> 
-
-                <article class="reading-body-box">
-
-                    <div class="question-setting-row">
-
-
-                        <input type="text" class="question-id-input" placeholder="Question ID">
-
-
-                        <div class="question-type-box">
-          
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Type</option>
-                                <option value="Public">Grammer</option>
-                                <option value="Public">Vocabulary</option>
-                                <option value="Public">Listening</option>
-                                <option value="Public">Reading</option>
-                                <option value="Public">Writing</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-    
-                        <div class="question-structure-box">
-              
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Sturucture</option>
-                                <option value="Public">Reading Body</option>
-                                <option value="Public">Mutiple Choice</option>
-                                <option value="Public">Filling</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-
-                        <button type="button" class="generate-question-btn">
-                            Generate 
-                        </button>
-
-                    </div>
-
-                    <div class="question-form-row">
-
-                        <textarea name="" class="question-body" id="readingInput" cols="30" rows="10">Start Typing Reading Body!</textarea>
-
-                        <button type="button" class="generate-options-btn">
-                           Finalize
-                        </button>
-
-                    </div>
-
-
-
-                </article> 
-
-                <article class="writing-body-box">
-
-                    <div class="question-setting-row">
-
-
-                        <input type="text" class="question-id-input" placeholder="Question ID">
-
-
-                        <div class="question-type-box">
-          
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Type</option>
-                                <option value="Public">Grammer</option>
-                                <option value="Public">Vocabulary</option>
-                                <option value="Public">Listening</option>
-                                <option value="Public">Reading</option>
-                                <option value="Public">Writing</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-    
-                        <div class="question-structure-box">
-              
-                            <div class="select">
-                              <select id="standard-select" name="classType">
-                                <option value="Private" disabled selected>Quesstion Sturucture</option>
-                                <option value="Public">Writing Body</option>
-                                <option value="Public">Essay</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
-
-                        <button type="button" class="generate-question-btn">
-                            Generate 
-                        </button>
-
-                    </div>
-
-                    <div class="question-form-row">
-
-                        <textarea name="" id="" class="question-body" cols="30" rows="10">Start Typing Writing Body!</textarea>
-
-                        <button type="button" class="generate-options-btn">
-                            Finalize
-                        </button>
-
-                    </div>
-
-
-
-                </article>  
 
                 <!-- <article class="writing-body-box"  style="white-space: pre-line" id="readingPlaceHolder">
                 </article>   -->
@@ -442,17 +326,6 @@
 
     </div>
     
-    <script type="text/javascript">
-
-        document.querySelector('#readingInput').addEventListener('change', (e)=> {
-
-            document.querySelector('#readingPlaceHolder').innerHTML = e.target.value;
-
-            e.preventDefault();
-
-        })
-
-    </script>
-
+    <script src="../../public/app/js/structureIdentifier.js"></script>
 </body>
 </html>
