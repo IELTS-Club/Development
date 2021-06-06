@@ -9,7 +9,7 @@
     <link rel="manifest" href="../../images/Favicon/manifest.json">
     <link rel="stylesheet" href="../dist/css/main.min.css">
 
-    <!-- <style>
+    <style>
 
         ::-webkit-scrollbar {
 
@@ -31,7 +31,7 @@
 
         }
 
-    </style> -->
+    </style>
 
 </head>
 <body>
@@ -158,18 +158,18 @@
 
                             <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
     
-                            <button type="button" class="generate-options-btn">
+                            <button type="button" class="generate-options-btn" id="addOption<%= `${i}` %>">
                                 Add Option
                             </button>
     
                         </div>
     
-                        <div class="question-options-row">
+                        <div class="question-options-row" id="creatInput<%= `${i}` %>">
     
-                            <input type="text" class="question-option-input" placeholder="option A">
+                            <!-- <input type="text" class="question-option-input" placeholder="option A">
                             <input type="text" class="question-option-input" placeholder="option B">
-                            <input type="text" class="question-option-input" placeholder="option ">
-                          <input type="text" class="question-option-input" placeholder="option "> 
+                            <input type="text" class="question-option-input" placeholder="option C">
+                            <input type="text" class="question-option-input" placeholder="option D">  -->
     
                             <div class="right-option-box">
                   
@@ -311,7 +311,7 @@
                             <span>
                                تعداد سوالات
                             </span>
-                            <%= QuestionsNumber %> سوال
+                            <span id="questionAmount"><%= QuestionsNumber %></span> <span>سوال</span>
                         </h3>  
 
                     </div>

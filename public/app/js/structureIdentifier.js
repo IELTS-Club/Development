@@ -105,7 +105,6 @@ for (let i = 1; i <= QuestionsNumber; i++) {
     //delete button 
     document.querySelector(`#del${i}`).addEventListener("click", (e) => {
         QuestionsNumber--;
-        console.log("hello")
         const mainSection = document.getElementById("mainSection");
         mainSection.removeChild(document.querySelector(`#article${i}`));
         e.preventDefault();
@@ -124,6 +123,15 @@ for (let i = 1; i <= QuestionsNumber; i++) {
         document.querySelector(`#multiple-structure${i}`).style.display = "none";
         document.querySelector(`#filling-structure${i}`).style.display = "none";
         document.querySelector(`#writing-box-structure${i}`).style.display = "none";
+
+        const addInput=document.querySelector(`#creatInput${i}`);
+        const inputs =addInput.getElementsByTagName("input");
+        let numberOFINputs=inputs.length
+        console.log(inputs);
+        for(let j=1;j<=numberOFINputs;j++){
+            console.log("hh")
+            addInput.removeChild(inputs[0]);
+        }
     })
     document.querySelector(`#resetFilling${i}`).addEventListener("click", (e) => {
         document.querySelector(`#defaultStructure${i}`).style.display = "block";
@@ -159,6 +167,17 @@ for (let i = 1; i <= QuestionsNumber; i++) {
         document.querySelector(`#writing-box-structure${i}`).style.display = "none";
     })
 
+    //add option for multiple
+    document.querySelector(`#addOption${i}`).addEventListener("click",(e) =>{ 
+        const addInput=document.querySelector(`#creatInput${i}`);
+        const input=document.createElement("input");
+        input.setAttribute("type","text");
+        input.setAttribute("class","question-option-input");
+        input.setAttribute("placeholder","Option ...")
+        addInput.prepend(input);
+
+        console.log(addInput);
+    })
 
 
 }

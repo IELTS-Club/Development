@@ -58,7 +58,7 @@ const userSchema=new mongoose.Schema({
 });
 userSchema.methods.genrateToken=function(){
     let token=jwt.sign({_id:this._id,isTeacher:this.isTeacher,email:this.email,name:this.name,phone:this.phone},config.get("private-key"),{
-        expiresIn:"1h"
+        expiresIn:"2h"
     });
     return token;
 }
