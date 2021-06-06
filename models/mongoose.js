@@ -58,7 +58,7 @@ const userSchema=new mongoose.Schema({
 });
 userSchema.methods.genrateToken=function(){
     let token=jwt.sign({_id:this._id,isTeacher:this.isTeacher,email:this.email,name:this.name,phone:this.phone},config.get("private-key"),{
-        expiresIn:"2h"
+        expiresIn:"4h"
     });
     return token;
 }
@@ -104,9 +104,11 @@ const examsSchema=new mongoose.Schema({
     QuestionsNumber:{type:Number},
     QuestionsList:[new mongoose.Schema({
         questionId:String,
+        questionType:String,
+        questionBody:String,
         questionStructure:String,
         questionChoices:[{type:String,required:function(){
-            if (this.questionStructure=="testi"){
+            if (this.questionStructure=="Multiple-Choice"){
                 return true;
             }
             else{
@@ -114,14 +116,14 @@ const examsSchema=new mongoose.Schema({
             }
         }}],
         trueAnswer:{type:Number,required:function(){
-            if (this.questionStructure=="testi"){
+            if (this.questionStructure=="Multiple-Choice"){
                 return true;
             }
             else{
                 return false
             }
         }},
-        questionType:String,
+        
         })],
     
     Answers:[{

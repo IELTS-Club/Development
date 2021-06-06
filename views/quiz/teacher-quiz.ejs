@@ -156,7 +156,7 @@
 
                         <div class="question-form-row">
 
-                            <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+                            <input type="text" class="question-body" id="multipleBodyInput<%= `${i}` %>" placeholder="Enter Your Question Form Here...">
     
                             <button type="button" class="generate-options-btn" id="addOption<%= `${i}` %>">
                                 Add Option
@@ -198,7 +198,7 @@
 
                         <div class="question-form-row">
 
-                            <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
+                            <input type="text" class="question-body" id="fillingBodyInput<%= `${i}` %>" placeholder="Enter Your Question Form Here...">
     
                             <button type="button" class="generate-options-btn" id="resetFilling<%= `${i}` %>">
                                 Reset
@@ -212,7 +212,7 @@
 
                         <div class="question-form-row">
 
-                            <textarea name="" class="question-body" id="readingInput" cols="30" rows="10">Start Typing Reading Body!</textarea>
+                            <textarea name="" class="question-body" id="readingInput<%= `${i}` %>" cols="30" rows="10">Start Typing Reading Body!</textarea>
     
                             <button type="button" class="generate-options-btn" id="resetReading<%= `${i}` %>">
                                Reset
@@ -228,7 +228,7 @@
 
                         <div class="question-form-row">
 
-                            <textarea name="" id="" class="question-body" cols="30" rows="10">Start Typing Writing Body!</textarea>
+                            <textarea name="" id="writtingBodyInput<%= `${i}` %>" class="question-body" cols="30" rows="10">Start Typing Writing Body!</textarea>
     
                             <button type="button" class="generate-options-btn" id="resetWriting<%= `${i}` %>">
                                 Reset
@@ -323,15 +323,15 @@
            
                 <div class="teacher-quiz-sidebar-time">
 
-                    <button type="button" id="addArticle">
+                    <button type="button" onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')" >
                         
-                        اضافه کردن سوال + 
+                        بازگشت به صفحه لیست آزمون‌ها
 
                     </button>
 
                 </div>
 
-                <button type="button" class="record-quiz-btn">
+                <button type="button" class="record-quiz-btn" id="Finalize">
 
                     نهایی سازی آزمون
 
@@ -341,6 +341,44 @@
             </aside>
 
         </main>
+
+
+       
+       
+       
+       
+       <!-- moadl  -->
+       
+        <section class="icdrn-modal" id="nullQuestion">
+            <div class="icdrn-modal-content">
+        
+              <span class="modal-close" id="modalClose">
+                &times;
+              </span>
+        
+              <img src="../images/auth-err-pic.svg" class="modal-img" alt="">
+        
+        
+        
+              <h3 id="errorText" >
+              </h3>
+        
+              <p>
+        
+                please make sure you have
+                <br>
+                filled all the questions
+        
+              </p>
+        
+              <button type="submit" class="icdrn-btn" id="checkAgain">
+        
+                check again
+        
+              </button>
+        
+            </div>
+          </section>
 
     </div>
     <script>

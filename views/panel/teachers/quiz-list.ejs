@@ -795,6 +795,9 @@
         const modalform=document.getElementById("modal-form");
         
         modalform.getElementsByTagName("button")[0].addEventListener("click",()=>{
+          if(modalform.getElementsByTagName("input")[6].value > 100){
+            modalform.getElementsByTagName("input")[6].value=100
+          }
           const quizInfo={
            examTitle:modalform.getElementsByTagName("input")[0].value,
            examStartDate:modalform.getElementsByTagName("input")[1].value,

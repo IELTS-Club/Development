@@ -1,5 +1,5 @@
 
-let QuestionsNumbers=QuestionsNumber
+//let QuestionsNumbers=QuestionsNumber
 for (let i = 1; i <= QuestionsNumber; i++) {
 
 
@@ -64,7 +64,7 @@ for (let i = 1; i <= QuestionsNumber; i++) {
             document.querySelector(`#multiple-structure${i}`).style.display = "none";
             document.querySelector(`#filling-structure${i}`).style.display = "none";
             document.querySelector(`#reading-box-structure${i}`).style.display = "block";
-            console.log("dd")
+            
 
         } else if (e.target.value == "rQuestionStructureMultiple") {
 
@@ -130,9 +130,9 @@ for (let i = 1; i <= QuestionsNumber; i++) {
         const addInput=document.querySelector(`#creatInput${i}`);
         const inputs =addInput.getElementsByTagName("input");
         let numberOFINputs=inputs.length
-        console.log(inputs);
+        
         for(let j=1;j<=numberOFINputs;j++){
-            console.log("hh")
+           
             addInput.removeChild(inputs[0]);
         }
         const selectTag=addInput.getElementsByTagName("select")[0];
@@ -141,7 +141,7 @@ for (let i = 1; i <= QuestionsNumber; i++) {
         for(let e=2;e<=numberOfOptions;e++){
             selectTag.removeChild(options[1]);
         }
-        console.log(selectTag)
+        
         e.preventDefault();
     })
     //reset Filling
@@ -192,7 +192,7 @@ for (let i = 1; i <= QuestionsNumber; i++) {
         input.setAttribute("placeholder","Option ...")
         addInput.prepend(input);
         e.preventDefault();
-        console.log(addInput);
+        
     })
     //select key for multiple choises
     const selectParent=document.querySelector(`#creatInput${i}`);
@@ -201,10 +201,14 @@ for (let i = 1; i <= QuestionsNumber; i++) {
         const inputs=inputsPlace.getElementsByTagName("input");
         const selectPlace=selectParent.getElementsByTagName("select")[0];
         const allOptions=selectPlace.getElementsByTagName("option");
+        let a=1
+        if(inputs.length==4){
+            a=2
+        }
             if(allOptions.length>1){
-                console.log("hi")
-                for(let e=1;e<=(allOptions.length)+2;e++){
-                    console.log("eee")
+               
+                for(let e=1;e<=(allOptions.length)+a;e++){
+                   
                     selectPlace.removeChild(allOptions[1]);
                }
             }
@@ -216,7 +220,7 @@ for (let i = 1; i <= QuestionsNumber; i++) {
             option.appendChild(text);
             const selectTag=selectParent.getElementsByTagName("select")[0];
             selectTag.appendChild(option);
-        }console.log(Allselect);
+        }
         
         e.preventDefault();
     })
@@ -227,7 +231,7 @@ for (let i = 1; i <= QuestionsNumber; i++) {
 //     const selection=document.querySelector("#mainSection");
 //     const article=document.querySelector("#article1");
 //     let nextArticle=article
-//     console.log(article);
+//     
 //     nextArticle.id=`article${QuestionsNumbers+1}`;
 //     //changing question setting id
 //         nextArticle.getElementsByTagName("input")[0].value=`QN-${QuestionsNumbers+1}`;
@@ -255,3 +259,173 @@ for (let i = 1; i <= QuestionsNumber; i++) {
 //     selection.appendChild(nextArticle)
 //     e.preventDefault();
 // })
+
+//query selector for closing the modal
+document.querySelector("#checkAgain").addEventListener("click",(e)=>{
+    document.querySelector("#nullQuestion").style.display="none"
+    e.preventDefault();
+})
+
+document.querySelector("#modalClose").addEventListener("click",(e)=>{
+    document.querySelector("#nullQuestion").style.display="none"
+    e.preventDefault();
+})
+
+//fetch
+document.querySelector("#Finalize").addEventListener("click",(e)=>{
+    const allQuestions={data:[]};
+
+
+    const allArticles=document.querySelector("#mainSection").getElementsByTagName("article");
+
+    for(let i=0;i<allArticles.length;i++){
+
+        let question={
+            questionId:"",
+            questionType:"",
+            questionStructure:"",
+            questionBody:"",
+            questionChoices:[],
+            trueAnswer:""
+        }
+        //question  id
+        question.questionId=allArticles[i].getElementsByTagName("input")[0].value;
+        let SelectQuestionNumber=question.questionId.split("-");
+        SelectQuestionNumber=Number(SelectQuestionNumber[1]);
+
+        //question type
+        question.questionType=allArticles[i].querySelector(`#QT${SelectQuestionNumber}`).value;
+        if(question.questionType=="questionTypeLabel"){
+            document.querySelector("#errorText").innerHTML=`please fill question (${question.questionId})`
+            return document.querySelector("#nullQuestion").style.display="block"
+        }
+        
+        //question structure
+
+        if(question.questionType=="questionTypeGrammer" || question.questionType=="questionTypeVocabulary" ||question.questionType=="questionTypeListening"){
+            question.questionStructure=allArticles[i].querySelector(`#glvQS${SelectQuestionNumber}`).value;
+            //validation
+            if(question.questionStructure=="glvQuestionStructureLabel"){
+                document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+
+         }
+        else if(question.questionType=="questionTypeReading"){
+            question.questionStructure=allArticles[i].querySelector(`#rQS${SelectQuestionNumber}`).value;
+            //validation
+            if(question.questionStructure=="rQuestionStructureLabel"){
+                document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+
+        }
+        else{
+            question.questionStructure=allArticles[i].querySelector(`#wQS${SelectQuestionNumber}`).value;
+            //validation
+            if(question.questionStructure=="wQuestionStructureLabel"){
+                document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+        }
+        
+
+        //question body
+        if(question.questionStructure=="glvQuestionStructureMultiple" || question.questionStructure=="rQuestionStructureMultiple"){
+            question.questionBody=allArticles[i].querySelector(`#multipleBodyInput${SelectQuestionNumber}`).value;
+            //validation
+            if(question.questionBody==""){
+                document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+
+        }
+
+        if(question.questionStructure=="glvQuestionStructureFilling" || question.questionStructure=="rQuestionStructureFilling"){
+            question.questionBody=allArticles[i].querySelector(`#fillingBodyInput${SelectQuestionNumber}`).value;
+            //validation
+            if(question.questionBody==""){
+                document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+
+        }
+
+        if(question.questionStructure=="rQuestionStructureReadingBody" ){
+            question.questionBody=allArticles[i].querySelector(`#readingInput${SelectQuestionNumber}`).value;
+            //validation
+            if(question.questionBody=="Start Typing Reading Body!"){
+                document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+
+        }
+
+        if(question.questionStructure=="wQuestionStructureWritingBody" ){
+            question.questionBody=allArticles[i].querySelector(`#writtingBodyInput${SelectQuestionNumber}`).value;
+            //validation
+            if(question.questionBody=="Start Typing Writing Body!"){
+                document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+
+        }
+
+        //questionChoices for multiple choices
+        if(question.questionStructure=="glvQuestionStructureMultiple" || question.questionStructure=="rQuestionStructureMultiple"){
+            let inputs=allArticles[i].querySelector(`#creatInput${SelectQuestionNumber}`).getElementsByTagName("input");
+            //validation
+            
+            if(inputs.length<1){
+                document.querySelector("#errorText").innerHTML=`please make some options in question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+            for(let p=0;p<inputs.length;p++){
+                if(inputs[p].value==''){
+                    document.querySelector("#errorText").innerHTML=`please make sure you have filled all options in question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+                }
+                question.questionChoices.push(inputs[p].value);
+            }
+
+        }
+
+        //true answer
+
+        if(question.questionStructure=="glvQuestionStructureMultiple" || question.questionStructure=="rQuestionStructureMultiple"){
+            let selectTag=allArticles[i].querySelector(`#creatInput${SelectQuestionNumber}`).getElementsByTagName("select")[0];
+            let options=selectTag.getElementsByTagName("option");
+            //validation
+            
+            if(options.length<=1){
+                document.querySelector("#errorText").innerHTML=`please fill some options in question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+            if(selectTag.value=="Private"){
+                document.querySelector("#errorText").innerHTML=`please select a true answer for question (${question.questionId})`
+                return document.querySelector("#nullQuestion").style.display="block"
+            }
+            question.trueAnswer=selectTag.value;
+
+        }
+
+        allQuestions.data.push(question);
+        console.log(allQuestions)
+
+        e.preventDefault();
+    }
+
+
+    //out of for
+    //fetch
+    const fetchOptions={
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(allQuestions)
+      }
+       fetch("/teachers/create-exam",fetchOptions);
+      
+        
+})

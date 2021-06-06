@@ -35,11 +35,16 @@ panel.get("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,re
     const examClass=await Class.findOne({id:req.session.classID});
     
     
+    
     res.render("quiz/teacher-quiz.ejs",{
         Title:req.session.Title,
         Type:req.session.Type,
         QuestionsNumber:req.session.QuestionsNumber,
-        Teacher:examClass.classTeacher
+        Teacher:examClass.classTeacher,
+        classId:examClass.id
     });
+})
+panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+    
 })
 module.exports=panel;
