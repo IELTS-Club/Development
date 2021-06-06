@@ -70,9 +70,9 @@
         
         <main class="teacher-quiz-body  m-quiz-container">
 
-            <section class="teacher-quiz-questions  m-quiz-container">
+            <section class="teacher-quiz-questions  m-quiz-container" id="mainSection">
             <% for(let i=1;i<=QuestionsNumber;i++){ %> 
-                <article class="section-box category-question-box">
+                <article class="section-box category-question-box" id="article<%= `${i}` %>">
 
                     <div class="question-setting-row">
 
@@ -146,8 +146,8 @@
 
                         </div>
 
-                        <button type="button" class="generate-question-btn">
-                            Generate 
+                        <button type="button" class="generate-question-btn" id="del<%= `${i}` %>">
+                            Delete Box 
                         </button>
 
                     </div>
@@ -186,8 +186,8 @@
                             </div>
     
     
-                            <button type="button" class="generate-options-btn">
-                                Finalize
+                            <button type="button" class="generate-options-btn" id="resetMultiple<%= `${i}` %>">
+                                Reset
                             </button>
     
                         </div>
@@ -200,8 +200,8 @@
 
                             <input type="text" class="question-body" placeholder="Enter Your Question Form Here...">
     
-                            <button type="button" class="generate-options-btn">
-                                Finalize
+                            <button type="button" class="generate-options-btn" id="resetFilling<%= `${i}` %>">
+                                Reset
                             </button>
     
                         </div>
@@ -214,8 +214,8 @@
 
                             <textarea name="" class="question-body" id="readingInput" cols="30" rows="10">Start Typing Reading Body!</textarea>
     
-                            <button type="button" class="generate-options-btn">
-                               Finalize
+                            <button type="button" class="generate-options-btn" id="resetReading<%= `${i}` %>">
+                               Reset
                             </button>
     
                         </div>
@@ -230,8 +230,8 @@
 
                             <textarea name="" id="" class="question-body" cols="30" rows="10">Start Typing Writing Body!</textarea>
     
-                            <button type="button" class="generate-options-btn">
-                                Finalize
+                            <button type="button" class="generate-options-btn" id="resetWriting<%= `${i}` %>">
+                                Reset
                             </button>
     
                         </div>

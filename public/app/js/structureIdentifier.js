@@ -1,5 +1,7 @@
 for(let i=1;i<=QuestionsNumber;i++){
     
+
+    //choose correct options for select
     document.querySelector(`#QT${i}`).addEventListener('change', (e)=> {
 
         if(e.target.value == "questionTypeGrammer" || e.target.value == "questionTypeVocabulary" || e.target.value == "questionTypeListening"  ) {
@@ -31,7 +33,7 @@ for(let i=1;i<=QuestionsNumber;i++){
     
     })
 
-
+    //sellect structure for grammer listening vocabulary
     document.querySelector(`#glvQS${i}`).addEventListener('change', (e)=> {
 
         if(e.target.value == "glvQuestionStructureMultiple") {
@@ -51,7 +53,7 @@ for(let i=1;i<=QuestionsNumber;i++){
     })
 
 
-
+    //select struvture for reading
     document.querySelector(`#rQS${i}`).addEventListener('change', (e)=> {
 
         if(e.target.value == "rQuestionStructureReadingBody") {
@@ -82,6 +84,8 @@ for(let i=1;i<=QuestionsNumber;i++){
     
     })
     
+
+    //select structure for writing
     document.querySelector(`#wQS${i}`).addEventListener('change', (e)=> {
     
         if(e.target.value == "wQuestionStructureWritingBody") {
@@ -96,6 +100,21 @@ for(let i=1;i<=QuestionsNumber;i++){
         e.preventDefault();
     
     })
+
+
+    //delete button 
+    document.querySelector(`#del${i}`).addEventListener("click",(e)=>{
+        QuestionsNumber--;
+        console.log("hello")
+        const mainSection =document.getElementById("mainSection");
+        mainSection.removeChild(document.querySelector(`#article${i}`));
+        e.preventDefault();
+    })
+
+    //reset button for multiple coices
+    document.querySelector(`#del${i}`).addEventListener("click",(e)=>{
+        
+    }
     
 }
 
