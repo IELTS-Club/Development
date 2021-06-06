@@ -273,7 +273,8 @@ document.querySelector("#modalClose").addEventListener("click",(e)=>{
 
 //fetch
 document.querySelector("#Finalize").addEventListener("click",(e)=>{
-    const allQuestions={data:[]};
+    const allQuestions={data:[],
+    questionAmount:QuestionsNumber};
 
 
     const allArticles=document.querySelector("#mainSection").getElementsByTagName("article");

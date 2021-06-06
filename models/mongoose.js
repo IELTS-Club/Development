@@ -102,7 +102,9 @@ const examsSchema=new mongoose.Schema({
     StopDate:{type:String},
     StopHour:{type:String},
     QuestionsNumber:{type:Number},
-    QuestionsList:[new mongoose.Schema({
+
+
+    QuestionsList:{
         questionId:String,
         questionType:String,
         questionBody:String,
@@ -112,7 +114,7 @@ const examsSchema=new mongoose.Schema({
                 return true;
             }
             else{
-                return false
+                return false;
             }
         }}],
         trueAnswer:{type:Number,required:function(){
@@ -124,8 +126,9 @@ const examsSchema=new mongoose.Schema({
             }
         }},
         
-        })],
+        },
     
+
     Answers:[{
         studentId:{type:mongoose.Schema.Types.ObjectId,ref:User},
         answersList:[new mongoose.Schema({
