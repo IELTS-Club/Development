@@ -112,11 +112,12 @@ for(let i=1;i<=QuestionsNumber;i++){
     })
 
     //reset button for multiple coices
-    document.querySelector(`#del${i}`).addEventListener("click",(e)=>{
+    // document.querySelector(`#del${i}`).addEventListener("click",(e)=>{
         
-    }
+    // }
     
 }
+
 
 
 
