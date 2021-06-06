@@ -112,11 +112,13 @@ for (let i = 1; i <= QuestionsNumber; i++) {
     })
 
     //reset button for multiple coices
+
     document.querySelector(`#resetMultiple${i}`).addEventListener("click", (e) => {
         document.querySelector(`#defaultStructure${i}`).style.display = "block";
         document.querySelector(`#writingStructure${i}`).style.display = "none";
         document.querySelector(`#readingStructure${i}`).style.display = "none";
         document.querySelector(`#GvlStructure${i}`).style.display = "none";
+
 
         document.querySelector(`#reading-box-structure${i}`).style.display = "none";
         document.querySelector(`#multiple-structure${i}`).style.display = "none";
@@ -156,6 +158,7 @@ for (let i = 1; i <= QuestionsNumber; i++) {
         document.querySelector(`#filling-structure${i}`).style.display = "none";
         document.querySelector(`#writing-box-structure${i}`).style.display = "none";
     })
+
 
 
 }
