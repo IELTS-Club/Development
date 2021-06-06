@@ -94,7 +94,7 @@ module.exports.Student = Student;
 
 //Exam
 const examsSchema=new mongoose.Schema({
-    Class:{type:mongoose.Schema.Types.ObjectId,ref:Class},
+    ClassID:{type:mongoose.Schema.Types.ObjectId,ref:Class},
     Title:{type:String},
     Type:{type:String},
     StartDate:{type:String},
@@ -104,7 +104,7 @@ const examsSchema=new mongoose.Schema({
     QuestionsNumber:{type:Number},
 
 
-    QuestionsList:{
+    QuestionsList:[{
         questionId:String,
         questionType:String,
         questionBody:String,
@@ -117,7 +117,7 @@ const examsSchema=new mongoose.Schema({
                 return false;
             }
         }}],
-        trueAnswer:{type:Number,required:function(){
+        trueAnswer:{type:String,required:function(){
             if (this.questionStructure=="Multiple-Choice"){
                 return true;
             }
@@ -126,7 +126,7 @@ const examsSchema=new mongoose.Schema({
             }
         }},
         
-        },
+        }],
     
 
     Answers:[{

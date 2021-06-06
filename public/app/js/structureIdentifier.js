@@ -427,6 +427,6 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         body:JSON.stringify(allQuestions)
       }
        fetch("/teachers/create-exam",fetchOptions);
-      
+      document.querySelector("#successfull").style.display="block"
         
 })

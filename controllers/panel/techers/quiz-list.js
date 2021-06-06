@@ -7,11 +7,22 @@ const { Class } = require("../../../models/mongoose");
 const { Exam }=require("../../../models/mongoose")
 
 panel.get("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
-    res.render("panel/teachers/quiz-list",{
+    const exams=await Exam.find({ClassID:req.params.classId});
+    console.log(exams)
+    if(exams.length<1){
+        console.log("hi")
+        return res.render("panel/teachers/no-quiz",{
+        userName:req.user.name,
+        classId:req.params.classId
+        })
+    }else{
+        res.render("panel/teachers/quiz-list",{
+        exams:exams,
         userName:req.user.name,
         classId:req.params.classId
     })
-
+}
+    
 })
 
 panel.post("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
@@ -48,12 +59,13 @@ panel.get("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,re
 panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
     console.log(req.body);
     const examData=req.body.data;
+    console.log(examData[0])
     // examData.forEach(element => {
         
     // });
     
     const exam= new Exam({
-        Class:req.session.classID,
+        ClassID:req.session.classId,
         Title:req.session.Title,
         Type:req.session.Type,
         StartDate:req.session.StartDate,
@@ -61,7 +73,7 @@ panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,r
         StopDate:req.session.StopDate,
         StopHour:req.session.StopHour,
         QuestionsNumber:req.body.questionAmount,
-        QuestionsList:new examData[0]
+        QuestionsList:examData
     })
    
     await exam.save();
