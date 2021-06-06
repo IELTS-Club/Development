@@ -22190,6 +22190,14 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .container-teacher-panel-quiz-list .main .quiz-list-grid .quiz-card {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+
 .container-teacher-panel-quiz-list .main .quiz-list-grid .quiz-card-thumbnail {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24277,6 +24285,10 @@ body {
 .teacher-quiz-page main .teacher-quiz-sidebar-info-questions h3 span {
   font-family: Yekan-Bakh-Thin;
   font-size: 13px;
+}
+
+.teacher-quiz-page main .teacher-quiz-sidebar-info-questions h3 div span {
+  font-family: Yekan-Bakh-Medium;
 }
 
 .teacher-quiz-page main .teacher-quiz-sidebar-title {

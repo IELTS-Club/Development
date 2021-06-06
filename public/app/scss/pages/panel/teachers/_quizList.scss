@@ -746,6 +746,15 @@
             box-sizing: border-box;
             transition: .2s all ease-in-out;
             cursor: pointer;
+           
+            
+            @media #{$phone} {
+
+              width: 100%;
+              margin-left: 0;
+              margin-bottom: 20px;
+  
+            }
             
     
 
