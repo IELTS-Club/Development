@@ -1127,21 +1127,30 @@
 
             &-time {
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                vertical-align: middle;
-                font-family: Yekan-Bakh-Medium;
+
                 width: 100%;
                 height: 65px;
-                // border: 2px dashed rgba(70, 170, 177, 0.582) ;
-                outline: none;
-                border-radius: 10px;
-                margin-top: 15px; 
-                color: rgb(37,140,147);
-                background-color: #f8f8fc;
-                cursor: pointer; 
+                
+                button {
+
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    vertical-align: middle;
+                    font-family: Yekan-Bakh-Medium;
+                    outline: none;
+                    border: 0;
+                    border-radius: 10px;
+                    margin-top: 15px; 
+                    color: rgb(37,140,147);
+                    background-color: #f8f8fc;
+                    cursor: pointer; 
+
+
+                }
 
             }
 
