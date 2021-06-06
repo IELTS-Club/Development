@@ -61,7 +61,7 @@ panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,r
         StopDate:req.session.StopDate,
         StopHour:req.session.StopHour,
         QuestionsNumber:req.body.questionAmount,
-        QuestionsList:examData
+        QuestionsList:new examData[0]
     })
    
     await exam.save();
