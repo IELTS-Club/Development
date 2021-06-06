@@ -718,7 +718,7 @@
           <div class="input-row">
             
             <input type="text" class="icdrn-input" placeholder="نوع آزمون ( میان ترم )">
-            <input type="number" class="icdrn-input" placeholder="تعداد سوالات ( ۶۰ سوال )">
+            <input type="number" class="icdrn-input" min="1" max="150" placeholder="تعداد سوالات ( ۶۰ سوال )">
   
             </div>
   
@@ -811,7 +811,7 @@
         body:JSON.stringify(quizInfo)
       }
        fetch("/teachers/quiz-list/<%= classId%>",options);
-       window.open("/teacher/create-exam")
+       window.open("/teachers/create-exam")
         })
 
         

@@ -23,15 +23,23 @@ panel.post("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],asyn
     req.session.StopDate=body.examStoptDate;
     req.session.StopHour=body.examStoptHour;
     req.session.QuestionsNumber=body.QuestionsNumber;
-    req.seesion.classId=req.params.classId;
+    req.session.classId=req.params.classId;
     res.send("done")
     
 });
 
-panel.get("/teacher/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+panel.get("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+    if (!req.session.Title || !req.session.Type  || !req.session.StartDate || !req.session.StartHour || !req.session.StopDate || !req.session.StopHour || !req.session.QuestionsNumber || !req.session.classId){
+        res.redirect("/teachers/class-list");
+    }
+    const examClass=await Class.findOne({id:req.session.classID});
+    
     
     res.render("quiz/teacher-quiz.ejs",{
-        
-    })
+        Title:req.session.Title,
+        Type:req.session.Type,
+        QuestionsNumber:req.session.QuestionsNumber,
+        Teacher:examClass.classTeacher
+    });
 })
 module.exports=panel;
