@@ -439,7 +439,20 @@
           </div>
 
         <div class="quiz-list-grid">
-
+          <% exams.forEach(element => {
+            let totalMinuts;
+            if(element.StartDate==element.StopDate){
+              const stopHour=element.StopHour.split(":");
+              const startHour=element.StartHour.split(":");
+               totalMinuts=((Number(stopHour[0]) * 60 )+Number(stopHour[1]))-((Number(startHour[0]) * 60 )+Number(startHour[1])) ;
+            }else{
+              const stopHour=element.StopHour.split(":");
+              const startHour=element.StartHour.split(":");
+              const lastDay=((24*60)-(Number(startHour[0])*60)+Number(startHour[1]))
+              let today=(Number(stopHour[0])*60)+(Number(stopHour[1]));
+              totalMinuts=lastDay+today
+            }
+          %> 
             <div class="quiz-card">
                
                 <div class="quiz-card-thumbnail">
@@ -472,13 +485,13 @@
 
                        <span>
 
-                        جمعه ۷ خرداد | ۱۳ عصر
+                        <%= element.StartDate %> | <%= element.StartHour %>
 
                        </span>
 
                        <span>
 
-                        ۲۰ سوال | ۶۰ دقیقه زمان
+                       <%= element.QuestionsNumber %> سوال | <%= totalMinuts %> دقیقه 
 
                        </span>
                         
@@ -493,74 +506,15 @@
                          </button>
            
                          
-                         <button type="button" class="icdrn-btn" id="studentQuizBtn">
+                         <button type="button" onclick="window.location.replace('/teacers/run-exam/<%= element.id %>')" class="icdrn-btn" id="studentQuizBtn">
                           اجرا
                           </button>
           
                 </div>
                 
             </div>
-
-            <div class="quiz-card">
-               
-                <div class="quiz-card-thumbnail">
-
-                    <img src="../../images/Final-Exams-Illustration.png" alt="">
-
-                </div>
-
-                <h3>
-                    آزمون میان ترم آیلتس
-                </h3>
-
-                <div class="quiz-card-detail">
-
-                    <div class="quiz-card-detail-icons">
-
-                        <img src="../../images/Teacher-Icon-QZ.svg" alt="">
-                        <img src="../../images/Date-Icon-QZ.svg" alt="">
-                        <img src="../../images/Detail-Icon-QZ.svg" alt="">
-
-                    </div>  
-
-                    <div class="quiz-card-detail-titles">
-                        
-                       <span>
-
-                           آقای جواد جدیدی
-
-                       </span>
-
-                       <span>
-
-                        جمعه ۷ خرداد | ۱۹ عصر
-
-                       </span>
-
-                       <span>
-
-                        ۲۰ سوال | ۴۰ دقیقه زمان
-
-                       </span>
-                        
-                    </div> 
-
-                </div>
-
-                <div class="quiz-card-action">
-
-                        <button type="button" class="icdrn-btn">
-                          مدیریت
-                         </button>
+<% }); %>
            
-                         
-                         <button type="button" class="icdrn-btn" id="studentQuizBtn">
-                          اجرا
-                          </button>
-          
-                </div>
-                
-            </div>
 
             
 

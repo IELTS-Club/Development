@@ -10,7 +10,6 @@ panel.get("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async
     const exams=await Exam.find({ClassID:req.params.classId});
     console.log(exams)
     if(exams.length<1){
-        console.log("hi")
         return res.render("panel/teachers/no-quiz",{
         userName:req.user.name,
         classId:req.params.classId
@@ -79,5 +78,10 @@ panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,r
     await exam.save();
 
 
+})
+
+
+panel.get("/teacers/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+    res.render("quiz/students-quiz.ejs");
 })
 module.exports=panel;
