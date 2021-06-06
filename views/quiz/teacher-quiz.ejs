@@ -71,13 +71,13 @@
         <main class="teacher-quiz-body  m-quiz-container">
 
             <section class="teacher-quiz-questions  m-quiz-container" id="mainSection">
-            <% for(let i=1;i<=QuestionsNumber;i++){ %> 
+            <% for(let i=1;i<=QuestionsNumber;i++){ %>  
                 <article class="section-box category-question-box" id="article<%= `${i}` %>">
 
                     <div class="question-setting-row">
 
 
-                        <input type="text" value="<%= `QN-${i}` %> " class="question-id-input" style="background-color: white;" disabled >
+                        <input type="text" value="<%= `QN-${i}` %>" class="question-id-input" style="background-color: white;" disabled >
 
 
                         <div class="question-type-box">
@@ -176,10 +176,10 @@
                                 <div class="select">
                                   <select id="standard-select" name="classType">
                                     <option value="Private" disabled selected>Key </option>
-                                    <option value="Public">A</option>
+                                    <!-- <option value="Public">A</option>
                                     <option value="Public">B</option>
                                     <option value="Public">C</option>
-                                    <option value="Public">D</option>
+                                    <option value="Public">D</option> -->
                                   </select>
                                   <span class="icon"></span>
                                 </div>
@@ -323,7 +323,7 @@
            
                 <div class="teacher-quiz-sidebar-time">
 
-                    <button type="button">
+                    <button type="button" id="addArticle">
                         
                         اضافه کردن سوال + 
 
