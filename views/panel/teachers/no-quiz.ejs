@@ -127,105 +127,105 @@
     <div class="panel-overlay hide-for-desktop">
 
       <nav class="panel-overlay-menu">
-
-        <img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo">
-
-        <div class="panel-menu-item">
-
-          <img src="../../images/Panel-Home-Icon.svg" alt="">
-
-
-          <a href="dashboard.html">
-
-
-            پیشخوان
-
-          </a>
-
-        </div>
-
-
-
-        <div class="panel-menu-item">
-
-          <img src="../../images/Panel-Classes-Icon.svg" alt="">
-
-
-          <a href="class-list.html">
-
-
-            کلاس های من
-
-          </a>
-
-        </div>
-
-
-        <div class="panel-menu-item">
-
-          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
-
-
-          <a href="add-class.html">
-
-
-            اضافه کردن کلاس
-
-          </a>
-
-        </div>
-
-        <div class="panel-menu-item">
-
-          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
-
-
-          <a href="placementtest-list.html">
-
-
-            تاریخچه تعیین سطح
-
-          </a>
-
-        </div>
-
-        <div class="panel-menu-item">
-
-          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-
-
-          <a href="students-list.html">
-
-
-            لیست دانشجویان
-
-          </a>
-
-        </div>
-
-        <div class="panel-menu-item active">
-
-          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-
-
-          <a href="edit-profile.html">
-
-
-            ویرایش اطلاعات
-
-          </a>
-
-        </div>
-
-        <div class="panel-exit-box">
-
-          <img src="../../images/Teachers-Illustration.svg" alt="">
-
-        </div>
-
+ 
+       <a href="/panel"><img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo"></a>
+ 
+       <div class="panel-menu-item">
+     
+         <img src="../../images/Panel-Home-Icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/dashboard">
+   
+   
+           پیشخوان
+         
+         </a>
+ 
+       </div>
+ 
+   
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="../../images/Panel-Classes-Icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/class-list">
+   
+   
+           کلاس های من
+         
+         </a>
+ 
+       </div>
+ 
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/add-class">
+   
+   
+           اضافه کردن کلاس
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/placement-test-list">
+   
+   
+           تاریخچه تعیین سطح
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="../../images/Panel-Students-list.svg" alt="" style="width: 30px;">
+ 
+ 
+         <a href="/teachers/student-list">
+   
+   
+           لیست دانشجویان
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item active">
+ 
+         <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/edit-profile">
+   
+   
+           ویرایش اطلاعات
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-exit-box">
+ 
+         <img src="../../images/Teachers-Illustration.svg" alt="">
+   
+       </div>
+ 
       </nav>
-
-    </div>
+ 
+     </div>
 
     <div class="navbar">
 
@@ -233,13 +233,15 @@
 
         <div class="searchbox">
 
-          <div class="search-input-box">
-            <input type="text" class="search-input" placeholder="دنبال چی میگردی؟ (بین دانشجویان جستجو کن)">
-            <!-- <i class="fas fa-search"></i> -->
-            <button class="search-btn" type="button">
-              جستجو
-            </button>
-          </div>
+          <form method="POST" action="/teachers/users">
+            <div class="search-input-box">
+              <input type="text" class="search-input" placeholder="جستجو بین کاربران" name="name">
+              <!-- <i class="fas fa-search"></i> -->
+              <button class="search-btn" type="submit">
+                جستجو
+              </button>
+            </div>
+          </form>
         </div>
 
       </div>
@@ -254,7 +256,7 @@
 
               <img src="../../images/Panel-Bells.svg" alt="">
 
-              <div class="bells-dropdown">
+              <!-- <div class="bells-dropdown">
                 <h3>
                   <span>|</span>
                   پیام های سیستمی آیلتس کلاب
@@ -316,7 +318,7 @@
 
                   </p>
                 </div>
-              </div>
+              </div> -->
 
             </div>
 
@@ -329,7 +331,7 @@
                   <span>|</span>
                   لیست ایمیل های شما
                 </h3>
-                <div class="email-list">
+                <!-- <div class="email-list">
                   <p>
 
                     <img src="../../images/Email-Blob.svg" alt="">
@@ -385,7 +387,7 @@
                     تجربه ای کاملا امن.!
 
                   </p>
-                </div>
+                </div> -->
               </div>
 
             </div>
@@ -398,13 +400,14 @@
               <div class="profile-dropdown">
                 <h3>
                   <span>|</span>
-                  میلاد عزیز خوش اومدی :)
+                   <%= userName%> عزیز خوش اومدی :)
                 </h3>
-                <div class="exit-btn">
-                  <img src="../../images/Logout-Icon.svg" alt="">
-                </div>
-              </div>
-
+                <form action="/logout" method="GET">
+                 <div class="exit-btn">
+                  <input type="image" src="../../images/Logout-Icon.svg" width="40px"/>
+                 <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+                 </div></form>
+               </div>
             </div>
 
 
@@ -469,7 +472,7 @@
 
         <div class="panel-logo">
 
-          <img src="../../images/ICDRN-Navbar-Logo.png" alt="">
+          <a href="/panel"><img src="../../images/ICDRN-Navbar-Logo.png" alt=""></a>
 
         </div>
 
@@ -478,7 +481,7 @@
           <img src="../../images/Panel-Home-Icon.svg" alt="">
 
 
-          <a href="dashboard.html">
+          <a href="/teachers/dashboard">
 
 
             پیشخوان
@@ -494,7 +497,7 @@
           <img src="../../images/Panel-Classes-Icon.svg" alt="">
 
 
-          <a href="class-list.html">
+          <a href="/teachers/class-list">
 
 
             کلاس های من
@@ -509,7 +512,7 @@
           <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
 
 
-          <a href="add-class.html">
+          <a href="/teachers/add-class">
 
 
             اضافه کردن کلاس
@@ -523,7 +526,7 @@
           <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
 
 
-          <a href="placementtest-list.html">
+          <a href="/teachers/placement-test-list">
 
 
             تعیین سطح ها
@@ -538,7 +541,7 @@
           <img class="panel-menu-item-students" src="../../images/Panel-Students-list.svg" alt="">
 
 
-          <a href="students-list.html">
+          <a href="/teachers/student-list">
 
 
             لیست دانشحویان
@@ -552,7 +555,7 @@
           <img src="../../images/Panel-edit-profile-icon.svg" alt="">
 
 
-          <a href="edit-profile.html">
+          <a href="/teachers/edit-profile">
 
 
             ویرایش اطلاعات

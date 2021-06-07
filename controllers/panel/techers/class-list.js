@@ -142,7 +142,7 @@ panel.get("/en/teachers/class-list",[isLogedInEN,isConfirmedEN,isTeacherEN],asyn
         userName:req.user.name,
         allClasses:allClasses,
         classes:classes,
-        userName:req.user.name,
+        
         email:req.user.email
     })
 });

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>پنل اساتید | آزمون ها </title>
-  
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
 
@@ -16,223 +17,230 @@
   <script type="text/javascript" src="../../jalaliDatepicker.min.js"></script>
 
   <style>
-
     #loader-wrapper {
-      position:fixed;
+      position: fixed;
       display: flex;
       justify-content: center;
       align-items: center;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      z-index:1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
     }
-    
+
     #loader-wrapper .loader {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       z-index: 10001;
-      width:300px;
-      height:150px;
+      width: 300px;
+      height: 150px;
     }
-    
+
     #loader-wrapper .loader h2 {
-    
+
       font-size: 30px;
       font-family: Kalameh-Black;
       color: #fff;
-    
-    
+
+
     }
-    
-    
+
+
     @-webkit-keyframes spin {
-      0%   { 
-        -webkit-transform: rotate(0deg); 
-          -ms-transform: rotate(0deg); 
-              transform: rotate(0deg);
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
       }
-      100% { 
-        -webkit-transform: rotate(360deg); 
-          -ms-transform: rotate(360deg); 
-              transform: rotate(360deg);
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
     }
+
     @keyframes spin {
-      0%   { 
-        -webkit-transform: rotate(0deg); 
-          -ms-transform: rotate(0deg); 
-              transform: rotate(0deg);
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
       }
-      100% { 
-        -webkit-transform: rotate(360deg); 
-          -ms-transform: rotate(360deg); 
-              transform: rotate(360deg);
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
     }
-    
+
     #loader-wrapper .loader-section {
-      position:fixed;
-      top:0;
-      background-image: linear-gradient(#258c93,#1D3C4E);
-      width:51%;
-      height:100%;
-      z-index:1000;
+      position: fixed;
+      top: 0;
+      background-image: linear-gradient(#258c93, #1D3C4E);
+      width: 51%;
+      height: 100%;
+      z-index: 1000;
     }
-    
+
     #loader-wrapper .loader-section.section-left {
-      left:0
+      left: 0
     }
+
     #loader-wrapper .loader-section.section-right {
-      right:0;
+      right: 0;
     }
-    
+
     /* Loaded Styles */
     .loaded #loader-wrapper .loader-section.section-left {
       transform: translateX(-100%);
-      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
     }
+
     .loaded #loader-wrapper .loader-section.section-right {
       transform: translateX(100%);
-      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
     }
+
     .loaded #loader {
       opacity: 0;
       transition: all 0.3s ease-out;
     }
+
     .loaded #loader-wrapper {
       visibility: hidden;
-      transform:translateY(-100%);
+      transform: translateY(-100%);
       transition: all 0.3s 1s ease-out;
     }
-    
   </style>
-  
+
 </head>
+
 <body>
 
-  
+
   <div class="container-panel   container-teacher-panel-quiz-list">
 
     <div class="panel-overlay hide-for-desktop">
 
-     <nav class="panel-overlay-menu">
-
-      <img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo">
-
-      <div class="panel-menu-item">
-    
-        <img src="../../images/Panel-Home-Icon.svg" alt="">
-
-
-        <a href="dashboard.html">
-  
-  
-          پیشخوان
-        
-        </a>
-
-      </div>
-
-  
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Classes-Icon.svg" alt="">
-
-
-        <a href="class-list.html">
-  
-  
-          کلاس های من
-        
-        </a>
-
-      </div>
-
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
-
-
-        <a href="add-class.html">
-  
-  
-          اضافه کردن کلاس
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
-
-
-        <a href="placementtest-list.html">
-  
-  
-          تاریخچه تعیین سطح
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-
-
-        <a href="students-list.html">
-  
-  
-          لیست دانشجویان
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item active">
-
-        <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-
-
-        <a href="edit-profile.html">
-  
-  
-          ویرایش اطلاعات
-        
-        </a>
-
-      </div>
-
-      <div class="panel-exit-box">
-
-        <img src="../../images/Teachers-Illustration.svg" alt="">
-  
-      </div>
-
-     </nav>
-
-    </div>
+      <nav class="panel-overlay-menu">
+ 
+       <a href="/panel"><img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo"></a>
+ 
+       <div class="panel-menu-item">
+     
+         <img src="../../images/Panel-Home-Icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/dashboard">
+   
+   
+           پیشخوان
+         
+         </a>
+ 
+       </div>
+ 
+   
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="../../images/Panel-Classes-Icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/class-list">
+   
+   
+           کلاس های من
+         
+         </a>
+ 
+       </div>
+ 
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/add-class">
+   
+   
+           اضافه کردن کلاس
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/placement-test-list">
+   
+   
+           تاریخچه تعیین سطح
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item">
+ 
+         <img src="../../images/Panel-Students-list.svg" alt="" style="width: 30px;">
+ 
+ 
+         <a href="/teachers/student-list">
+   
+   
+           لیست دانشجویان
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-menu-item active">
+ 
+         <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+ 
+ 
+         <a href="/teachers/edit-profile">
+   
+   
+           ویرایش اطلاعات
+         
+         </a>
+ 
+       </div>
+ 
+       <div class="panel-exit-box">
+ 
+         <img src="../../images/Teachers-Illustration.svg" alt="">
+   
+       </div>
+ 
+      </nav>
+ 
+     </div>
 
     <div class="navbar">
 
       <div class="navbar-search">
-
         <div class="searchbox">
 
-          <div class="search-input-box">
-            <input type="text" class="search-input" placeholder="دنبال چی میگردی؟ (بین دانشجویان جستجو کن)">
-            <!-- <i class="fas fa-search"></i> -->
-            <button class="search-btn" type="button">
-              جستجو
-            </button> 
-          </div>
+          <form method="POST" action="/teachers/users">
+            <div class="search-input-box">
+              <input type="text" class="search-input" placeholder="جستجو بین کاربران" name="name">
+              <!-- <i class="fas fa-search"></i> -->
+              <button class="search-btn" type="submit">
+                جستجو
+              </button>
+            </div>
+          </form>
         </div>
 
       </div>
@@ -241,13 +249,13 @@
 
         <div class="panel-status-bar">
 
-         <div class="status-icons">
+          <div class="status-icons">
 
-          <div class="bells">
-    
-            <img src="../../images/Panel-Bells.svg" alt="">
+            <div class="bells">
 
-            <div class="bells-dropdown">
+              <img src="../../images/Panel-Bells.svg" alt="">
+
+              <!-- <div class="bells-dropdown">
               <h3>
                 <span>|</span>
                   پیام های سیستمی آیلتس کلاب
@@ -309,18 +317,17 @@
 
                 </p>
               </div>
-             </div>
-    
-          </div>
-    
-          <div class="message">
-    
-            <img src="../../images/Panel-Messsage.svg" 
-            alt="">
+             </div> -->
 
-            <div class="message-dropdown">
-              <h3>
-                <span>|</span>
+            </div>
+
+            <div class="message">
+
+              <img src="../../images/Panel-Messsage.svg" alt="">
+
+              <div class="message-dropdown">
+                <h3>
+                  <!-- <span>|</span>
                   لیست ایمیل های شما
               </h3>
               <div class="email-list">
@@ -379,39 +386,42 @@
                  تجربه ای کاملا امن.!
 
                 </p>
+              </div> -->
               </div>
-             </div>
-    
-          </div>
-    
-          <div class="profile">
-    
-            <img src="../../images/Panel-Profile.svg" alt="">
-    
 
-            <div class="profile-dropdown">
-             <h3>
-               <span>|</span>
-                میلاد عزیز خوش اومدی :)
-             </h3>
-             <div class="exit-btn">
-              <img src="../../images/Logout-Icon.svg" alt="">
-             </div>
             </div>
 
+            <div class="profile">
+
+              <img src="../../images/Panel-Profile.svg" alt="">
+
+
+              <div class="profile-dropdown">
+                <h3>
+                  <span>|</span>
+                  <%= userName%> عزیز خوش اومدی :)
+                </h3>
+                <form action="/logout" method="GET">
+                  <div class="exit-btn">
+                    <input type="image" src="../../images/Logout-Icon.svg" width="40px" />
+                    <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+
+
           </div>
-
-    
-
-         </div>
 
           <div class="panel-humburger hide-for-desktop">
-    
+
             <img src="../../images/Panel-Burger.svg" alt="">
-    
+
           </div>
-          
-    
+
+
         </div>
 
       </div>
@@ -423,20 +433,20 @@
       <div class="quiz-list">
 
         <div class="quiz-list-title">
-            <h2>
-              <span>
-                |
-              </span>
-              مدیریت آزمون ها
-            </h2>
-            <button type="button" class="icdrn-btn" id="addQuizBtn">
-         
-              آزمون جدید
-  
-              <span>+</span>
-  
-            </button>
-          </div>
+          <h2>
+            <span>
+              |
+            </span>
+            مدیریت آزمون ها
+          </h2>
+          <button type="button" class="icdrn-btn" id="addQuizBtn">
+
+            آزمون جدید
+
+            <span>+</span>
+
+          </button>
+        </div>
 
         <div class="quiz-list-grid">
           <% exams.forEach(element => {
@@ -452,71 +462,72 @@
               let today=(Number(stopHour[0])*60)+(Number(stopHour[1]));
               totalMinuts=lastDay+today
             }
-          %> 
-            <div class="quiz-card">
-               
-                <div class="quiz-card-thumbnail">
+          %>
+          <div class="quiz-card">
 
-                    <img src="../../images/Final-Exams-Illustration.png" alt="">
+            <div class="quiz-card-thumbnail">
 
-                </div>
+              <img src="../../images/Final-Exams-Illustration.png" alt="">
 
-                <h3>
-                    آزمون میان ترم آیلتس
-                </h3>
-
-                <div class="quiz-card-detail">
-
-                    <div class="quiz-card-detail-icons">
-
-                        <img src="../../images/Teacher-Icon-QZ.svg" alt="">
-                        <img src="../../images/Date-Icon-QZ.svg" alt="">
-                        <img src="../../images/Detail-Icon-QZ.svg" alt="">
-
-                    </div>  
-
-                    <div class="quiz-card-detail-titles">
-                        
-                       <span>
-
-                           استاد پژمان نورزاد
-
-                       </span>
-
-                       <span>
-
-                        <%= element.StartDate %> | <%= element.StartHour %>
-
-                       </span>
-
-                       <span>
-
-                       <%= element.QuestionsNumber %> سوال | <%= totalMinuts %> دقیقه 
-
-                       </span>
-                        
-                    </div> 
-
-                </div>
-
-                <div class="quiz-card-action">
-
-                        <button type="button" class="icdrn-btn">
-                          مدیریت
-                         </button>
-           
-                         
-                         <button type="button" onclick="window.location.replace('/teacers/run-exam/<%= element.id %>')" class="icdrn-btn" id="studentQuizBtn">
-                          اجرا
-                          </button>
-          
-                </div>
-                
             </div>
-<% }); %>
-           
 
-            
+            <h3>
+              آزمون میان ترم آیلتس
+            </h3>
+
+            <div class="quiz-card-detail">
+
+              <div class="quiz-card-detail-icons">
+
+                <img src="../../images/Teacher-Icon-QZ.svg" alt="">
+                <img src="../../images/Date-Icon-QZ.svg" alt="">
+                <img src="../../images/Detail-Icon-QZ.svg" alt="">
+
+              </div>
+
+              <div class="quiz-card-detail-titles">
+
+                <span>
+
+                  استاد پژمان نورزاد
+
+                </span>
+
+                <span>
+
+                  <%= element.StartDate %> | <%= element.StartHour %>
+
+                </span>
+
+                <span>
+
+                  <%= element.QuestionsNumber %> سوال | <%= totalMinuts %> دقیقه
+
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="quiz-card-action">
+
+              <button type="button" class="icdrn-btn">
+                مدیریت
+              </button>
+
+
+              <button type="button" onclick="window.location.replace('/teacers/run-exam/<%= element.id %>')"
+                class="icdrn-btn" id="studentQuizBtn">
+                اجرا
+              </button>
+
+            </div>
+
+          </div>
+          <% }); %>
+
+
+
 
 
         </div>
@@ -528,183 +539,183 @@
 
     <div class="side-menu hide-for-phone">
 
-        <nav class="panel-menu-list">
-    
-          <div class="panel-logo">
-    
-            <img src="../../images/ICDRN-Navbar-Logo.png" alt="">
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Home-Icon.svg" alt="">
-    
-    
-            <a href="dashboard.html">
-      
-      
-              پیشخوان
-            
-            </a>
-    
-          </div>
-    
-      
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Classes-Icon.svg" alt="">
-    
-    
-            <a href="class-list.html">
-      
-      
-              کلاس های من
-            
-            </a>
-    
-          </div>
-    
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
-    
-    
-            <a href="add-class.html">
-      
-      
-              اضافه کردن کلاس
-            
-            </a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
-    
-    
-            <a href="placementtest-list.html">
-      
-      
-              تعیین سطح ها
-            
-            </a>
-    
-          </div>
+      <nav class="panel-menu-list">
 
-          
-          <div class="panel-menu-item">
+        <div class="panel-logo">
 
-            <img class="panel-menu-item-students" src="../../images/Panel-Students-list.svg" alt="">
+          <a href="/panel"><img src="../../images/ICDRN-Navbar-Logo.png" alt=""></a>
 
-
-            <a href="students-list.html">
-      
-      
-              لیست دانشحویان
-            
-            </a>
-
-          </div>
-        
-          <div class="panel-menu-item active ">
-    
-            <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-    
-    
-            <a href="edit-profile.html">
-      
-      
-              ویرایش اطلاعات
-            
-            </a>
-    
-          </div>
-    
-        </nav>
-    
-        <div class="panel-exit-box">
-    
-           <img src="../../images/Teachers-Illustration.svg" alt="">
-    
         </div>
-    
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+
+
+          <a href="/teachers/dashboard">
+
+
+            پیشخوان
+
+          </a>
+
+        </div>
+
+
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
+
+
+          <a href="/teachers/class-list">
+
+
+            کلاس های من
+
+          </a>
+
+        </div>
+
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+
+
+          <a href="/teachers/add-class">
+
+
+            اضافه کردن کلاس
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+          <a href="/teachers/placement-test-list">
+
+
+            تعیین سطح ها
+
+          </a>
+
+        </div>
+
+
+        <div class="panel-menu-item">
+
+          <img class="panel-menu-item-students" src="../../images/Panel-Students-list.svg" alt="">
+
+
+          <a href="/teachers/student-list">
+
+
+            لیست دانشحویان
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item active ">
+
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+          <a href="/teachers/edit-profile">
+
+
+            ویرایش اطلاعات
+
+          </a>
+
+        </div>
+
+      </nav>
+
+      <div class="panel-exit-box">
+
+        <img src="../../images/Teachers-Illustration.svg" alt="">
+
+      </div>
+
 
     </div>
 
   </div>
 
   <section class="icdrn-modal-lg new-quiz-modal" id="newQuizModal">
-  
+
     <span class="modal-close">&times;</span>
 
     <div class="icdrn-modal-grid">
 
-       <div class="modal-content">
+      <div class="modal-content">
 
-          <h3>
-             اضافه کردن آزمون جدید
-          </h3>
+        <h3>
+          اضافه کردن آزمون جدید
+        </h3>
 
 
         <div class="modal-form" id="modal-form">
-        
+
           <input type="text" class="icdrn-input" placeholder="عنوان آزمون (مثال: elementry)">
- 
+
           <div class="input-row">
-            
-          <input type="text" data-jdp  class="icdrn-input"  placeholder="تاریخ شروع (۷ خرداد)">
-          <input type="time" class="icdrn-input" placeholder="ساعت شروع (۱۵:۰۰)">
+
+            <input type="text" data-jdp class="icdrn-input" placeholder="تاریخ شروع (۷ خرداد)">
+            <input type="time" class="icdrn-input" placeholder="ساعت شروع (۱۵:۰۰)">
 
           </div>
 
           <div class="input-row">
-            
-            <input type="text" data-jdp class="icdrn-input"  placeholder="تاریخ پایان (۸ خرداد)">
+
+            <input type="text" data-jdp class="icdrn-input" placeholder="تاریخ پایان (۸ خرداد)">
             <input type="time" class="icdrn-input" placeholder="ساعت پایان (۱۷:۰۰)">
-  
-            </div>
-  
+
+          </div>
+
 
           <div class="input-row">
-            
+
             <input type="text" class="icdrn-input" placeholder="نوع آزمون ( میان ترم )">
             <input type="number" class="icdrn-input" min="1" max="150" placeholder="تعداد سوالات ( ۶۰ سوال )">
-  
-            </div>
-  
 
-          <button type="button" class="icdrn-btn" >
-          اضافه کردن آزمون
+          </div>
+
+
+          <button type="button" class="icdrn-btn">
+            اضافه کردن آزمون
           </button>
 
-        
-        </div>
-        
-       </div>
 
-       <div class="modal-img">
+        </div>
+
+      </div>
+
+      <div class="modal-img">
 
         <img src="../../images/student-quiz-list.svg" alt="">
-          
-          <div class="modal-img-subtitle hide-for-phone">
-             <span>
-             مدرس محترم
-             </span>
-             لطفا اطلاعات مهم آزمون هوشمند از قبیل
-             <br>
-             زمان اجرا و مدت زمان آزمــون را به دقت و کــامل وارد کنید
-             <br>
-             طرح سوالالت آزمون در مرحله بعدی رصورت خواهد گرفت.
-            </div>
-       </div>
+
+        <div class="modal-img-subtitle hide-for-phone">
+          <span>
+            مدرس محترم
+          </span>
+          لطفا اطلاعات مهم آزمون هوشمند از قبیل
+          <br>
+          زمان اجرا و مدت زمان آزمــون را به دقت و کــامل وارد کنید
+          <br>
+          طرح سوالالت آزمون در مرحله بعدی رصورت خواهد گرفت.
+        </div>
+      </div>
 
     </div>
-    
- </section>
+
+  </section>
 
   <div id="loader-wrapper">
     <div id="loader"></div>
@@ -717,64 +728,59 @@
       <h2>سایت در حال بارگذاریه!</h2>
     </div>
   </div>
-  
-  
+
+
   <script src="../../app/js/app.js"></script>
   <script src="../../app/js/PanelMenuToggle.js"></script>
 
   <script>
-
     //For Live Projects
-        window.addEventListener('load',function(){
-          document.querySelector('body').classList.add("loaded")  
-        });
-    
-    
-      </script>
+    window.addEventListener('load', function () {
+      document.querySelector('body').classList.add("loaded")
+    });
+  </script>
 
-      <script>
-       jalaliDatepicker.startWatch({});
-      document.querySelector('#addQuizBtn').addEventListener('click', () => {
-      
+  <script>
+    jalaliDatepicker.startWatch({});
+    document.querySelector('#addQuizBtn').addEventListener('click', () => {
+
       document.querySelector('.container-teacher-panel-quiz-list').style.filter = "blur(7px)";
       document.querySelector('#newQuizModal').style.display = "flex";
 
-      
+
     });
+  </script>
+  <!--script for sending data -->
 
-      </script>
-<!--script for sending data -->
+  <script>
+    const modalform = document.getElementById("modal-form");
 
-      <script>
-        const modalform=document.getElementById("modal-form");
-        
-        modalform.getElementsByTagName("button")[0].addEventListener("click",()=>{
-          if(modalform.getElementsByTagName("input")[6].value > 100){
-            modalform.getElementsByTagName("input")[6].value=100
-          }
-          const quizInfo={
-           examTitle:modalform.getElementsByTagName("input")[0].value,
-           examStartDate:modalform.getElementsByTagName("input")[1].value,
-           examStartHour:modalform.getElementsByTagName("input")[2].value,
-           examStoptDate:modalform.getElementsByTagName("input")[3].value,
-           examStoptHour:modalform.getElementsByTagName("input")[4].value,
-           examType:modalform.getElementsByTagName("input")[5].value,
-           QuestionsNumber:modalform.getElementsByTagName("input")[6].value,
-           
-          }
-          const options={
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json"
-        },
-        body:JSON.stringify(quizInfo)
+    modalform.getElementsByTagName("button")[0].addEventListener("click", () => {
+      if (modalform.getElementsByTagName("input")[6].value > 100) {
+        modalform.getElementsByTagName("input")[6].value = 100
       }
-       fetch("/teachers/quiz-list/<%= classId%>",options);
-       window.open("/teachers/create-exam")
-        })
+      const quizInfo = {
+        examTitle: modalform.getElementsByTagName("input")[0].value,
+        examStartDate: modalform.getElementsByTagName("input")[1].value,
+        examStartHour: modalform.getElementsByTagName("input")[2].value,
+        examStoptDate: modalform.getElementsByTagName("input")[3].value,
+        examStoptHour: modalform.getElementsByTagName("input")[4].value,
+        examType: modalform.getElementsByTagName("input")[5].value,
+        QuestionsNumber: modalform.getElementsByTagName("input")[6].value,
 
-        
-      </script>
+      }
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(quizInfo)
+      }
+      fetch("/teachers/quiz-list/<%= classId%>", options);
+      window.open("/teachers/create-exam")
+    })
+  </script>
 
 </body>
+
 </html>
