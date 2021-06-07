@@ -1,4 +1,4 @@
-button.icdrn-btn[type="button"] {
+button.icdrn-btn {
   box-sizing: border-box;
   font-family: Yekan-Bakh-Medium;
   width: 120px;
@@ -13,17 +13,17 @@ button.icdrn-btn[type="button"] {
 
 }
 
-button.icdrn-btn[type="button"]:hover {
+button.icdrn-btn:hover {
   outline: 0;
   background-color: $richyPrimaryColor;
 }
 
-button.icdrn-btn[type="button"]:focus{
+button.icdrn-btn:focus{
   outline: none;
   border:3px solid $primaryColor;
 }
 
-button.icdrn-btn[type="submit"] {
+button.icdrn-btn {
   box-sizing: border-box;
   font-family: Yekan-Bakh-Medium;
   width: 120px;
@@ -38,12 +38,12 @@ button.icdrn-btn[type="submit"] {
 
 }
 
-button.icdrn-btn[type="submit"]:hover {
+button.icdrn-btn:hover {
   outline: 0;
   background-color: $richyPrimaryColor;
 }
 
-button.icdrn-btn[type="submit"]:focus{
+button.icdrn-btn:focus{
   outline: none;
   border:3px solid $primaryColor;
 }

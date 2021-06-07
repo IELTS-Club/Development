@@ -1,32 +1,7 @@
 
-body {
-
-  height: 100%;
-  // background-color: #F4F4F8;
-
-
-}
-
-
-.container-panel {
-
-  height: 100%;
-    background-color: #F4F4F8;
-
-  &.open-slide {
-
-    .panel-overlay {
-
-      right: 0px;
-
-    }
-
-  }
-
-}
-
 
 .container-teacher-panel-userslist {
+
 
   display: grid;
   height: 100%;
@@ -52,7 +27,6 @@ body {
     ;
   
   }
-
 
   .panel-overlay {
 
@@ -628,6 +602,8 @@ body {
 
   }
 
+ 
+
   .main {
 
     grid-area: main;
@@ -642,11 +618,11 @@ body {
 
     }
 
-    .placementtest-history {
+    .users-list {
 
       width: 100%;
 
-      .placementtest-history-title {
+      .users-list-title {
 
         display: flex;
         justify-content: space-between;
@@ -717,7 +693,7 @@ body {
 
       }
 
-      .placementtest-history-table-box  {
+      .users-list-table-box  {
 
         display: flex;
         justify-content: center;
@@ -761,12 +737,13 @@ body {
 
           tr {
 
-            height:600px;
+            height:60px !important;
             border-bottom: 8px solid #F4F4F8;
 
             td {
+
               vertical-align: middle;
-              padding-top: 17px;
+              padding-top: 5px;
               text-align: center;
 
     
@@ -922,157 +899,110 @@ body {
 
 }
 
-  .side-menu {
+.side-menu {
 
-    position: fixed;
+  position: fixed;
+  grid-area: menu;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -20px 7px 30px #f8f8f870;
+
+  @media #{$phone} {
+
     grid-area: menu;
-    height: 100vh;
-    background-color: #fff;
-    box-shadow: -20px 7px 30px #f8f8f870;
 
-    @media #{$phone} {
 
-      grid-area: menu;
+  }
 
+    .panel-logo {
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+  
+  
+  
+      img {
+  
+        text-align: center;
+        width: 150px;
+  
+      }
   
     }
   
-      .panel-logo {
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 40px;
-    
-    
-    
-        img {
-    
-          text-align: center;
-          width: 150px;
-    
-        }
-    
-      }
-    
-      .panel-menu-list {
-    
-        display: flex;
-        flex-direction: column;
-        padding: 30px 50px 0 50px;
-    
-        .panel-menu-item {
-    
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          margin-bottom: 12px;
-          padding: 10px;
-    
-          img:not(:nth-child(5)) {
-    
-            width: 30px;
-            text-align: center;
-    
-          }
-
-          img.panel-menu-item-students {
-
-            width:38px;
-
-          }
-    
-          a {
-    
-            margin-right: 20px;
-    
-          }
-          
-        }
-
+    .panel-menu-list {
   
-    
-        .panel-menu-item:last-child{
-    
-          margin-bottom: 0;
-    
-        }
-    
-        .active {
-    
-          border-radius: 20px;
-          background-color: #FFF4E5;
-    
-        }
-    
-      }
-    
-      .panel-exit-box {
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 30px;
-    
-        img {
-    
-          width: 170px;
-    
-        }
-    
-      }
-    
-
-  }
-
-}
-
-
-
-.open-menu {
-
-    right: 0px;
-
-}
-
-.bg-blur {
-
-  filter: blur(10px);
-
-}
-
-
-.show-drop {
-
-    display: flex;
-
-
-  }
-
-  .report-test {
-
-    // display: flex;
-
-    .icdrn-modal-content {
-
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 30px 50px 0 50px;
+  
+      .panel-menu-item {
+  
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 12px;
+        padding: 10px;
+  
+        img:not(:nth-child(5)) {
+  
+          width: 30px;
+          text-align: center;
+  
+        }
 
-      input {
+        img.panel-menu-item-students {
 
-        margin: 0 0 15px;
+          width:38px;
 
-        @media #{$phone} {
-
-          font-size: 10px;
+        }
+  
+        a {
+  
+          margin-right: 20px;
   
         }
         
-
       }
 
-    }
 
-  }
+  
+      .panel-menu-item:last-child{
+  
+        margin-bottom: 0;
+  
+      }
+  
+      .active {
+  
+        border-radius: 20px;
+        background-color: #FFF4E5;
+  
+      }
+  
+    }
+  
+    .panel-exit-box {
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+  
+      img {
+  
+        width: 170px;
+  
+      }
+  
+    }
+  
+
+}
+
+
+
+}
+
