@@ -551,8 +551,8 @@ transition: all 0.3s 1s ease-out;
                   </button>
               
               <% }else{ %>
-                <button type="submit" class="icdrn-btn">
-                  <a href="<%= element.classLink %>">  ورود به اتاق کلاس</a>
+                <button type="button" class="icdrn-btn" onclick="window.location.replace('<%=element.classLink%>')">
+                  ورود به اتاق کلاس
                   </button>
                   <% } %>
             </div>
@@ -686,56 +686,6 @@ transition: all 0.3s 1s ease-out;
 
 
 
-
-    <section class="icdrn-modal" id="lanmisDetails">
-    <div class="icdrn-modal-content">
-
-      <a href="/panel/class-list"><span class="modal-close" id="modalCloseA">
-        &times;
-      </span></a>
-
-       <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="" style="display: none;"> 
-
-
-
-      <h3>
-        توضیحات ورود به کلاس
-        </h3>
-
-      <p>
-
-        دقت کن که نام کاربری و پسوردت تو لنمیس همون کد ملیته
-       
-
-      </p>
-
-      <a href="<%= link %>"><button type="submit" class="icdrn-btn">
-        
-         ورود به کلاس
-        
-      </button> </a>
-
-    </div>
-  </section>
-<% if (showLanmisDetails==true){ %> 
-    <script> 
-      
-      const getRegisterErrorModal = document.querySelector('#lanmisDetails');
-     
-      
-      
-      
-  
-      
-        getRegisterErrorModal.style.display = "flex";
-      
-      
-    
-  
-      
-  
-     </script>
-    <% } %>
     
       <script src="app/js/app.js"></script>
       <script src="app/js/placementTestModal.js"></script>

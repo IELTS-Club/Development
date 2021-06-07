@@ -3,11 +3,15 @@ const panel=express.Router();
 const isLogedIn=require("../../../middleware/isLogedIn");
 const isConfirmed=require("../../../middleware/isConfirmed");
 const isTeacher=require("../../../middleware/isTeacher");
+const isStudent=require("../../../middleware/isStudent");
 const { Class } = require("../../../models/mongoose");
 const { Exam }=require("../../../models/mongoose")
 
 panel.get("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
     const exams=await Exam.find({ClassID:req.params.classId});
+    
+    const date=new Date().toLocaleTimeString("fa").replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+    
     console.log(exams)
     if(exams.length<1){
         return res.render("panel/teachers/no-quiz",{
@@ -43,10 +47,12 @@ panel.post("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],asyn
 
 panel.get("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
     if (!req.session.Title || !req.session.Type  || !req.session.StartDate || !req.session.StartHour || !req.session.StopDate || !req.session.StopHour || !req.session.QuestionsNumber || !req.session.classId){
+        console.log(req.session)
         res.redirect("/teachers/class-list");
     }
-    const examClass=await Class.findOne({id:req.session.classID});
-    
+    const classId=req.session.classId
+    const examClass=await Class.findOne({_id:classId});
+    console.log(examClass);
     
     
     res.render("quiz/teacher-quiz.ejs",{
@@ -61,7 +67,7 @@ panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,r
     console.log(req.body);
     const examData=req.body.data;
     console.log(examData[0])
-    // examData.forEach(element => {
+    // examData.forEach(exam => {
         
     // });
     
@@ -84,14 +90,52 @@ panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,r
 
 
 panel.get("/teacers/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
-    
+
+
     const exam=await Exam.findById({_id:req.params.id});
-    console.log(exam)
+    
+    
+    console.log(exam.StartDate);
+
     const examClass=await Class.findOne({_id:exam.ClassID});
+
     res.render("quiz/students-quiz",{
         exam:exam,
         Teacher:examClass.classTeacher,
         classId:exam.classID,
     });
+})
+
+panel.get("/students/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+    const examId=req.params.id
+    const exam=await Exam.findById({_id:examId});
+    function isAbleToJoin() {
+        const date=new Date().toLocaleDateString('fa-IR').replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+        let nowDate=date
+        const date1=date.split("/");
+        if(Number(date1[1])<10){
+            nowDate=`${date1[0]}/0${date1[1]}/${date1[2]}`
+        }
+        const hour=new Date().toLocaleTimeString("fa").replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+        let hour1=hour.split(":");
+        let nowHour=`${hour1[0]}:${hour1[1]}`
+
+        if(element.StartDate==exam.StopDate && exam.StartDate==nowDate){
+          const sHour=exam.StartHour.split(":");
+          const fHour=exam.StopHour.split(":")
+          const nHour=nowHour.split(":");
+          
+          if((Number(sHour[0])*60) + Number(sHour[1]) <= (Number(nHour[0])*60) + Number(nHour[1])){
+         
+            if((Number(fHour[0])*60) +  Number(fHour[1]) > (Number(nHour[0])*60) + Number(nHour[1])){
+              return true
+            }
+          }
+          
+      }
+    return false
+      }
+          
+
 })
 module.exports=panel;
