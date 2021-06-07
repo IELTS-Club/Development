@@ -102,11 +102,7 @@ panel.get("/teacers/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,re
     res.render("quiz/students-quiz",{
         exam:exam,
         Teacher:examClass.classTeacher,
-<<<<<<< HEAD
         classId:exam.ClassID
-=======
-        classId:exam.classID,
->>>>>>> b3e375e6c648dc30c3622e8129a8dda73292ed11
     });
 })
 
