@@ -349,15 +349,15 @@
        
        <!-- moadl  -->
        
-        <section class="icdrn-modal" id="nullQuestion">
+        <section class="icdrn-modal" dir="ltr" id="nullQuestion">
+
             <div class="icdrn-modal-content">
         
               <span class="modal-close" id="modalClose">
                 &times;
               </span>
         
-              <img src="../images/auth-err-pic.svg" class="modal-img" alt="">
-        
+              <img src="../images/null-question-illustration.svg" class="modal-img" alt="">
         
         
               <h3 id="errorText" >
@@ -367,13 +367,13 @@
         
                 please make sure you have
                 <br>
-                filled all the questions
+                filled all the questions :(
         
               </p>
         
               <button type="submit" class="icdrn-btn" id="checkAgain">
         
-                check again
+                check again!
         
               </button>
         
@@ -381,28 +381,29 @@
           </section>
 
 
-          <section class="icdrn-modal" id="successfull">
+          <section class="icdrn-modal" dir="ltr" id="successfull">
+
             <div class="icdrn-modal-content">
         
               
         
-              <img src="../images/auth-err-pic.svg" class="modal-img" alt="">
+              <img src="../images/succuesfull-quiz.svg" class="modal-img" alt="">
         
         
         
               <h3>
-                  ازمون شما با موفقیت ساخته شد!
+                  Successfull!
               </h3>
         
               <p>
         
-                
+                You'r Quiz has been Created Successfully :)
         
               </p>
         
               <button type="submit" class="icdrn-btn" onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')">
         
-                بازگشت به صفحه لیست آزمــون‌ها
+                Back to Quizlist!
         
               </button>
         

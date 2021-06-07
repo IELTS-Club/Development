@@ -457,7 +457,7 @@ body {
   }
 }
 
-button.icdrn-btn[type="button"] {
+button.icdrn-btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: Yekan-Bakh-Medium;
@@ -473,17 +473,17 @@ button.icdrn-btn[type="button"] {
   cursor: pointer;
 }
 
-button.icdrn-btn[type="button"]:hover {
+button.icdrn-btn:hover {
   outline: 0;
   background-color: #e0a75d;
 }
 
-button.icdrn-btn[type="button"]:focus {
+button.icdrn-btn:focus {
   outline: none;
   border: 3px solid #ECB773;
 }
 
-button.icdrn-btn[type="submit"] {
+button.icdrn-btn {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: Yekan-Bakh-Medium;
@@ -499,12 +499,12 @@ button.icdrn-btn[type="submit"] {
   cursor: pointer;
 }
 
-button.icdrn-btn[type="submit"]:hover {
+button.icdrn-btn:hover {
   outline: 0;
   background-color: #e0a75d;
 }
 
-button.icdrn-btn[type="submit"]:focus {
+button.icdrn-btn:focus {
   outline: none;
   border: 3px solid #ECB773;
 }
@@ -20535,19 +20535,6 @@ body {
   }
 }
 
-body {
-  height: 100%;
-}
-
-.container-panel {
-  height: 100%;
-  background-color: #F4F4F8;
-}
-
-.container-panel.open-slide .panel-overlay {
-  right: 0px;
-}
-
 .container-teacher-panel-userslist {
   display: -ms-grid;
   display: grid;
@@ -21106,11 +21093,11 @@ body {
   }
 }
 
-.container-teacher-panel-userslist .main .placementtest-history {
+.container-teacher-panel-userslist .main .users-list {
   width: 100%;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title {
+.container-teacher-panel-userslist .main .users-list .users-list-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21120,7 +21107,7 @@ body {
 }
 
 @media (max-width: 600px) {
-  .container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title {
+  .container-teacher-panel-userslist .main .users-list .users-list-title {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -21134,25 +21121,25 @@ body {
   }
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title h2 {
+.container-teacher-panel-userslist .main .users-list .users-list-title h2 {
   font-family: Kalameh-Black;
   font-size: 30px;
   color: #258C93;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title h2 span {
+.container-teacher-panel-userslist .main .users-list .users-list-title h2 span {
   font-weight: bold;
   color: #ECB773;
   padding-left: 4px;
 }
 
 @media (max-width: 600px) {
-  .container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title h2 {
+  .container-teacher-panel-userslist .main .users-list .users-list-title h2 {
     margin-bottom: 15px;
   }
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title button {
+.container-teacher-panel-userslist .main .users-list .users-list-title button {
   font-family: Yekan-Bakh-Regular;
   color: #258C93;
   border: 1px solid #258C93;
@@ -21160,24 +21147,24 @@ body {
 }
 
 @media (max-width: 600px) {
-  .container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title button {
+  .container-teacher-panel-userslist .main .users-list .users-list-title button {
     width: 100%;
     margin-bottom: 40px;
   }
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title button span {
+.container-teacher-panel-userslist .main .users-list .users-list-title button span {
   padding-right: 5px;
   font-family: Yekan-Bakh-Bold;
   font-size: 17px;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-title button:hover {
+.container-teacher-panel-userslist .main .users-list .users-list-title button:hover {
   color: #fff;
   background-color: #258C93;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box {
+.container-teacher-panel-userslist .main .users-list .users-list-table-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21193,13 +21180,13 @@ body {
 }
 
 @media (max-width: 600px) {
-  .container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box {
+  .container-teacher-panel-userslist .main .users-list .users-list-table-box {
     overflow-x: auto;
     font-size: 14px;
   }
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table {
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table {
   width: 100%;
   text-align: center;
   border: 5px solid #F4F4F8;
@@ -21208,30 +21195,30 @@ body {
 }
 
 @media (max-width: 600px) {
-  .container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table {
+  .container-teacher-panel-userslist .main .users-list .users-list-table-box table {
     width: 800px;
   }
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table th {
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table th {
   height: 30px;
   padding-top: 17px;
   color: #fff;
   background-color: #ECB773;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table tr {
-  height: 600px;
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr {
+  height: 60px !important;
   border-bottom: 8px solid #F4F4F8;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table tr td {
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr td {
   vertical-align: middle;
-  padding-top: 17px;
+  padding-top: 5px;
   text-align: center;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table tr td:nth-child(7) button[type="submit"] {
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr td:nth-child(7) button[type="submit"] {
   font-family: Yekan-Bakh-Medium;
   font-size: 12px;
   padding: 7px;
@@ -21240,7 +21227,7 @@ body {
   background-color: #218087;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table tr td:nth-child(9) span {
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr td:nth-child(9) span {
   font-family: Yekan-Bakh-Medium;
   font-size: 12px;
   padding: 7px;
@@ -21249,11 +21236,11 @@ body {
   background-color: #00af6c;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table tr:nth-child(odd) {
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr:nth-child(odd) {
   background-color: #FFF4E5;
 }
 
-.container-teacher-panel-userslist .main .placementtest-history .placementtest-history-table-box table tr:nth-child(even) {
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr:nth-child(even) {
   background-color: #e9e9e9;
 }
 
@@ -21459,47 +21446,6 @@ body {
 
 .container-teacher-panel-userslist .side-menu .panel-exit-box img {
   width: 170px;
-}
-
-.open-menu {
-  right: 0px;
-}
-
-.bg-blur {
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
-}
-
-.show-drop {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.report-test .icdrn-modal-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.report-test .icdrn-modal-content input {
-  margin: 0 0 15px;
-}
-
-@media (max-width: 600px) {
-  .report-test .icdrn-modal-content input {
-    font-size: 10px;
-  }
 }
 
 .container-panel {

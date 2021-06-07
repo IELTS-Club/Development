@@ -298,7 +298,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         question.questionType=allArticles[i].querySelector(`#QT${SelectQuestionNumber}`).value;
         if(question.questionType=="questionTypeLabel"){
             document.querySelector("#errorText").innerHTML=`please fill question (${question.questionId})`
-            return document.querySelector("#nullQuestion").style.display="block"
+            return document.querySelector("#nullQuestion").style.display="flex"
         }
         
         //question structure
@@ -308,7 +308,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             //validation
             if(question.questionStructure=="glvQuestionStructureLabel"){
                 document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
 
          }
@@ -317,7 +317,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             //validation
             if(question.questionStructure=="rQuestionStructureLabel"){
                 document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
 
         }
@@ -326,7 +326,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             //validation
             if(question.questionStructure=="wQuestionStructureLabel"){
                 document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
         }
         
@@ -337,7 +337,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             //validation
             if(question.questionBody==""){
                 document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
 
         }
@@ -347,7 +347,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             //validation
             if(question.questionBody==""){
                 document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
 
         }
@@ -357,7 +357,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             //validation
             if(question.questionBody=="Start Typing Reading Body!"){
                 document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
 
         }
@@ -367,7 +367,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             //validation
             if(question.questionBody=="Start Typing Writing Body!"){
                 document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
 
         }
@@ -379,12 +379,12 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             
             if(inputs.length<1){
                 document.querySelector("#errorText").innerHTML=`please make some options in question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
             for(let p=0;p<inputs.length;p++){
                 if(inputs[p].value==''){
                     document.querySelector("#errorText").innerHTML=`please make sure you have filled all options in question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
                 }
                 question.questionChoices.push(inputs[p].value);
             }
@@ -400,11 +400,11 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
             
             if(options.length<=1){
                 document.querySelector("#errorText").innerHTML=`please fill some options in question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
             if(selectTag.value=="Private"){
                 document.querySelector("#errorText").innerHTML=`please select a true answer for question (${question.questionId})`
-                return document.querySelector("#nullQuestion").style.display="block"
+                return document.querySelector("#nullQuestion").style.display="flex"
             }
             question.trueAnswer=selectTag.value;
 
@@ -427,6 +427,6 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         body:JSON.stringify(allQuestions)
       }
        fetch("/teachers/create-exam",fetchOptions);
-      document.querySelector("#successfull").style.display="block"
+      document.querySelector("#successfull").style.display="flex"
         
 })
