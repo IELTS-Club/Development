@@ -102,41 +102,32 @@
 
                     <%  if(element.questionStructure=="glvQuestionStructureMultiple" ){ %>
                     <div class="mutiple-options-structure">
-
+                        <% element.questionChoices .forEach(element1 => { %>
                         <div class="mutiple-option-item">
 
-                            <input type="radio">
-                            <label for="">stay where you are and be quiet.</label>
+                            <input type="radio" name="option<%= element.questionId %>" value="<%= element1 %>">
+                            <label for=""><%= element1 %></label>
 
                         </div>
+                       
+                       <% }); %>
 
-                        <div class="mutiple-option-item">
-
-                            <input type="radio">
-                            <label for="">go towards a busier place.</label>
-
-                        </div>
-
-                        <div class="mutiple-option-item">
-
-                            <input type="radio">
-                            <label for="">phone a taxi at once.</label>
-
-                        </div>
+                       
 
                     </div>
                     <% }%>
                     <%  if(element.questionStructure=="glvQuestionStructureFilling" ){ %>
-                     <div class="filling-options-structure">
+                    <div class="filling-options-structure">
 
                         <div class="filling-option-item">
 
-                            <input type="text" class="filling-answer-body" placeholder="Enter Your Question Form Here...">
-                           
+                            <input type="text" class="filling-answer-body"
+                                placeholder="Enter Your Question Form Here...">
+
                         </div>
 
-                        
-                    </div> 
+
+                    </div>
                     <% }%>
                     <%  if(element.questionStructure=="rQuestionStructureReadingBody" ){ %>
                     <div class="reading-options-structure">
@@ -152,30 +143,30 @@
                     </div>
                     <% }%>
                     <%  if(element.questionStructure=="wQuestionStructureWritingBody" ){ %>
-                     <div class="writing-options-structure">
+                    <div class="writing-options-structure">
 
 
-                        <div class="writing-option-box"  style="white-space: pre-line" >
+                        <div class="writing-option-box" style="white-space: pre-line">
 
                             <%= element.questionBody %>
-                                
-                                                    
+
+
                         </div>
 
-                        <textarea class="writing-option-answer-box"  style="white-space: pre-line" >
+                        <textarea class="writing-option-answer-box" style="white-space: pre-line">
 
                            type your answer here...
                                                     
                         </textarea>
 
-                        
+
                     </div>
                     <% }%>
                 </article>
 
                 <% }); %>
 
-             
+
             </section>
 
             <aside class="student-quiz-sidebar  m-quiz-container">
@@ -252,8 +243,8 @@
 
                 <div class="student-quiz-sidebar-time">
 
-                    <span>
-                       بازگشت به صفحه آزمون‌ها
+                    <span onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')">
+                        بازگشت به صفحه آزمون‌ها
 
                     </span>
 
