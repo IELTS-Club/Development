@@ -89,7 +89,7 @@ panel.get("/teacers/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,re
     res.render("quiz/students-quiz",{
         exam:exam,
         Teacher:examClass.classTeacher,
-        
+        classId:exam.ClassID
     });
 })
 module.exports=panel;
