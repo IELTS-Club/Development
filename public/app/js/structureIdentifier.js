@@ -5,7 +5,7 @@ for (let i = 1; i <= QuestionsNumber; i++) {
 
     //choose correct options for select
     document.querySelector(`#QT${i}`).addEventListener('change', (e) => {
-
+      
         if (e.target.value == "questionTypeGrammer" || e.target.value == "questionTypeVocabulary" || e.target.value == "questionTypeListening") {
 
             document.querySelector(`#defaultStructure${i}`).style.display = "none";
