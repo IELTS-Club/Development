@@ -4,13 +4,24 @@ const isLogedIn=require("../../../middleware/isLogedIn");
 const isConfirmed=require("../../../middleware/isConfirmed");
 const isTeacher=require("../../../middleware/isTeacher");
 const { Class } = require("../../../models/mongoose");
+const { Exam }=require("../../../models/mongoose")
 
 panel.get("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
-    res.render("panel/teachers/quiz-list",{
+    const exams=await Exam.find({ClassID:req.params.classId});
+    console.log(exams)
+    if(exams.length<1){
+        return res.render("panel/teachers/no-quiz",{
+        userName:req.user.name,
+        classId:req.params.classId
+        })
+    }else{
+        res.render("panel/teachers/quiz-list",{
+        exams:exams,
         userName:req.user.name,
         classId:req.params.classId
     })
-
+}
+    
 })
 
 panel.post("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
@@ -35,11 +46,42 @@ panel.get("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,re
     const examClass=await Class.findOne({id:req.session.classID});
     
     
+    
     res.render("quiz/teacher-quiz.ejs",{
         Title:req.session.Title,
         Type:req.session.Type,
         QuestionsNumber:req.session.QuestionsNumber,
-        Teacher:examClass.classTeacher
+        Teacher:examClass.classTeacher,
+        classId:examClass.id
     });
+})
+panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+    console.log(req.body);
+    const examData=req.body.data;
+    console.log(examData[0])
+    // examData.forEach(element => {
+        
+    // });
+    
+    const exam= new Exam({
+        ClassID:req.session.classId,
+        Title:req.session.Title,
+        Type:req.session.Type,
+        StartDate:req.session.StartDate,
+        StartHour:req.session.StartHour,
+        StopDate:req.session.StopDate,
+        StopHour:req.session.StopHour,
+        QuestionsNumber:req.body.questionAmount,
+        QuestionsList:examData
+    })
+   
+    await exam.save();
+
+
+})
+
+
+panel.get("/teacers/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+    res.render("quiz/students-quiz.ejs");
 })
 module.exports=panel;

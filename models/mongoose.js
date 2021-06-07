@@ -58,7 +58,7 @@ const userSchema=new mongoose.Schema({
 });
 userSchema.methods.genrateToken=function(){
     let token=jwt.sign({_id:this._id,isTeacher:this.isTeacher,email:this.email,name:this.name,phone:this.phone},config.get("private-key"),{
-        expiresIn:"2h"
+        expiresIn:"4h"
     });
     return token;
 }
@@ -94,7 +94,7 @@ module.exports.Student = Student;
 
 //Exam
 const examsSchema=new mongoose.Schema({
-    Class:{type:mongoose.Schema.Types.ObjectId,ref:Class},
+    ClassID:{type:mongoose.Schema.Types.ObjectId,ref:Class},
     Title:{type:String},
     Type:{type:String},
     StartDate:{type:String},
@@ -102,28 +102,33 @@ const examsSchema=new mongoose.Schema({
     StopDate:{type:String},
     StopHour:{type:String},
     QuestionsNumber:{type:Number},
-    QuestionsList:[new mongoose.Schema({
+
+
+    QuestionsList:[{
         questionId:String,
+        questionType:String,
+        questionBody:String,
         questionStructure:String,
         questionChoices:[{type:String,required:function(){
-            if (this.questionStructure=="testi"){
+            if (this.questionStructure=="Multiple-Choice"){
                 return true;
             }
             else{
-                return false
+                return false;
             }
         }}],
-        trueAnswer:{type:Number,required:function(){
-            if (this.questionStructure=="testi"){
+        trueAnswer:{type:String,required:function(){
+            if (this.questionStructure=="Multiple-Choice"){
                 return true;
             }
             else{
                 return false
             }
         }},
-        questionType:String,
-        })],
+        
+        }],
     
+
     Answers:[{
         studentId:{type:mongoose.Schema.Types.ObjectId,ref:User},
         answersList:[new mongoose.Schema({
