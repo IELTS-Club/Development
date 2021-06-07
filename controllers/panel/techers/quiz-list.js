@@ -18,7 +18,9 @@ panel.get("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async
         res.render("panel/teachers/quiz-list",{
         exams:exams,
         userName:req.user.name,
-        classId:req.params.classId
+        classId:req.params.classId,
+        userName:req.user.name,
+
     })
 }
     
