@@ -82,9 +82,14 @@ panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,r
 
 
 panel.get("/teacers/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
-    const exam=await Exam.findOne({id:req.params.id})
+    
+    const exam=await Exam.findOne({_id:req.params.id});
+    console.log(exam)
+    const examClass=await Class.findOne({_id:exam.ClassID});
     res.render("quiz/students-quiz",{
-        exam:exam
+        exam:exam,
+        Teacher:examClass.classTeacher,
+        
     });
 })
 module.exports=panel;
