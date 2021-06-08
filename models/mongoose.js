@@ -131,10 +131,11 @@ const examsSchema=new mongoose.Schema({
 
     Answers:[{
         studentId:{type:mongoose.Schema.Types.ObjectId,ref:User},
-        answersList:[new mongoose.Schema({
+        process:{type:String,default:"inProccess"},
+        answersList:[{
             questionId:String,
             answerKey:String
-        })]
+        }]
 
     }] 
 });

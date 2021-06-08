@@ -468,7 +468,7 @@ transition: all 0.3s 1s ease-out;
 
             function selectClassTeacher(){
               if(element.classTeacher=="Noorzad")
-              return  "دکتر پزمان نورزاد";
+              return  "دکتر پژمان نورزاد";
             
             if(element.classTeacher=="Bahrami")
               return "خانم هانیه بهرامی"
@@ -485,7 +485,16 @@ transition: all 0.3s 1s ease-out;
             if(element.classTeacher=="Jadidi")
             return "اقای جواد جدیدی"
             if(element.classTeacher=="Asi")
-            return "خانم نیکتا عاصی شاد"
+            return "خانم نیکتا عاصی‌ شاد"
+
+            if(element.classTeacher=="Fallah")
+            return "اقای مهرشاد فلاح"
+
+            if(element.classTeacher=="Hadavi")
+            return "خانم مریم هادوی"
+
+            if(element.classTeacher=="Keshtkar")
+            return "خانم زهرا کشتکار"
             }
 
             function selectTeacherImage(){
@@ -506,9 +515,19 @@ transition: all 0.3s 1s ease-out;
             
             if(element.classTeacher=="Jadidi")
             return "../../images/Master-Pic-6.png"
-
+            
             if(element.classTeacher=="Asi")
             return "../../images/Master-Pic-7.png"
+
+            if(element.classTeacher=="Fallah")
+            return "../../images/Master-Pic-8.png"
+
+            if(element.classTeacher=="Hadavi")
+            return "../../images/Master-Pic-9.png"
+
+            if(element.classTeacher=="Keshtkar")
+            return "../../images/Master-Pic-10.png"
+
             }
             
             function selectClassType(){
@@ -549,11 +568,18 @@ transition: all 0.3s 1s ease-out;
                 <button type="submit" class="icdrn-btn" disabled>
                   در حال انتظار
                   </button>
-              
+                  
               <% }else{ %>
-                <button type="button" class="icdrn-btn" onclick="window.location.replace('<%=element.classLink%>')">
-                  ورود به اتاق کلاس
+                <div class="btn-row">
+                  <button type="button" class="icdrn-btn" onclick="window.location.href='<%=element.classLink%>'">
+                  ورود
                   </button>
+                  
+                  <button type="button" class="icdrn-btn" onclick="window.location.href='/panel/quiz-list/<%=element._id%>'">
+                    آزمون ها
+                    </button>
+                  </div>
+                
                   <% } %>
             </div>
 
@@ -677,7 +703,7 @@ transition: all 0.3s 1s ease-out;
     <section class="icdrn-modal" id="studentNoQuizModal">
       <div class="icdrn-modal-content">
   
-        <span class="modal-close" class="studentNoQuizModalClose">
+        <span class="modal-close" class="studentNoQuizModalClose" id="modal-closeA">
           &times;
         </span>
   
@@ -706,7 +732,7 @@ transition: all 0.3s 1s ease-out;
   
     <section class="icdrn-modal-lg student-quiz-list-modal" id="studentQuizListModal">
   
-      <span class="modal-close">
+      <span class="modal-close" id="modal-close">
       &times;
       </span>
   
@@ -720,29 +746,30 @@ transition: all 0.3s 1s ease-out;
   
             <div class="quiz-list">
   
+              <% if(showData!=null){ 
+              showData.forEach(element => {
+                
+               %>
+
               <div class="quiz-item">
   
                <div class="quiz-item-title">
                 <span>
-                  پایان ترم
+                 <%= element.Type %>
                 </span>
               </div> 
   
                <div class="quiz-item-date">
                 <span>
-                  چهار شنبه ساعت ۱۵
+                 <%= element.StartDate %> | <%= element.StartHour %>
                 </span>
               </div> 
   
-              <div class="quiz-item-teacher">
-                <span>
-                  استاد نورزاد
-                </span>
-              </div> 
+              
   
               <div class="quiz-item-btn">
   
-                <button type="button" class="icdrn-btn">
+                <button type="button" class="icdrn-btn" onclick="window.location.href='/students/run-exam/<%=element._id %>'">
                   شروع آزمون
                 </button>
                 
@@ -750,35 +777,7 @@ transition: all 0.3s 1s ease-out;
   
               </div>
   
-              <div class="quiz-item">
-  
-                <div class="quiz-item-title">
-                 <span>
-                   پایان ترم
-                 </span>
-               </div> 
-   
-                <div class="quiz-item-date">
-                 <span>
-                  شنبه ۱۰ صبح
-                 </span>
-               </div> 
-   
-               <div class="quiz-item-teacher">
-                 <span>
-                   استاد بهرامی
-                 </span>
-               </div> 
-   
-               <div class="quiz-item-btn">
-   
-                 <button type="button" class="icdrn-btn">
-                   شروع آزمون
-                 </button>
-                 
-               </div> 
-   
-               </div>
+            <% });} %> 
   
             </div>
   
@@ -818,7 +817,7 @@ transition: all 0.3s 1s ease-out;
      <section class="icdrn-modal" id="timeOutQuizModal">
       <div class="icdrn-modal-content">
   
-        <span class="modal-close" class="studentNoQuizModalClose">
+        <span class="modal-close" id="modal-closeB" class="studentNoQuizModalClose">
           &times;
         </span>
   
@@ -835,7 +834,7 @@ transition: all 0.3s 1s ease-out;
           
           <span style="background-color: #258c9321;color: #1D3C4E; border-radius: 10px;
           padding: 4px; font-size:14px">
-            ۱۵ عصر برگرد پیشمون :)
+           یکم دیگه برگرد پیشمون
           </span>
   
         </p>
@@ -871,16 +870,46 @@ transition: all 0.3s 1s ease-out;
       <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     
     
-      <script>
+      <script >
     
         //For Live Projects
             window.addEventListener('load',function(){
               document.querySelector('body').classList.add("loaded")  
             });
         
+            
         
           </script>
-
+         <% if(showData) {%>
+          <script>
+            
+            const examShowModal=document.querySelector("#studentQuizListModal");
+            examShowModal.style.display="flex";
+            document.querySelector("#modal-close").addEventListener("click",(e)=>{
+              examShowModal.style.display="none";
+            })
+          </script>
+          <% } %>
+          <% if(isNull) {%>
+          <script>
+            
+            const examNullModal=document.querySelector("#studentNoQuizModal");
+            examNullModal.style.display="flex";
+            document.querySelector("#modal-closeA").addEventListener("click",(e)=>{
+              examNullModal.style.display="none";
+            })
+          </script>
+          <% } %>
+          <% if(timeError) {%>
+          <script>
+            
+            const timeError=document.querySelector("#timeOutQuizModal");
+            timeError.style.display="flex";
+            document.querySelector("#modal-closeB").addEventListener("click",(e)=>{
+              timeError.style.display="none";
+            })
+          </script>
+          <% } %>
   <script src="../../app/js/app.js"></script>
   <script src="../../app/js/PanelMenuToggle.js"></script>
 

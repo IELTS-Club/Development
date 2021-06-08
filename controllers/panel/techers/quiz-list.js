@@ -5,7 +5,7 @@ const isConfirmed=require("../../../middleware/isConfirmed");
 const isTeacher=require("../../../middleware/isTeacher");
 const isStudent=require("../../../middleware/isStudent");
 const { Class } = require("../../../models/mongoose");
-const { Exam }=require("../../../models/mongoose")
+const { Exam }=require("../../../models/mongoose");
 
 panel.get("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
     const exams=await Exam.find({ClassID:req.params.classId});
@@ -27,6 +27,64 @@ panel.get("/teachers/quiz-list/:classId",[isLogedIn,isConfirmed,isTeacher],async
 
     })
 }
+    
+})
+
+//should be isStudent
+panel.get("/panel/quiz-list/:classId",[isLogedIn,isConfirmed],async(req,res)=>{
+    const exams=await Exam.find({ClassID:req.params.classId});
+    
+    
+    if(exams.length==0){
+        req.flash("examNull","nothing")
+        return res.redirect("/panel/class-list")
+    }
+    let vlaidatedExams=[];
+
+    //for each
+    exams.forEach(element => {
+        
+            const date=new Date().toLocaleDateString('fa-IR').replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+            let nowDate=date
+            const date1=date.split("/");
+            if(Number(date1[1])<10){
+                nowDate=`${date1[0]}/0${date1[1]}/${date1[2]}`
+            }
+            const hour=new Date().toLocaleTimeString("fa").replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+            let hour1=hour.split(":");
+            let nowHour=`${hour1[0]}:${hour1[1]}`
+            let splitDate=element.StopDate.split("/");
+            let splitNow=nowDate.split("/")
+            if(element.StartDate==element.StopDate){
+                if(Number(splitDate[0]) > Number(splitNow[0])){
+                    return vlaidatedExams.push(element);
+                }
+                if(Number(splitDate[1]) > Number(splitNow[1])){
+                    return vlaidatedExams.push(element);
+                }
+                if(Number(splitDate[2]) > Number(splitNow[2])){
+                    return vlaidatedExams.push(element);
+                }
+              const fHour=element.StopHour.split(":")
+              const nHour=nowHour.split(":");
+              
+              if((Number(fHour[0])*60) + Number(fHour[1]) > (Number(nHour[0])*60) + Number(nHour[1])){
+                return vlaidatedExams.push(element);
+                
+              }
+              
+          }
+    });
+    
+    console.log("ad:",vlaidatedExams)
+    if(vlaidatedExams.length==0){
+        req.flash("examNull","nothing")
+        return res.redirect("/panel/class-list")
+    }
+
+    req.flash("examShowData",vlaidatedExams);
+    res.redirect("/panel/class-list")
+
     
 })
 
@@ -66,7 +124,7 @@ panel.get("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,re
 panel.post("/teachers/create-exam",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
     console.log(req.body);
     const examData=req.body.data;
-    console.log(examData[0])
+    
     // examData.forEach(exam => {
         
     // });
@@ -105,8 +163,8 @@ panel.get("/teacers/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,re
         classId:exam.ClassID
     });
 })
-
-panel.get("/students/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
+//should be isStudent
+panel.get("/students/run-exam/:id",[isLogedIn,isConfirmed],async(req,res)=>{
     const examId=req.params.id
     const exam=await Exam.findById({_id:examId});
     function isAbleToJoin() {
@@ -120,7 +178,7 @@ panel.get("/students/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,r
         let hour1=hour.split(":");
         let nowHour=`${hour1[0]}:${hour1[1]}`
 
-        if(element.StartDate==exam.StopDate && exam.StartDate==nowDate){
+        if(exam.StartDate==exam.StopDate && exam.StartDate==nowDate){
           const sHour=exam.StartHour.split(":");
           const fHour=exam.StopHour.split(":")
           const nHour=nowHour.split(":");
@@ -135,7 +193,58 @@ panel.get("/students/run-exam/:id",[isLogedIn,isConfirmed,isTeacher],async(req,r
       }
     return false
       }
-          
+      if(isAbleToJoin()==false){
+        req.flash("timeError","itsNotTheTime");
+        res.redirect("/panel/class-list")
+      }
+      else{
+        examClass=await Class.findOne({_id:exam.ClassID});
+        const date=new Date().toLocaleDateString('fa-IR').replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+        let nowDate=date
+        const date1=date.split("/");
+        if(Number(date1[1])<10){
+            nowDate=`${date1[0]}/0${date1[1]}/${date1[2]}`
+        }
+        const hour=new Date().toLocaleTimeString("fa").replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+        let hour1=hour.split(":");
+        let nowHour=`${hour1[0]}:${hour1[1]}`
+        function calculateTotalReaminingTime(){
+          const sHour=exam.StartHour.split(":");
+          const fHour=exam.StopHour.split(":")
+          const nHour=nowHour.split(":");
+          let totalMinuts=((Number(fHour[0])*60)+(Number(fHour[1])))-((Number(nHour[0])*60)+(Number(nHour[1])));
+          return totalMinuts
+        }console.log(calculateTotalReaminingTime())
+        res.render("quiz/forStudent",{
+            exam:exam,
+            Teacher:examClass.classTeacher,
+            Student:req.user.name,
+            classId:exam.ClassID,
+            reaminigTime:calculateTotalReaminingTime()
+        });
+      }
+        
 
 })
+
+panel.post("/students/run-exam/:id",[isLogedIn,isConfirmed],async(req,res)=>{
+    let proces=req.body.proces;
+    let Answerss=req.body.Answers;
+    console.log("ss",Answerss);
+    let studentId=req.user._id
+    console.log(req.body);
+    const exam=await Exam.findById({_id:req.params.id});
+    exam.Answers.push({
+        
+            studentId:studentId,
+            process:proces,
+            answersList:Answerss
+            
+        
+    });
+    await exam.save()
+    
+
+})
+
 module.exports=panel;

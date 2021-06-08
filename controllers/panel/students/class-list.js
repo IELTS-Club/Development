@@ -12,8 +12,9 @@ const express=require("express");
 const panel=express.Router();
  
 //panel get fa
-panel.get("/panel/class-list",[isLogedin,isConfirmed,isStudent],async(req,res)=>{
+panel.get("/panel/class-list",[isLogedin,isConfirmed],async(req,res)=>{
     const classes=[];
+    
     const student=await Student.find({name:req.user._id})
     if(student.length!=0){
         
@@ -30,11 +31,33 @@ panel.get("/panel/class-list",[isLogedin,isConfirmed,isStudent],async(req,res)=>
           
       }
           // you should write for for classes
+          let examShowData=req.flash("examShowData");
+          if(examShowData.length>0){
+            examShowData=examShowData;
+          }else {
+            examShowData=null;
+          }
+          let examNull=req.flash("examNull");
+          if(examNull.length>0){
+            examNull=examNull[0];
+          }else {
+            examNull=null;
+          }
+          let timeError=req.flash("timeError");
+          if(timeError.length>0){
+            timeError=timeError[0];
+          }else {
+            timeError=null;
+          }
+          
     res.render("panel/students/class-list",{
         classes:classes,
         userName:req.user.name,
         showLanmisDetails:null,
-        link:null
+        link:null,
+        showData:examShowData,
+        isNull:examNull,
+        timeError
     });
 });
 
