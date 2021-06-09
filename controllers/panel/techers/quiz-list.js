@@ -58,22 +58,25 @@ panel.get("/panel/quiz-list/:classId",[isLogedIn,isConfirmed],async(req,res)=>{
             if(element.StartDate==element.StopDate){
                 if(Number(splitDate[0]) > Number(splitNow[0])){
                     return vlaidatedExams.push(element);
+                   
                 }
                 if(Number(splitDate[1]) > Number(splitNow[1])){
                     return vlaidatedExams.push(element);
+                   
                 }
                 if(Number(splitDate[2]) > Number(splitNow[2])){
                     return vlaidatedExams.push(element);
+                    
                 }
               const fHour=element.StopHour.split(":")
               const nHour=nowHour.split(":");
-              
-              if((Number(fHour[0])*60) + Number(fHour[1]) > (Number(nHour[0])*60) + Number(nHour[1])){
-                return vlaidatedExams.push(element);
-                
-              }
-              
-          }
+                if(Number(splitDate[2]) == Number(splitNow[2])){
+                    if((Number(fHour[0])*60) + Number(fHour[1]) > (Number(nHour[0])*60) + Number(nHour[1])){
+                    return vlaidatedExams.push(element);
+                    
+                    }
+                }
+            }
     });
     
     console.log("ad:",vlaidatedExams)
@@ -230,6 +233,7 @@ panel.get("/students/run-exam/:id",[isLogedIn,isConfirmed],async(req,res)=>{
 panel.post("/students/run-exam/:id",[isLogedIn,isConfirmed],async(req,res)=>{
     let proces=req.body.proces;
     let Answerss=req.body.Answers;
+    
     console.log("ss",Answerss);
     let studentId=req.user._id
     console.log(req.body);
