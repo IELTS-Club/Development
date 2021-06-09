@@ -7,8 +7,10 @@ let display = document.querySelector('#time');
 
     let timer = duration, minutes, seconds;
   
-    setInterval(function () {
-  
+    const forInterval=setInterval(fetchToDatabase,1000)
+
+    function fetchToDatabase (){
+
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
   
@@ -26,6 +28,7 @@ let display = document.querySelector('#time');
   
       if(minutes == 0 && seconds == 0) {
         console.log("hi")
+        clearInterval(forInterval);
         const allAnswers={Answers:[],proccess:"done"}
     
     for(let i=1;i<=QuestionsNumber;i++){
@@ -76,8 +79,7 @@ let display = document.querySelector('#time');
 
 
         }
-  
-    }, 1000);
+    }
   }
 
 
