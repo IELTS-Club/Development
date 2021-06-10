@@ -299,6 +299,7 @@
 
             </div>
         </section>
+
         <section class="icdrn-modal" dir="ltr" id="timeDone">
 
             <div class="icdrn-modal-content">
@@ -327,6 +328,36 @@
 
             </div>
         </section>
+
+        <section class="icdrn-modal" dir="ltr" id="finishWarning" style="display: flex;">
+
+            <div class="icdrn-modal-content">
+
+
+                <img src="/images/null-question-illustration.svg" class="modal-img" alt="">
+
+
+                <h3 id="errorText">
+                    پایان زمان
+                </h3>
+
+                <p>
+
+                   دانش آموز گرامی زمان آزمون شما پایان یافت
+                    <br>
+                   و جواب های شما ذخیره گردید :(
+
+                </p>
+
+                <button type="submit" class="icdrn-btn"  onclick="window.location.href='/panel/class-list'">
+
+                    لیست کلاس ها
+
+                </button>
+
+            </div>
+        </section>
+
     </div>
     <script>
         const reminingtime = Number("<%= reaminigTime %>");
