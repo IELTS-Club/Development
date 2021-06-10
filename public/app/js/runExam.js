@@ -103,58 +103,69 @@ let duration =(reminingtime * 60)
 
 
 
-// setInterval(function(){
-//     const allAnswers={Answers:[],proces:"inProccess"}
+const sevaAfterTwoMinutes=setInterval(function(){
+    const allAnswers={Answers:[],proces:"inProccess"}
     
-//     for(let i=1;i<=QuestionsNumber;i++){
-//         const options={
-//             questionId:"",
-//             answerKey:""
-//         }
-//         //get question Id
-//         const allArticles=document.getElementsByTagName("article")[i-1];
-//         options.questionId=allArticles.id;
+    for(let i=1;i<=QuestionsNumber;i++){
+        const options={
+            questionId:"",
+            answerKey:""
+        }
+        //get question Id
+        const allArticles=document.getElementsByTagName("article")[i-1];
+        options.questionId=allArticles.id;
         
         
-//         const divStructures=allArticles.getElementsByTagName("div")[1];
+        const divStructures=allArticles.getElementsByTagName("div")[1];
 
-//         //get multiple
-//        if(divStructures.id==`mutiple-options-structure${options.questionId}`){
-//         var radios =document.getElementsByName(`option${options.questionId}`);
-//        radios.forEach(element => {
-//            if(element.checked){
-//             options.answerKey=element.value;
-//            }
-//        });
-//         }
+       //get multiple
+       if(divStructures.id==`mutiple-options-structure${options.questionId}`){
+        options.structure="mutiple"
+       var radios =document.getElementsByName(`option${options.questionId}`);
+      radios.forEach(element => {
+          if(element.checked){
+           options.answerKey=element.value;
+          }
+      });
+       }
 
-//         //get filling
-//         if(divStructures.id==`filling-options-structure${options.questionId}`){
-//             var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
-//             options.answerKey=fillingKey.value;
-//             }
-//         //get wrting answer
-//         if(divStructures.id==`writing-options-structure${options.questionId}`){
-//             var writtingKey =document.getElementById(`writtingKey${options.questionId}`);
-//             options.answerKey=writtingKey.value;
-//             }
+       //get filling
+       if(divStructures.id==`filling-options-structure${options.questionId}`){
+           var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
+           options.answerKey=fillingKey.value;
+           options.structure="filling"
+           }
+        //get reding structure
+        if(divStructures.id==`reading-options-structure${options.questionId}`){
+         var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
+         options.answerKey=fillingKey.value;
+         options.structure="reading"
+         }
 
-//             allAnswers.Answers.push(options)
-//     }
-//     const fetchOptions={
-//         method:"POST",
-//         headers:{
-//           "Content-Type":"application/json"
-//         },
-//         body:JSON.stringify(allAnswers)
-//       }
-//       console.log(allAnswers)
-//        fetch(`/students/run-exam/${examId}`,fetchOptions);
+       //get wrting answer
+       if(divStructures.id==`writing-options-structure${options.questionId}`){
+         options.structure="writing";        
+           var writtingKey =document.getElementById(`writtingKey${options.questionId}`);
+           options.answerKey=writtingKey.value;
+           }
+
+
+            allAnswers.Answers.push(options)
+    }
+    const fetchOptions={
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(allAnswers)
+      }
+      console.log(allAnswers)
+       fetch(`/students/run-exam/${examId}`,fetchOptions);
        
        
 
 
-// },10000)
+},10000)
 
 
 
@@ -218,6 +229,7 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
        fetch(`/students/run-exam/${examId}`,fetchOptions);
        document.querySelector('#successfull').style.display="flex";
        clearInterval(forInterval);
+       clearInterval(sevaAfterTwoMinutes)
 
 })
   

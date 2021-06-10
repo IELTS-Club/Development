@@ -49,6 +49,12 @@ panel.get("/panel/class-list",[isLogedin,isConfirmed],async(req,res)=>{
           }else {
             timeError=null;
           }
+          let orgnizedBefore=req.flash("orgnizedBefore");
+          if(orgnizedBefore.length>0){
+            orgnizedBefore=orgnizedBefore[0];
+          }else {
+            orgnizedBefore=null;
+          }
           
     res.render("panel/students/class-list",{
         classes:classes,
@@ -57,7 +63,8 @@ panel.get("/panel/class-list",[isLogedin,isConfirmed],async(req,res)=>{
         link:null,
         showData:examShowData,
         isNull:examNull,
-        timeError
+        timeError,
+        orgnizedBefore
     });
 });
 
