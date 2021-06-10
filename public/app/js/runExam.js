@@ -43,26 +43,36 @@ let duration =(reminingtime * 60)
         
         const divStructures=allArticles.getElementsByTagName("div")[1];
 
-        //get multiple
-       if(divStructures.id==`mutiple-options-structure${options.questionId}`){
-        var radios =document.getElementsByName(`option${options.questionId}`);
-       radios.forEach(element => {
-           if(element.checked){
-            options.answerKey=element.value;
-           }
-       });
-        }
+      //get multiple
+      if(divStructures.id==`mutiple-options-structure${options.questionId}`){
+        options.structure="mutiple"
+       var radios =document.getElementsByName(`option${options.questionId}`);
+      radios.forEach(element => {
+          if(element.checked){
+           options.answerKey=element.value;
+          }
+      });
+       }
 
-        //get filling
-        if(divStructures.id==`filling-options-structure${options.questionId}`){
-            var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
-            options.answerKey=fillingKey.value;
-            }
-        //get wrting answer
-        if(divStructures.id==`writing-options-structure${options.questionId}`){
-            var writtingKey =document.getElementById(`writtingKey${options.questionId}`);
-            options.answerKey=writtingKey.value;
-            }
+       //get filling
+       if(divStructures.id==`filling-options-structure${options.questionId}`){
+           var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
+           options.answerKey=fillingKey.value;
+           options.structure="filling"
+           }
+        //get reding structure
+        if(divStructures.id==`reading-options-structure${options.questionId}`){
+         var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
+         options.answerKey=fillingKey.value;
+         options.structure="reading"
+         }
+
+       //get wrting answer
+       if(divStructures.id==`writing-options-structure${options.questionId}`){
+         options.structure="writing";        
+           var writtingKey =document.getElementById(`writtingKey${options.questionId}`);
+           options.answerKey=writtingKey.value;
+           }
 
             allAnswers.Answers.push(options)
     }
