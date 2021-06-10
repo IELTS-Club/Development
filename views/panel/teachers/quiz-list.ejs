@@ -127,105 +127,105 @@
     <div class="panel-overlay hide-for-desktop">
 
       <nav class="panel-overlay-menu">
- 
-       <a href="/panel"><img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo"></a>
- 
-       <div class="panel-menu-item">
-     
-         <img src="../../images/Panel-Home-Icon.svg" alt="">
- 
- 
-         <a href="/teachers/dashboard">
-   
-   
-           پیشخوان
-         
-         </a>
- 
-       </div>
- 
-   
- 
-       <div class="panel-menu-item">
- 
-         <img src="../../images/Panel-Classes-Icon.svg" alt="">
- 
- 
-         <a href="/teachers/class-list">
-   
-   
-           کلاس های من
-         
-         </a>
- 
-       </div>
- 
- 
-       <div class="panel-menu-item">
- 
-         <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
- 
- 
-         <a href="/teachers/add-class">
-   
-   
-           اضافه کردن کلاس
-         
-         </a>
- 
-       </div>
- 
-       <div class="panel-menu-item">
- 
-         <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
- 
- 
-         <a href="/teachers/placement-test-list">
-   
-   
-           تاریخچه تعیین سطح
-         
-         </a>
- 
-       </div>
- 
-       <div class="panel-menu-item">
- 
-         <img src="../../images/Panel-Students-list.svg" alt="" style="width: 30px;">
- 
- 
-         <a href="/teachers/student-list">
-   
-   
-           لیست دانشجویان
-         
-         </a>
- 
-       </div>
- 
-       <div class="panel-menu-item active">
- 
-         <img src="../../images/Panel-edit-profile-icon.svg" alt="">
- 
- 
-         <a href="/teachers/edit-profile">
-   
-   
-           ویرایش اطلاعات
-         
-         </a>
- 
-       </div>
- 
-       <div class="panel-exit-box">
- 
-         <img src="../../images/Teachers-Illustration.svg" alt="">
-   
-       </div>
- 
+
+        <a href="/panel"><img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo"></a>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+
+
+          <a href="/teachers/dashboard">
+
+
+            پیشخوان
+
+          </a>
+
+        </div>
+
+
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
+
+
+          <a href="/teachers/class-list">
+
+
+            کلاس های من
+
+          </a>
+
+        </div>
+
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+
+
+          <a href="/teachers/add-class">
+
+
+            اضافه کردن کلاس
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+          <a href="/teachers/placement-test-list">
+
+
+            تاریخچه تعیین سطح
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Students-list.svg" alt="" style="width: 30px;">
+
+
+          <a href="/teachers/student-list">
+
+
+            لیست دانشجویان
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item active">
+
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+          <a href="/teachers/edit-profile">
+
+
+            ویرایش اطلاعات
+
+          </a>
+
+        </div>
+
+        <div class="panel-exit-box">
+
+          <img src="../../images/Teachers-Illustration.svg" alt="">
+
+        </div>
+
       </nav>
- 
-     </div>
+
+    </div>
 
     <div class="navbar">
 
@@ -454,15 +454,20 @@
             if(element.StartDate==element.StopDate){
               const stopHour=element.StopHour.split(":");
               const startHour=element.StartHour.split(":");
-               totalMinuts=((Number(stopHour[0]) * 60 )+Number(stopHour[1]))-((Number(startHour[0]) * 60 )+Number(startHour[1])) ;
+               totalMinuts=((Number(stopHour[0]) * 60 )+Number(stopHour[1]))-((Number(startHour[0]) * 60 )+Number(startHour[1]));
             }else{
               const stopHour=element.StopHour.split(":");
               const startHour=element.StartHour.split(":");
-              const lastDay=((24*60)-(Number(startHour[0])*60)+Number(startHour[1]))
+              const lastDay=((24*60)-(Number(startHour[0])*60)-Number(startHour[1]))
               let today=(Number(stopHour[0])*60)+(Number(stopHour[1]));
-              totalMinuts=lastDay+today
+              totalMinuts="فرمت زمانی نادرست"
             }
+            
+           
+            
+           
           %>
+          
           <div class="quiz-card">
 
             <div class="quiz-card-thumbnail">
@@ -472,7 +477,7 @@
             </div>
 
             <h3>
-              آزمون میان ترم آیلتس
+              <%= element.Title %>
             </h3>
 
             <div class="quiz-card-detail">

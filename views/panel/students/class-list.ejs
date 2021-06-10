@@ -468,7 +468,7 @@ transition: all 0.3s 1s ease-out;
 
             function selectClassTeacher(){
               if(element.classTeacher=="Noorzad")
-              return  "دکتر پزمان نورزاد";
+              return  "دکتر پژمان نورزاد";
             
             if(element.classTeacher=="Bahrami")
               return "خانم هانیه بهرامی"
@@ -485,7 +485,16 @@ transition: all 0.3s 1s ease-out;
             if(element.classTeacher=="Jadidi")
             return "اقای جواد جدیدی"
             if(element.classTeacher=="Asi")
-            return "خانم نیکتا عاصی شاد"
+            return "خانم نیکتا عاصی‌ شاد"
+
+            if(element.classTeacher=="Fallah")
+            return "اقای مهرشاد فلاح"
+
+            if(element.classTeacher=="Hadavi")
+            return "خانم مریم هادوی"
+
+            if(element.classTeacher=="Keshtkar")
+            return "خانم زهرا کشتکار"
             }
 
             function selectTeacherImage(){
@@ -506,9 +515,19 @@ transition: all 0.3s 1s ease-out;
             
             if(element.classTeacher=="Jadidi")
             return "../../images/Master-Pic-6.png"
-
+            
             if(element.classTeacher=="Asi")
             return "../../images/Master-Pic-7.png"
+
+            if(element.classTeacher=="Fallah")
+            return "../../images/Master-Pic-8.png"
+
+            if(element.classTeacher=="Hadavi")
+            return "../../images/Master-Pic-9.png"
+
+            if(element.classTeacher=="Keshtkar")
+            return "../../images/Master-Pic-10.png"
+
             }
             
             function selectClassType(){
@@ -549,11 +568,18 @@ transition: all 0.3s 1s ease-out;
                 <button type="submit" class="icdrn-btn" disabled>
                   در حال انتظار
                   </button>
-              
+                  
               <% }else{ %>
-                <button type="submit" class="icdrn-btn">
-                  <a href="<%= element.classLink %>">  ورود به اتاق کلاس</a>
+                <div class="btn-row">
+                  <button type="button" class="icdrn-btn" onclick="window.location.href='<%=element.classLink%>'">
+                  ورود
                   </button>
+                  
+                  <button type="button" class="icdrn-btn" onclick="window.location.href='/panel/quiz-list/<%=element._id%>'">
+                    آزمون ها
+                    </button>
+                  </div>
+                
                   <% } %>
             </div>
 
@@ -677,7 +703,7 @@ transition: all 0.3s 1s ease-out;
     <section class="icdrn-modal" id="studentNoQuizModal">
       <div class="icdrn-modal-content">
   
-        <span class="modal-close" class="studentNoQuizModalClose">
+        <span class="modal-close" class="studentNoQuizModalClose" id="modal-closeA">
           &times;
         </span>
   
@@ -706,7 +732,7 @@ transition: all 0.3s 1s ease-out;
   
     <section class="icdrn-modal-lg student-quiz-list-modal" id="studentQuizListModal">
   
-      <span class="modal-close">
+      <span class="modal-close" id="modal-close">
       &times;
       </span>
   
@@ -720,29 +746,30 @@ transition: all 0.3s 1s ease-out;
   
             <div class="quiz-list">
   
+              <% if(showData!=null){ 
+              showData.forEach(element => {
+                
+               %>
+
               <div class="quiz-item">
   
                <div class="quiz-item-title">
                 <span>
-                  پایان ترم
+                 <%= element.Type %>
                 </span>
               </div> 
   
                <div class="quiz-item-date">
                 <span>
-                  چهار شنبه ساعت ۱۵
+                 <%= element.StartDate %> | <%= element.StartHour %>
                 </span>
               </div> 
   
-              <div class="quiz-item-teacher">
-                <span>
-                  استاد نورزاد
-                </span>
-              </div> 
+              
   
               <div class="quiz-item-btn">
   
-                <button type="button" class="icdrn-btn">
+                <button type="button" class="icdrn-btn" onclick="window.location.href='/students/run-exam/<%=element._id %>'">
                   شروع آزمون
                 </button>
                 
@@ -750,35 +777,7 @@ transition: all 0.3s 1s ease-out;
   
               </div>
   
-              <div class="quiz-item">
-  
-                <div class="quiz-item-title">
-                 <span>
-                   پایان ترم
-                 </span>
-               </div> 
-   
-                <div class="quiz-item-date">
-                 <span>
-                  شنبه ۱۰ صبح
-                 </span>
-               </div> 
-   
-               <div class="quiz-item-teacher">
-                 <span>
-                   استاد بهرامی
-                 </span>
-               </div> 
-   
-               <div class="quiz-item-btn">
-   
-                 <button type="button" class="icdrn-btn">
-                   شروع آزمون
-                 </button>
-                 
-               </div> 
-   
-               </div>
+            <% });} %> 
   
             </div>
   
@@ -818,7 +817,7 @@ transition: all 0.3s 1s ease-out;
      <section class="icdrn-modal" id="timeOutQuizModal">
       <div class="icdrn-modal-content">
   
-        <span class="modal-close" class="studentNoQuizModalClose">
+        <span class="modal-close" id="modal-closeB" class="studentNoQuizModalClose">
           &times;
         </span>
   
@@ -835,12 +834,12 @@ transition: all 0.3s 1s ease-out;
           
           <span style="background-color: #258c9321;color: #1D3C4E; border-radius: 10px;
           padding: 4px; font-size:14px">
-            ۱۵ عصر برگرد پیشمون :)
+           یکم دیگه برگرد پیشمون
           </span>
   
         </p>
   
-        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain" style="margin-top:-7px">
+        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"  onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
   
           بازگشت
   
@@ -848,6 +847,46 @@ transition: all 0.3s 1s ease-out;
   
       </div>
     </section>
+
+
+
+    <!-orgnized Before modal -->
+  
+  <section class="icdrn-modal" id="orgnizedBefore">
+   <div class="icdrn-modal-content">
+
+     <span class="modal-close" id="modal-closeF" class="studentNoQuizModalClose">
+       &times;
+     </span>
+
+     <img src="../../images/time-out-quiz.svg" class="modal-img" alt="">
+
+
+
+     <h3 style="font-size:30px;margin-top:-10px">
+      قبلا توی این آزمون شرکت کردی رفیق :)
+     </h3>
+
+     <p  style="margin-top:-5px">
+       منتظر باش تا کارنامه 
+       
+       <span style="background-color: #258c9321;color: #1D3C4E; border-radius: 10px;
+       padding: 4px; font-size:14px">
+        به دسستت برسه
+       </span>
+
+     </p>
+
+     <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"  onclick="window.location.href='/panel/class-list'" style="margin-top:-7px">
+
+       بازگشت
+
+     </button>
+
+   </div>
+ </section>
+
+
 
   <div id="loader-wrapper">
       <div id="loader"></div>
@@ -863,56 +902,6 @@ transition: all 0.3s 1s ease-out;
 
 
 
-
-    <section class="icdrn-modal" id="lanmisDetails">
-    <div class="icdrn-modal-content">
-
-      <a href="/panel/class-list"><span class="modal-close" id="modalCloseA">
-        &times;
-      </span></a>
-
-       <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="" style="display: none;"> 
-
-
-
-      <h3>
-        توضیحات ورود به کلاس
-        </h3>
-
-      <p>
-
-        دقت کن که نام کاربری و پسوردت تو لنمیس همون کد ملیته
-       
-
-      </p>
-
-      <a href="<%= link %>"><button type="submit" class="icdrn-btn">
-        
-         ورود به کلاس
-        
-      </button> </a>
-
-    </div>
-  </section>
-<% if (showLanmisDetails==true){ %> 
-    <script> 
-      
-      const getRegisterErrorModal = document.querySelector('#lanmisDetails');
-     
-      
-      
-      
-  
-      
-        getRegisterErrorModal.style.display = "flex";
-      
-      
-    
-  
-      
-  
-     </script>
-    <% } %>
     
       <script src="app/js/app.js"></script>
       <script src="app/js/placementTestModal.js"></script>
@@ -921,16 +910,58 @@ transition: all 0.3s 1s ease-out;
       <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     
     
-      <script>
+      <script >
     
         //For Live Projects
             window.addEventListener('load',function(){
               document.querySelector('body').classList.add("loaded")  
             });
         
+            
         
           </script>
+         <% if(showData) {%>
+          <script>
+            
+            const examShowModal=document.querySelector("#studentQuizListModal");
+            examShowModal.style.display="flex";
+            document.querySelector("#modal-close").addEventListener("click",(e)=>{
+              examShowModal.style.display="none";
+            })
+          </script>
+          <% } %>
+          <% if(isNull) {%>
+          <script>
+            
+            const examNullModal=document.querySelector("#studentNoQuizModal");
+            examNullModal.style.display="flex";
+            document.querySelector("#modal-closeA").addEventListener("click",(e)=>{
+              examNullModal.style.display="none";
+            })
+          </script>
+          <% } %>
+          <% if(timeError) {%>
+          <script>
+            
+            const timeError=document.querySelector("#timeOutQuizModal");
+            timeError.style.display="flex";
+            document.querySelector("#modal-closeB").addEventListener("click",(e)=>{
+              timeError.style.display="none";
+            })
+          </script>
+          <% } %>
+          <% if(orgnizedBefore) {%>
+          <script>
+            
+            const orgnizedBefore=document.querySelector("#orgnizedBefore");
+            orgnizedBefore.style.display="flex";
+            document.querySelector("#modal-closeF").addEventListener("click",(e)=>{
+              orgnizedBefore.style.display="none";
+            })
+          </script>
 
+          
+          <% } %>
   <script src="../../app/js/app.js"></script>
   <script src="../../app/js/PanelMenuToggle.js"></script>
 

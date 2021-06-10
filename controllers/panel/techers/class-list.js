@@ -82,7 +82,10 @@ panel.get("/teachers/class-list",[isLogedIn,isConfirmed,isTeacher],async(req,res
         return "Hadavi";
         if (req.user.email=="fallahmehrshad790@gmail.com")
         return "Fallah";
-        if (req.user.email=="haniyebh10@gmail.com")return "Bahrami";
+        if (req.user.email=="zk270266@gmail.com")
+        return "Keshtkar";
+        if (req.user.email=="haniyebh10@gmail.com")
+        return "Bahrami";
         }
         const teacher=selectTeacher();
     const Clasess=await Class.find({classTeacher:teacher})
@@ -128,7 +131,10 @@ panel.get("/en/teachers/class-list",[isLogedInEN,isConfirmedEN,isTeacherEN],asyn
         return "Hadavi";
         if (req.user.email=="fallahmehrshad790@gmail.com")
         return "Fallah";
-        if (req.user.email=="haniyebh10@gmail.com")return "Bahrami";
+        if (req.user.email=="zk270266@gmail.com")
+        return "Keshtkar";
+        if (req.user.email=="haniyebh10@gmail.com")
+        return "Bahrami";
         }
         const teacher=selectTeacher();
     const Clasess=await Class.find({classTeacher:teacher})
