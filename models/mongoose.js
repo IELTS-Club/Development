@@ -134,7 +134,8 @@ const examsSchema=new mongoose.Schema({
         process:{type:String,default:"inProccess"},
         answersList:[{
             questionId:String,
-            answerKey:String
+            answerKey:String,
+            structure:String
         }]
 
     }] 

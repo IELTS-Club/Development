@@ -1,9 +1,9 @@
 
 
 let display = document.querySelector('#time');
-  startTimer((reminingtime * 60), display);
-
-  function startTimer(duration, display) {
+ // startTimer((reminingtime * 60), display);
+let duration =(reminingtime * 60)
+ // function startTimer(duration, display) {
 
     let timer = duration, minutes, seconds;
   
@@ -16,7 +16,7 @@ let display = document.querySelector('#time');
   
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-  
+    
         display.textContent = minutes + ":" + seconds;
   
       if (--timer < 0) {
@@ -29,7 +29,7 @@ let display = document.querySelector('#time');
       if(minutes == 0 && seconds == 0) {
         console.log("hi")
         clearInterval(forInterval);
-        const allAnswers={Answers:[],proccess:"done"}
+        const allAnswers={Answers:[],proces:"done"}
     
     for(let i=1;i<=QuestionsNumber;i++){
         const options={
@@ -80,7 +80,7 @@ let display = document.querySelector('#time');
 
         }
     }
-  }
+  //}
 
 
 
@@ -154,7 +154,8 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
     for(let i=1;i<=QuestionsNumber;i++){
         const options={
             questionId:"",
-            answerKey:""
+            answerKey:"",
+            structure:"",
         }
         //get question Id
         const allArticles=document.getElementsByTagName("article")[i-1];
@@ -165,6 +166,7 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
 
         //get multiple
        if(divStructures.id==`mutiple-options-structure${options.questionId}`){
+         options.structure="mutiple"
         var radios =document.getElementsByName(`option${options.questionId}`);
        radios.forEach(element => {
            if(element.checked){
@@ -177,9 +179,18 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
         if(divStructures.id==`filling-options-structure${options.questionId}`){
             var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
             options.answerKey=fillingKey.value;
+            options.structure="filling"
             }
+         //get reding structure
+         if(divStructures.id==`reading-options-structure${options.questionId}`){
+          var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
+          options.answerKey=fillingKey.value;
+          options.structure="reading"
+          }
+
         //get wrting answer
         if(divStructures.id==`writing-options-structure${options.questionId}`){
+          options.structure="writing";        
             var writtingKey =document.getElementById(`writtingKey${options.questionId}`);
             options.answerKey=writtingKey.value;
             }
@@ -196,7 +207,7 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
       console.log(allAnswers)
        fetch(`/students/run-exam/${examId}`,fetchOptions);
        document.querySelector('#successfull').style.display="flex";
-
+       clearInterval(forInterval);
 
 })
   

@@ -201,6 +201,7 @@ panel.get("/students/run-exam/:id",[isLogedIn,isConfirmed],async(req,res)=>{
         res.redirect("/panel/class-list")
       }
       else{
+        
         examClass=await Class.findOne({_id:exam.ClassID});
         const date=new Date().toLocaleDateString('fa-IR').replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
         let nowDate=date
