@@ -45,7 +45,7 @@ let duration =(reminingtime * 60)
 
       //get multiple
       if(divStructures.id==`mutiple-options-structure${options.questionId}`){
-        options.structure="mutiple"
+       
        var radios =document.getElementsByName(`option${options.questionId}`);
       radios.forEach(element => {
           if(element.checked){
@@ -58,18 +58,13 @@ let duration =(reminingtime * 60)
        if(divStructures.id==`filling-options-structure${options.questionId}`){
            var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
            options.answerKey=fillingKey.value;
-           options.structure="filling"
+         
            }
-        //get reding structure
-        if(divStructures.id==`reading-options-structure${options.questionId}`){
-         var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
-         options.answerKey=fillingKey.value;
-         options.structure="reading"
-         }
+     
 
        //get wrting answer
        if(divStructures.id==`writing-options-structure${options.questionId}`){
-         options.structure="writing";        
+         
            var writtingKey =document.getElementById(`writtingKey${options.questionId}`);
            options.answerKey=writtingKey.value;
            }
@@ -100,8 +95,7 @@ let duration =(reminingtime * 60)
 
 
 
-
-
+let fetchedNumber=0
 
 const sevaAfterTwoMinutes=setInterval(function(){
     const allAnswers={Answers:[],proces:"inProccess"}
@@ -120,7 +114,7 @@ const sevaAfterTwoMinutes=setInterval(function(){
 
        //get multiple
        if(divStructures.id==`mutiple-options-structure${options.questionId}`){
-        options.structure="mutiple"
+        
        var radios =document.getElementsByName(`option${options.questionId}`);
       radios.forEach(element => {
           if(element.checked){
@@ -133,18 +127,13 @@ const sevaAfterTwoMinutes=setInterval(function(){
        if(divStructures.id==`filling-options-structure${options.questionId}`){
            var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
            options.answerKey=fillingKey.value;
-           options.structure="filling"
+          
            }
-        //get reding structure
-        if(divStructures.id==`reading-options-structure${options.questionId}`){
-         var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
-         options.answerKey=fillingKey.value;
-         options.structure="reading"
-         }
+       
 
        //get wrting answer
        if(divStructures.id==`writing-options-structure${options.questionId}`){
-         options.structure="writing";        
+         
            var writtingKey =document.getElementById(`writtingKey${options.questionId}`);
            options.answerKey=writtingKey.value;
            }
@@ -161,11 +150,17 @@ const sevaAfterTwoMinutes=setInterval(function(){
       }
       console.log(allAnswers)
        fetch(`/students/run-exam/${examId}`,fetchOptions);
-       
+       if(fetchedNumber==3){
+         console.log("hi")
+        clearInterval(sevaAfterTwoMinutes)
+       }
+       fetchedNumber++;
        
 
 
-},10000)
+},reminingtime/5*60*1000)
+
+
 
 
 
@@ -176,7 +171,7 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
         const options={
             questionId:"",
             answerKey:"",
-            structure:"",
+            
         }
         //get question Id
         const allArticles=document.getElementsByTagName("article")[i-1];
@@ -187,7 +182,7 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
 
         //get multiple
        if(divStructures.id==`mutiple-options-structure${options.questionId}`){
-         options.structure="mutiple"
+        
         var radios =document.getElementsByName(`option${options.questionId}`);
        radios.forEach(element => {
            if(element.checked){
@@ -200,18 +195,13 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
         if(divStructures.id==`filling-options-structure${options.questionId}`){
             var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
             options.answerKey=fillingKey.value;
-            options.structure="filling"
+           
             }
-         //get reding structure
-         if(divStructures.id==`reading-options-structure${options.questionId}`){
-          var fillingKey =document.getElementById(`fillingKey${options.questionId}`);
-          options.answerKey=fillingKey.value;
-          options.structure="reading"
-          }
+        
 
         //get wrting answer
         if(divStructures.id==`writing-options-structure${options.questionId}`){
-          options.structure="writing";        
+          
             var writtingKey =document.getElementById(`writtingKey${options.questionId}`);
             options.answerKey=writtingKey.value;
             }
@@ -234,3 +224,4 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
 })
   
 
+console.log(reminingtime/5*60*1000)

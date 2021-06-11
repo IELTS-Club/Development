@@ -95,13 +95,13 @@
 
                     <div class="question-form-row">
 
-                        <% if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "glvQuestionStructureFilling"){ %>
+                        <% if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureFilling"){ %>
                         <span>
                             <%= element.questionBody%> </span>
                         <% } %>
                     </div>
 
-                    <%  if(element.questionStructure=="glvQuestionStructureMultiple" ){ 
+                    <%  if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureMultiple" ){ 
                             let f=1 %>
                     <div class="mutiple-options-structure" id="mutiple-options-structure<%= element.questionId%>">
                         <% element.questionChoices.forEach(element1 => {
@@ -122,7 +122,7 @@
 
                         </div>
                         <% }%>
-                        <%  if(element.questionStructure=="glvQuestionStructureFilling" ){ %>
+                        <%  if(element.questionStructure=="glvQuestionStructureFilling" || element.questionStructure== "glvQuestionStructureFilling" ){ %>
                         <div class=" filling-options-structure" id="filling-options-structure<%= element.questionId%>">
 
                                 <div class="filling-option-item">

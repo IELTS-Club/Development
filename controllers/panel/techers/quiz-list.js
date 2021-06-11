@@ -227,6 +227,7 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
             examStudents = exam.Answers;
             
             examStudents.forEach(element => {
+                console.log(req.user._id,element)
                 if (element.studentId == req.user._id && element.process == "done") {
                     req.flash("orgnizedBefore", "orgnizedBefore");
                     res.redirect("/panel/class-list")
@@ -272,52 +273,72 @@ panel.post("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) 
     const exam = await Exam.findById({
         _id: req.params.id
     });
-   
+       
+        
 
-        examStudents = exam.Answers;
-      
-        examStudents.forEach(async element => {
-            console.log(element)
-            if (element.studentId == req.user._id && element.process == "inProccess") {
-                console.log("inP")
-                let proces = req.body.proces;
-                let Answerss = req.body.Answers;
-                     if(exam.Answers.answersList!=Answerss){
-                        console.log("dog")
-                    exam.Answers={
-                        process: proces,
-                        answersList: Answerss
-                    }
-                    await exam.save();
-                }
-                
+       let examStudents = exam.Answers;
+        if(examStudents.length==0){
+            console.log("nude")
+            let proces = req.body.proces;
+            let Answerss = req.body.Answers;
+            let studentId = req.user._id
+            console.log(req.body);
+            exam.Answers.push({
 
-            } else if (element.studentId == req.user._id && element.process == "done") {
-                console.log("done")
-                req.flash("orgnizedBefore", "orgnizedBefore");
-                res.redirect("/panel/class-list")
-
-            } 
-            // else {
-            //     console.log("dooone")
-            //     let proces = req.body.proces;
-            //     let Answerss = req.body.Answers;
-            //     let studentId = req.user._id
-            //     console.log(req.body);
-            //     exam.Answers.push({
-
-            //         studentId: studentId,
-            //         process: proces,
-            //         answersList: Answerss
+                studentId: studentId,
+                process: proces,
+                answersList: Answerss
 
 
-            //     });
-            //     await exam.save()
+            });
+            await exam.save()
 
-            // }
-
-        });
-
+        }else{
+            examStudents.forEach(async (element,index) => {
+               
+                 if (element.studentId == req.user._id && element.process == "inProccess") {
+                     let proces = req.body.proces;
+                     let Answerss = req.body.Answers;
+                     let studentId = req.user._id
+                            console.log(index);
+                             console.log("dog")
+                            
+                             exam.Answers[index]={
+                             process: proces,
+                             studentId: studentId,
+                             answersList: Answerss
+                         }
+                         await exam.save();
+                    
+     
+                 } else if (element.studentId == req.user._id && element.process == "done") {
+                     console.log("done")
+                     req.flash("orgnizedBefore", "orgnizedBefore");
+                     res.redirect("/panel/class-list")
+     
+                 } 
+                 else {
+                     console.log("dooone")
+                     let proces = req.body.proces;
+                     let Answerss = req.body.Answers;
+                     let studentId = req.user._id
+                     console.log(req.body);
+                     exam.Answers.push({
+     
+                         studentId: studentId,
+                         process: proces,
+                         answersList: Answerss
+     
+     
+                     });
+                     await exam.save()
+     
+                 }
+     
+             });
+     
+        }
+        
    
 
 
