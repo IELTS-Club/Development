@@ -158,7 +158,7 @@ const sevaAfterTwoMinutes=setInterval(function(){
        
 
 
-},reminingtime/5*60*1000)
+},reminingtime/5*60*100)
 
 
 

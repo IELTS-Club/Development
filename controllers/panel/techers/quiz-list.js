@@ -227,7 +227,7 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
             examStudents = exam.Answers;
             
             examStudents.forEach(element => {
-                console.log(req.user._id,element)
+                
                 if (element.studentId == req.user._id && element.process == "done") {
                     req.flash("orgnizedBefore", "orgnizedBefore");
                     res.redirect("/panel/class-list")
@@ -256,13 +256,29 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
             const nHour = nowHour.split(":");
             let totalMinuts = ((Number(fHour[0]) * 60) + (Number(fHour[1]))) - ((Number(nHour[0]) * 60) + (Number(nHour[1])));
             return totalMinuts
+
         }
+        let autoSaveAnswers ="";
+        function bringAutoSaveDate(){
+            examStudents = exam.Answers;
+            
+            examStudents.forEach(element => {
+                
+                if (element.studentId == req.user._id && element.process == "inProccess") {
+                    autoSaveAnswers=element.answersList
+                }
+
+            });
+        }
+        bringAutoSaveDate();
+       
         res.render("quiz/forStudent", {
             exam: exam,
             Teacher: examClass.classTeacher,
             Student: req.user.name,
             classId: exam.ClassID,
-            reaminigTime: calculateTotalReaminingTime()
+            reaminigTime: calculateTotalReaminingTime(),
+            autoSaveAnswers,
         });
     }
 

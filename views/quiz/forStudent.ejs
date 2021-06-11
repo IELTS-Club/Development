@@ -86,13 +86,13 @@
 
                 <% const questionsList=exam.QuestionsList
                
-                questionsList.forEach(element => {
+                questionsList.forEach( (element,index) => {
                     
-               
+                
                 
                 %>
                 <article class="section-box category-question-box" id="<%= element.questionId%>">
-
+                    <%=autoSaveAnswers[index]%>
                     <div class="question-form-row">
 
                         <% if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureFilling"){ %>
@@ -127,7 +127,7 @@
 
                                 <div class="filling-option-item">
 
-                                    <input type="text" class="filling-answer-body"
+                                    <input type="text" class="filling-answer-body" value="<% if(autoSaveAnswers==""){%><%= autoSaveAnswers[index].answerKey  %><%}%>"
                                         placeholder="Enter Your Question Form Here..."
                                         id="fillingKey<%= element.questionId%>">
 
@@ -161,7 +161,7 @@
                             </div>
 
                             <textarea class="writing-option-answer-box" id="writtingKey<%= element.questionId%>"
-                                style="white-space: pre-line"></textarea>
+                                style="white-space: pre-line"><% if(autoSaveAnswers==""){%><%= autoSaveAnswers[index].answerKey  %><%}%></textarea>
 
 
                         </div>
