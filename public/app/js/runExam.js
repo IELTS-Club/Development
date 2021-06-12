@@ -158,7 +158,7 @@ const sevaAfterTwoMinutes=setInterval(function(){
        
 
 
-},reminingtime/5*60*100)
+},reminingtime/5*60*1000)
 
 
 
@@ -224,4 +224,4 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
 })
   
 
-console.log(reminingtime/5*60*1000)
+console.log(reminingtime)
