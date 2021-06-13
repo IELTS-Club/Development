@@ -312,7 +312,7 @@ panel.post("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) 
         }else{
             examStudents.forEach(async (element,index) => {
                
-                 if (element.studentId == req.user._id && element.process == "inProccess") {
+                 if (element.studentId == req.user._id ) {
                      let proces = req.body.proces;
                      let Answerss = req.body.Answers;
                      let studentId = req.user._id
