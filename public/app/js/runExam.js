@@ -150,7 +150,7 @@ const sevaAfterTwoMinutes=setInterval(function(){
       }
       console.log(allAnswers)
        fetch(`/students/run-exam/${examId}`,fetchOptions);
-       if(fetchedNumber==3){
+       if(fetchedNumber==8){
          console.log("hi")
         clearInterval(sevaAfterTwoMinutes)
        }
