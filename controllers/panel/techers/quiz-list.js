@@ -341,30 +341,6 @@ panel.post("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) 
                 
 
             }
-            //  else if (element.studentId == req.user._id && element.process == "done") {
-            //      console.log("done")
-            //      req.flash("orgnizedBefore", "orgnizedBefore");
-            //      res.redirect("/panel/class-list")
-
-            //  } 
-            //  else {
-            //      console.log("dooone")
-            //      let proces = req.body.proces;
-            //      let Answerss = req.body.Answers;
-            //      let studentId = req.user._id
-            //      console.log(req.body);
-            //      exam.Answers.push({
-
-            //          studentId: studentId,
-            //          process: proces,
-            //          answersList: Answerss
-
-
-            //      });
-            //      await exam.save()
-
-            //  }
-
         });
     }
     console.log(isOrgnizedForAutoSave);
