@@ -111,7 +111,7 @@
                         <div class="mutiple-option-item" id="multipleOption<%= element.questionId%>">
 
                             <input type="radio" id="option<%= element.questionId%><%= f %>" name="option<%= element.questionId %>"
-                                value="<%= element1 %>">
+                                value="<%= element1 %>" <% if(autoSaveAnswers!=""){ if(element1==autoSaveAnswers[index].answerKey){%> checked <%}}%> >
                             <label for="option<%= element.questionId%><%= f%>"><%= element1 %></label>
 
                             </div>

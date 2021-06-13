@@ -225,9 +225,9 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
         //is done exam
         function isOrgnized() {
             examStudents = exam.Answers;
-            
+
             examStudents.forEach(element => {
-                
+
                 if (element.studentId == req.user._id && element.process == "done") {
                     req.flash("orgnizedBefore", "orgnizedBefore");
                     res.redirect("/panel/class-list")
@@ -258,20 +258,21 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
             return totalMinuts
 
         }
-        let autoSaveAnswers ="";
-        function bringAutoSaveDate(){
+        let autoSaveAnswers = "";
+
+        function bringAutoSaveDate() {
             examStudents = exam.Answers;
-            
+
             examStudents.forEach(element => {
-                
+
                 if (element.studentId == req.user._id && element.process == "inProccess") {
-                    autoSaveAnswers=element.answersList
+                    autoSaveAnswers = element.answersList
                 }
 
             });
         }
         bringAutoSaveDate();
-       
+
         res.render("quiz/forStudent", {
             exam: exam,
             Teacher: examClass.classTeacher,
@@ -286,79 +287,114 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
 })
 
 panel.post("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) => {
+    console.log("Hello")
     const exam = await Exam.findById({
         _id: req.params.id
     });
-       
+
+
+    let isOrgnizedForAutoSave = false;
+
+    let examStudents = exam.Answers;
+
+    if (examStudents.length == 0) {
+        console.log("nude")
+        let proces = req.body.proces;
+        let Answerss = req.body.Answers;
+        let studentId = req.user._id
+        console.log(req.body);
+        isOrgnizedForAutoSave = true;
+        exam.Answers.push({
+
+            studentId: studentId,
+            process: proces,
+            answersList: Answerss
+
+
+        });
+        await exam.save()
         
 
-       let examStudents = exam.Answers;
-        if(examStudents.length==0){
-            console.log("nude")
-            let proces = req.body.proces;
-            let Answerss = req.body.Answers;
-            let studentId = req.user._id
-            console.log(req.body);
-            exam.Answers.push({
+    } else {
+        examStudents.forEach(async (element, index) => {
 
-                studentId: studentId,
-                process: proces,
-                answersList: Answerss
+            if (element.studentId == req.user._id) {
+                let proces = req.body.proces;
+                let Answerss = req.body.Answers;
+                let studentId = req.user._id
+                console.log("req.body", req.body)
+                isOrgnizedForAutoSave = true;
+                const newAutoSaveAnswers = exam.Answers;
+                console.log("newAutoSaveAnswers", newAutoSaveAnswers);
+                newAutoSaveAnswers[index] = {
+                    process: proces,
+                    studentId: studentId,
+                    answersList: Answerss
+                }
+                await Exam.findByIdAndUpdate({
+                    _id: req.params.id
+                }, {
+                    $set: {
+                        Answers: newAutoSaveAnswers
+                    }
+                });
+                
+
+            }
+            //  else if (element.studentId == req.user._id && element.process == "done") {
+            //      console.log("done")
+            //      req.flash("orgnizedBefore", "orgnizedBefore");
+            //      res.redirect("/panel/class-list")
+
+            //  } 
+            //  else {
+            //      console.log("dooone")
+            //      let proces = req.body.proces;
+            //      let Answerss = req.body.Answers;
+            //      let studentId = req.user._id
+            //      console.log(req.body);
+            //      exam.Answers.push({
+
+            //          studentId: studentId,
+            //          process: proces,
+            //          answersList: Answerss
 
 
-            });
-            await exam.save()
+            //      });
+            //      await exam.save()
 
-        }else{
-            examStudents.forEach(async (element,index) => {
-               
-                 if (element.studentId == req.user._id ) {
-                     let proces = req.body.proces;
-                     let Answerss = req.body.Answers;
-                     let studentId = req.user._id
-                            console.log(index);
-                             console.log("dog")
-                            
-                             exam.Answers[index]={
-                             process: proces,
-                             studentId: studentId,
-                             answersList: Answerss
-                         }
-                         await exam.save();
-                    
-     
-                 } else if (element.studentId == req.user._id && element.process == "done") {
-                     console.log("done")
-                     req.flash("orgnizedBefore", "orgnizedBefore");
-                     res.redirect("/panel/class-list")
-     
-                 } 
-                 else {
-                     console.log("dooone")
-                     let proces = req.body.proces;
-                     let Answerss = req.body.Answers;
-                     let studentId = req.user._id
-                     console.log(req.body);
-                     exam.Answers.push({
-     
-                         studentId: studentId,
-                         process: proces,
-                         answersList: Answerss
-     
-     
-                     });
-                     await exam.save()
-     
-                 }
-     
-             });
-     
-        }
-        
-   
+            //  }
+
+        });
+    }
+    console.log(isOrgnizedForAutoSave);
+    if (isOrgnizedForAutoSave == false) {
+        console.log("dooone");
+        let proces = req.body.proces;
+        let Answerss = req.body.Answers;
+        let studentId = req.user._id;
+        exam.Answers.push({
+
+            studentId: studentId,
+            process: proces,
+            answersList: Answerss
+
+
+        });
+        await exam.save()
+    }
+
+
 
 
 
 })
 
+
+
+panel.get("/teachers/for-milad", [isLogedIn, isConfirmed], async (req, res) => {
+    res.render("panel/teachers/forMilad")
+
+
+})
 module.exports = panel;
