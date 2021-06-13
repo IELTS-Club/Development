@@ -28,7 +28,7 @@ app.use(express.json({limit:"1mb"}));
           maxAge:1000 * 60 * 60 * 24,
           httpOnly:true
         },
-        store: store,
+        //store: store,
         resave: false,
         saveUninitialized: false
 }));
