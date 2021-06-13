@@ -13,14 +13,14 @@ const error=require("./middleware/error");
 
 app.use(express.json({limit:"1mb"}));
 
-const store = new MongoDBStore(
-    {
-      uri: 'mongodb://localhost/icdrn',
-      collection: 'session'
-    },
-    function(error) {
-      winston.error(error);
-    });
+// const store = new MongoDBStore(
+//     {
+//       uri: 'mongodb://localhost/icdrn',
+//       collection: 'session'
+//     },
+//     function(error) {
+//       winston.error(error);
+//     });
 
     app.use(session({
         secret: config.get("secret-key"),
