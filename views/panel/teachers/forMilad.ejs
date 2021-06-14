@@ -138,7 +138,7 @@ transition: all 0.3s 1s ease-out;
 <body>
 
   
-  <div class="container-panel   container-teacher-panel-dashboard">
+  <div class="container-panel   container-teacher-panel-edit-quiz">
 
     <div class="panel-overlay hide-for-desktop">
 
@@ -273,69 +273,6 @@ transition: all 0.3s 1s ease-out;
             <a href="/"> <img src="../../images/Panel-home.svg" 
               alt=""></a>
 
-            <!-- <div class="bells-dropdown">
-              <h3>
-                <span>|</span>
-                  پیام های سیستمی آیلتس کلاب
-              </h3>
-              <div class="email-list">
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    فراموزشی رمز عبور
-                  </span>
-
-                  روی لینک زیر کلیک کنید...!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    تخفیف ویژه مهاجرت
-                  </span>
-
-                  اطلاعات بیشتر مطالعه...
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    در دوران کرونا آنلاین بیاموزید
-                  </span>
-
-                 به راحتی آب..!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    شبکه های اجتماعی ما
-                  </span>
-
-                 در کنار هم پیشرفت..!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    صورت حساب دوره جدید 
-                  </span>
-
-                 تجربه ای کاملا امن.!
-
-                </p>
-              </div>
-             </div> -->
     
           </div>
     
@@ -349,63 +286,8 @@ transition: all 0.3s 1s ease-out;
                 <span>|</span>
                   لیست ایمیل های شما
               </h3>
-              <!-- <div class="email-list">
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    فراموزشی رمز عبور
-                  </span>
-
-                  روی لینک زیر کلیک کنید...!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    تخفیف ویژه مهاجرت
-                  </span>
-
-                  اطلاعات بیشتر مطالعه...
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    در دوران کرونا آنلاین بیاموزید
-                  </span>
-
-                 به راحتی آب..!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    شبکه های اجتماعی ما
-                  </span>
-
-                 در کنار هم پیشرفت..!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    صورت حساب دوره جدید 
-                  </span>
-
-                 تجربه ای کاملا امن.!
-
-                </p>
-              </div> -->
+  
+              
              </div>
     
           </div>
@@ -448,7 +330,75 @@ transition: all 0.3s 1s ease-out;
 
     <div class="main">
 
-    </div>
+      <div class="quiz-edit">
+
+         <div class="quiz-edit-title">
+            <h2>
+               <span>
+               |
+               </span>
+               مدیریت آزمون 
+            </h2>
+         </div>
+
+         <div class="quiz-edit-grid">
+
+            <div class="quiz-edit-form">
+
+               <div class="quiz-edit-actions" style="margin-top:10px">
+                  <button type="button" class="icdrn-btn hide-for-phone" id="editInstructorBtn">
+                     ویرایش اطلاعات کلی
+                     </button>
+                     <button type="button" class="icdrn-btn hide-for-phone " id="editTimeBtn">
+                     حدف آزمون
+                     </button>
+
+                  <div class="row hide-for-desktop">
+                     <button type="button" class="icdrn-btn" id="editInstructorBtn">
+                        ویرایش مدرس
+                        </button>
+                        <button type="button" class="icdrn-btn">
+                        تغییر زمان کلاس
+                        </button>
+                  </div>
+                  <button type="button" class="icdrn-btn add-students" id="addStudentsBtn">
+                  ویرایش سوالات
+                  </button>
+               </div>
+
+               <div class="quiz-edit-table-box">
+                  <table>
+                     <tr>
+                        <th>نام دانشجو</th>
+                        <th>آدرس ایمیل</th>
+                        <th>عملیات</th>
+                     </tr>
+                     <tr>
+                        <td>میلاد محمدی</td>
+                        <td>Milad@gmail.com</td>
+                        <td>
+                           <button type="button" class="icdrn-btn">
+                           نتایج دانشجو
+                           </button>
+                        </td>
+                     </tr>
+                 
+
+
+                  </table>
+               </div>
+
+            </div>
+
+            <div class="quiz-edit-pic">
+               <img src="../../images/edit-quiz-illustration.svg" alt="">
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
 
     <div class="side-menu hide-for-phone">
 
@@ -559,6 +509,39 @@ transition: all 0.3s 1s ease-out;
     </div>
 
   </div>
+
+
+  <section class="icdrn-modal" id="timeOutQuizModal">
+    <div class="icdrn-modal-content">
+
+      <span class="modal-close" id="modal-closeB" class="studentNoQuizModalClose">
+        &times;
+      </span>
+
+      <img src="../../images/warning-illustration.svg" class="modal-img" alt="">
+
+
+
+      <h3 style="font-size:30px;margin-top:-10px">
+       مطمئن هستی برای حدف ؟!
+      </h3>
+
+
+      <div class="btn-row" style="display: flex; justify-content: center;">
+
+        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"  onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
+          بله، کاملا
+        </button>
+  
+        
+        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"  onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
+          انصراف
+        </button>
+
+      </div>
+
+    </div>
+  </section>
 
 
   <div id="loader-wrapper">
