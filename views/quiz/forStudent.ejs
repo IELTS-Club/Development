@@ -86,22 +86,22 @@
 
                 <% const questionsList=exam.QuestionsList
                
-                questionsList.forEach(element => {
+                questionsList.forEach( (element,index) => {
                     
-               
+                
                 
                 %>
                 <article class="section-box category-question-box" id="<%= element.questionId%>">
-
+                   
                     <div class="question-form-row">
 
-                        <% if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "glvQuestionStructureFilling"){ %>
+                        <% if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureFilling"){ %>
                         <span>
                             <%= element.questionBody%> </span>
                         <% } %>
                     </div>
 
-                    <%  if(element.questionStructure=="glvQuestionStructureMultiple" ){ 
+                    <%  if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureMultiple" ){ 
                             let f=1 %>
                     <div class="mutiple-options-structure" id="mutiple-options-structure<%= element.questionId%>">
                         <% element.questionChoices.forEach(element1 => {
@@ -111,7 +111,7 @@
                         <div class="mutiple-option-item" id="multipleOption<%= element.questionId%>">
 
                             <input type="radio" id="option<%= element.questionId%><%= f %>" name="option<%= element.questionId %>"
-                                value="<%= element1 %>">
+                                value="<%= element1 %>" <% if(autoSaveAnswers!=""){ if(element1==autoSaveAnswers[index].answerKey){%> checked <%}}%> >
                             <label for="option<%= element.questionId%><%= f%>"><%= element1 %></label>
 
                             </div>
@@ -122,12 +122,12 @@
 
                         </div>
                         <% }%>
-                        <%  if(element.questionStructure=="glvQuestionStructureFilling" ){ %>
+                        <%  if(element.questionStructure=="glvQuestionStructureFilling" || element.questionStructure== "glvQuestionStructureFilling" ){ %>
                         <div class=" filling-options-structure" id="filling-options-structure<%= element.questionId%>">
 
                                 <div class="filling-option-item">
 
-                                    <input type="text" class="filling-answer-body"
+                                    <input type="text" class="filling-answer-body" value="<% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%>"
                                         placeholder="Enter Your Question Form Here..."
                                         id="fillingKey<%= element.questionId%>">
 
@@ -161,7 +161,7 @@
                             </div>
 
                             <textarea class="writing-option-answer-box" id="writtingKey<%= element.questionId%>"
-                                style="white-space: pre-line"></textarea>
+                                style="white-space: pre-line"><% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%></textarea>
 
 
                         </div>
