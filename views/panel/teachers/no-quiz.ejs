@@ -708,7 +708,7 @@
         body: JSON.stringify(quizInfo)
       }
       fetch("/teachers/quiz-list/<%= classId%>", options);
-      window.open("/teachers/create-exam")
+      window.href="/teachers/create-exam"
     })
   </script>
 
