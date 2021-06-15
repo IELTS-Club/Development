@@ -161,10 +161,16 @@ const sevaAfterTwoMinutes=setInterval(function(){
 },reminingtime/10*60*1000)
 
 
-
-
-
 document.querySelector("#finishExam").addEventListener("click",(e)=>{
+    document.querySelector("#areYouSure").style.display="flex";
+})
+document.querySelector("#imNotSure").addEventListener("click",(e)=>{
+    document.querySelector("#areYouSure").style.display="none";
+})
+
+
+
+document.querySelector("#imSure").addEventListener("click",(e)=>{
     const allAnswers={Answers:[],proces:"done"}
     
     for(let i=1;i<=QuestionsNumber;i++){
@@ -217,6 +223,7 @@ document.querySelector("#finishExam").addEventListener("click",(e)=>{
       }
       console.log(allAnswers)
        fetch(`/students/run-exam/${examId}`,fetchOptions);
+       document.querySelector("#areYouSure").style.display="none";
        document.querySelector('#successfull').style.display="flex";
        clearInterval(forInterval);
        clearInterval(sevaAfterTwoMinutes)

@@ -5,7 +5,8 @@ const isConfirmed = require("../../../middleware/isConfirmed");
 const isTeacher = require("../../../middleware/isTeacher");
 const isStudent = require("../../../middleware/isStudent");
 const {
-    Class
+    Class,
+    User
 } = require("../../../models/mongoose");
 const {
     Exam
@@ -313,7 +314,7 @@ panel.post("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) 
 
         });
         await exam.save()
-        
+
 
     } else {
         examStudents.forEach(async (element, index) => {
@@ -338,7 +339,7 @@ panel.post("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) 
                         Answers: newAutoSaveAnswers
                     }
                 });
-                
+
 
             }
         });
@@ -371,12 +372,69 @@ panel.post("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) 
 
 //manage quiz
 panel.get("/teachers/manage-exam/:id", [isLogedIn, isConfirmed], async (req, res) => {
-    res.render("panel/teachers/forMilad")
+    const exam = await Exam.findById(req.params.id);
+    if (!exam) {
+        res.redirect("/teachers/class-list");
+    }
+    const students = []
+
+    for(let o=0;o<exam.Answers.length;o++){
+        let element = exam.Answers[o]
+        
+        const users = await User.findById(element.studentId);
+        const student = {
+            id:element.studentId,
+            name: users.name,
+            email: users.email
+        }
+
+        students.push(student);
+
+    }
+        
+
+    console.log(students)
+    res.render("panel/teachers/forMilad",{
+        students,
+        userName: req.user.name,
+        examId:exam._id,
+
+    })
 
 
+});
+
+
+//show resault
+panel.get("/teachers/show-resault/:examId/:studentId", [isLogedIn, isConfirmed],async(req,res)=>{
+    const exam=await Exam.findById(req.params.examId);
+    const examClass=await Class.findById(exam.ClassID)
+    const student=await User.findById(req.params.studentId);
+    if(!exam || !student){
+        return res.redirect("/teachers/class-list");
+    }
+    let autoSaveAnswers = "";
+
+    function bringAutoSaveDate() {
+        examStudents = exam.Answers;
+
+        examStudents.forEach(element => {
+
+            if (element.studentId == req.user._id) {
+                autoSaveAnswers = element.answersList
+            }
+
+        });
+    }
+    bringAutoSaveDate();
+    console.log(req.user.name)
+    res.render("quiz/forResault", {
+        exam: exam,
+        Teacher: examClass.classTeacher,
+        Student: student.name,
+        autoSaveAnswers,
+    });
 })
-
-
 
 
 

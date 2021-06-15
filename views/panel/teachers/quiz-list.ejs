@@ -516,12 +516,12 @@
 
             <div class="quiz-card-action">
 
-              <button type="button" class="icdrn-btn">
+              <button type="button" class="icdrn-btn" onclick="window.location.href='/teachers/manage-exam/<%= element.id %>'">
                 مدیریت
               </button>
 
 
-              <button type="button" onclick="window.location.replace('/teacers/run-exam/<%= element.id %>')"
+              <button type="button" onclick="window.location.href='/teacers/run-exam/<%= element.id %>'"
                 class="icdrn-btn" id="studentQuizBtn">
                 اجرا
               </button>
@@ -782,7 +782,7 @@
         body: JSON.stringify(quizInfo)
       }
       fetch("/teachers/quiz-list/<%= classId%>", options);
-      window.href="/teachers/create-exam"
+      window.location.href="/teachers/create-exam"
     })
   </script>
 

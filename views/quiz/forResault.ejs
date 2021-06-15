@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
     <link rel="manifest" href="/en/images/Favicon/manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../dist/css/main.min.css">
+    <link rel="stylesheet" href="/dist/css/main.min.css">
 
     <style>
 
@@ -45,7 +45,7 @@
 
             <div class="student-quiz-nav-logo">
 
-                <img src="../../images/ICDRN-Navbar-Logo.png" alt="">
+                <img src="/images/ICDRN-Navbar-Logo.png" alt="">
 
                 <h3>
                     آزمون هوشمند
@@ -55,7 +55,7 @@
 
             <div class="student-quiz-nav-avatar">
 
-                <img src="../../images/Quiz-Avatar.svg" alt="">
+                <img src="/images/Quiz-Avatar.svg" alt="">
 
                 <h3>
 
@@ -177,7 +177,7 @@
 
                 <div class="student-quiz-sidebar-cover">
 
-                    <img src="../../images/Quiz-pic.svg" alt="">
+                    <img src="/images/Quiz-pic.svg" alt="">
 
                 </div>
 
@@ -191,7 +191,7 @@
                     <div class="student-quiz-sidebar-info-teacher">
 
 
-                        <img src="../../images/Quiz_Teacher-Icon.svg" alt="">
+                        <img src="/images/Quiz_Teacher-Icon.svg" alt="">
 
                         <h3>
                             <span>
@@ -235,7 +235,7 @@
 
                     <div class="student-quiz-sidebar-info-questions">
 
-                        <img src="../../images/Quiz_Questions-Icon.svg" alt="">
+                        <img src="/images/Quiz_Questions-Icon.svg" alt="">
 
                         <h3>
                             <span>
@@ -248,13 +248,10 @@
 
                 </div>
 
-                <div class="student-quiz-sidebar-time">
+                <div class="student-quiz-sidebar-time" onclick="window.location.href='/teachers/manage-exam/<%=exam._id%>'">
 
                     <span>
-                        زمان باقی مانده
-                        <span id="time">
-
-                        </span>
+                        بازگشت به مدیریت آزمون
 
                     </span>
 
@@ -262,7 +259,7 @@
 
                 <button type="button" id="finishExam" class="record-quiz-btn">
 
-                    نهایی سازی آزمون
+                 ثبت کارنامه
 
                 </button>
 
@@ -366,7 +363,7 @@
 
       
 
-      <img src="../../images/warning-illustration.svg" class="modal-img" alt="">
+      <img src="/images/warning-illustration.svg" class="modal-img" alt="">
 
 
 
@@ -393,12 +390,7 @@
 
 
     </div>
-    <script>
-        const reminingtime = Number("<%= reaminigTime %>");
-        const QuestionsNumber = Number("<%= exam.QuestionsNumber%>");
-        const examId = "<%= exam._id%>";
-    </script>
-    <script src="../../app/js/runExam.js"></script>
+   
 </body>
 
 </html>
