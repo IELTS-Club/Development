@@ -100,7 +100,7 @@
                         <% } %>
                     </div>
 
-                    <%  if(element.questionStructure=="glvQuestionStructureMultiple" ){ 
+                    <%  if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureMultiple" ){ 
                         let f=1 %>
                     <div class="mutiple-options-structure">
                         <% element.questionChoices .forEach(element1 => {
@@ -120,7 +120,7 @@
 
                     </div>
                     <% }%>
-                    <%  if(element.questionStructure=="glvQuestionStructureFilling" ){ %>
+                    <%  if(element.questionStructure=="glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureFilling" ){ %>
                     <div class="filling-options-structure">
 
                         <div class="filling-option-item">

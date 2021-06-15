@@ -368,9 +368,24 @@ panel.post("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) 
 
 
 
-panel.get("/teachers/for-milad", [isLogedIn, isConfirmed], async (req, res) => {
+
+//manage quiz
+panel.get("/teachers/manage-exam/:id", [isLogedIn, isConfirmed], async (req, res) => {
     res.render("panel/teachers/forMilad")
 
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = panel;
