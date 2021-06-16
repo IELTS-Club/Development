@@ -4,20 +4,14 @@ const isLogedIn = require("../../../middleware/isLogedIn");
 const isConfirmed = require("../../../middleware/isConfirmed");
 const isTeacher = require("../../../middleware/isTeacher");
 const isStudent = require("../../../middleware/isStudent");
-const {
-    Class,
-    User
-} = require("../../../models/mongoose");
-const {
-    Exam
-} = require("../../../models/mongoose");
+const {Class,User} = require("../../../models/mongoose");
+const {Exam} = require("../../../models/mongoose");
 
 panel.get("/teachers/quiz-list/:classId", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
     const exams = await Exam.find({
         ClassID: req.params.classId
     });
-
-    const date = new Date().toLocaleTimeString("fa").replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
+    const examClass=await Class.findById(req.params.classId);
 
     console.log(exams)
     if (exams.length < 1) {
@@ -30,7 +24,7 @@ panel.get("/teachers/quiz-list/:classId", [isLogedIn, isConfirmed, isTeacher], a
             exams: exams,
             userName: req.user.name,
             classId: req.params.classId,
-            userName: req.user.name,
+            examTeacher:examClass.classTeacher
 
         })
     }
@@ -475,14 +469,26 @@ panel.get("/teachers/edit-questions/:id", [isLogedIn, isConfirmed, isTeacher], a
     const classTeacher=await Class.findById(exam.ClassID)
     console.log()
     res.render("quiz/editQuestions",{
+        examQuestions:exam.QuestionsList,
         Teacher:classTeacher.classTeacher,
         QuestionsNumber:exam.QuestionsNumber,
         Title:exam.Title,
-        classId:exam.ClassID
+        classId:exam.ClassID,
+        examId:req.params.id
     })
 })
+//save edited
 
-
+panel.post("/teachers/edit-questions/:id", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
+    console.log(req.body)
+    await Exam.findByIdAndUpdate(req.params.id,{
+        $set:{
+            QuestionsNumber:req.body.questionAmount,
+            QuestionsList:req.body.data 
+        }
+    })
+    res.send("done")
+})
 
 
 
