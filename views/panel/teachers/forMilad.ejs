@@ -356,7 +356,7 @@
               <button type="button" class="icdrn-btn hide-for-phone" id="editInstructorBtn1">
                 ویرایش اطلاعات کلی
               </button>
-              <button type="button" class="icdrn-btn hide-for-phone " id="deleteExamBtn">
+              <button type="button" class="icdrn-btn hide-for-phone " id="deleteExamBtn1">
                 حدف آزمون
               </button>
 
@@ -364,11 +364,11 @@
                 <button type="button" class="icdrn-btn" id="editInstructorBtn2">
                   ویرایش اطلاعات کلی
                 </button>
-                <button type="button" class="icdrn-btn" id="deleteExamBtn">
+                <button type="button" class="icdrn-btn" id="deleteExamBtn2">
                   حدف آزمون
                 </button>
               </div>
-              <button type="button" class="icdrn-btn add-students" id="editQuestions">
+              <button type="button" class="icdrn-btn add-students" onclick="window.location.href='/teachers/edit-questions/<%=examId%>'" id="editQuestions">
                 ویرایش سوالات
               </button>
             </div>
@@ -549,14 +549,14 @@
 
   <section class="icdrn-modal-lg new-quiz-modal" id="newQuizModal">
 
-    <span class="modal-close">&times;</span>
+    <span class="modal-close" id="closeModal">&times;</span>
 
     <div class="icdrn-modal-grid">
 
       <div class="modal-content">
 
-        <h3>
-          اضافه کردن آزمون جدید
+        <h3 id="infoBox">
+          تغییر اطلاعات آزمون
         </h3>
 
 
@@ -620,6 +620,37 @@
 
 
 
+  <!-- are you sure to delete -->
+  <section class="icdrn-modal" id="areYouSure">
+    <div class="icdrn-modal-content">
+
+      
+
+      <img src="../../images/warning-illustration.svg" class="modal-img" alt="">
+
+
+
+      <h3 style="font-size:30px;margin-top:-10px">
+       برای حذف آزمــون مطمئنی ؟
+        </h3>
+
+
+      <div class="btn-row" style="display: flex; justify-content: center;">
+
+        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="imSure"  onclick="window.location.href='/teachers/delete-exam/<%=examId%>'" style="margin-top:-7px">
+          بله، کاملا
+        </button>
+  
+        
+        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="imNotSure"  style="margin-top:-7px">
+          انصراف
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
 
 
 
@@ -633,30 +664,41 @@
     });
     jalaliDatepicker.startWatch({});
     
-
+    document.getElementById("editInstructorBtn2").addEventListener("click",()=>{
+      
+      document.querySelector("#newQuizModal").style.display="flex"
+      
+     })
     
     document.getElementById("editInstructorBtn1").addEventListener("click",()=>{
       
      document.querySelector("#newQuizModal").style.display="flex"
+     
+    })
+    document.getElementById("closeModal").addEventListener("click",()=>{
+      document.querySelector("#newQuizModal").style.display="none"
     })
   </script>
    <script>
     const modalform = document.getElementById("modal-form");
 
     modalform.getElementsByTagName("button")[0].addEventListener("click", () => {
-      if (modalform.getElementsByTagName("input")[6].value > 100) {
-        modalform.getElementsByTagName("input")[6].value = 100
-      }
+      if(modalform.getElementsByTagName("input")[0].value =='' || modalform.getElementsByTagName("input")[1].value ==''||modalform.getElementsByTagName("input")[2].value ==''||modalform.getElementsByTagName("input")[3].value ==''||modalform.getElementsByTagName("input")[4].value ==''||modalform.getElementsByTagName("input")[5].value =='' ){
+        document.getElementById("infoBox").innerHTML="لطفا تمامی فیلد ها را پر کنید" 
+        document.getElementById("infoBox").style.color="red" 
+      }else{
+     
       const quizInfo = {
         examTitle: modalform.getElementsByTagName("input")[0].value,
         examStartDate: modalform.getElementsByTagName("input")[1].value,
         examStartHour: modalform.getElementsByTagName("input")[2].value,
-        examStoptDate: modalform.getElementsByTagName("input")[3].value,
-        examStoptHour: modalform.getElementsByTagName("input")[4].value,
+        examStopDate: modalform.getElementsByTagName("input")[3].value,
+        examStopHour: modalform.getElementsByTagName("input")[4].value,
         examType: modalform.getElementsByTagName("input")[5].value,
-        QuestionsNumber: modalform.getElementsByTagName("input")[6].value,
+       
 
       }
+     
       const options = {
         method: "POST",
         headers: {
@@ -664,8 +706,22 @@
         },
         body: JSON.stringify(quizInfo)
       }
-      console.log(quizInfo)
-      
+      fetch("/teachers/change-exam-details/<%= examId %>", options);
+      document.getElementById("infoBox").innerHTML="اطلاعات آزمون با موفقیت به روزرسانی شد"
+      document.getElementById("infoBox").style.color="green"
+    }
+    })
+  
+  </script>
+  <script>
+    document.getElementById('deleteExamBtn1').addEventListener("click",()=>{
+      document.getElementById("areYouSure").style.display="flex"
+    })
+    document.getElementById('deleteExamBtn2').addEventListener("click",()=>{
+      document.getElementById("areYouSure").style.display="flex"
+    })
+    document.getElementById("imNotSure").addEventListener("click",()=>{
+      document.getElementById("areYouSure").style.display="none"
     })
   </script>
   <script src="/app/js/app.js"></script>

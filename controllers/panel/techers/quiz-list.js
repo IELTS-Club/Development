@@ -107,8 +107,8 @@ panel.post("/teachers/quiz-list/:classId", [isLogedIn, isConfirmed, isTeacher], 
     req.session.Type = body.examType;
     req.session.StartDate = body.examStartDate;
     req.session.StartHour = body.examStartHour;
-    req.session.StopDate = body.examStoptDate;
-    req.session.StopHour = body.examStoptHour;
+    req.session.StopDate = body.examStopDate;
+    req.session.StopHour = body.examStopHour;
     req.session.QuestionsNumber = body.QuestionsNumber;
     req.session.classId = req.params.classId;
     res.send("done")
@@ -439,8 +439,48 @@ panel.get("/teachers/show-resault/:examId/:studentId", [isLogedIn, isConfirmed],
 
 
 
+//change exam details
+panel.post("/teachers/change-exam-details/:id", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
+    console.log(req.body);
+    const examData = req.body.data;
+    console.log(req.params.id)
+    const exam=await Exam.findByIdAndUpdate(req.params.id,{
+        $set:{
+        Title: req.body.examTitle,
+        Type: req.body.examType,
+        StartDate: req.body.examStartDate,
+        StartHour: req.body.examStartHour,
+        StopDate: req.body.examStopDate,
+        StopHour: req.body.examStopHour,
+        }
+    });
 
 
+})
+
+
+//delete exam
+
+panel.get("/teachers/delete-exam/:id", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
+    const exam= await Exam.findById(req.params.id);
+    const classId=exam.ClassID;
+    await Exam.findByIdAndRemove(req.params.id);
+    res.redirect(`/teachers/quiz-list/${classId}`);
+})
+
+
+//edit questions
+panel.get("/teachers/edit-questions/:id", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
+    const exam=await Exam.findById(req.params.id);
+    const classTeacher=await Class.findById(exam.ClassID)
+    console.log()
+    res.render("quiz/editQuestions",{
+        Teacher:classTeacher.classTeacher,
+        QuestionsNumber:exam.QuestionsNumber,
+        Title:exam.Title,
+        classId:exam.ClassID
+    })
+})
 
 
 
