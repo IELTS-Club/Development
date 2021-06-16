@@ -24,6 +24,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,700;1,200;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,700;1,200;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   overflow-x: hidden;
 }
@@ -2027,7 +2031,11 @@ button.icdrn-btn:focus {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  line-height: 50px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .header-nav .language-switcher-box .language-dropdown ul li img {
@@ -2035,10 +2043,11 @@ button.icdrn-btn:focus {
 }
 
 .header-nav .language-switcher-box .language-dropdown ul li:last-child {
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .header-nav .language-switcher-box .language-dropdown ul li:hover {
+  background-color: #E7FDFF;
   color: #707070;
 }
 
@@ -2098,6 +2107,8 @@ button.icdrn-btn:focus {
 }
 
 .header-nav .nav-action .login-link {
+  font-family: Yekan-Bakh-Medium;
+  font-size: 14px;
   width: 100px;
   text-align: center;
 }
@@ -2314,6 +2325,7 @@ body {
 @media (min-width: 1023px) and (max-width: 4000px) {
   .welcome-label {
     height: 50px;
+    padding: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2334,23 +2346,24 @@ body {
 .welcome-label h4 {
   font-family: Yekan-Bakh-Bold;
   color: #ffff;
+  margin-left: 10px;
 }
 
-.welcome-label button.icdrn-btn[type="button"] {
+.welcome-label button.icdrn-btn {
   width: 100px;
   height: 30px;
   margin-top: 10px;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .welcome-label button.icdrn-btn[type="button"] {
+  .welcome-label button.icdrn-btn {
     margin-top: 0;
     margin-right: 20px;
   }
 }
 
 @media (min-width: 1023px) and (max-width: 4000px) {
-  .welcome-label button.icdrn-btn[type="button"] {
+  .welcome-label button.icdrn-btn {
     margin-top: 0px;
     margin-right: 20px;
   }
@@ -4896,12 +4909,28 @@ body {
   }
 }
 
+.register .register-grid .register-form .register-form-inner .fullname-box input {
+  width: 400px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .register .register-grid .register-form .register-form-inner .fullname-box input {
+    width: 300px;
+  }
+}
+
 @media (min-width: 1023px) and (max-width: 4000px) {
   .register .register-grid .register-form .register-form-inner .form-row {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -4933,6 +4962,20 @@ body {
   }
 }
 
+.register .register-grid .register-form .register-form-inner .phone-box input {
+  height: 60px;
+  margin-left: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .register .register-grid .register-form .register-form-inner .phone-box input {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+
 .register .register-grid .register-form .register-form-inner .email-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4958,6 +5001,18 @@ body {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+}
+
+.register .register-grid .register-form .register-form-inner .email-box input {
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .register .register-grid .register-form .register-form-inner .email-box input {
+    width: 100%;
   }
 }
 
@@ -4991,7 +5046,19 @@ body {
 
 .register .register-grid .register-form .register-form-inner .password-box .password-input-box {
   width: 100%;
-  background-color: #111;
+}
+
+.register .register-grid .register-form .register-form-inner .password-box input {
+  width: 400px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .register .register-grid .register-form .register-form-inner .password-box input {
+    width: 300px;
+  }
 }
 
 .register .register-grid .register-form .register-form-inner .confirm-password-box {
@@ -5022,6 +5089,39 @@ body {
   }
 }
 
+.register .register-grid .register-form .register-form-inner .confirm-password-box input {
+  width: 400px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .register .register-grid .register-form .register-form-inner .confirm-password-box input {
+    width: 300px;
+  }
+}
+
+.register .register-grid .register-form .register-form-inner .show-password-box {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .register .register-grid .register-form .register-form-inner .show-password-box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.register .register-grid .register-form .register-form-inner .show-password-box label {
+  margin-left: 5px;
+}
+
 .register .register-grid .register-form .register-form-inner .register-btn-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5033,6 +5133,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 300PX;
 }
 
 @media (min-width: 1023px) and (max-width: 4000px) {
@@ -5047,6 +5148,17 @@ body {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    width: 400PX;
+  }
+}
+
+.register .register-grid .register-form .register-form-inner .register-btn-box button {
+  width: 100% !important;
+}
+
+@media (max-width: 600px) {
+  .register .register-grid .register-form .register-form-inner .register-btn-box button {
+    width: 300px;
   }
 }
 
@@ -5219,18 +5331,25 @@ body {
 }
 
 .login .login-grid .login-form .icdrn-title {
+  width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+.login .login-grid .login-form .icdrn-title h2 {
+  font-size: 35px;
+}
+
 @media (max-width: 600px) {
   .login .login-grid .login-form .icdrn-title {
+    width: 300px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -5239,11 +5358,12 @@ body {
 }
 
 .login .login-grid .login-form .icdrn-title button {
-  margin-right: 70px;
+  margin-right: 60px;
 }
 
 @media (max-width: 600px) {
   .login .login-grid .login-form .icdrn-title button {
+    margin-top: 10px;
     margin-right: 0;
   }
 }
@@ -5251,6 +5371,8 @@ body {
 .login .login-grid .login-form .login-form-inner {
   margin-top: 20px;
   width: 300px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media (min-width: 1023px) and (max-width: 4000px) {
@@ -5288,6 +5410,19 @@ body {
   }
 }
 
+.login .login-grid .login-form .login-form-inner .username-box input {
+  width: 400px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .login .login-grid .login-form .login-form-inner .username-box input {
+    width: 300px;
+  }
+}
+
 .login .login-grid .login-form .login-form-inner .password-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5316,6 +5451,39 @@ body {
   }
 }
 
+.login .login-grid .login-form .login-form-inner .password-box input {
+  width: 400px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .login .login-grid .login-form .login-form-inner .password-box input {
+    width: 300px;
+  }
+}
+
+.login .login-grid .login-form .login-form-inner .show-password-box {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .login .login-grid .login-form .login-form-inner .show-password-box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.login .login-grid .login-form .login-form-inner .show-password-box label {
+  margin-left: 5px;
+}
+
 .login .login-grid .login-form .login-form-inner .login-btn-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5327,11 +5495,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
+  width: 300px;
 }
 
 @media (min-width: 1023px) and (max-width: 4000px) {
   .login .login-grid .login-form .login-form-inner .login-btn-box {
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6081,18 +6250,25 @@ body {
 }
 
 .teachers-login .teachers-login-grid .login-form .icdrn-title {
+  width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+.teachers-login .teachers-login-grid .login-form .icdrn-title h2 {
+  font-size: 35px;
+}
+
 @media (max-width: 600px) {
   .teachers-login .teachers-login-grid .login-form .icdrn-title {
+    width: 300px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -6106,6 +6282,7 @@ body {
 
 @media (max-width: 600px) {
   .teachers-login .teachers-login-grid .login-form .icdrn-title button {
+    margin-top: 10px;
     margin-right: 0;
   }
 }
@@ -6150,6 +6327,19 @@ body {
   }
 }
 
+.teachers-login .teachers-login-grid .login-form .login-form-inner .username-box input {
+  width: 400px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .teachers-login .teachers-login-grid .login-form .login-form-inner .username-box input {
+    width: 300px;
+  }
+}
+
 .teachers-login .teachers-login-grid .login-form .login-form-inner .password-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6176,6 +6366,39 @@ body {
         -ms-flex-align: start;
             align-items: flex-start;
   }
+}
+
+.teachers-login .teachers-login-grid .login-form .login-form-inner .password-box input {
+  width: 400px;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .teachers-login .teachers-login-grid .login-form .login-form-inner .password-box input {
+    width: 300px;
+  }
+}
+
+.teachers-login .teachers-login-grid .login-form .login-form-inner .show-password-box {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .teachers-login .teachers-login-grid .login-form .login-form-inner .show-password-box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.teachers-login .teachers-login-grid .login-form .login-form-inner .show-password-box label {
+  margin-left: 5px;
 }
 
 .teachers-login .teachers-login-grid .login-form .login-form-inner .login-btn-box {

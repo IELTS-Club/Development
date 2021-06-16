@@ -30,6 +30,7 @@ body {
   @media #{$laptop} {
 
     height: 50px;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -43,10 +44,11 @@ body {
 
     font-family: Yekan-Bakh-Bold;
     color:#ffff;
+    margin-left: 10px;
 
   }
 
-  button.icdrn-btn[type="button"]{
+  button.icdrn-btn{
 
     width: 100px;
     height: 30px;

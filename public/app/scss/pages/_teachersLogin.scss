@@ -56,15 +56,24 @@
 
       .icdrn-title {
 
+        width: 400px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+
+        h2 {
+
+          font-size: 35px;
+
+        }
 
         @media #{$phone} {
 
+          width: 300px;
           flex-direction: column;
 
         }
+
 
 
         button {
@@ -73,6 +82,7 @@
 
           @media #{$phone} {
 
+            margin-top: 10px;
             margin-right: 0;
   
           }
@@ -109,6 +119,22 @@
 
         }
 
+        input {
+
+          width: 400px;
+          height: 60px;
+          box-sizing: border-box;
+
+          @media #{$phone} {
+
+            width: 300px;
+  
+          }
+
+
+        }
+
+
         }
 
         .password-box {
@@ -124,6 +150,43 @@
           align-items: flex-start;
 
         }
+
+        input {
+
+          width: 400px;
+          height: 60px;
+          box-sizing: border-box;
+
+          @media #{$phone} {
+
+            width: 300px;
+  
+          }
+
+
+        }
+
+
+        }
+
+
+        .show-password-box {
+
+          width: 300px;
+          display: flex;
+          margin: 20px 0;
+
+          @media #{$phone} {
+
+            justify-content: center;
+  
+          }
+
+          label {
+
+            margin-left: 5px;
+
+          }
 
         }
 

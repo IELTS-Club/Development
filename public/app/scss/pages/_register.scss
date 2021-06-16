@@ -72,6 +72,20 @@
 
            }
 
+           input {
+
+            width: 400px;
+            height: 60px;
+            box-sizing: border-box;
+  
+            @media #{$phone} {
+  
+              width: 300px;
+    
+            }
+  
+          }
+
 
         }
 
@@ -83,6 +97,7 @@
 
             width: 100%;
             display: flex;
+            justify-content: space-between;
   
           }
   
@@ -103,6 +118,25 @@
 
         }
 
+        
+        input {
+
+          height: 60px;
+          margin-left: 40px;
+          box-sizing: border-box;
+
+          
+        @media #{$phone} {
+
+          width: 100%;
+          margin-left: 0px;
+
+        }
+
+        }
+
+        
+
         }
 
         .email-box {
@@ -116,6 +150,19 @@
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+
+        }
+
+        input {
+
+          height: 60px;
+          box-sizing: border-box;
+
+          @media #{$phone} {
+
+            width: 100%;
+  
+          }
 
         }
 
@@ -138,7 +185,20 @@
         .password-input-box {
 
           width: 100%;
-          background-color: #111;
+
+        }
+
+        input {
+
+          width: 400px;
+          height: 60px;
+          box-sizing: border-box;
+
+          @media #{$phone} {
+
+            width: 300px;
+  
+          }
 
         }
 
@@ -158,21 +218,70 @@
 
                }
 
+               input {
+
+                width: 400px;
+                height: 60px;
+                box-sizing: border-box;
+      
+                @media #{$phone} {
+      
+                  width: 300px;
+        
+                }
+      
+              }
+
         }
 
      
+        .show-password-box {
+
+          width: 300px;
+          display: flex;
+          margin: 20px 0;
+
+          @media #{$phone} {
+
+            justify-content: center;
+  
+          }
+
+          label {
+
+            margin-left: 5px;
+
+          }
+
+        }
 
         .register-btn-box {
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 300PX;
 
         @media #{$laptop} {
 
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+          width: 400PX;
+
+
+        }
+
+        button {
+
+          width:100% !important;
+
+
+          @media #{$phone} {
+
+            width: 300px;
+  
+          }
 
         }
 

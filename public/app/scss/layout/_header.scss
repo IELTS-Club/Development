@@ -227,7 +227,10 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        line-height: 50px;
+        transition: all .2s ease-in-out;
 
         img {
 
@@ -238,10 +241,14 @@
       }
 
       li:last-child {
-        padding-bottom: 0;
+
+        margin-bottom: 0;
+
       }
 
       li:hover {
+
+        background-color:#E7FDFF ;
         color: #707070;
 
       }
@@ -325,6 +332,8 @@
  
   .login-link {
 
+    font-family: Yekan-Bakh-Medium;
+    font-size: 14px;
     width: 100px;
     text-align: center;
 
