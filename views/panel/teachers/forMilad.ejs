@@ -9,6 +9,8 @@
   <link rel="manifest" href="../../images/Favicon/manifest.json">
   <link rel="stylesheet" href="../../dist/css/main.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link type="text/css" rel="stylesheet" href="../../jalaliDatepicker.min.css" />
+  <script type="text/javascript" src="../../jalaliDatepicker.min.js"></script>
 
   <style>
     .swiper-container {
@@ -354,19 +356,19 @@
               <button type="button" class="icdrn-btn hide-for-phone" id="editInstructorBtn1">
                 ویرایش اطلاعات کلی
               </button>
-              <button type="button" class="icdrn-btn hide-for-phone " id="editTimeBtn">
+              <button type="button" class="icdrn-btn hide-for-phone " id="deleteExamBtn">
                 حدف آزمون
               </button>
 
               <div class="row hide-for-desktop">
-                <button type="button" class="icdrn-btn" id="editInstructorBtn">
-                  ویرایش مدرس
+                <button type="button" class="icdrn-btn" id="editInstructorBtn2">
+                  ویرایش اطلاعات کلی
                 </button>
-                <button type="button" class="icdrn-btn">
-                  تغییر زمان کلاس
+                <button type="button" class="icdrn-btn" id="deleteExamBtn">
+                  حدف آزمون
                 </button>
               </div>
-              <button type="button" class="icdrn-btn add-students" id="addStudentsBtn">
+              <button type="button" class="icdrn-btn add-students" id="editQuestions">
                 ویرایش سوالات
               </button>
             </div>
@@ -580,7 +582,7 @@
           <div class="input-row">
 
             <input type="text" class="icdrn-input" placeholder="نوع آزمون ( میان ترم )">
-            <input type="number" class="icdrn-input" min="1" max="150" placeholder="تعداد سوالات ( ۶۰ سوال )">
+            <input type="number" class="icdrn-input" min="1" max="150" placeholder="disabled" disabled>
 
           </div>
 
@@ -629,8 +631,41 @@
     window.addEventListener('load', function () {
       document.querySelector('body').classList.add("loaded")
     });
+    jalaliDatepicker.startWatch({});
+    
+
+    
     document.getElementById("editInstructorBtn1").addEventListener("click",()=>{
-     console.log("hi")
+      
+     document.querySelector("#newQuizModal").style.display="flex"
+    })
+  </script>
+   <script>
+    const modalform = document.getElementById("modal-form");
+
+    modalform.getElementsByTagName("button")[0].addEventListener("click", () => {
+      if (modalform.getElementsByTagName("input")[6].value > 100) {
+        modalform.getElementsByTagName("input")[6].value = 100
+      }
+      const quizInfo = {
+        examTitle: modalform.getElementsByTagName("input")[0].value,
+        examStartDate: modalform.getElementsByTagName("input")[1].value,
+        examStartHour: modalform.getElementsByTagName("input")[2].value,
+        examStoptDate: modalform.getElementsByTagName("input")[3].value,
+        examStoptHour: modalform.getElementsByTagName("input")[4].value,
+        examType: modalform.getElementsByTagName("input")[5].value,
+        QuestionsNumber: modalform.getElementsByTagName("input")[6].value,
+
+      }
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(quizInfo)
+      }
+      console.log(quizInfo)
+      
     })
   </script>
   <script src="/app/js/app.js"></script>
