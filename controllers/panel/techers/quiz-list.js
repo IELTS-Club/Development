@@ -420,7 +420,7 @@ panel.get("/teachers/show-resault/:examId/:studentId", [isLogedIn, isConfirmed],
 
         examStudents.forEach(element => {
 
-            if (element.studentId == req.user._id) {
+            if (element.studentId == req.params.studentId) {
                 autoSaveAnswers = element.answersList
             }
 
