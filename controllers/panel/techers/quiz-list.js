@@ -490,6 +490,10 @@ panel.post("/teachers/edit-questions/:id", [isLogedIn, isConfirmed, isTeacher], 
     res.send("done")
 })
 
-
+panel.get("/panel/karnameh", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
+    res.render("panel/students/karnameh",{
+        userName: req.user.name,
+    })
+})
 
 module.exports = panel;
