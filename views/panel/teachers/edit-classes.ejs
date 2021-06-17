@@ -8,7 +8,40 @@
       <link rel="manifest" href="../../images/Favicon/manifest.json">
       <link rel="stylesheet" href="../../dist/css/main.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
       <style>
+
+         body {
+     
+           background-color: #F4F4F8 !important;
+     
+         }
+     
+         .swiper-container {
+     
+           width: 100%;
+           height: 100%;
+     
+         }
+     
+         .swiper-slide {
+           text-align: center;
+           font-size: 18px;
+           background: #fff;
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: -webkit-flex;
+           display: flex;
+           -webkit-box-pack: center;
+           -ms-flex-pack: center;
+           -webkit-justify-content: center;
+           justify-content: center;
+           -webkit-box-align: center;
+           -ms-flex-align: center;
+           -webkit-align-items: center;
+           align-items: center;
+         }
+     
          #loader-wrapper {
          position:fixed;
          display: flex;
@@ -20,6 +53,7 @@
          height:100%;
          z-index:1000;
          }
+     
          #loader-wrapper .loader {
          display: flex;
          flex-direction: column;
@@ -29,35 +63,43 @@
          width:300px;
          height:150px;
          }
+     
          #loader-wrapper .loader h2 {
+     
          font-size: 30px;
          font-family: Kalameh-Black;
          color: #fff;
+     
+     
          }
+     
+     
          @-webkit-keyframes spin {
-         0%   { 
-         -webkit-transform: rotate(0deg); 
-         -ms-transform: rotate(0deg); 
-         transform: rotate(0deg);
+         0%   {
+         -webkit-transform: rotate(0deg);
+           -ms-transform: rotate(0deg);
+               transform: rotate(0deg);
          }
-         100% { 
-         -webkit-transform: rotate(360deg); 
-         -ms-transform: rotate(360deg); 
-         transform: rotate(360deg);
+         100% {
+         -webkit-transform: rotate(360deg);
+           -ms-transform: rotate(360deg);
+               transform: rotate(360deg);
          }
          }
+     
          @keyframes spin {
-         0%   { 
-         -webkit-transform: rotate(0deg); 
-         -ms-transform: rotate(0deg); 
-         transform: rotate(0deg);
+         0%   {
+         -webkit-transform: rotate(0deg);
+           -ms-transform: rotate(0deg);
+               transform: rotate(0deg);
          }
-         100% { 
-         -webkit-transform: rotate(360deg); 
-         -ms-transform: rotate(360deg); 
-         transform: rotate(360deg);
+         100% {
+         -webkit-transform: rotate(360deg);
+           -ms-transform: rotate(360deg);
+               transform: rotate(360deg);
          }
          }
+     
          #loader-wrapper .loader-section {
          position:fixed;
          top:0;
@@ -66,34 +108,41 @@
          height:100%;
          z-index:1000;
          }
+     
          #loader-wrapper .loader-section.section-left {
          left:0
          }
+     
          #loader-wrapper .loader-section.section-right {
          right:0;
          }
-         /* Loaded Styles */
+     
          .loaded #loader-wrapper .loader-section.section-left {
          transform: translateX(-100%);
          transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
          }
+     
          .loaded #loader-wrapper .loader-section.section-right {
          transform: translateX(100%);
          transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
          }
+     
          .loaded #loader {
          opacity: 0;
          transition: all 0.3s ease-out;
          }
+     
          .loaded #loader-wrapper {
          visibility: hidden;
          transform:translateY(-100%);
          transition: all 0.3s 1s ease-out;
          }
-      </style>
+     
+       </style>
+    
    </head>
    <body>
-      <div class="container-panel   container-teacher-panel-edit-classes">
+      <div class="container-teacher-panel container-teacher-panel-edit-classes">
          <div class="panel-overlay hide-for-desktop">
             <nav class="panel-overlay-menu">
                <img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo">
@@ -138,7 +187,7 @@
                </div>
             </nav>
          </div>
-         <div class="navbar">
+         <div class="navbar teacher-ct">
             <div class="navbar-search">
                <div class="searchbox">
                   <form method="POST" action="/teachers/users">
@@ -271,7 +320,7 @@
                </div>
             </div>
          </div>
-         <div class="main">
+         <div class="main teacher-ct">
             <div class="classes-edit">
                <div class="classes-edit-title">
                   <h2>
@@ -368,7 +417,7 @@
                   </a>
                </div>
                <div class="panel-menu-item">
-                  <img class="panel-menu-item-students" src="../../images/Panel-Students-list.svg" alt="">
+                  <img class="panel-menu-item-students special-icon" src="../../images/Panel-Students-list.svg" alt="">
                   <a href="/teachers/student-list">
                   لیست دانشحویان
                   </a>

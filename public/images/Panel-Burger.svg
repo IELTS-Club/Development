@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="50" height="41" viewBox="0 0 50 41">
-  <g id="Group_310" data-name="Group 310" transform="translate(-308 -193)">
-    <line id="Line_18" data-name="Line 18" x1="47" transform="translate(309.5 194.5)" fill="none" stroke="#ecb773" stroke-linecap="round" stroke-width="3"/>
-    <line id="Line_19" data-name="Line 19" x1="36" transform="translate(309.5 213.5)" fill="none" stroke="#258c93" stroke-linecap="round" stroke-width="3"/>
-    <line id="Line_20" data-name="Line 20" x1="47" transform="translate(309.5 232.5)" fill="none" stroke="#ecb773" stroke-linecap="round" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="49.5" height="36.453" viewBox="0 0 49.5 36.453">
+  <g id="Panel-Burger" transform="translate(-1715.5 -270.5)">
+    <line id="Line_29" data-name="Line 29" x1="34" transform="translate(1717.5 272.5)" fill="none" stroke="#258c93" stroke-linecap="round" stroke-width="4"/>
+    <path id="blob_1_" data-name="blob (1)" d="M-57.279-70.451A11.794,11.794,0,0,1-52.835-62.6a16.505,16.505,0,0,1-1.7,9.414c-1.459,3.036-3.715,5.852-6.649,7.022s-6.564.712-9.787-.594a14.166,14.166,0,0,1-7.48-6.191,13.453,13.453,0,0,1-.78-9.329,13.3,13.3,0,0,1,4.7-7.6,15.2,15.2,0,0,1,8.464-2.544C-62.944-72.554-59.687-72.147-57.279-70.451Z" transform="translate(1817.702 352.442)" fill="#f8e6ce"/>
+    <line id="Line_30" data-name="Line 30" x1="24" transform="translate(1717.5 287.5)" fill="none" stroke="#258c93" stroke-linecap="round" stroke-width="4"/>
+    <line id="Line_33" data-name="Line 33" x1="32" transform="translate(1717.5 301.5)" fill="none" stroke="#258c93" stroke-linecap="round" stroke-width="4"/>
   </g>
 </svg>

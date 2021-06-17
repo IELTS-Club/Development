@@ -48,6 +48,7 @@
 @import "pages/error/searchResult";
 @import "pages/error/confirmationFaild";
 
+@import "layout/studentPanel";
 @import "pages/panel/students/dashboard";
 @import "pages/panel/students/classList";
 @import "pages/panel/students/classRegistration";
@@ -57,6 +58,7 @@
 
 @import "pages/blog/blogOne";
 
+@import "layout/teacherPanel";
 @import "pages/panel/teachers/dashboard";
 @import "pages/panel/teachers/classList";
 @import "pages/panel/teachers/addClass";
