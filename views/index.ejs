@@ -13,131 +13,114 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-
-  
   <style>
-
-
-       .swiper-container {
-      width: 100%;
-      height: 100%;
+    .swiper-container {
+    width: 100%;
+    height: 100%;
     }
-
     .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
     }
     .swiper-slide img {
-width: 300px;
-}
-#loader-wrapper {
-  position:fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:1000;
-}
-
-#loader-wrapper .loader {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 10001;
-  width:300px;
-  height:150px;
-}
-
-#loader-wrapper .loader h2 {
-
-  font-size: 30px;
-  font-family: Kalameh-Black;
-  color: #fff;
-
-
-}
-
-
-@-webkit-keyframes spin {
-  0%   {
-    -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  0%   {
-    -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-  }
-}
-
-#loader-wrapper .loader-section {
-  position:fixed;
-  top:0;
-  background-image: linear-gradient(#258c93,#1D3C4E);
-  width:51%;
-  height:100%;
-  z-index:1000;
-}
-
-#loader-wrapper .loader-section.section-left {
-  left:0
-}
-#loader-wrapper .loader-section.section-right {
-  right:0;
-}
-
-/* Loaded Styles */
-.loaded #loader-wrapper .loader-section.section-left {
-  transform: translateX(-100%);
-  transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-}
-.loaded #loader-wrapper .loader-section.section-right {
-  transform: translateX(100%);
-  transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-}
-.loaded #loader {
-  opacity: 0;
-  transition: all 0.3s ease-out;
-}
-.loaded #loader-wrapper {
-  visibility: hidden;
-  transform:translateY(-100%);
-  transition: all 0.3s 1s ease-out;
-}
-
-  </style>
+    width: 300px;
+    }
+    #loader-wrapper {
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    }
+    #loader-wrapper .loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+    width:300px;
+    height:150px;
+    }
+    #loader-wrapper .loader h2 {
+    font-size: 30px;
+    font-family: Kalameh-Black;
+    color: #fff;
+    }
+    @-webkit-keyframes spin {
+    0%   { 
+    -webkit-transform: rotate(0deg); 
+    -ms-transform: rotate(0deg); 
+    transform: rotate(0deg);
+    }
+    100% { 
+    -webkit-transform: rotate(360deg); 
+    -ms-transform: rotate(360deg); 
+    transform: rotate(360deg);
+    }
+    }
+    @keyframes spin {
+    0%   { 
+    -webkit-transform: rotate(0deg); 
+    -ms-transform: rotate(0deg); 
+    transform: rotate(0deg);
+    }
+    100% { 
+    -webkit-transform: rotate(360deg); 
+    -ms-transform: rotate(360deg); 
+    transform: rotate(360deg);
+    }
+    }
+    #loader-wrapper .loader-section {
+    position:fixed;
+    top:0;
+    background-image: linear-gradient(#258c93,#1D3C4E);
+    width:51%;
+    height:100%;
+    z-index:1000;
+    }
+    #loader-wrapper .loader-section.section-left {
+    left:0
+    }
+    #loader-wrapper .loader-section.section-right {
+    right:0;
+    }
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+    transform: translateX(-100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader-wrapper .loader-section.section-right {
+    transform: translateX(100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+    .loaded #loader {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+    visibility: hidden;
+    transform:translateY(-100%);
+    transition: all 0.3s 1s ease-out;
+    }
+ </style>
     
   <!--BEGIN RAYCHAT CODE--> 
   <script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="50b0f0b4-8bbe-472d-94a5-ecbbaac0b985";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script> 
@@ -1139,19 +1122,24 @@ width: 300px;
   <script src="app/js/mockQuizModal.js"></script>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper('.swiper-container', {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        
-      },autoplay: {
-        delay: 2500,
-      disableOnInteraction: false,
-      },
-    });
+     var swiper = new Swiper('.swiper-container', {
+       navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev',
+         breakpoints: {
+            1200: {
+               slidesPerView: 'auto',
+               spaceBetween: 40,
+            },
+            830: {
+               slidesPerView: 'auto',
+               spaceBetween: 10, // <- doesn't work
+            }
+         }
+       },
+     });
   </script>
 
   <script>

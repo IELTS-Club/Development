@@ -165,7 +165,7 @@
 
             @media #{$phone} {
 
-              width: 100%;
+              overflow: scroll;
               height: 300px;
               padding:0;
 
@@ -181,6 +181,14 @@
               border: 5px solid #F4F4F8;
               border-radius: 10px;
               border-collapse: collapse;
+
+              @media #{$phone} {
+
+                ovrrflow:scroll;
+                width: 500px;
+  
+    
+              }
 
               th {
 

@@ -638,6 +638,7 @@
     
       .side-menu {
 
+        position: fixed;
         grid-area: menu;
         height: 100vh;
         background-color: #fff;
@@ -747,11 +748,7 @@
   }
 
 
-  .open-menu {
 
-    right: 0px;
-
-}
 
 .bg-blur {
 

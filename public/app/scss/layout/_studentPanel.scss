@@ -1,4 +1,16 @@
+.student-ct {
 
+  padding: 5px 80px;
+  box-sizing: border-box;
+
+
+  @media #{$phone} {
+
+      padding: 60px 40px;
+
+    }
+
+}
 
   .container-student-panel {
 
@@ -15,6 +27,16 @@
     margin: 0;
     background-color: #F4F4F8 !important;
 
+    .open-menu {
+  
+      .panel-overlay {
+  
+        right:0;
+  
+      }
+  
+    }
+
   
     @media #{$phone} {
   
@@ -29,20 +51,11 @@
     
     }
 
-      
-    &.open-slide {
-  
-        .panel-overlay {
-    
-          right: 0px;
-    
-        }
-    
-      }
-  
-  
+
     .panel-overlay {
   
+ 
+
       position: fixed;
       right: -300px;
       width: 200px;
@@ -626,13 +639,13 @@
     
       }
 
-  }
-  
+        
   .side-menu {
     
     position: fixed;
     grid-area: menu;
     height: 100vh;
+    border-radius: 50px 0 0 50px;
     background-color: #fff;
     box-shadow: -20px 7px 30px #f8f8f870;
 
@@ -674,6 +687,7 @@
           align-items: center;
           margin-bottom: 12px;
           padding: 10px;
+          
     
           img {
     
@@ -685,6 +699,21 @@
           a {
     
             margin-right: 20px;
+
+            .new-feature {
+              
+              display: inline-block;
+              width: 40PX;
+              font-size: 11px;
+              font-family: Yekan-Bakh-Light;
+              text-align: center;
+              padding: 5px;
+              margin-right: 5px;
+              border-radius: 30px;
+              color: #fff;
+              background-color: #258C93;
+
+            }
     
           }
           
@@ -724,22 +753,12 @@
   }
 
 
-  .open-menu {
-
-    right: 0px;
-
-}
-
-.bg-blur {
-
-  filter: blur(10px);
-
-}
+  }
 
 
-.show-drop {
 
-    display: flex;
+  .bg-blur {
 
+    filter: blur(10px);
 
   }
