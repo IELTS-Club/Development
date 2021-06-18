@@ -514,8 +514,6 @@
          </section>
 
 
-
-
          <section class="icdrn-modal" id="editTimeModal" style="display: none;">
 
             <div class="icdrn-modal-content">
@@ -552,34 +550,207 @@
          <section class="icdrn-modal" id="addStudentsModal" style="display: none;">
 
             <div class="icdrn-modal-content">
+             
                <form action="/teachers/edit-class/<%= classId %>/addStudent" method="POST">
-            <a href="/teachers/edit-class/<%= classId %>"><span class="modal-close" id="modalCloseA">
-            &times;
-            </span></a>
             
-            <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="" style="display: none;">
+                  <a href="/teachers/edit-class/<%= classId %>">
+
+                     <span class="modal-close" id="modalCloseA">
+                        &times;
+                     </span>
+
+                  </a>
             
+                <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="" style="display: none;">
+  
+               <h3>
+               اضافه کردن دانشجو
+               </h3>
             
+               <div class="add-students-box">
+   
+                  <input type="text" class="add-students-input" placeholder="ایمیل دقیق دانشجویان را با کاما جدا کنید..." required name="classStudents">
+                  
+               </div>
             
-            <h3>
-            اضافه کردن دانشجو
-            </h3>
-            
-            <div class="add-students-box">
- 
-               <input type="text" class="add-students-input" placeholder="ایمیل دقیق دانشجویان را با کاما جدا کنید..." required name="classStudents">
+               <button type="submit" class="icdrn-btn">
                
-             </div>
-            
-            <button type="submit" class="icdrn-btn">
-            
-            ثبت تغیرات
-            
-            </button>
+               ثبت تغیرات
+               
+               </button>
+
+
                </form>
+
             </div>
                
          </section>
+
+
+          <!-- Edit Classe's General Info -->
+
+         <section class="icdrn-modal-lg edit-class-general-info" id="editClassGeneralInfo">
+
+            <span class="modal-close">&times;</span>
+      
+            <div class="icdrn-modal-grid">
+      
+            <div class="modal-content">
+      
+               <h3 id="infoBox">
+                  ویرایش کلی کلاس
+               </h3>
+      
+      
+               <div class="modal-form" id="modal-form">
+
+                  <div class="coursename-box">
+
+      
+                     <div class="select">
+                     <select id="standard-select" name="className">
+                        <option value="Ielts">کلاس آنلاین آموزشی آیلتس</option>
+                        <option value="Toefl">
+                           کلاس آنلاین آموزشی تافل
+                        </option>
+                        <option value="Emigration">
+                           کلاس آنلاین آموزشی مهاجرت
+                        </option>
+                        <option value="Conversation">
+                           کلاس آنلاین آموزشی مکالمه
+                        </option>
+                        <option value="PTE">
+                           کلاس آنلاین آموزشی PTE
+                        </option>
+                        <option value="Duolingo">
+                           کلاس آموزشی آنلاین دولینگو
+                        </option>
+                     </select>
+                     <span class="icon"></span>
+                     </div>
+      
+                     
+                  </div>
+
+                  <div class="row">
+                  
+                     <div class="coursemode-box">
+         
+                     <div class="select">
+                        <select id="standard-select" name="classType">
+                           <option value="Private">خصوصی</option>
+                           <option value="Public">عمومی</option>
+                        </select>
+                        <span class="icon"></span>
+                     </div>
+                     </div>
+         
+                     
+                     <div class="courseteacher-box">
+         
+                     <div class="select">
+                        <select id="standard-select" name="classTeacher">
+                           <option value="Noorzad">
+                           دکتر پژمان نورزاد
+                           </option>
+                           <option value="Bahrami">
+                           خانم هانیه بهرامی
+                           </option>
+                           <option value="Nouri">
+                           خانم مینا نوری
+                           </option>
+                           <option value="Zolfaghari">
+                           خانم آرزو ذوالفقاری
+                           </option>
+                           <option value="Mohebiii">
+                           خانم عاطفه محبی
+                           </option>
+                           <option value="Jadidi">
+                           آقای جواد جدیدی
+                           </option>
+                           <option value="Asi">
+                           خانم نیکتا عاصی شاد
+                           </option>
+                           <option value="Fallah">
+                           اقای مهرشاد فلاح
+                           </option>
+                           <option value="Hadavi">
+                           خانم مریم هادوی
+                           </option>
+                           <option value="Keshtkar">
+                           خانم زهرا کشتکار
+                           </option>
+                        </select>
+                        <span class="icon"></span>
+                     </div>
+                     
+                     </div>
+                  </div>
+      
+                  <div class="row">
+
+                     <div class="courselevel-box">
+      
+         
+                     <div class="select">
+                        <select id="standard-select" name="classLevel">
+                           <option value="Starter">Starter</option>
+                           <option value="Elementary">Elementary</option>
+                           <option value="Pre-Intermediate">Pre-Intermediate</option>
+                           <option value="Intermediate">Intermediate</option>
+                           <option value="Upper-Intermediate">Upper-Intermediate</option>
+                           <option value="Advance">Advance</option>
+                        </select>
+                        <span class="icon"></span>
+                     </div>
+                     </div>
+                     
+                     <div class="coursedate-box">
+         
+                     <input type="text" class="coursedate-input" placeholder="زمان دقیق جلسات کلاس" name="classTime" required>
+                     
+                     </div>
+      
+                  </div>
+
+                  <div class="courseroomlink-box">
+
+                     <input type="text" class="courseroomlink-input" placeholder="لینک کامل اتاق مربوط به این کلاس را وارد کنید" name="classLink" required>
+                     
+                  </div>
+
+
+                  <button type="button" class="icdrn-btn">
+                  ویرایش کلاس
+                  </button>
+      
+      
+               </div>
+      
+            </div>
+      
+            <div class="modal-img">
+      
+               <img src="../../images/edit-class-general-info-illustration.svg" alt="">
+      
+               <div class="modal-img-subtitle hide-for-phone">
+                  <span>
+                  مدرس محترم
+                  </span>
+               تمامی اطلاعاتی که تغییر خواهید داد، بـصورت 
+                  <br>
+                  اتوماتیک برای دانشــجویان تغییر داده خــواهد شد و نیازی به 
+
+            <br>
+            اقـــدام             دیــگری از ســمت شما در این جــهت نیست. با تشکــر!
+
+               </div>
+            </div>
+      
+            </div>
+      
+         </section>
+  
 
 
          <script>

@@ -121,8 +121,6 @@
 }
 
 
-
-
 .placement-test-registration-modal {
 
   position: fixed;
@@ -1135,5 +1133,1062 @@
 #newFeaturesModal {
 
   transition: .5s all ease-in-out;
+
+}
+
+.record-common-report-card {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+  @media #{$phone} {
+
+    flex-direction: column;
+  
+  }
+  
+
+
+  
+  .modal-close {
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size:30px;
+    font-weight: 400px;
+    cursor: pointer;
+
+  }
+
+
+
+  .icdrn-modal-grid {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+    width: 50%;
+    height: 75%;
+    background-color: #fff;
+
+
+    @media #{$phone} {
+
+      
+    width: 78%;
+    height: 550px;
+      flex-direction: column;
+  
+    }
+    
+
+.modal-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media #{$phone} {
+
+    order:2;
+  
+  }
+  
+
+  h3 {
+
+    font-family: Kalameh-Black;
+    font-size: 35px;
+    width: auto;
+    margin: 20px 0;
+    text-align: center;
+    color: $secondaryColor;
+
+
+    @media #{$phone} {
+
+      font-size:22px;
+
+      width:180px
+
+    }
+
+  }
+
+  p {
+
+    font-family: Yekan-Bakh-Thin;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+
+    @media #{$laptop} {
+
+      font-size: 16px;
+      width: auto;
+
+    }
+
+  }
+
+ .modal-form {
+
+  width: 100%;
+
+  input {
+
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+  }
+
+
+  .input-row {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    input {
+
+      margin: auto;
+      width: 48% !important;
+
+    }
+
+    imput:not(:last-child) {
+
+      margin-left: 20px;
+
+    }
+
+  }
+
+  button[type="button"] {
+    
+    font-size: 10px;
+    width: 100%;
+    height: 50px; 
+
+    @media #{$laptop} {
+
+      font-size: 14px;
+      width:100%;
+
+    }
+
+  }
+
+
+ }
+
+}
+
+.modal-img {
+
+      @media #{$phone} {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+  img {
+
+    margin-top: 20px;
+    width: 300px;
+
+    @media #{$phone} {
+
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      order: 1;
+
+    }
+
+  }
+
+  .modal-img-subtitle {
+
+    font-family: Yekan-Bakh-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+
+}
+
+}
+
+.record-mock-report-card {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+  @media #{$phone} {
+
+    flex-direction: column;
+  
+  }
+  
+
+
+  
+  .modal-close {
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size:30px;
+    font-weight: 400px;
+    cursor: pointer;
+
+  }
+
+
+
+  .icdrn-modal-grid {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+    width: 50%;
+    height: 75%;
+    background-color: #fff;
+
+
+    @media #{$phone} {
+
+      
+    width: 78%;
+    height: 550px;
+      flex-direction: column;
+  
+    }
+    
+
+.modal-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media #{$phone} {
+
+    order:2;
+  
+  }
+  
+
+  h3 {
+
+    font-family: Kalameh-Black;
+    font-size: 35px;
+    width: auto;
+    margin: 20px 0;
+    text-align: center;
+    color: $secondaryColor;
+
+
+    @media #{$phone} {
+
+      font-size:22px;
+
+      width:180px
+
+    }
+
+  }
+
+  p {
+
+    font-family: Yekan-Bakh-Thin;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+
+    @media #{$laptop} {
+
+      font-size: 16px;
+      width: auto;
+
+    }
+
+  }
+
+ .modal-form {
+
+  width: 100%;
+
+  input {
+
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+  }
+
+
+  .input-row {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    input {
+
+      margin: auto;
+      width: 48% !important;
+
+    }
+
+    imput:not(:last-child) {
+
+      margin-left: 20px;
+
+    }
+
+  }
+
+  button[type="button"] {
+    
+    font-size: 10px;
+    width: 100%;
+    height: 50px; 
+
+    @media #{$laptop} {
+
+      font-size: 14px;
+      width:100%;
+
+    }
+
+  }
+
+
+ }
+
+}
+
+.modal-img {
+
+      @media #{$phone} {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+  img {
+
+    margin-top: 20px;
+    width: 300px;
+
+    @media #{$phone} {
+
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      order: 1;
+
+    }
+
+  }
+
+  .modal-img-subtitle {
+
+    font-family: Yekan-Bakh-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+
+}
+
+}
+
+#addStudentsModal {
+
+  .icdrn-modal-content {
+
+
+    form {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+
+      .add-students-box {
+
+        width: 100%;
+  
+      }
+
+      button {
+
+        margin: auto;
+
+      }
+
+    }
+
+
+    
+    
+  }
+
+}
+
+.edit-class-general-info {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1000;
+  transition: all 2s linear;
+
+
+  @media #{$phone} {
+
+    flex-direction: column;
+  
+  }
+  
+
+
+  
+  .modal-close {
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    font-size:30px;
+    font-weight: 400px;
+    cursor: pointer;
+
+  }
+
+
+
+  .icdrn-modal-grid {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px 7px 10px rgba(248,248,248,0.1);
+    width: 50%;
+    height: 75%;
+    background-color: #fff;
+
+
+    @media #{$phone} {
+
+      
+    width: 78%;
+    height: 550px;
+      flex-direction: column;
+  
+    }
+    
+
+.modal-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media #{$phone} {
+
+    order:2;
+  
+  }
+  
+
+  h3 {
+
+    font-family: Kalameh-Black;
+    font-size: 35px;
+    width: auto;
+    margin: 20px 0;
+    text-align: center;
+    color: $secondaryColor;
+
+
+    @media #{$phone} {
+
+      font-size:22px;
+
+      width:180px
+
+    }
+
+  }
+
+  p {
+
+    font-family: Yekan-Bakh-Thin;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+
+    @media #{$laptop} {
+
+      font-size: 16px;
+      width: auto;
+
+    }
+
+  }
+
+ .modal-form {
+
+  width: 100%;
+
+  div {
+
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+  }
+
+
+  .coursename-box {
+
+    position: relative;
+
+    .select {
+
+      position: relative;
+      width: 100%;
+
+      #standard-select {
+
+        font-family: Yekan-Bakh-Light;
+        width: 100%;
+        height:55px;
+        padding: 10px;
+        border: none;
+        outline: 0;
+        border-radius: 10px;
+        background-color: #F3F3F3;
+
+      }
+
+      .icon {
+
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height:100%;
+        border-radius: 10px;
+        background-color: #F3F3F3;
+        pointer-events: none;
+
+      }
+
+      .icon::before {
+
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent ;
+        border-top:6px solid rgb(148, 148, 148) ;
+
+
+      }
+
+
+
+    }
+
+  }
+
+  .row {
+
+    display: flex;
+    flex-direction: row;
+
+    @media #{$phone} {
+
+      flex-direction: column;
+    
+    }
+    
+
+    
+    .coursemode-box {
+
+      position: relative;
+      width: 50%;
+      margin-left: 20px;
+
+      @media #{$phone} {
+
+        width: 100%;
+        margin-left: 0;
+    
+      }
+      
+
+      .select {
+
+        position: relative;
+        width: 100%;
+
+        @media #{$phone} {
+
+          width: 100%;
+
+        }
+
+
+        #standard-select {
+
+          font-family: Yekan-Bakh-Light;
+          width: 100%;
+          height:55px;
+          padding: 10px;
+          border: none;
+          outline: 0;
+          background-color: #F3F3F3;
+          border-radius: 10px;
+
+        }
+
+        .icon {
+
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50px;
+          height:100%;
+          border-radius: 10px;
+          background-color: #F3F3F3;
+          pointer-events: none;
+
+        }
+
+        .icon::before {
+
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent ;
+          border-top:6px solid rgb(148, 148, 148) ;
+
+
+        }
+
+
+
+      }
+
+
+    }
+
+
+    .courseteacher-box {
+
+      position: relative;
+      width: 50%;
+
+      @media #{$phone} {
+
+        width: 100%;
+    
+      }
+      
+
+      .select {
+
+        position: relative;
+        width: 100%;
+
+        #standard-select {
+
+          font-family: Yekan-Bakh-Light;
+          width: 100%;
+          height:55px;
+          padding: 10px;
+          border: none;
+          outline: 0;
+          background-color: #F3F3F3;
+          border-radius: 10px;
+
+        }
+
+        .icon {
+
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50px;
+          height:100%;
+          border-radius: 10px;
+          background-color: #F3F3F3;
+          pointer-events: none;
+
+        }
+
+        .icon::before {
+
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent ;
+          border-top:6px solid rgb(148, 148, 148) ;
+
+
+        }
+
+
+
+      }
+
+    }
+
+
+  }
+
+  .row {
+
+    display: flex;
+    flex-direction: row;
+
+    @media #{$phone} {
+
+      flex-direction: column;
+    
+    }
+    
+
+    
+    .courselevel-box {
+
+      position: relative;
+      width: 50%;
+      margin-left: 20px;
+
+      @media #{$phone} {
+
+        width: 100%;
+        margin-left: 0;
+    
+      }
+      
+
+      .select {
+
+        position: relative;
+        width: 100%;
+
+        @media #{$phone} {
+
+          width: 100%;
+
+        }
+
+
+        #standard-select {
+
+          font-family: Yekan-Bakh-Light;
+          width: 100%;
+          height:55px;
+          padding: 10px;
+          border: none;
+          outline: 0;
+          background-color: #F3F3F3;
+          border-radius: 10px;
+
+        }
+
+        .icon {
+
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50px;
+          height:100%;
+          border-radius: 10px;
+          background-color: #F3F3F3;
+          pointer-events: none;
+
+        }
+
+        .icon::before {
+
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent ;
+          border-top:6px solid rgb(148, 148, 148) ;
+
+
+        }
+
+
+
+      }
+
+
+    }
+
+
+    .coursedate-box {
+
+      width: 50%;
+
+      @media #{$phone} {
+
+        width: 100%;
+
+      }
+
+      .coursedate-input {
+        box-sizing: border-box;
+
+        font-family: Yekan-Bakh-Regular;
+        width: 100%;
+        height: 55px;
+        border: none;
+        padding-right: 15px;
+        border-radius: 10px;
+        background-color: #F3F3F3;
+
+      }
+
+    }
+
+
+  }
+
+
+  .courseroomlink-box {
+
+    .courseroomlink-input {
+      box-sizing: border-box;
+
+      font-family: Yekan-Bakh-Regular;
+      width: 100%;
+      height: 55px;
+      border: none;
+      padding-right: 15px;
+      border-radius: 10px;
+      background-color: #F3F3F3;
+
+    }
+
+  }
+
+  input {
+
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+  }
+
+
+  .input-row {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    input {
+
+      margin: auto;
+      width: 48% !important;
+
+    }
+
+    imput:not(:last-child) {
+
+      margin-left: 20px;
+
+    }
+
+  }
+
+  button[type="button"] {
+    
+    font-size: 10px;
+    width: 100%;
+    height: 50px; 
+
+    @media #{$laptop} {
+
+      font-size: 14px;
+      width:100%;
+
+    }
+
+  }
+
+
+ }
+
+}
+
+.modal-img {
+
+      @media #{$phone} {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+  img {
+
+    margin-top: 20px;
+    width: 300px;
+
+    @media #{$phone} {
+
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      order: 1;
+
+    }
+
+  }
+
+  .modal-img-subtitle {
+
+    font-family: Yekan-Bakh-Regular;
+    font-size: 13px;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 10px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+
+}
 
 }

@@ -1,0 +1,457 @@
+
+.container-panel-report-card {
+
+    .main {
+  
+      grid-area: main;
+      height: auto;
+      padding: 50px 80px;
+  
+  
+      @media #{$phone} {
+  
+        height:1000px;
+        padding: 40px 40px;
+  
+      }
+  
+      .common-report-cards {
+  
+        width: 100%;
+  
+        .report-cards-title {
+  
+          display: flex;
+          justify-content: space-between;
+  
+          @media #{$phone} {
+  
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      
+          }
+  
+          h2{
+  
+            span {
+  
+              font-weight: bold;
+              color: $primaryColor;
+              padding-left: 4px;
+    
+            }
+  
+            font-family: Kalameh-Black;
+            font-size: 30px;
+            color:#258C93;
+  
+            @media #{$phone} {
+  
+              margin-bottom: 15px;
+        
+            }
+  
+  
+          }
+  
+          button {
+  
+            font-family: Yekan-Bakh-Regular;
+            color: #258C93;
+            border: 1px solid #258C93;
+            background-color: transparent;
+  
+            @media #{$phone} {
+  
+              width: 100%;
+              margin-bottom: 40px;
+         
+             }
+  
+            span {
+  
+              padding-right: 5px;
+              font-family: Yekan-Bakh-Bold;
+              font-size: 17px;
+  
+            }
+  
+          }
+  
+          button:hover {
+  
+            color: #fff;
+            background-color: #258C93;
+  
+          }
+  
+  
+  
+        }
+  
+        .report-cards-table-box  {
+  
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: auto;
+          margin-top: 20px;
+  
+          @media #{$phone} {
+  
+            overflow-x:auto;
+            font-size: 14px;
+       
+           }
+           
+  
+          table {
+  
+            width: 100%;
+            text-align: center;
+            border: 5px solid #F4F4F8;
+            border-radius: 10px;
+            border-collapse: collapse;
+  
+  
+          @media #{$phone} {
+  
+            width: 2000px;
+       
+           }
+  
+            
+            th {
+  
+              height: 30px;
+              padding-top:17px;
+              color: #fff;
+              background-color: $primaryColor;
+  
+  
+            }
+  
+            tr {
+  
+              height:60px;
+              border-bottom: 8px solid #F4F4F8;
+  
+              td {
+  
+                padding-top: 17px;
+                text-align: center;
+  
+      
+              }
+  
+            td:nth-child(8){
+  
+             span {
+  
+              font-family: Yekan-Bakh-Medium;
+              font-size: 12px;
+              padding: 7px;
+              border-radius: 10px;
+              color: rgb(255, 255, 255);
+              background-color: #00af6c;
+  
+             }
+  
+            }
+  
+            }
+  
+            tr:nth-child(odd) {
+  
+              background-color: #FFF4E5;
+  
+            }
+  
+            tr:nth-child(even) {
+  
+              background-color: #e9e9e9;
+  
+  
+            }
+  
+  
+          }
+  
+        }
+  
+  
+    }
+
+    .mock-report-cards {
+
+        margin-top: 50px;
+        width: 100%;
+
+        .report-cards-title {
+
+        display: flex;
+        justify-content: space-between;
+
+        @media #{$phone} {
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+        }
+
+        h2{
+
+            span {
+
+            font-weight: bold;
+            color: $primaryColor;
+            padding-left: 4px;
+    
+            }
+
+            font-family: Kalameh-Black;
+            font-size: 30px;
+            color:#258C93;
+
+            @media #{$phone} {
+
+            margin-bottom: 15px;
+        
+            }
+
+
+        }
+
+        button {
+
+            font-family: Yekan-Bakh-Regular;
+            color: #258C93;
+            border: 1px solid #258C93;
+            background-color: transparent;
+
+            @media #{$phone} {
+
+            width: 100%;
+            margin-bottom: 40px;
+        
+            }
+
+            span {
+
+            padding-right: 5px;
+            font-family: Yekan-Bakh-Bold;
+            font-size: 17px;
+
+            }
+
+        }
+
+        button:hover {
+
+            color: #fff;
+            background-color: #258C93;
+
+        }
+
+
+
+        }
+
+        .report-cards-table-box  {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+
+        @media #{$phone} {
+
+            overflow-x:auto;
+            font-size: 14px;
+    
+        }
+        
+
+        table {
+
+            width: 100%;
+            text-align: center;
+            border: 5px solid #F4F4F8;
+            border-radius: 10px;
+            border-collapse: collapse;
+
+
+        @media #{$phone} {
+
+            width: 2000px;
+    
+        }
+
+            
+            th {
+
+            height: 30px;
+            padding-top:17px;
+            color: #fff;
+            background-color: $primaryColor;
+
+
+            }
+
+            tr {
+
+            height:60px;
+            border-bottom: 8px solid #F4F4F8;
+
+            td {
+
+                padding-top: 17px;
+                text-align: center;
+
+    
+            }
+
+            td:nth-child(8){
+
+            span {
+
+            font-family: Yekan-Bakh-Medium;
+            font-size: 12px;
+            padding: 7px;
+            border-radius: 10px;
+            color: rgb(255, 255, 255);
+            background-color: #00af6c;
+
+            }
+
+            }
+
+            }
+
+            tr:nth-child(odd) {
+
+            background-color: #FFF4E5;
+
+            }
+
+            tr:nth-child(even) {
+
+            background-color: #e9e9e9;
+
+
+            }
+
+
+        }
+
+        }
+
+
+    }
+  
+    .side-menu {
+  
+      position: fixed;
+      grid-area: menu;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: -20px 7px 30px #f8f8f870;
+  
+      @media #{$phone} {
+  
+        grid-area: menu;
+        background-color: red;
+  
+    
+      }
+    
+        .panel-logo {
+      
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 40px;
+      
+      
+      
+          img {
+      
+            text-align: center;
+            width: 150px;
+      
+          }
+      
+        }
+      
+        .panel-menu-list {
+      
+          display: flex;
+          flex-direction: column;
+          padding: 30px 50px 0 50px;
+      
+          .panel-menu-item {
+      
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 10px;
+      
+            img {
+      
+              width: 30px;
+              text-align: center;
+      
+            }
+      
+            a {
+      
+              margin-right: 20px;
+      
+            }
+            
+          }
+      
+          .panel-menu-item:last-child{
+      
+            margin-bottom: 0;
+      
+          }
+      
+          .active {
+      
+            border-radius: 20px;
+            background-color: #FFF4E5;
+      
+          }
+      
+        }
+      
+        .panel-exit-box {
+      
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+      
+          img {
+      
+            width: 170px;
+      
+          }
+      
+        }
+      
+  
+    }
+  
+  }
+  
+  }
+  
+  

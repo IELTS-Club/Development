@@ -603,78 +603,76 @@
      
         <!-- error box -->
 
-        <section class="icdrn-modal" id="registerSucsesModal">
-          <div class="icdrn-modal-content">
-      
-            <span class="modal-close" id="modalCloseA">
-              &times;
-            </span>
-      
-            <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="">
-      
-      
-      
-            <h3>
-              <%= success %> عزیز اطلاعات شما با موفقیت ثبت شد
-            </h3>
-      
-            <p>
-      
-              اطلاعات شما با موفقیت در پایگاه داده آیلتس کلاب 
-              <br>
-                ثبت شد      
-            </p>
-      
-             <button type="submit" class="icdrn-btn" id="Bastan">
-               <a href="/dashboard">
-               بستن
-              </a>
-            </button> 
-      
-          </div>
-        </section>
-
-
-       
-        <section class="icdrn-modal" id="registerErrorModal">
-          <div class="icdrn-modal-content">
-      
-            <span class="modal-close" id="modalClose">
-              &times;
-            </span>
-      
-            <img src="../images/auth-err-pic.svg" class="modal-img" alt="">
-      
-      
-      
-            <h3 id="h3-box">
-             <%= error %>
-            </h3>
-      
-            <p>
-      
-              لطفا اطلاعاتی که وارد کردی 
-              <br>
-              رو یه بار دیگه با دقت بیشتر مرور کن!
-      
-            </p>
-      
-            <button type="submit" class="icdrn-btn" id="checkAgain">
-      
-              برسی دوباره فرم
-      
-            </button>
-      
-          </div>
-        </section>
-
-        
-
-
-
     </div>
 
   </div>
+
+  <section class="icdrn-modal" id="registerSucsesModal">
+    <div class="icdrn-modal-content">
+
+      <span class="modal-close" id="modalCloseA">
+        &times;
+      </span>
+
+      <img src="../images/Confirmation-Modal-Img.svg" class="modal-img" alt="">
+
+
+
+      <h3>
+        <%= success %> عزیز اطلاعات شما با موفقیت ثبت شد
+      </h3>
+
+      <p>
+
+        اطلاعات شما با موفقیت در پایگاه داده آیلتس کلاب 
+        <br>
+          ثبت شد      
+      </p>
+
+       <button type="submit" class="icdrn-btn" id="Bastan">
+         <a href="/dashboard">
+         بستن
+        </a>
+      </button> 
+
+    </div>
+  </section>
+
+
+ 
+  <section class="icdrn-modal" id="registerErrorModal">
+    <div class="icdrn-modal-content">
+
+      <span class="modal-close" id="modalClose">
+        &times;
+      </span>
+
+      <img src="../images/auth-err-pic.svg" class="modal-img" alt="">
+
+
+
+      <h3 id="h3-box">
+       <%= error %>
+      </h3>
+
+      <p>
+
+        لطفا اطلاعاتی که وارد کردی 
+        <br>
+        رو یه بار دیگه با دقت بیشتر مرور کن!
+
+      </p>
+
+      <button type="submit" class="icdrn-btn" id="checkAgain">
+
+        برسی دوباره فرم
+
+      </button>
+
+    </div>
+  </section>
+
+  
 
   <% if (error) { %>  >
     <script> 
@@ -713,15 +711,20 @@
     const getmodalBastan=document.querySelector("#Bastan")
 
     registerSucsesModal.style.display = "flex";
+    document.querySelector('.container-panel-profile-edit').style.filter = 'blur(6px)';
 
 
     getmodalClose.addEventListener("click",()=>{
 
      registerSucsesModal.style.display = "none";
+     document.querySelector('.container-panel-profile-edit').style.filter = 'blur(0)';
+
 
    });
 
    getmodalBastan.addEventListener("click",()=>{
+
+    document.querySelector('.container-panel-profile-edit').style.filter = 'blur(0)';
     registerSucsesModal.style.display = "none";
    });
 

@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 500px;
+  height: 600px;
   background-image: url(../../images/Footer-BG-MB.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -152,6 +152,18 @@
       margin-bottom: 20px; 
       color: #fff;
 
+
+    }
+
+    .newsletter-box {
+
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 240px;
+      height: auto !important;
+      background-color: #fff;
 
     }
 
