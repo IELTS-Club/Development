@@ -71,25 +71,26 @@
         <main class="teacher-quiz-body  m-quiz-container">
 
             <section class="teacher-quiz-questions  m-quiz-container" id="mainSection">
-            <% for(let i=1;i<=QuestionsNumber;i++){ %>  
+            <% for(let i=1;i<=QuestionsNumber;i++){ 
+               const questionDetails=examQuestions[i-1] %>  
                 <article class="section-box category-question-box" id="article<%= `${i}` %>">
 
                     <div class="question-setting-row">
 
 
-                        <input type="text" value="<%= `QN-${i}` %>" class="question-id-input" style="background-color: white;" disabled >
+                        <input type="text" value="<%=examQuestions[i-1].questionId%>" class="question-id-input" style="background-color: white;" disabled >
 
 
                         <div class="question-type-box">
-          
+                            
                             <div class="select">
                               <select class="standard-select" name="questionType" id="QT<%= `${i}` %>">
-                                <option value="questionTypeLabel" disabled selected>Quesstion Type</option>
-                                <option value="questionTypeGrammer">Grammer</option>
-                                <option value="questionTypeVocabulary">Vocabulary</option>
-                                <option value="questionTypeListening">Listening</option>
-                                <option value="questionTypeReading">Reading</option>
-                                <option value="questionTypeWriting">Writing</option>
+                                <option value="questionTypeLabel" disabled>Quesstion Type</option>
+                                <option value="questionTypeGrammer" <%if(questionDetails.questionType=="questionTypeGrammer"){%> selected <% } %> >Grammer</option>
+                                <option value="questionTypeVocabulary"<%if(questionDetails.questionType=="questionTypeVocabulary"){%> selected <% } %> >Vocabulary</option>
+                                <option value="questionTypeListening" <%if(questionDetails.questionType=="questionTypeListening"){%> selected <% } %> >Listening</option>
+                                <option value="questionTypeReading"  <%if(questionDetails.questionType=="questionTypeReading"){%> selected <% } %> >Reading</option>
+                                <option value="questionTypeWriting" <%if(questionDetails.questionType=="questionTypeWriting"){%> selected <% } %> >Writing</option>
                               </select>
                               <span class="icon"></span>
                             </div>
@@ -98,47 +99,47 @@
                         <div class="q-structure">
 
                             
-                        <div class="question-structure-box" id="defaultStructure<%= `${i}` %>">
+                        <div class="question-structure-box" id="defaultStructure<%= `${i}` %>" style="display: none;">
               
                             <div class="select">
                               <select class="standard-select" name="questionStructure" id="QS">
-                                <option value="questionStructureLabel" disabled selected>Quesstion Sturucture</option>
+                                <option value="questionStructureLabel" selected disabled >Quesstion Sturucture</option>
                               </select>
                               <span class="icon"></span>
                             </div>
                         </div>
 
-                        <div class="question-structure-box" id="GvlStructure<%= `${i}` %>" style="display: none;">
+                        <div class="question-structure-box" id="GvlStructure<%= `${i}` %>"  <%if(questionDetails.questionType=="questionTypeGrammer" || questionDetails.questionType=="questionTypeVocabulary" || questionDetails.questionType=="questionTypeListening"){%> style="display: block;" <% }else{ %> style="display: none;" <% }%> >
               
-                            <div class="select">
+                            <div class="select"  >
                               <select class="standard-select" name="questionStructure" id="glvQS<%= `${i}` %>">
-                                <option value="glvQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
-                                <option value="glvQuestionStructureMultiple">Multiple Choice</option>
-                                <option value="glvQuestionStructureFilling">Filling</option>
+                                <option value="glvQuestionStructureLabel" disabled >Quesstion Sturucture</option>
+                                <option value="glvQuestionStructureMultiple" <%if(questionDetails.questionStructure=="glvQuestionStructureMultiple"){%> selected <%}%>>Multiple Choice</option>
+                                <option value="glvQuestionStructureFilling" <%if(questionDetails.questionStructure=="glvQuestionStructureFilling"){%> selected <%}%> >Filling</option>
                               </select>
                               <span class="icon"></span>
                             </div>
                         </div>
 
-                        <div class="question-structure-box" id="readingStructure<%= `${i}` %>" style="display: none;">
+                        <div class="question-structure-box" id="readingStructure<%= `${i}` %>" <%if(questionDetails.questionType=="questionTypeReading"){%> style="display: block;" <% }else{ %> style="display: none;" <% }%> >
               
-                            <div class="select">
-                              <select class="standard-select" name="questionStructure" id="rQS<%= `${i}` %>">
+                            <div class="select" >
+                              <select class="standard-select" name="questionStructure" id="rQS<%= `${i}` %>" >
                                 <option value="rQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
-                                <option value="rQuestionStructureReadingBody">Reading Body</option>
-                                <option value="rQuestionStructureMultiple">Multiple Choice</option>
-                                <option value="rQuestionStructureFilling">Filling</option>
+                                <option value="rQuestionStructureReadingBody"  <%if(questionDetails.questionStructure=="rQuestionStructureReadingBody"){%> selected <%}%> >Reading Body</option>
+                                <option value="rQuestionStructureMultiple"  <%if(questionDetails.questionStructure=="rQuestionStructureMultiple"){%> selected <%}%> >Multiple Choice</option>
+                                <option value="rQuestionStructureFilling"  <%if(questionDetails.questionStructure=="rQuestionStructureFilling"){%> selected <%}%> >Filling</option>
                               </select>
                               <span class="icon"></span>
                             </div>
                         </div>
 
-                        <div class="question-structure-box" id="writingStructure<%= `${i}` %>" style="display: none;">
+                        <div class="question-structure-box" id="writingStructure<%= `${i}` %>" <%if(questionDetails.questionType=="questionTypeWriting"){%> style="display: block;" <% }else{ %> style="display: none;" <% }%> >
               
                             <div class="select">
                               <select class="standard-select" name="questionStructure" id="wQS<%= `${i}` %>">
                                 <option value="wQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
-                                <option value="wQuestionStructureWritingBody">Writing Body</option>
+                                <option value="wQuestionStructureWritingBody"  <%if(questionDetails.questionStructure=="wQuestionStructureWritingBody"){%> selected <%}%> >Writing Body</option>
                               </select>
                               <span class="icon"></span>
                             </div>
@@ -152,11 +153,11 @@
 
                     </div>
 
-                    <div class="multiple-structure" id="multiple-structure<%= `${i}` %>">
+                    <div class="multiple-structure" id="multiple-structure<%= `${i}` %>" <% if(questionDetails.questionStructure=="glvQuestionStructureMultiple" || questionDetails.questionStructure=="rQuestionStructureMultiple"){%> style="display:block;" <% }else{%>style="display:none;"<%}%> >
 
                         <div class="question-form-row">
 
-                            <input type="text" class="question-body" id="multipleBodyInput<%= `${i}` %>" placeholder="Enter Your Question Form Here...">
+                            <input type="text" class="question-body" id="multipleBodyInput<%= `${i}` %>" value="<%=questionDetails.questionBody%>" placeholder="Enter Your Question Form Here...">
     
                             <button type="button" class="generate-options-btn" id="addOption<%= `${i}` %>">
                                 Add Option
@@ -164,13 +165,17 @@
     
                         </div>
     
-                        <div class="question-options-row" id="creatInput<%= `${i}` %>">
-    
+                        <div class="question-options-row" id="creatInput<%= `${i}` %>" >
+                            
                             <!-- <input type="text" class="question-option-input" placeholder="option A">
                             <input type="text" class="question-option-input" placeholder="option B">
                             <input type="text" class="question-option-input" placeholder="option C">
                             <input type="text" class="question-option-input" placeholder="option D">  -->
-    
+                                <%questionDetails.questionChoices.forEach(element => { %>
+                                    <input type="text" class="question-option-input" value="<%= element%>" placeholder="<%= element%>">
+                               
+                                
+                                <%});%>
                             <div class="right-option-box">
                   
                                 <div class="select">
@@ -194,11 +199,11 @@
 
                     </div>
 
-                    <div class="filling-structure" id="filling-structure<%= `${i}` %>">
+                    <div class="filling-structure" id="filling-structure<%= `${i}` %>" <% if(questionDetails.questionStructure=="glvQuestionStructureFilling" || questionDetails.questionStructure=="rQuestionStructureFilling"){%> style="display:block;" <% }else{%>style="display:none;"<%}%> >
 
                         <div class="question-form-row">
 
-                            <input type="text" class="question-body" id="fillingBodyInput<%= `${i}` %>" placeholder="Enter Your Question Form Here...">
+                            <input type="text" class="question-body" id="fillingBodyInput<%= `${i}` %>" value="<%=questionDetails.questionBody%>" placeholder="Enter Your Question Form Here...">
     
                             <button type="button" class="generate-options-btn" id="resetFilling<%= `${i}` %>">
                                 Reset
@@ -208,11 +213,11 @@
 
                     </div>
 
-                    <div class="reading-box-structure" id="reading-box-structure<%= `${i}` %>">
+                    <div class="reading-box-structure" id="reading-box-structure<%= `${i}` %>"  <% if(questionDetails.questionStructure=="rQuestionStructureReadingBody"){%> style="display:block;" <% }else{%>style="display:none;"<%}%> >
 
                         <div class="question-form-row">
 
-                            <textarea name="" class="question-body" id="readingInput<%= `${i}` %>" cols="30" rows="10">Start Typing Reading Body!</textarea>
+                            <textarea name="" class="question-body" id="readingInput<%= `${i}` %>" cols="30" rows="10"><%=questionDetails.questionBody%></textarea>
     
                             <button type="button" class="generate-options-btn" id="resetReading<%= `${i}` %>">
                                Reset
@@ -224,11 +229,11 @@
 
                     </div>
 
-                    <div class="writing-box-structure" id="writing-box-structure<%= `${i}` %>">
+                    <div class="writing-box-structure" id="writing-box-structure<%= `${i}` %>" <% if(questionDetails.questionStructure=="wQuestionStructureWritingBody"){%> style="display:block;" <% }else{%>style="display:none;"<%}%> >
 
                         <div class="question-form-row">
 
-                            <textarea name="" id="writtingBodyInput<%= `${i}` %>" class="question-body" cols="30" rows="10">Start Typing Writing Body!</textarea>
+                            <textarea name="" id="writtingBodyInput<%= `${i}` %>" class="question-body" cols="30" rows="10"><%=questionDetails.questionBody%></textarea>
     
                             <button type="button" class="generate-options-btn" id="resetWriting<%= `${i}` %>">
                                 Reset
@@ -242,8 +247,7 @@
                 </article> 
             <% } %> 
 
-                <!-- <article class="writing-body-box"  style="white-space: pre-line" id="readingPlaceHolder">
-                </article>   -->
+              
 
             </section>
 
@@ -416,8 +420,9 @@
     </div>
     <script>
         let QuestionsNumber=Number("<%= QuestionsNumber %>")
+        let examID="<%=examId%>"
         
     </script>
-    <script src="/app/js/structureIdentifier.js"></script>
+    <script src="/app/js/structureIdentifier1.js"></script>
 </body>
 </html>

@@ -523,9 +523,37 @@
               <div class="quiz-card-detail-titles">
 
                 <span>
-
-                  استاد پژمان نورزاد
-
+                  <% function selectClassTeacher(){
+                                if(examTeacher=="Noorzad")
+                                return  "دکتر پژمان نورزاد";
+                              
+                              if(examTeacher=="Bahrami")
+                                return "خانم هانیه بهرامی"
+                              
+                              if(examTeacher=="Mohebiii")
+                                return "خانم عاطفه محبی"
+                              
+                              if(examTeacher=="Nouri")
+                                return "خانم مینا نوری"
+                              
+                              if(examTeacher=="Zolfaghari")
+                                return "خانم آرزو ‌‌ذولفقاری"
+                              
+                              if(examTeacher=="Jadidi")
+                              return "اقای جواد جدیدی"
+                              if(examTeacher=="Asi")
+                              return "خانم نیکتا عاصی‌ شاد"
+                  
+                              if(examTeacher=="Fallah")
+                              return "اقای مهرشاد فلاح"
+                  
+                              if(examTeacher=="Hadavi")
+                              return "خانم مریم هادوی"
+                              
+                              if(examTeacher=="Keshtkar")
+                              return "خانم زهرا کشتکار"
+                              } %> 
+                 <%= selectClassTeacher(); %>
                 </span>
 
                 <span>
@@ -691,7 +719,7 @@
 
       <div class="modal-content">
 
-        <h3>
+        <h3 id="infoBox">
           اضافه کردن آزمون جدید
         </h3>
 
@@ -791,6 +819,10 @@
     const modalform = document.getElementById("modal-form");
 
     modalform.getElementsByTagName("button")[0].addEventListener("click", () => {
+      if(modalform.getElementsByTagName("input")[0].value =='' || modalform.getElementsByTagName("input")[1].value ==''||modalform.getElementsByTagName("input")[2].value ==''||modalform.getElementsByTagName("input")[3].value ==''||modalform.getElementsByTagName("input")[4].value ==''||modalform.getElementsByTagName("input")[5].value =='' ||modalform.getElementsByTagName("input")[6].value ==''){
+        document.getElementById("infoBox").innerHTML="لطفا تمامی فیلد ها را پر کنید" 
+        document.getElementById("infoBox").style.color="red" 
+      }else{
       if (modalform.getElementsByTagName("input")[6].value > 100) {
         modalform.getElementsByTagName("input")[6].value = 100
       }
@@ -813,6 +845,7 @@
       }
       fetch("/teachers/quiz-list/<%= classId%>", options);
       window.location.href="/teachers/create-exam"
+    }
     })
   </script>
 
