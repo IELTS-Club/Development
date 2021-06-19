@@ -15475,16 +15475,746 @@ body {
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: main;
-  height: 100vh;
+  height: auto;
+  padding: 50px 80px;
 }
 
 @media (max-width: 600px) {
   .container-teacher-panel-dashboard .main {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
-    grid-area: main;
+    height: 1000px;
+    padding: 40px 40px;
   }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame {
+  width: 100%;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title h2 {
+  font-family: Kalameh-Black;
+  font-size: 30px;
+  color: #258C93;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title h2 span {
+  font-weight: bold;
+  color: #ECB773;
+  padding-left: 4px;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title h2 {
+    margin-bottom: 15px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title button {
+  font-family: Yekan-Bakh-Regular;
+  color: #258C93;
+  border: 1px solid #258C93;
+  background-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title button {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title button span {
+  padding-right: 5px;
+  font-family: Yekan-Bakh-Bold;
+  font-size: 17px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-title button:hover {
+  color: #fff;
+  background-color: #258C93;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 48%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 400px;
+    background-color: #fff;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box .welcome-box-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 55%;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box .welcome-box-title {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box .welcome-box-title h2 {
+  font-size: 25px;
+  font-family: Kalameh-Black;
+  color: #258C93;
+  margin-bottom: 15px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box .welcome-box-title h2 span.name {
+  text-align: center;
+  margin-left: 5px;
+  padding: 3px;
+  border-radius: 10px;
+  color: #E0A75D;
+  background-color: #e0a75d2d;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box .welcome-box-title .btn-row {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box .welcome-box-illustration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 35%;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box .welcome-box-illustration {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 200px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-welcome-box .welcome-box-illustration img {
+  width: 300px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 48%;
+  height: 100%;
+  padding: 15px;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box {
+    width: 100%;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 46%;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 350px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) a {
+  display: block;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) a {
+    margin-bottom: 20px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .new-class-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .new-class-action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 350px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .new-class-action h3 {
+  font-family: Kalameh-Black;
+  font-size: 19px;
+  color: #258C93;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .new-class-action h3 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    font-size: 19px;
+    text-align: center;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .new-class-action img {
+  width: 100px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .change-pass-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 35%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .change-pass-action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 350px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .change-pass-action h4 {
+  font-family: Kalameh-Black;
+  font-size: 15px;
+  color: #258C93;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .change-pass-action h4 {
+    font-size: 19px;
+    text-align: center;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .change-pass-action img {
+  width: 70px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(1) .change-pass-action img {
+    width: 100px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 46%;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 350px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) a {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) a {
+    margin-bottom: 20px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .change-profile-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 35%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .change-profile-action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .change-profile-action h4 {
+  font-family: Kalameh-Black;
+  font-size: 15px;
+  color: #258C93;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .change-profile-action h4 {
+    font-size: 19px;
+    text-align: center;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .change-profile-action img {
+  width: 70px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .change-profile-action img {
+    width: 100px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .new-test-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .new-test-action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .new-test-action h3 {
+  font-family: Kalameh-Black;
+  font-size: 19px;
+  color: #258C93;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .new-test-action h3 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    font-size: 19px;
+    text-align: center;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-full-access .dashboard-actions-box .action-row:nth-child(2) .new-test-action img {
+  width: 100px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 250px;
+  margin-top: 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight {
+    display: none;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 32%;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-title h2 {
+  font-family: Kalameh-Black;
+  font-size: 25px;
+  color: #258C93;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-title h2 span {
+  font-weight: bold;
+  color: #ECB773;
+  padding-left: 4px;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-title h2 {
+    margin-bottom: 15px;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  line-height: 55px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 10px;
+  -webkit-transition: .4s all ease-in-out;
+  transition: .4s all ease-in-out;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list li span {
+  margin: 0 5px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list li button {
+  width: 90px;
+  height: 35px;
+  margin: 5px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list li:nth-child(odd) {
+  background-color: #F6FAFB;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list li:nth-child(even) {
+  background-color: #F6F3ED;
+}
+
+.container-teacher-panel-dashboard .main .dashboard-frame .dashboard-activity-insight .insight-item .insight-item-list li:hover {
+  background-color: #fff;
+}
+
+.container-teacher-panel-dashboard .main .side-menu {
+  position: fixed;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: menu;
+  height: 100vh;
+  background-color: #fff;
+  -webkit-box-shadow: -20px 7px 30px #f8f8f870;
+          box-shadow: -20px 7px 30px #f8f8f870;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-dashboard .main .side-menu {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: menu;
+  }
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-logo img {
+  text-align: center;
+  width: 150px;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 50px 0 50px;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-menu-list .panel-menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-menu-list .panel-menu-item img {
+  width: 30px;
+  text-align: center;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-menu-list .panel-menu-item a {
+  margin-right: 20px;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-menu-list .panel-menu-item:last-child {
+  margin-bottom: 0;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-menu-list .active {
+  border-radius: 20px;
+  background-color: #FFF4E5;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-exit-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+.container-teacher-panel-dashboard .main .side-menu .panel-exit-box img {
+  width: 170px;
 }
 
 .container-teacher-panel-classlist .main {
@@ -17728,6 +18458,276 @@ body {
 }
 
 .container-teacher-panel-placementlist .main .side-menu .panel-exit-box img {
+  width: 170px;
+}
+
+.container-teacher-panel-userslist .main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-userslist .main {
+    height: 1000px;
+    padding: 40px 40px;
+  }
+}
+
+.container-teacher-panel-userslist .main .users-list {
+  width: 100%;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #111;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-userslist .main .users-list .users-list-title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-title h2 {
+  font-family: Kalameh-Black;
+  font-size: 30px;
+  color: #258C93;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-title h2 span {
+  font-weight: bold;
+  color: #ECB773;
+  padding-left: 4px;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-userslist .main .users-list .users-list-title h2 {
+    margin-bottom: 15px;
+  }
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-title button {
+  font-family: Yekan-Bakh-Regular;
+  color: #258C93;
+  border: 1px solid #258C93;
+  background-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-userslist .main .users-list .users-list-title button {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-title button span {
+  padding-right: 5px;
+  font-family: Yekan-Bakh-Bold;
+  font-size: 17px;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-title button:hover {
+  color: #fff;
+  background-color: #258C93;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-userslist .main .users-list .users-list-table-box {
+    overflow: scroll;
+    height: 300px;
+    padding: 0;
+    font-size: 14px;
+  }
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  border: 5px solid #F4F4F8;
+  border-radius: 10px;
+  border-collapse: collapse;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-userslist .main .users-list .users-list-table-box table {
+    ovrrflow: scroll;
+    width: 1200px;
+  }
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table th {
+  height: 30px;
+  padding-top: 17px;
+  color: #af9494;
+  background-color: #ECB773;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr {
+  height: 60px !important;
+  border-bottom: 8px solid #F4F4F8;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr td {
+  vertical-align: middle;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr td:nth-child(7) button[type="submit"] {
+  font-family: Yekan-Bakh-Medium;
+  font-size: 12px;
+  padding: 7px;
+  border-radius: 10px;
+  color: white;
+  background-color: #218087;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr td:nth-child(9) span {
+  font-family: Yekan-Bakh-Medium;
+  font-size: 12px;
+  padding: 7px;
+  border-radius: 10px;
+  color: white;
+  background-color: #00af6c;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr:nth-child(odd) {
+  background-color: #FFF4E5;
+}
+
+.container-teacher-panel-userslist .main .users-list .users-list-table-box table tr:nth-child(even) {
+  background-color: #e9e9e9;
+}
+
+.container-teacher-panel-userslist .main .side-menu {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: menu;
+  height: 100vh;
+  background-color: #fff;
+  -webkit-box-shadow: -20px 7px 30px #f8f8f870;
+          box-shadow: -20px 7px 30px #f8f8f870;
+}
+
+@media (max-width: 600px) {
+  .container-teacher-panel-userslist .main .side-menu {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: menu;
+    background-color: red;
+  }
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-logo img {
+  text-align: center;
+  width: 150px;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 50px 0 50px;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-menu-list .panel-menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-menu-list .panel-menu-item img {
+  width: 30px;
+  text-align: center;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-menu-list .panel-menu-item a {
+  margin-right: 20px;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-menu-list .panel-menu-item:last-child {
+  margin-bottom: 0;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-menu-list .active {
+  border-radius: 20px;
+  background-color: #FFF4E5;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-exit-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+.container-teacher-panel-userslist .main .side-menu .panel-exit-box img {
   width: 170px;
 }
 
