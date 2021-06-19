@@ -1,7 +1,7 @@
 .student-ct {
 
   padding: 5px 80px;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 
 
   @media #{$phone} {
@@ -58,12 +58,14 @@
 
       position: fixed;
       right: -300px;
-      width: 200px;
+      width: 220px;
       height: 100vh;
-      padding: 10px;
+      padding: 20px;
+      border-radius: 50px 0 0 50px;
       background-color: #fff;
       z-index: 1;
       transition: all 1s ease;
+      
   
       .panel-overlay-menu {
   
@@ -71,13 +73,48 @@
         flex-direction: column;
         justify-content: center;
   
-        .logo {
+        .panel-logo {
+    
+          margin-top: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 40px;
+      
+      
+          img {
+      
+            text-align: center;
+            width: 80px;
+      
+          }
   
-          width: 120px;
-          margin: 25px auto 50px;
   
+          .panel-logo-title {
+  
+            h2 {
+  
+              font-size: 25px;
+              font-family: Kalameh-Black;
+              color: #258C93;
+  
+            }
+  
+            div {
+  
+              text-align: center;
+              font-family: Kalameh-Regular;
+              border-radius: 20px;
+              color: #fff;
+              background-color: #258C93;
+  
+            }
+  
+          }
+  
+      
         }
-  
+
         .panel-menu-item {
       
           display: flex;
@@ -97,6 +134,21 @@
           a {
     
             margin-right: 20px;
+
+            .new-feature {
+              
+              display: inline-block;
+              width: 40PX;
+              font-size: 11px;
+              font-family: Yekan-Bakh-Light;
+              text-align: center;
+              padding: 5px;
+              margin-right: 5px;
+              border-radius: 30px;
+              color: #fff;
+              background-color: #258C93;
+
+            }
     
           }
           
@@ -218,7 +270,7 @@
               font-family: Yekan-Bakh-Medium;
               font-size: 14px;
               top: 50%;
-              right: 110%;
+              right: 60%;
               width: 90px;
               height: 40px;
               padding: 5px;
@@ -661,16 +713,39 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 40px;
-    
+        margin-bottom: 20px;
     
     
         img {
     
           text-align: center;
-          width: 150px;
+          width: 80px;
     
         }
+
+
+        .panel-logo-title {
+
+          h2 {
+
+            font-size: 25px;
+            font-family: Kalameh-Black;
+            color: #258C93;
+
+          }
+
+          div {
+
+            text-align: center;
+            font-family: Kalameh-Regular;
+            border-radius: 20px;
+            color: #fff;
+            background-color: #258C93;
+
+          }
+
+        }
+
     
       }
     

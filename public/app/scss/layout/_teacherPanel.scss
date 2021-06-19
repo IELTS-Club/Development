@@ -69,11 +69,46 @@
           flex-direction: column;
           justify-content: center;
     
-          .logo {
+          .panel-logo {
     
-            width: 120px;
-            margin: 25px auto 50px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        
+        
+            img {
+        
+              text-align: center;
+              width: 80px;
+        
+            }
     
+    
+            .panel-logo-title {
+    
+              h2 {
+    
+                font-size: 25px;
+                font-family: Kalameh-Black;
+                color: #258C93;
+    
+              }
+    
+              div {
+    
+                text-align: center;
+                font-family: Kalameh-Regular;
+                border-radius: 20px;
+                color: #fff;
+                background-color: #258C93;
+    
+              }
+    
+            }
+    
+        
           }
     
           .panel-menu-item {
@@ -652,23 +687,47 @@
       
         }
       
-          .panel-logo {
-        
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 40px;
-        
-        
-        
-            img {
-        
-              text-align: center;
-              width: 150px;
-        
-            }
-        
+        .panel-logo {
+    
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+      
+      
+          img {
+      
+            text-align: center;
+            width: 80px;
+      
           }
+  
+  
+          .panel-logo-title {
+  
+            h2 {
+  
+              font-size: 25px;
+              font-family: Kalameh-Black;
+              color: #258C93;
+  
+            }
+  
+            div {
+  
+              text-align: center;
+              font-family: Kalameh-Regular;
+              border-radius: 20px;
+              color: #fff;
+              background-color: #258C93;
+  
+            }
+  
+          }
+  
+      
+        }
+      
         
           .panel-menu-list {
         
