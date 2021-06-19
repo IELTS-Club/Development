@@ -1,7 +1,7 @@
 
 const PanelBtnToggle = document.querySelector('.panel-humburger');
-const panelContainer = document.querySelector('.panel-overlay');
-
+const panelOverlay = document.querySelector('.panel-overlay');
+const studentPanelContainer = document.querySelector('.container-student-panel')
 
 const navbarStatus = document.querySelector('.navbar-status');
 const profileLabel = document.querySelector('.profile img');
@@ -20,7 +20,8 @@ const bellsDropdowm = document.querySelector('.bells-dropdown');
 
 PanelBtnToggle.addEventListener('click', () => {
 
-    panelContainer.style.right = '0px';
+  panelOverlay.style.right = '0px';
+  // studentPanelContainer.style.filter = 'blur(3px)'
 
 })
 
@@ -31,7 +32,7 @@ document.addEventListener('click', function(event) {
     var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
     if (!isClickInsideElement) {
       
-      panelContainer.style.right = '-300px';
+      panelOverlay.style.right = '-300px';
 
       
     }
