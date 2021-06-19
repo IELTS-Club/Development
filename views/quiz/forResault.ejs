@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/dist/css/main.min.css">
 
     <style>
-
         ::-webkit-scrollbar {
 
             width: 20px;
@@ -21,18 +20,17 @@
 
         ::-webkit-scrollbar-track {
 
-            box-shadow: inset 0 0 5px rgba(46, 46, 46, 0.11); 
+            box-shadow: inset 0 0 5px rgba(46, 46, 46, 0.11);
             border-radius: 20px;
 
         }
 
         ::-webkit-scrollbar-thumb {
 
-            background:   linear-gradient(145deg, rgba(37,140,147,1) 0%, rgba(70,174,181,1) 100%);
+            background: linear-gradient(145deg, rgba(37, 140, 147, 1) 0%, rgba(70, 174, 181, 1) 100%);
             border-radius: 20px;
 
         }
-
     </style>
 
 </head>
@@ -92,7 +90,7 @@
                 
                 %>
                 <article class="section-box category-question-box" id="<%= element.questionId%>">
-                   
+
                     <div class="question-form-row">
 
                         <% if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureFilling"){ %>
@@ -110,62 +108,64 @@
 
                         <div class="mutiple-option-item" id="multipleOption<%= element.questionId%>">
 
-                            <input type="radio" id="option<%= element.questionId%><%= f %>" name="option<%= element.questionId %>"
-                                value="<%= element1 %>" <% if(autoSaveAnswers!=""){ if(element1==autoSaveAnswers[index].answerKey){%> checked <%}}%> >
+                            <input type="radio" id="option<%= element.questionId%><%= f %>"
+                                name="option<%= element.questionId %>" value="<%= element1 %>"
+                                <% if(autoSaveAnswers!=""){ if(element1==autoSaveAnswers[index].answerKey){%> checked
+                                <%}}%>>
                             <label for="option<%= element.questionId%><%= f%>"><%= element1 %></label>
 
-                            </div>
-                        
+                        </div>
+
                         <% }); %>
 
-                        
 
-                        </div>
-                        <% }%>
-                        <%  if(element.questionStructure=="glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureFilling" ){ %>
-                        <div class=" filling-options-structure" id="filling-options-structure<%= element.questionId%>">
 
-                                <div class="filling-option-item">
+                    </div>
+                    <% }%>
+                    <%  if(element.questionStructure=="glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureFilling" ){ %>
+                    <div class=" filling-options-structure" id="filling-options-structure<%= element.questionId%>">
 
-                                    <input type="text" class="filling-answer-body" value="<% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%>"
+                        <div class="filling-option-item">
+
+                            <input type="text" class="filling-answer-body" value="<% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%>"
                                         placeholder="Enter Your Question Form Here..."
                                         id="fillingKey<%= element.questionId%>">
 
-                                </div>
+                        </div>
+
+
+                    </div>
+                    <% }%>
+                    <%  if(element.questionStructure=="rQuestionStructureReadingBody" ){ %>
+                    <div class="reading-options-structure" id="reading-options-structure<%= element.questionId%>">
+
+                        <div class="reading-option-item" style="white-space: pre-line">
+
+                            <%= element.questionBody %>
 
 
                         </div>
-                        <% }%>
-                        <%  if(element.questionStructure=="rQuestionStructureReadingBody" ){ %>
-                        <div class="reading-options-structure" id="reading-options-structure<%= element.questionId%>">
-
-                            <div class="reading-option-item" style="white-space: pre-line">
-
-                                <%= element.questionBody %>
 
 
-                            </div>
+                    </div>
+                    <% }%>
+                    <%  if(element.questionStructure=="wQuestionStructureWritingBody" ){ %>
+                    <div class="writing-options-structure" id="writing-options-structure<%= element.questionId%>">
 
 
-                        </div>
-                        <% }%>
-                        <%  if(element.questionStructure=="wQuestionStructureWritingBody" ){ %>
-                        <div class="writing-options-structure" id="writing-options-structure<%= element.questionId%>">
+                        <div class="writing-option-box" style="white-space: pre-line">
 
-
-                            <div class="writing-option-box" style="white-space: pre-line">
-
-                                <%= element.questionBody %>
-
-
-                            </div>
-
-                            <textarea class="writing-option-answer-box" id="writtingKey<%= element.questionId%>"
-                                style="white-space: pre-line"><% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%></textarea>
+                            <%= element.questionBody %>
 
 
                         </div>
-                        <% }%>
+
+                        <textarea class="writing-option-answer-box" id="writtingKey<%= element.questionId%>"
+                            style="white-space: pre-line"><% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%></textarea>
+
+
+                    </div>
+                    <% }%>
                 </article>
 
                 <% }); %>
@@ -248,7 +248,8 @@
 
                 </div>
 
-                <div class="student-quiz-sidebar-time" onclick="window.location.href='/teachers/manage-exam/<%=exam._id%>'">
+                <div class="student-quiz-sidebar-time"
+                    onclick="window.location.href='/teachers/manage-exam/<%=exam._id%>'">
 
                     <span>
                         بازگشت به مدیریت آزمون
@@ -257,9 +258,9 @@
 
                 </div>
 
-                <button type="button" id="finishExam" class="record-quiz-btn">
+                <button type="button" id="submitReport" class="record-quiz-btn">
 
-                 ثبت کارنامه
+                    ثبت کارنامه
 
                 </button>
 
@@ -268,129 +269,53 @@
 
         </main>
 
-        <section class="icdrn-modal" id="successfull">
-
-            <div class="icdrn-modal-content">
-
-
-
-                <img src="/images/succuesfull-quiz.svg" class="modal-img" alt="">
-
-
-
-                <h3>
-                    ازمون شما ثبت شد :)
-                </h3>
-
-                <p>
-
-                    دانش آموز گرامی آزمون شما با موفقیت ثبت شد :)
-
-                </p>
-
-                <button type="submit" class="icdrn-btn" onclick="window.location.href='/panel/class-list'">
-
-                    لیست کلاس ها
-
-                </button>
-
-            </div>
-        </section>
-
-        <section class="icdrn-modal" dir="ltr" id="timeDone">
-
-            <div class="icdrn-modal-content">
-
-
-                <img src="/images/null-question-illustration.svg" class="modal-img" alt="">
-
-
-                <h3 id="errorText">
-                    پایان زمان
-                </h3>
-
-                <p>
-
-                   دانش آموز گرامی زمان آزمون شما پایان یافت
-                    <br>
-                   و جواب های شما ذخیره گردید :(
-
-                </p>
-
-                <button type="submit" class="icdrn-btn"  onclick="window.location.href='/panel/class-list'">
-
-                    لیست کلاس ها
-
-                </button>
-
-            </div>
-        </section>
-
-        <section class="icdrn-modal" dir="ltr" id="finishWarning" >
-
-            <div class="icdrn-modal-content">
-
-
-                <img src="/images/null-question-illustration.svg" class="modal-img" alt="">
-
-
-                <h3 id="errorText">
-                    پایان زمان
-                </h3>
-
-                <p>
-
-                   دانش آموز گرامی زمان آزمون شما پایان یافت
-                    <br>
-                   و جواب های شما ذخیره گردید :(
-
-                </p>
-
-                <button type="submit" class="icdrn-btn"  onclick="window.location.href='/panel/class-list'">
-
-                    لیست کلاس ها
-
-                </button>
-
-            </div>
-        </section>
-
-
-
-
-  <section class="icdrn-modal" id="areYouSure">
-    <div class="icdrn-modal-content">
-
-      
-
-      <img src="/images/warning-illustration.svg" class="modal-img" alt="">
-
-
-
-      <h3 style="font-size:30px;margin-top:-10px">
-        برای پایان آزمون مطمئنی ؟
-        </h3>
-
-
-      <div class="btn-row" style="display: flex; justify-content: center;">
-
-        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="imSure"  onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
-          بله، کاملا
-        </button>
-  
-        
-        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="imNotSure"  onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
-          انصراف
-        </button>
-
-      </div>
-
     </div>
-  </section>
+
+    <!-- Record Report Card (Choose Type) Step.1 -->
+
+    <section class="icdrn-modal" id="recordReportCard">
+        <div class="icdrn-modal-content">
+
+            <span class="modal-close" id="modal-closeB" class="studentNoQuizModalClose">
+                &times;
+            </span>
+
+            <img src="../../images/record-report-card.svg" class="modal-img" alt="">
 
 
-    </div>
-   
+
+            <h3 style="font-size:30px;margin-top:-10px">
+                نوع کارنامه رو انتخاب کن:
+            </h3>
+
+
+
+            <div class="btn-row" style="display: flex; justify-content: center;align-items: center;">
+
+                <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"
+                    onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
+
+                    کارنامه عادی
+
+                </button>
+                <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"
+                    onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
+
+                    کارنامه ماک
+
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <script type="text/javascript">
+        document.getElementById("recordReportCard").addEventListener("click",()=>{
+
+        })
+    </script>
 </body>
 
 </html>
