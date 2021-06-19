@@ -142,3 +142,26 @@ const examsSchema=new mongoose.Schema({
 });
 const Exam=mongoose.model("Exam",examsSchema);
 module.exports.Exam=Exam;
+
+
+//exam Srtudents resault
+const reportSchema=new mongoose.Schema({
+    StudentID:{type:mongoose.Schema.Types.ObjectId,ref:User},
+    Type:{type:String,required:true},
+    //Common repot
+    ClassAttendance:{type:Number},
+    ClassActivity:{type:Number},
+    MidtermScore:{type:Number},
+    FinalOral:{type:Number},
+    FinalWritten:{type:Number},
+    //Mock report 
+    Listening:{type:Number},
+    Reading:{type:Number},
+    Writing:{type:Number},
+    Speaking:{type:Number},
+
+
+    OveralScore:{type:Number}
+})
+const Report=mongoose.model("Report",reportSchema);
+module.exports.Report=Report;
