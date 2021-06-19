@@ -4,7 +4,7 @@ const isLogedIn = require("../../../middleware/isLogedIn");
 const isConfirmed = require("../../../middleware/isConfirmed");
 const isTeacher = require("../../../middleware/isTeacher");
 const isStudent = require("../../../middleware/isStudent");
-const {Class,User} = require("../../../models/mongoose");
+const {Class,User,Report} = require("../../../models/mongoose");
 const {Exam} = require("../../../models/mongoose");
 
 panel.get("/teachers/quiz-list/:classId", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
@@ -426,6 +426,7 @@ panel.get("/teachers/show-resault/:examId/:studentId", [isLogedIn, isConfirmed],
         exam: exam,
         Teacher: examClass.classTeacher,
         Student: student.name,
+        StudentID:req.params.studentId,
         autoSaveAnswers,
     });
 })
@@ -490,10 +491,28 @@ panel.post("/teachers/edit-questions/:id", [isLogedIn, isConfirmed, isTeacher], 
     res.send("done")
 })
 
-panel.get("/panel/karnameh", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
+//submiting the report
+
+panel.post("/teachers/submit-report/",[isLogedIn, isConfirmed, isTeacher],async(req,res)=>{
+    console.log(req.body);
+    const report=new Report(req.body)
+    await report.save()
+
+    res.send("saved")
+})
+
+
+//show reports to student
+panel.get("/panel/reports", [isLogedIn, isConfirmed ], async (req, res) => {
+    const report=await Report.find({StudentID:req.user._id})
+    console.log(report)
     res.render("panel/students/karnameh",{
         userName: req.user.name,
+        reports:report
     })
 })
+
+
+
 
 module.exports = panel;
