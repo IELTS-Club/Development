@@ -491,7 +491,8 @@
                 const ReportData = {
                     Type: "Mock",
                     StudentID: '<%=StudentID%>',
-                    classID:'<%=classID%>',
+                    classTime:'<%=classTime%>',
+                    classTeacher:'<%= selectClassTeacher(); %>',
                     Listening: mockInputs[0].value,
                     Reading: mockInputs[1].value,
                     Writing: mockInputs[2].value,
@@ -524,7 +525,8 @@
                 const ReportData = {
                     Type: "Common",
                     StudentID: '<%=StudentID%>',
-                    classID:'<%=classID%>',
+                    classTime:'<%=classTime%>',
+                    classTeacher:'<%= selectClassTeacher();%>',
                     ClassAttendance: commonInputs[0].value,
                     ClassActivity: commonInputs[1].value,
                     MidtermScore: commonInputs[2].value,

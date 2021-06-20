@@ -426,6 +426,7 @@ panel.get("/teachers/show-resault/:examId/:studentId", [isLogedIn, isConfirmed],
     res.render("quiz/forResault", {
         exam: exam,
         classID:exam.ClassID,
+        classTime:examClass.classTime,
         Teacher: examClass.classTeacher,
         Student: student.name,
         StudentID:req.params.studentId,
@@ -506,8 +507,8 @@ panel.post("/teachers/submit-report/",[isLogedIn, isConfirmed, isTeacher],async(
 
 //show reports to student
 panel.get("/panel/reports", [isLogedIn, isConfirmed ], async (req, res) => {
-    const Commonreport=await Report.find({StudentID:req.user._id,Type:"Common"}).populate("classID",{classTime:1,classTeacher:1});
-    const Mockreport=await Report.find({StudentID:req.user._id,Type:"Mock"}).populate("classID",{classTime:1,classTeacher:1});
+    const Commonreport=await Report.find({StudentID:req.user._id,Type:"Common"})
+    const Mockreport=await Report.find({StudentID:req.user._id,Type:"Mock"})
     console.log(Commonreport)
     res.render("panel/students/karnameh",{
         userName: req.user.name,

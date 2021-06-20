@@ -155,9 +155,20 @@
 
       <nav class="panel-overlay-menu">
 
-        <img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo">
+        <div class="panel-logo">
 
-        <div class="panel-menu-item active">
+          <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+          <div class="panel-logo-title">
+            <h2>
+              آیلتس کلاب
+            </h2>
+            <div>
+              دکتر پژمان نورزاد
+            </div>
+          </div>
+
+        </div>
+        <div class="panel-menu-item">
 
           <img src="../../images/Panel-Home-Icon.svg" alt="">
 
@@ -188,7 +199,7 @@
         </div>
 
 
-        <div class="panel-menu-item">
+        <div class="panel-menu-item ">
 
           <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
 
@@ -197,6 +208,26 @@
 
 
             کلاس جدید
+
+          </a>
+
+        </div>
+
+
+        <div class="panel-menu-item active">
+
+          <img src="../../images/Panel-report-card-icon.svg" alt="">
+
+
+          <a href="/panel/reports" style="display:flex; align-items: center;">
+
+
+
+            کارنامه ها
+
+            <span class="new-feature">
+              جدید!
+            </span>
 
           </a>
 
@@ -225,6 +256,7 @@
 
 
             ویرایش اطلاعات
+
           </a>
 
         </div>
@@ -481,44 +513,11 @@
 
             <%}%>
             <%
-             Commonreport.forEach(element => { 
-              
-               function selectClassTeacher(){
-                                if(element.classID.classTeacher=="Noorzad")
-                                return  "دکتر پژمان نورزاد";
-                              
-                              if(element.classID.classTeacher=="Bahrami")
-                                return "خانم هانیه بهرامی"
-                              
-                              if(element.classID.classTeacher=="Mohebiii")
-                                return "خانم عاطفه محبی"
-                              
-                              if(element.classID.classTeacher=="Nouri")
-                                return "خانم مینا نوری"
-                              
-                              if(element.classID.classTeacher=="Zolfaghari")
-                                return "خانم آرزو ‌‌ذولفقاری"
-                              
-                              if(element.classID.classTeacher=="Jadidi")
-                              return "اقای جواد جدیدی"
-                              if(element.classID.classTeacher=="Asi")
-                              return "خانم نیکتا عاصی‌ شاد"
-                  
-                              if(element.classID.classTeacher=="Fallah")
-                              return "اقای مهرشاد فلاح"
-                  
-                              if(element.classID.classTeacher=="Hadavi")
-                              return "خانم مریم هادوی"
-
-                              if(element.classID.classTeacher=="Keshtkar")
-                              return "خانم زهرا کشتکار"
-                              } 
-                           
-              %>
+             Commonreport.forEach(element => {   %>
             <tr id="notFoundCommonReportCard">
 
-              <td><%= element.classID.classTime%></td>
-              <td><%= selectClassTeacher(); %></td>
+              <td><%= element.classTime%></td>
+              <td><%= element.classTeacher %></td>
               <td><%= element.ClassAttendance %></td>
               <td><%= element.ClassActivity %></td>
               <td><%= element.MidtermScore %></td>
@@ -570,7 +569,7 @@
               <th>Overal</th>
             </tr>
 
-           
+
             <% if(Mockreport.length==0){%>
             <tr id="notFoundCommonReportCard">
 
@@ -581,44 +580,11 @@
 
             <%}%>
             <%
-            Mockreport.forEach(element => { 
-              
-               function selectClassTeacher(){
-                                if(element.classID.classTeacher=="Noorzad")
-                                return  "دکتر پژمان نورزاد";
-                              
-                              if(element.classID.classTeacher=="Bahrami")
-                                return "خانم هانیه بهرامی"
-                              
-                              if(element.classID.classTeacher=="Mohebiii")
-                                return "خانم عاطفه محبی"
-                              
-                              if(element.classID.classTeacher=="Nouri")
-                                return "خانم مینا نوری"
-                              
-                              if(element.classID.classTeacher=="Zolfaghari")
-                                return "خانم آرزو ‌‌ذولفقاری"
-                              
-                              if(element.classID.classTeacher=="Jadidi")
-                              return "اقای جواد جدیدی"
-                              if(element.classID.classTeacher=="Asi")
-                              return "خانم نیکتا عاصی‌ شاد"
-                  
-                              if(element.classID.classTeacher=="Fallah")
-                              return "اقای مهرشاد فلاح"
-                  
-                              if(element.classID.classTeacher=="Hadavi")
-                              return "خانم مریم هادوی"
-
-                              if(element.classID.classTeacher=="Keshtkar")
-                              return "خانم زهرا کشتکار"
-                              } 
-                           
-              %>
+            Mockreport.forEach(element => {  %>
             <tr id="notFoundCommonReportCard">
 
-              <td><%= element.classID.classTime%></td>
-              <td><%= selectClassTeacher(); %></td>
+              <td><%= element.classTime%></td>
+              <td><%= element.classTeacher %></td>
               <td><%= element.Listening %></td>
               <td><%= element.Reading %></td>
               <td><%= element.Writing %></td>
@@ -646,7 +612,15 @@
 
         <div class="panel-logo">
 
-          <img src="../../images/ICDRN-Navbar-Logo.png" alt="">
+          <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+          <div class="panel-logo-title">
+            <h2>
+              آیلتس کلاب
+            </h2>
+            <div>
+              دکتر پژمان نورزاد
+            </div>
+          </div>
 
         </div>
 
@@ -666,7 +640,7 @@
 
 
 
-        <div class="panel-menu-item">
+        <div class="panel-menu-item ">
 
           <img src="../../images/Panel-Classes-Icon.svg" alt="">
 
@@ -700,7 +674,8 @@
           <img src="../../images/Panel-report-card-icon.svg" alt="">
 
 
-          <a href="/panel/class-registration" style="display:flex; align-items: center;">
+          <a href="/panel/reports" style="display:flex; align-items: center;">
+
 
 
             کارنامه ها

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,8 @@
   <link rel="manifest" href="../../images/Favicon/manifest.json">
   <link rel="stylesheet" href="../../dist/css/main.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  
-  <style>
 
+  <style>
     body {
 
       background-color: #F4F4F8 !important;
@@ -43,324 +43,330 @@
     }
 
     #loader-wrapper {
-    position:fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:1000;
-    }
-
-    #loader-wrapper .loader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10001;
-    width:300px;
-    height:150px;
-    }
-
-    #loader-wrapper .loader h2 {
-
-    font-size: 30px;
-    font-family: Kalameh-Black;
-    color: #fff;
-
-
-    }
-
-
-    @-webkit-keyframes spin {
-    0%   {
-    -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-    }
-    100% {
-    -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-    }
-    }
-
-    @keyframes spin {
-    0%   {
-    -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-    }
-    100% {
-    -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-    }
-    }
-
-    #loader-wrapper .loader-section {
-    position:fixed;
-    top:0;
-    background-image: linear-gradient(#258c93,#1D3C4E);
-    width:51%;
-    height:100%;
-    z-index:1000;
-    }
-
-    #loader-wrapper .loader-section.section-left {
-    left:0
-    }
-
-    #loader-wrapper .loader-section.section-right {
-    right:0;
-    }
-
-    .loaded #loader-wrapper .loader-section.section-left {
-    transform: translateX(-100%);
-    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-    }
-
-    .loaded #loader-wrapper .loader-section.section-right {
-    transform: translateX(100%);
-    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-    }
-
-    .loaded #loader {
-    opacity: 0;
-    transition: all 0.3s ease-out;
-    }
-
-    .loaded #loader-wrapper {
-    visibility: hidden;
-    transform:translateY(-100%);
-    transition: all 0.3s 1s ease-out;
-    }
-
-  </style>
-
-
-  <style>
-
-    #loader-wrapper {
-      position:fixed;
+      position: fixed;
       display: flex;
       justify-content: center;
       align-items: center;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      z-index:1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
     }
-    
+
     #loader-wrapper .loader {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       z-index: 10001;
-      width:300px;
-      height:150px;
+      width: 300px;
+      height: 150px;
     }
-    
+
     #loader-wrapper .loader h2 {
-    
+
       font-size: 30px;
       font-family: Kalameh-Black;
       color: #fff;
-    
-    
+
+
     }
-    
-    
+
+
     @-webkit-keyframes spin {
-      0%   { 
-        -webkit-transform: rotate(0deg); 
-          -ms-transform: rotate(0deg); 
-              transform: rotate(0deg);
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
       }
-      100% { 
-        -webkit-transform: rotate(360deg); 
-          -ms-transform: rotate(360deg); 
-              transform: rotate(360deg);
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
     }
+
     @keyframes spin {
-      0%   { 
-        -webkit-transform: rotate(0deg); 
-          -ms-transform: rotate(0deg); 
-              transform: rotate(0deg);
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
       }
-      100% { 
-        -webkit-transform: rotate(360deg); 
-          -ms-transform: rotate(360deg); 
-              transform: rotate(360deg);
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
       }
     }
-    
+
     #loader-wrapper .loader-section {
-      position:fixed;
-      top:0;
-      background-image: linear-gradient(#258c93,#1D3C4E);
-      width:51%;
-      height:100%;
-      z-index:1000;
+      position: fixed;
+      top: 0;
+      background-image: linear-gradient(#258c93, #1D3C4E);
+      width: 51%;
+      height: 100%;
+      z-index: 1000;
     }
-    
+
     #loader-wrapper .loader-section.section-left {
-      left:0
+      left: 0
     }
+
     #loader-wrapper .loader-section.section-right {
-      right:0;
+      right: 0;
     }
-    
-    /* Loaded Styles */
+
     .loaded #loader-wrapper .loader-section.section-left {
       transform: translateX(-100%);
-      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
     }
+
     .loaded #loader-wrapper .loader-section.section-right {
       transform: translateX(100%);
-      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
     }
+
     .loaded #loader {
       opacity: 0;
       transition: all 0.3s ease-out;
     }
+
     .loaded #loader-wrapper {
       visibility: hidden;
-      transform:translateY(-100%);
+      transform: translateY(-100%);
       transition: all 0.3s 1s ease-out;
     }
-    
-      </style>
+  </style>
+
+
+  <style>
+    #loader-wrapper {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+    }
+
+    #loader-wrapper .loader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width: 300px;
+      height: 150px;
+    }
+
+    #loader-wrapper .loader h2 {
+
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
+
+
+    }
+
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    #loader-wrapper .loader-section {
+      position: fixed;
+      top: 0;
+      background-image: linear-gradient(#258c93, #1D3C4E);
+      width: 51%;
+      height: 100%;
+      z-index: 1000;
+    }
+
+    #loader-wrapper .loader-section.section-left {
+      left: 0
+    }
+
+    #loader-wrapper .loader-section.section-right {
+      right: 0;
+    }
+
+    /* Loaded Styles */
+    .loaded #loader-wrapper .loader-section.section-left {
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+
+    .loaded #loader-wrapper .loader-section.section-right {
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+
+    .loaded #loader {
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+
+    .loaded #loader-wrapper {
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: all 0.3s 1s ease-out;
+    }
+  </style>
 
 </head>
 
 <body>
 
-  
+
   <div class="container-student-panel container-panel-placement">
 
     <div class="panel-overlay hide-for-desktop">
 
-     <nav class="panel-overlay-menu">
+      <nav class="panel-overlay-menu">
 
-      <div class="panel-logo">
-    
-        <img src="../../images/ICDRN-Panel-Logo.png" alt="">
-        <div class="panel-logo-title">
-          <h2>
-            آیلتس کلاب
-          </h2>
-          <div>
-            دکتر پژمان نورزاد
+        <div class="panel-logo">
+
+          <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+          <div class="panel-logo-title">
+            <h2>
+              آیلتس کلاب
+            </h2>
+            <div>
+              دکتر پژمان نورزاد
+            </div>
           </div>
+
+        </div>
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+
+
+          <a href="/dashboard">
+
+
+            پیشخوان
+
+          </a>
+
         </div>
 
-      </div>
-
-      <div class="panel-menu-item">
-    
-        <img src="../../images/Panel-Home-Icon.svg" alt="">
 
 
-        <a href="/dashboard">
-  
-  
-          پیشخوان
-        
-        </a>
+        <div class="panel-menu-item">
 
-      </div>
-
-  
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Classes-Icon.svg" alt="">
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
 
 
-        <a href="/panel/class-list">
-  
-  
-          لیست کلاس ها
-        
-        </a>
-
-      </div>
+          <a href="/panel/class-list">
 
 
-      <div class="panel-menu-item">
+            لیست کلاس ها
 
-        <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+          </a>
 
-
-        <a href="/panel/class-registration">
-  
-  
-          کلاس جدید
-        
-        </a>
-
-      </div>
-
-      
-      <div class="panel-menu-item">
-    
-        <img src="../../images/Panel-report-card-icon.svg" alt="">
+        </div>
 
 
-        <a href="/panel/class-registration" style="display:flex; align-items: center;">
-  
-  
-          کارنامه ها 
+        <div class="panel-menu-item active">
 
-          <span class="new-feature">
-            جدید!
-          </span>
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item active">
-
-        <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
 
 
-        <a href="/panel/placement-test-history">
-  
-  
-          تعیین سطح ها
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+          <a href="/panel/class-registration">
 
 
-        <a href="/panel/profile-edit">
-  
-  
-          ویرایش اطلاعات
-        
-        </a>
+            کلاس جدید
 
-      </div>
+          </a>
 
-      <div class="panel-exit-box">
-    
-        <img src="../../images/Panel-Exit.svg" alt="">
-  
-      </div>
+        </div>
 
-     </nav>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-report-card-icon.svg" alt="">
+
+
+          <a href="/panel/reports" style="display:flex; align-items: center;">
+
+
+
+            کارنامه ها
+
+            <span class="new-feature">
+              جدید!
+            </span>
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item active">
+
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+          <a href="/panel/placement-test-history">
+
+
+            تعیین سطح ها
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+          <a href="/panel/profile-edit">
+
+
+            ویرایش اطلاعات
+
+          </a>
+
+        </div>
+
+        <div class="panel-exit-box">
+
+          <img src="../../images/Panel-Exit.svg" alt="">
+
+        </div>
+
+      </nav>
 
     </div>
 
@@ -375,7 +381,7 @@
             <!-- <i class="fas fa-search"></i> -->
             <button class="search-btn" type="submit">
               جستجو
-            </button> 
+            </button>
           </div>
         </div>
 
@@ -388,11 +394,10 @@
           <div class="status-icons">
 
             <div class="bells">
-      
-              <a href="/"> <img src="../../images/Panel-home.svg" 
-                alt=""></a>
-  
-  
+
+              <a href="/"> <img src="../../images/Panel-home.svg" alt=""></a>
+
+
               <!-- <div class="bells-dropdown">
                 <h3>
                   <span>|</span>
@@ -456,20 +461,19 @@
                   </p>
                 </div>
                </div> -->
-      
+
             </div>
-      
+
             <div class="message">
-      
-              <img src="../../images/Panel-Messsage.svg" 
-            alt="">
-  
+
+              <img src="../../images/Panel-Messsage.svg" alt="">
+
               <div class="message-dropdown">
                 <h3>
                   <span>|</span>
-                    لیست ایمیل های شما
+                  لیست ایمیل های شما
                 </h3>
-               <!--  <div class="email-list">
+                <!--  <div class="email-list">
                   <p>
   
                     <img src="../../images/Email-Blob.svg" alt="">
@@ -526,40 +530,41 @@
   
                   </p>
                 </div> -->
-               </div> 
-      
-            </div>
-      
-            <div class="profile">
-      
-              <img src="../../images/Panel-Profile.svg" alt="">
-      
-  
-              <div class="profile-dropdown">
-               <h3>
-                 <span>|</span>
-                 <%= userName  %>  خوش اومدی :)
-               </h3>
-               <form action="/logout" method="GET">
-                <div class="exit-btn">
-                 <input type="image" src="../../images/Logout-Icon.svg" width="40px"/>
-                <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
-                </div></form>
               </div>
-  
+
             </div>
-  
-      
-  
-           </div>
+
+            <div class="profile">
+
+              <img src="../../images/Panel-Profile.svg" alt="">
+
+
+              <div class="profile-dropdown">
+                <h3>
+                  <span>|</span>
+                  <%= userName  %> خوش اومدی :)
+                </h3>
+                <form action="/logout" method="GET">
+                  <div class="exit-btn">
+                    <input type="image" src="../../images/Logout-Icon.svg" width="40px" />
+                    <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+
+
+          </div>
 
           <div class="panel-humburger hide-for-desktop">
-    
+
             <img src="../../images/Panel-Burger.svg" alt="">
-    
+
           </div>
-          
-    
+
+
         </div>
 
       </div>
@@ -578,8 +583,8 @@
             تاریخچه تعیین سطح
           </h2>
           <button type="submit" class="icdrn-btn" id="startPlacementTestBtn">
-       
-            تعیین سطح جدید 
+
+            تعیین سطح جدید
 
             <span>+</span>
 
@@ -600,10 +605,10 @@
               <th>نوع تعین سطح</th>
               <th>وضعیت پرداخت</th>
             </tr>
-          
-          <%   if(quizes.length!= 0){ %> 
+
+            <%   if(quizes.length!= 0){ %>
             <% let i=0; %>
-           <%    quizes.forEach(element => { %>
+            <%    quizes.forEach(element => { %>
             <%     i++; 
               function trueAnswer(){
               if(element.trueAnswer==null){
@@ -620,7 +625,7 @@
                return  "-"
               }return element.level;
             }
-            %> 
+            %>
 
             <tr>
               <td><%= i %></td>
@@ -640,7 +645,7 @@
                 <span>پرداخت شده</span>
               </td>
             </tr>
-         <%              
+            <%              
             });
           }  %>
           </table>
@@ -653,126 +658,127 @@
 
     <div class="side-menu hide-for-phone">
 
-        <nav class="panel-menu-list">
-    
-          <div class="panel-logo">
-    
-            <img src="../../images/ICDRN-Panel-Logo.png" alt="">
-            <div class="panel-logo-title">
-              <h2>
-                آیلتس کلاب
-              </h2>
-              <div>
-                دکتر پژمان نورزاد
-              </div>
+      <nav class="panel-menu-list">
+
+        <div class="panel-logo">
+
+          <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+          <div class="panel-logo-title">
+            <h2>
+              آیلتس کلاب
+            </h2>
+            <div>
+              دکتر پژمان نورزاد
             </div>
-
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Home-Icon.svg" alt="">
-    
-    
-            <a href="/dashboard">
-      
-      
-              پیشخوان
-            
-            </a>
-    
-          </div>
-    
-      
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Classes-Icon.svg" alt="">
-    
-    
-            <a href="/panel/class-list">
-      
-      
-              لیست کلاس ها
-            
-            </a>
-    
-          </div>
-    
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
-    
-    
-            <a href="/panel/class-registration">
-      
-      
-              کلاس جدید
-            
-            </a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-report-card-icon.svg" alt="">
-    
-    
-            <a href="/panel/class-registration" style="display:flex; align-items: center;">
-      
-      
-              کارنامه ها 
-
-              <span class="new-feature">
-                جدید!
-              </span>
-            
-            </a>
-    
           </div>
 
-          <div class="panel-menu-item active">
-    
-            <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
-    
-    
-            <a href="/panel/placement-test-history">
-      
-      
-              تعیین سطح ها
-            
-            </a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-    
-    
-            <a href="/panel/profile-edit">
-      
-      
-              ویرایش اطلاعات
-            
-            </a>
-    
-          </div>
-    
-        </nav>
-    
-        <div class="panel-exit-box">
-    
-          <img src="../../images/Panel-Exit.svg" alt="">
-    
         </div>
-    
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+
+
+          <a href="/dashboard">
+
+
+            پیشخوان
+
+          </a>
+
+        </div>
+
+
+
+        <div class="panel-menu-item active">
+
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
+
+
+          <a href="/panel/class-list">
+
+
+            لیست کلاس ها
+
+          </a>
+
+        </div>
+
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+
+
+          <a href="/panel/class-registration">
+
+
+            کلاس جدید
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-report-card-icon.svg" alt="">
+
+
+          <a href="/panel/reports" style="display:flex; align-items: center;">
+
+
+
+            کارنامه ها
+
+            <span class="new-feature">
+              جدید!
+            </span>
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item active">
+
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+          <a href="/panel/placement-test-history">
+
+
+            تعیین سطح ها
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+          <a href="/panel/profile-edit">
+
+
+            ویرایش اطلاعات
+
+          </a>
+
+        </div>
+
+      </nav>
+
+      <div class="panel-exit-box">
+
+        <img src="../../images/Panel-Exit.svg" alt="">
+
+      </div>
+
 
     </div>
 
   </div>
- 
+
 
 
 
@@ -789,97 +795,98 @@
   <section class="icdrn-modal-lg placement-test-registration-modal" id="placeMentTest">
 
     <span class="modal-close">
-    &times;
-  </span>
+      &times;
+    </span>
 
 
-<div class="icdrn-modal-grid">
+    <div class="icdrn-modal-grid">
 
-  <form action="/quiz" method="POST">
-  <div class="modal-content">
+      <form action="/quiz" method="POST">
+        <div class="modal-content">
 
-    <h3>
-      ثبت نام جهت تعین سطح
-    </h3>
+          <h3>
+            ثبت نام جهت تعین سطح
+          </h3>
 
-    <div class="modal-form">
-      <input type="text" class="icdrn-input" placeholder="نام و نام خانوادگی خود را وارد کنید" name="name" required>
-    <div class="placement-test-mode-box">
-      <div class="select">
-        <select id="standard-select" name="quizType" required>
-          <option disabled selected >روش برگزاری تعیین سطح</option>
-          <option value="Written">
-            کتبی | سیستمی آنلاین
-          </option>
-          <option value="Oral">
-            شفاهی | تماسی پرسش محور
-          </option>
-        </select>
-        <span class="icon"></span>
+          <div class="modal-form">
+            <input type="text" class="icdrn-input" placeholder="نام و نام خانوادگی خود را وارد کنید" name="name"
+              required>
+            <div class="placement-test-mode-box">
+              <div class="select">
+                <select id="standard-select" name="quizType" required>
+                  <option disabled selected>روش برگزاری تعیین سطح</option>
+                  <option value="Written">
+                    کتبی | سیستمی آنلاین
+                  </option>
+                  <option value="Oral">
+                    شفاهی | تماسی پرسش محور
+                  </option>
+                </select>
+                <span class="icon"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modal-pricde">
+
+
+
+            <h3 class="modal-price-number">
+              هزینه آزمون
+              :
+              <span>
+                <del> ۲۵.۰۰۰ تومان</del>
+              </span>
+              رایگان
+            </h3>
+
+          </div>
+
+          <div class="privacy-policy">
+
+            <input type="checkbox" name="isChecked" required>
+            <span class="checkmark"></span>
+            <label for="">
+              قوانین و مقررات آیلتس کلاب را می پذیرم.
+            </label>
+
+          </div>
+
+
+
+          <button type="submit" class="icdrn-btn">
+
+            ثبت نام در آزمون تعیین سطح
+
+          </button>
+
+
+        </div>
+      </form>
+      <div class="modal-img">
+        <img src="../../images/Placement-Q!uiz.svg" alt="">
+        <div class="modal-img-subtitle hide-for-phone">
+
+          <span>
+
+            لطفا به حساب کاربری خود وارد شوید یا ثبت نام کنید و
+          </span>
+
+          اطلاعات حساب کاربری خود را در پنل کاربری
+          <br>
+
+          به درستی وارد کنید تا در صورت برقراری کلاس ها،
+          <br>
+          امکان تماس با شما دوست عزیز فراهم باشد.
+
+
+        </div>
       </div>
-    </div>
-     
-    </div>
-
-    <div class="modal-pricde">
-
-
-
-      <h3 class="modal-price-number">
-        هزینه آزمون
-        :
-      <span>
-        <del> ۲۵.۰۰۰ تومان</del>
-      </span>
-      رایگان
-      </h3>
 
     </div>
 
-    <div class="privacy-policy">
-
-      <input type="checkbox" name="isChecked" required>
-      <span class="checkmark"></span>
-      <label for="">
-        قوانین و مقررات آیلتس کلاب را می پذیرم.
-      </label>
-
-    </div>
-
-
-
-  <button type="submit" class="icdrn-btn">
-
-    ثبت نام در آزمون تعیین سطح
-
-   </button>
-
-
-</div>
-</form>
-<div class="modal-img">
-  <img src="../../images/Placement-Q!uiz.svg" alt="">
-  <div class="modal-img-subtitle hide-for-phone">
-
-   <span>
-
-    لطفا به حساب کاربری خود وارد شوید یا ثبت نام  کنید و
-   </span>
-
-    اطلاعات حساب کاربری خود را در پنل کاربری
-    <br>
-
-   به درستی وارد کنید تا در صورت برقراری کلاس ها،
-   <br>
-   امکان تماس با شما دوست عزیز فراهم باشد.
-
-
-  </div>
-</div>
-
-</div>
-
-</section>
+  </section>
 
 
 
@@ -896,7 +903,7 @@
   <div id="loader-wrapper">
     <div id="loader"></div>
     <div class="loader-section section-left">
-  
+
     </div>
     <div class="loader-section section-right"></div>
     <div class="loader">
@@ -904,53 +911,49 @@
       <h2>سایت در حال بارگذاریه!</h2>
     </div>
   </div>
-  
-  
-    <script src="app/js/app.js"></script>
-    <script src="app/js/placementTestModal.js"></script>
-    <script src="app/js/mockQuizModal.js"></script>
-  
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-  
-    <script>
-      const openPlacementTest=document.querySelector("#openPlacementTest");
-      const placeMentTest=document.querySelector("#placeMentTest");
-      openPlacementTest.addEventListener("click",()=>{
-        placeMentTest.style.dispaly="flex";
-      })
 
-    </script>
-    <script>
-  
-      //For Live Projects
-          window.addEventListener('load',function(){
-            document.querySelector('body').classList.add("loaded")  
-          });
-      
-      
-        </script>
+
+  <script src="app/js/app.js"></script>
+  <script src="app/js/placementTestModal.js"></script>
+  <script src="app/js/mockQuizModal.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+  <script>
+    const openPlacementTest = document.querySelector("#openPlacementTest");
+    const placeMentTest = document.querySelector("#placeMentTest");
+    openPlacementTest.addEventListener("click", () => {
+      placeMentTest.style.dispaly = "flex";
+    })
+  </script>
+  <script>
+    //For Live Projects
+    window.addEventListener('load', function () {
+      document.querySelector('body').classList.add("loaded")
+    });
+  </script>
   <script src="../../app/js/app.js"></script>
   <script src="../../app/js/PanelMenuToggle.js"></script>
   <script src="../../app/js/placementTestModal1.js"></script>
-  <script> 
-    const getReportBTN=document.querySelector("#startPlacementTestBtn");
+  <script>
+    const getReportBTN = document.querySelector("#startPlacementTestBtn");
     const getRegisterErrorModal = document.querySelector('#placeMentTest');
-   
-    const closeTheModal=document.querySelector("#modal-close");
-    
+
+    const closeTheModal = document.querySelector("#modal-close");
+
     const getmodalClose = document.querySelector('#comingSoonBtn');
-    
-    getReportBTN.addEventListener("click",()=>{
+
+    getReportBTN.addEventListener("click", () => {
       getRegisterErrorModal.style.display = "flex";
     })
-    
-    closeTheModal.addEventListener("click",()=>{
+
+    closeTheModal.addEventListener("click", () => {
       getRegisterErrorModal.style.display = "none";
     })
-
-   </script>
+  </script>
 
 
 
 </body>
+
 </html>
