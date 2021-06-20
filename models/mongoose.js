@@ -146,7 +146,7 @@ module.exports.Exam=Exam;
 
 //exam Srtudents resault
 const reportSchema=new mongoose.Schema({
-    StudentID:{type:mongoose.Schema.Types.ObjectId,ref:User}
+    StudentID:{type:mongoose.Schema.Types.ObjectId,ref:User},
     classTime:{type:String},
     classTeacher:{type:String},
     Type:{type:String,required:true},
