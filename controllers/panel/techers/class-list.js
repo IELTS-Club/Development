@@ -3,7 +3,7 @@ const panel=express.Router();
 const isLogedIn=require("../../../middleware/isLogedIn");
 const isConfirmed=require("../../../middleware/isConfirmed");
 const isTeacher=require("../../../middleware/isTeacher");
-const { Class } = require("../../../models/mongoose");
+const { Class, Exam } = require("../../../models/mongoose");
 const isLogedInEN=require("../../../middleware/isLogedin.en");
 const isConfirmedEN=require("../../../middleware/isconfirmed.en");
 const isTeacherEN=require("../../../middleware/isTeacher")
@@ -160,8 +160,17 @@ panel.get("/en/teachers/class-list",[isLogedInEN,isConfirmedEN,isTeacherEN],asyn
 panel.get("/teachers/delete-class/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
     console.log("hello")
     const classId=req.params.id
+    const exams=await Exam.find({ClassID:req.params.id})
+    console.log(exams)
+    if(exams.length!=0){
+        for(let k=1;k<=exams.length;k++){
+            await Exam.findOneAndRemove({ClassID:req.params.id});
+            
+        }
+    }
     await Class.findOneAndDelete({_id:classId});
-    res.redirect("/teachers/class-list")
+     res.redirect("/teachers/class-list");
+
 })
 
 //get delete classes en

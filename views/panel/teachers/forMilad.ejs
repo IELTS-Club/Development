@@ -583,33 +583,33 @@
 
         <div class="modal-form" id="modal-form">
 
-          <input type="text" class="icdrn-input" placeholder="عنوان آزمون (مثال: elementry)">
+          <input type="text" class="icdrn-input" value="<%=examDeatails.Title%>" placeholder="عنوان آزمون (مثال: elementry)">
 
           <div class="input-row">
 
-            <input type="text" data-jdp class="icdrn-input" placeholder="تاریخ شروع (۷ خرداد)">
-            <input type="time" class="icdrn-input" placeholder="ساعت شروع (۱۵:۰۰)">
+            <input type="text" data-jdp class="icdrn-input" value="<%=examDeatails.StartDate%>" placeholder="تاریخ شروع (۷ خرداد)">
+            <input type="time" class="icdrn-input" value="<%=examDeatails.StartHour%>" placeholder="ساعت شروع (۱۵:۰۰)">
 
           </div>
 
           <div class="input-row">
 
-            <input type="text" data-jdp class="icdrn-input" placeholder="تاریخ پایان (۸ خرداد)">
-            <input type="time" class="icdrn-input" placeholder="ساعت پایان (۱۷:۰۰)">
+            <input type="text" data-jdp class="icdrn-input" value="<%=examDeatails.StopDate%>" placeholder="تاریخ پایان (۸ خرداد)">
+            <input type="time" class="icdrn-input" value="<%=examDeatails.StopHour%>" placeholder="ساعت پایان (۱۷:۰۰)">
 
           </div>
 
 
           <div class="input-row">
 
-            <input type="text" class="icdrn-input" placeholder="نوع آزمون ( میان ترم )">
+            <input type="text" class="icdrn-input" value="<%=examDeatails.Type%>" placeholder="نوع آزمون ( میان ترم )">
             <input type="number" class="icdrn-input" min="1" max="150" placeholder="disabled" disabled>
 
           </div>
 
 
           <button type="button" class="icdrn-btn">
-            اضافه کردن آزمون
+              تغییر اطلاعات آزمون
           </button>
 
 

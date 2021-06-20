@@ -312,7 +312,7 @@
 
 
 
-    //mock-report-cards
+    
     <section class="icdrn-modal-lg record-mock-report-card" id="recordMockReportCard">
 
         <span class="modal-close" id="modalCloseB">&times;</span>
@@ -491,6 +491,7 @@
                 const ReportData = {
                     Type: "Mock",
                     StudentID: '<%=StudentID%>',
+                    classID:'<%=classID%>',
                     Listening: mockInputs[0].value,
                     Reading: mockInputs[1].value,
                     Writing: mockInputs[2].value,
@@ -523,6 +524,7 @@
                 const ReportData = {
                     Type: "Common",
                     StudentID: '<%=StudentID%>',
+                    classID:'<%=classID%>',
                     ClassAttendance: commonInputs[0].value,
                     ClassActivity: commonInputs[1].value,
                     MidtermScore: commonInputs[2].value,

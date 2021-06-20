@@ -110,10 +110,10 @@ panel.post("/teachers/quiz-list/:classId", [isLogedIn, isConfirmed, isTeacher], 
 });
 
 panel.get("/teachers/create-exam", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
-    if (!req.session.Title || !req.session.Type || !req.session.StartDate || !req.session.StartHour || !req.session.StopDate || !req.session.StopHour || !req.session.QuestionsNumber || !req.session.classId) {
-        console.log(req.session)
-        res.redirect("/teachers/class-list");
-    }
+    // if (!req.session.Title || !req.session.Type || !req.session.StartDate || !req.session.StartHour || !req.session.StopDate || !req.session.StopHour || !req.session.QuestionsNumber || !req.session.classId) {
+    //     console.log(req.session)
+    //     res.redirect("/teachers/class-list");
+    // }
     const classId = req.session.classId
     const examClass = await Class.findOne({
         _id: classId
@@ -392,6 +392,7 @@ panel.get("/teachers/manage-exam/:id", [isLogedIn, isConfirmed], async (req, res
         students,
         userName: req.user.name,
         examId:exam._id,
+        examDeatails:exam
 
     })
 
@@ -424,6 +425,7 @@ panel.get("/teachers/show-resault/:examId/:studentId", [isLogedIn, isConfirmed],
     console.log(req.user.name)
     res.render("quiz/forResault", {
         exam: exam,
+        classID:exam.ClassID,
         Teacher: examClass.classTeacher,
         Student: student.name,
         StudentID:req.params.studentId,
@@ -504,11 +506,13 @@ panel.post("/teachers/submit-report/",[isLogedIn, isConfirmed, isTeacher],async(
 
 //show reports to student
 panel.get("/panel/reports", [isLogedIn, isConfirmed ], async (req, res) => {
-    const report=await Report.find({StudentID:req.user._id})
-    console.log(report)
+    const Commonreport=await Report.find({StudentID:req.user._id,Type:"Common"}).populate("classID",{classTime:1,classTeacher:1});
+    const Mockreport=await Report.find({StudentID:req.user._id,Type:"Mock"}).populate("classID",{classTime:1,classTeacher:1});
+    console.log(Commonreport)
     res.render("panel/students/karnameh",{
         userName: req.user.name,
-        reports:report
+        Commonreport:Commonreport,
+        Mockreport:Mockreport
     })
 })
 

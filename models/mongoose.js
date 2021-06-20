@@ -147,6 +147,7 @@ module.exports.Exam=Exam;
 //exam Srtudents resault
 const reportSchema=new mongoose.Schema({
     StudentID:{type:mongoose.Schema.Types.ObjectId,ref:User},
+    classID:{type:mongoose.Schema.Types.ObjectId,ref:Class},
     Type:{type:String,required:true},
     //Common repot
     ClassAttendance:{type:Number},
