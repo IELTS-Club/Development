@@ -199,7 +199,7 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
         if (Number(date1[2]) < 10) {
             nowDate = `${date1[0]}/${date1[1]}/0${date1[2]}`
         }
-        if (Number(date1[2]) < 10 || Number(date1[1]) < 10) {
+        if (Number(date1[2]) < 10 && Number(date1[1]) < 10) {
             nowDate = `${date1[0]}/0${date1[1]}/0${date1[2]}`
         }
 
@@ -258,7 +258,7 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
         if (Number(date1[2]) < 10) {
             nowDate = `${date1[0]}/${date1[1]}/0${date1[2]}`
         }
-        if (Number(date1[2]) < 10 || Number(date1[1]) < 10) {
+        if (Number(date1[2]) < 10 && Number(date1[1]) < 10) {
             nowDate = `${date1[0]}/0${date1[1]}/0${date1[2]}`
         }
         console.log(nowDate);
