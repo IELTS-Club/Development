@@ -266,7 +266,7 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
         let hour1 = hour.split(":");
         let nowHour = `${hour1[0]}:${hour1[1]}`
 
-        cosnole.log(nowHour);
+        console.log(nowHour);
         function calculateTotalReaminingTime() {
             const sHour = exam.StartHour.split(":");
             const fHour = exam.StopHour.split(":")
