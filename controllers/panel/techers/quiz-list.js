@@ -6,6 +6,7 @@ const isTeacher = require("../../../middleware/isTeacher");
 const isStudent = require("../../../middleware/isStudent");
 const {Class,User,Report} = require("../../../models/mongoose");
 const {Exam} = require("../../../models/mongoose");
+const { compareSync } = require("bcrypt");
 
 panel.get("/teachers/quiz-list/:classId", [isLogedIn, isConfirmed, isTeacher], async (req, res) => {
     const exams = await Exam.find({
@@ -258,11 +259,12 @@ panel.get("/students/run-exam/:id", [isLogedIn, isConfirmed], async (req, res) =
         if (Number(date1[2]) < 10 || Number(date1[1]) < 10) {
             nowDate = `${date1[0]}/0${date1[1]}/0${date1[2]}`
         }
+        console.log(nowDate);
         const hour = new Date().toLocaleTimeString("fa").replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
         let hour1 = hour.split(":");
         let nowHour = `${hour1[0]}:${hour1[1]}`
 
-
+        compareSync.log(nowHour);
         function calculateTotalReaminingTime() {
             const sHour = exam.StartHour.split(":");
             const fHour = exam.StopHour.split(":")
