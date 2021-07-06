@@ -57,7 +57,7 @@ panel.get("/panel/quiz-list/:classId", [isLogedIn, isConfirmed], async (req, res
         if (Number(date1[2]) < 10) {
             nowDate = `${date1[0]}/${date1[1]}/0${date1[2]}`
         }
-        if (Number(date1[2]) < 10 || Number(date1[1]) < 10) {
+        if (Number(date1[2]) < 10 && Number(date1[1]) < 10) {
             nowDate = `${date1[0]}/0${date1[1]}/0${date1[2]}`
         }
         const hour = new Date().toLocaleTimeString("fa").replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728));
