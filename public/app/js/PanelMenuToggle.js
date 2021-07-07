@@ -1,7 +1,7 @@
 
 const PanelBtnToggle = document.querySelector('.panel-humburger');
-const panelContainer = document.querySelector('.container-panel');
-
+const panelOverlay = document.querySelector('.panel-overlay');
+const studentPanelContainer = document.querySelector('.container-student-panel')
 
 const navbarStatus = document.querySelector('.navbar-status');
 const profileLabel = document.querySelector('.profile img');
@@ -16,16 +16,29 @@ const messageDropdowm = document.querySelector('.message-dropdown');
 const bellsLabel = document.querySelector('.bells img');
 const bellsDropdowm = document.querySelector('.bells-dropdown');
 
+
+
 PanelBtnToggle.addEventListener('click', () => {
-  
-  panelContainer.classList.toggle('open-slide');
 
-  console.log('hello');
-
-  
-
+  panelOverlay.style.right = '0px';
+  // studentPanelContainer.style.filter = 'blur(3px)'
 
 })
+
+
+let ignoreClickOnMeElement = document.querySelector('.panel-humburger');
+
+document.addEventListener('click', function(event) {
+    var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+    if (!isClickInsideElement) {
+      
+      panelOverlay.style.right = '-300px';
+
+      
+    }
+});
+
+
 
 profileLabel.addEventListener('click', () => {
   

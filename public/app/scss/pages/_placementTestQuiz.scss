@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,700;1,200;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,700;1,200;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,700;1,100;1,300&display=swap');
+
+
+.quiz-container {
+
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: 100vh;
+  
+  background-image: url(../../images/Quiz-BG.jpg);
+  background-size: cover;
+
+
+
+
+  .quiz-start-box {
+
+    opacity: 1;
+    font-family: 'poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 350px;
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    transition: opacity .5s ease-in-out;
+    // box-sizing: border-box;
+
+    @media #{$phone} {
+
+      padding: 20px;
+      width: 70%;
+      height: 450px;
+  
+    }
+    
+  .start-inner {
+
+    height: 100%;
+
+    .quiz-header {
+
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 20%;
+  
+      @media #{$phone} {
+  
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color:$secondaryColor;
+  
+        @media #{$phone} {
+
+          font-size: 18px;
+          margin-bottom: 10px;
+
+    
+        }
+  
+      }
+  
+    }
+  
+    .quiz-content {
+  
+      width: 100%;
+      height: 65%;
+      font-weight: 100;
+
+
+      @media #{$phone} {
+  
+        overflow: scroll;
+        
+  
+      }
+  
+      p {
+  
+        line-height: 25px;
+  
+        @media #{$phone} {
+  
+          text-align: justify;
+          
+    
+        }
+  
+      }
+  
+    }
+    
+    .quiz-footer {
+  
+      display: flex;
+      justify-content: space-evenly;
+      height: 15%;
+
+      @media #{$phone} {
+
+        align-items: center;
+        justify-content: center;
+  
+      }
+  
+      .icdrn-btn[type="submit"] {
+  
+        background-color: $secondaryColor;
+        color: #fff;
+  
+      }
+  
+      .icdrn-btn:nth-child(1) {
+  
+        // margin-right: 150px;
+  
+        @media #{$phone} {
+  
+          margin-right: 10px;
+    
+        }
+  
+      }
+  
+    }
+
+  }
+
+}
+
+
+
+
+
+.quiz-box {
+
+  opacity: 1;
+  font-family: 'poppins', sans-serif;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 350px;
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 15px;
+  transition: opacity .5s ease-in-out;
+
+  @media #{$phone} {
+
+    padding: 20px;
+    width: 70%;
+    height: 450px;
+
+  }
+
+  
+.quiz-header {
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 20%;
+
+  @media #{$phone} {
+  
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h3 {
+    font-size: 23px;
+    font-weight: 700;
+    color:$secondaryColor;
+
+    @media #{$phone} {
+
+      font-size: 18px;
+      margin-bottom: 10px;
+
+
+    }
+
+  }
+
+}
+
+.quiz-content {
+
+  width: 100%;
+  height: 60%;
+
+  @media #{$phone} {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+ 
+  h3 {
+
+    font-size: 23px;
+    font-weight:700;
+    margin-bottom: 20px;
+
+    @media #{$phone} {
+
+      font-size: 20px;
+
+    }
+
+  }
+
+  span {
+
+    line-height: 30px;
+
+  }
+
+}
+
+.quiz-footer {
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  
+  @media #{$phone} {
+
+    flex-direction: column;
+    
+  }
+
+
+  .location {
+
+    @media #{$phone} {
+
+      order:2;
+      margin-top: 10px;
+  
+    }
+
+  }
+
+  .icdrn-btn {
+
+    margin-left: 50px;
+    background-color: $secondaryColor;
+    color: #fff;
+
+    
+    @media #{$phone} {
+
+      margin-left:0;
+      order:1;
+      
+    }
+
+
+  }
+
+
+}
+
+
+}
+
+
+}
+
+#placementResult {
+
+  display: none;
+  z-index: 1000;
+
+  icdrn-modal-conten {
+
+    p{
+
+      span.res-label {
+
+        color: blue !important;
+
+      }
+
+    }
+
+  }
+
+}
+
+
+#placementTimeOut {
+
+  display: none;
+  z-index: 1000;
+
+}

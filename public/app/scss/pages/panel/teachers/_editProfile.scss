@@ -1,0 +1,200 @@
+
+
+.container-teacher-panel-edit-profile {
+
+  .main {
+
+    grid-area: main;
+    height: 100vh;
+   
+    @media #{$phone} {
+
+      height:800px;
+      padding: 40px 40px;
+
+    }
+
+
+    .profile-edit {
+
+      width: 100%;
+
+      &-title {
+
+
+      @media #{$phone} {
+
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+    
+        }
+
+        span {
+
+          font-weight: bold;
+          color: $primaryColor;
+          padding-left: 4px;
+
+        }
+
+        font-family: Kalameh-Black;
+        font-size: 30px;
+        color:#258C93;
+
+      }
+
+      &-grid {
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 350px;
+        margin-top: 10px;
+
+        @media #{$phone} {
+
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 40px;
+    
+        }
+
+
+       .profile-edit-form {
+
+        width: 40%;
+        height: 100%;
+
+        @media #{$phone} {
+
+          width: 100%;
+          order: 2;
+     
+         }
+
+        .fullname-box {
+
+          position: relative;
+
+          .fullname-input {
+
+            box-sizing: border-box;
+            font-family: Yekan-Bakh-Regular;
+            width: 100%;
+            height: 45px;
+            border: none;
+            padding-right: 15px;
+            border-radius: 10px;
+            background-color: #fff;
+
+          }
+
+          }
+
+
+        }
+
+
+        .email-box {
+
+          position: relative;
+
+          .email-input {
+
+            box-sizing: border-box;
+            font-family: Yekan-Bakh-Regular;
+            width: 100%;
+            height: 45px;
+            border: none;
+            padding-right: 15px;
+            border-radius: 10px;
+            background-color: #fff;
+
+          }
+         
+
+        }
+
+
+        .phone-box {
+
+          .phone-input {
+            box-sizing: border-box;
+
+            font-family: Yekan-Bakh-Regular;
+            width: 100%;
+            height: 45px;
+            border: none;
+            padding-right: 15px;
+            border-radius: 10px;
+            background-color: #fff;
+
+          }
+
+        }
+
+
+      .profile-edit-btn-box {
+
+        .icdrn-btn {
+
+          margin-top: 25px;
+          width: 100%;
+
+          @media #{$phone} {
+
+            margin-top: 40px;
+         
+             }
+
+        }
+
+      }
+
+
+       }
+
+       .class-registration-pic {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 100%;
+
+        @media #{$phone} {
+
+   
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-top: 30px;
+          margin-bottom: 20px;
+          order: 1;
+     
+         }
+
+        img {
+
+          width: 300px;
+
+          @media #{$phone} {
+
+   
+            width: 270px;
+            margin-bottom: 20px;
+       
+           }
+
+        }
+
+       }
+
+      }
+
+    }
+
+
+}
+

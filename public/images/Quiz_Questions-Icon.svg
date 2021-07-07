@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80.164" height="80.164" viewBox="0 0 80.164 80.164">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="squircle" d="M0,39.4C0,5.122,5.122,0,39.4,0S78.8,5.122,78.8,39.4,73.678,78.8,39.4,78.8,0,73.678,0,39.4" transform="translate(520 410.844) rotate(-1)" fill="#57c3c3" opacity="0.09"/>
+    </clipPath>
+  </defs>
+  <g id="Quiz_Questions-Icon" transform="translate(-597 -305.469)">
+    <g id="Quiz-Avatar">
+      <path id="squircle-2" data-name="squircle" d="M0,39.4C0,5.122,5.122,0,39.4,0S78.8,5.122,78.8,39.4,73.678,78.8,39.4,78.8,0,73.678,0,39.4" transform="translate(597 306.844) rotate(-1)" fill="#57c3c3"/>
+    </g>
+    <g id="conversation" transform="translate(616 326.525)">
+      <g id="Group_2" data-name="Group 2" transform="translate(0 14.095)">
+        <g id="Group_1" data-name="Group 1">
+          <path id="Path_1" data-name="Path 1" d="M28.028,185.746a.81.81,0,0,0-.81.81v5.589a4.055,4.055,0,0,1-4.05,4.05H14.422a.81.81,0,0,0-.81.809v1.611l-1.933-1.933a.81.81,0,0,0-.743-.487H5.67a4.055,4.055,0,0,1-4.05-4.05V179.67a4.055,4.055,0,0,1,4.05-4.05h8.182a.81.81,0,0,0,0-1.62H5.67A5.677,5.677,0,0,0,0,179.67v12.475a5.677,5.677,0,0,0,5.67,5.67h4.849l3.327,3.327a.81.81,0,0,0,1.383-.572l0-2.755h7.937a5.677,5.677,0,0,0,5.67-5.67v-5.589A.81.81,0,0,0,28.028,185.746Z" transform="translate(0 -174)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_4" data-name="Group 4" transform="translate(15.877)">
+        <g id="Group_3" data-name="Group 3">
+          <path id="Path_2" data-name="Path 2" d="M209.824,0h-2.05a11.774,11.774,0,1,0,0,23.548h2.05a11.8,11.8,0,0,0,2.988-.383l3.029,3.027a.81.81,0,0,0,1.383-.573V20.932a11.886,11.886,0,0,0,3.095-3.816,11.647,11.647,0,0,0,1.279-5.342A11.787,11.787,0,0,0,209.824,0Zm6.1,19.89a.81.81,0,0,0-.323.647v3.127l-1.982-1.981a.81.81,0,0,0-.811-.2,10.157,10.157,0,0,1-2.987.447h-2.05a10.154,10.154,0,1,1,0-20.308h2.05a10.154,10.154,0,0,1,6.1,18.27Z" transform="translate(-196)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_6" data-name="Group 6" transform="translate(25.473 5.676)">
+        <g id="Group_5" data-name="Group 5">
+          <path id="Path_3" data-name="Path 3" d="M321.313,73.251a3.43,3.43,0,0,0-6.851.241.81.81,0,1,0,1.62,0,1.81,1.81,0,0,1,1.939-1.8,1.81,1.81,0,0,1,.268,3.571,1.533,1.533,0,0,0-1.208,1.5v1.946a.81.81,0,1,0,1.62,0V76.826A3.412,3.412,0,0,0,321.313,73.251Z" transform="translate(-314.462 -70.063)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_8" data-name="Group 8" transform="translate(28.093 16.714)">
+        <g id="Group_7" data-name="Group 7">
+          <path id="Path_4" data-name="Path 4" d="M348.183,206.567a.811.811,0,1,0,.237.573A.816.816,0,0,0,348.183,206.567Z" transform="translate(-346.8 -206.33)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_10" data-name="Group 10" transform="translate(4.374 25.112)">
+        <g id="Group_9" data-name="Group 9">
+          <path id="Path_5" data-name="Path 5" d="M71.9,310H54.81a.81.81,0,1,0,0,1.62H71.9a.81.81,0,1,0,0-1.62Z" transform="translate(-54 -310)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_12" data-name="Group 12" transform="translate(21.467 29.648)">
+        <g id="Group_11" data-name="Group 11">
+          <path id="Path_6" data-name="Path 6" d="M266.383,366.237a.81.81,0,1,0,.237.573A.816.816,0,0,0,266.383,366.237Z" transform="translate(-265 -366)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_14" data-name="Group 14" transform="translate(4.374 29.648)">
+        <g id="Group_13" data-name="Group 13">
+          <path id="Path_7" data-name="Path 7" d="M68.716,366H54.81a.81.81,0,0,0,0,1.62H68.716a.81.81,0,0,0,0-1.62Z" transform="translate(-54 -366)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_16" data-name="Group 16" transform="translate(4.374 20.576)">
+        <g id="Group_15" data-name="Group 15">
+          <path id="Path_8" data-name="Path 8" d="M66.637,254H54.81a.81.81,0,1,0,0,1.62H66.637a.81.81,0,1,0,0-1.62Z" transform="translate(-54 -254)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

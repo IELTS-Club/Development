@@ -3,7 +3,7 @@ const panel=express.Router();
 const isLogedIn=require("../../../middleware/isLogedIn");
 const isConfirmed=require("../../../middleware/isConfirmed");
 const isTeacher=require("../../../middleware/isTeacher");
-const { Class } = require("../../../models/mongoose");
+const { Class, Exam } = require("../../../models/mongoose");
 const isLogedInEN=require("../../../middleware/isLogedin.en");
 const isConfirmedEN=require("../../../middleware/isconfirmed.en");
 const isTeacherEN=require("../../../middleware/isTeacher")
@@ -82,7 +82,10 @@ panel.get("/teachers/class-list",[isLogedIn,isConfirmed,isTeacher],async(req,res
         return "Hadavi";
         if (req.user.email=="fallahmehrshad790@gmail.com")
         return "Fallah";
-        if (req.user.email=="haniyebh10@gmail.com")return "Bahrami";
+        if (req.user.email=="zk270266@gmail.com")
+        return "Keshtkar";
+        if (req.user.email=="haniyebh10@gmail.com")
+        return "Bahrami";
         }
         const teacher=selectTeacher();
     const Clasess=await Class.find({classTeacher:teacher})
@@ -128,7 +131,10 @@ panel.get("/en/teachers/class-list",[isLogedInEN,isConfirmedEN,isTeacherEN],asyn
         return "Hadavi";
         if (req.user.email=="fallahmehrshad790@gmail.com")
         return "Fallah";
-        if (req.user.email=="haniyebh10@gmail.com")return "Bahrami";
+        if (req.user.email=="zk270266@gmail.com")
+        return "Keshtkar";
+        if (req.user.email=="haniyebh10@gmail.com")
+        return "Bahrami";
         }
         const teacher=selectTeacher();
     const Clasess=await Class.find({classTeacher:teacher})
@@ -142,7 +148,7 @@ panel.get("/en/teachers/class-list",[isLogedInEN,isConfirmedEN,isTeacherEN],asyn
         userName:req.user.name,
         allClasses:allClasses,
         classes:classes,
-        userName:req.user.name,
+        
         email:req.user.email
     })
 });
@@ -154,8 +160,17 @@ panel.get("/en/teachers/class-list",[isLogedInEN,isConfirmedEN,isTeacherEN],asyn
 panel.get("/teachers/delete-class/:id",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
     console.log("hello")
     const classId=req.params.id
+    const exams=await Exam.find({ClassID:req.params.id})
+    console.log(exams)
+    if(exams.length!=0){
+        for(let k=1;k<=exams.length;k++){
+            await Exam.findOneAndRemove({ClassID:req.params.id});
+            
+        }
+    }
     await Class.findOneAndDelete({_id:classId});
-    res.redirect("/teachers/class-list")
+     res.redirect("/teachers/class-list");
+
 })
 
 //get delete classes en

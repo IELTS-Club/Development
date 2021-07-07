@@ -2,7 +2,7 @@ const mongoose=require("mongoose");
 const config=require("config");
 const winston=require("winston");
 const jwt=require("jsonwebtoken");
-const bcrypt=require("bcrypt");
+
 mongoose.connect(config.get("DBname"),{ useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false  })
 .then(()=>{if (process.env.NODE_ENV=="development")winston.info("connected to icdrn database")})
 .catch( (err)=>winston.error(err));
@@ -58,7 +58,7 @@ const userSchema=new mongoose.Schema({
 });
 userSchema.methods.genrateToken=function(){
     let token=jwt.sign({_id:this._id,isTeacher:this.isTeacher,email:this.email,name:this.name,phone:this.phone},config.get("private-key"),{
-        expiresIn:"1h"
+        expiresIn:"1d"
     });
     return token;
 }
@@ -91,3 +91,79 @@ const studentSchema=new mongoose.Schema({
 })
 const Student=mongoose.model("Student",studentSchema);
 module.exports.Student = Student;
+
+//Exam
+const examsSchema=new mongoose.Schema({
+    ClassID:{type:mongoose.Schema.Types.ObjectId,ref:Class},
+    Title:{type:String},
+    Type:{type:String},
+    StartDate:{type:String},
+    StartHour:{type:String},
+    StopDate:{type:String},
+    StopHour:{type:String},
+    QuestionsNumber:{type:Number},
+
+
+    QuestionsList:[{
+        questionId:String,
+        questionType:String,
+        questionBody:String,
+        questionStructure:String,
+        questionChoices:[{type:String,required:function(){
+            if (this.questionStructure=="Multiple-Choice"){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }}],
+        trueAnswer:{type:String,required:function(){
+            if (this.questionStructure=="Multiple-Choice"){
+                return true;
+            }
+            else{
+                return false
+            }
+        }},
+        
+        }],
+    
+
+    Answers:[{
+        studentId:{type:mongoose.Schema.Types.ObjectId,ref:User},
+        process:{type:String,default:"inProccess"},
+        answersList:[{
+            questionId:String,
+            answerKey:String,
+            structure:String
+        }]
+
+    }] 
+});
+const Exam=mongoose.model("Exam",examsSchema);
+module.exports.Exam=Exam;
+
+
+//exam Srtudents resault
+const reportSchema=new mongoose.Schema({
+    StudentID:{type:mongoose.Schema.Types.ObjectId,ref:User},
+    classTime:{type:String},
+    classTeacher:{type:String},
+    Type:{type:String,required:true},
+    //Common repot
+    ClassAttendance:{type:Number},
+    ClassActivity:{type:Number},
+    MidtermScore:{type:Number},
+    FinalOral:{type:Number},
+    FinalWritten:{type:Number},
+    //Mock report 
+    Listening:{type:Number},
+    Reading:{type:Number},
+    Writing:{type:Number},
+    Speaking:{type:Number},
+
+
+    OveralScore:{type:Number}
+})
+const Report=mongoose.model("Report",reportSchema);
+module.exports.Report=Report;

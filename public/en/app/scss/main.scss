@@ -53,6 +53,7 @@
 @import "pages/error/searchResult";
 @import "pages/error/confirmationFaild";
 
+@import "layout/studentPanel";
 @import "pages/panel/students/dashboard";
 @import "pages/panel/students/classList";
 @import "pages/panel/students/classRegistration";
@@ -61,12 +62,13 @@
 
 @import "pages/blog/blogOne";
 
+@import "layout/studentPanel";
 @import "pages/panel/teachers/dashboard";
 @import "pages/panel/teachers/classList";
 @import "pages/panel/teachers/addClass";
 @import "pages/panel/teachers/studentList";
 @import "pages/panel/teachers/editProfile";
-@import "pages/panel/teachers/usersList.scss";
+@import "pages/panel/teachers/usersLis";
 @import "pages/panel/teachers/placementtestList";
 
 

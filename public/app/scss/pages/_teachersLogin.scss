@@ -1,0 +1,314 @@
+
+
+
+.teachers-login {
+
+
+  width: 100%;
+  overflow: hidden;
+  background-color: #FFF;
+
+  @media #{$laptop} {
+
+    height: 100vh;
+
+  }
+
+     .teachers-login-grid {
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    @media #{$laptop} {
+
+  
+      display: flex;
+      flex-direction: row;
+
+    }
+
+    .login-form {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      order: 2;
+      height: 100%;
+
+
+      @media #{$laptop} {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        order: 1;
+        width: 45%;
+        height: 100%;
+        margin-top: 90px;
+  
+      }
+
+
+      .icdrn-title {
+
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+
+          font-size: 35px;
+
+        }
+
+        @media #{$phone} {
+
+          width: 300px;
+          flex-direction: column;
+
+        }
+
+
+
+        button {
+
+          margin-right: 130px;
+
+          @media #{$phone} {
+
+            margin-top: 10px;
+            margin-right: 0;
+  
+          }
+
+        }
+
+      }
+
+      
+      .login-form-inner {
+
+        margin-top: 20px;
+        width: 300px;
+
+        @media #{$laptop} {
+
+          margin: 0;
+          width: 400px;
+  
+        }
+
+
+        .username-box {
+
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+
+        @media #{$laptop} {
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+        }
+
+        input {
+
+          width: 400px;
+          height: 60px;
+          box-sizing: border-box;
+
+          @media #{$phone} {
+
+            width: 300px;
+  
+          }
+
+
+        }
+
+
+        }
+
+        .password-box {
+
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+
+        @media #{$laptop} {
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+        }
+
+        input {
+
+          width: 400px;
+          height: 60px;
+          box-sizing: border-box;
+
+          @media #{$phone} {
+
+            width: 300px;
+  
+          }
+
+
+        }
+
+
+        }
+
+
+        .show-password-box {
+
+          width: 300px;
+          display: flex;
+          margin: 20px 0;
+
+          @media #{$phone} {
+
+            justify-content: center;
+  
+          }
+
+          label {
+
+            margin-left: 5px;
+
+          }
+
+        }
+
+
+        .login-btn-box {
+
+         
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media #{$laptop} {
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+        }
+
+
+        }
+
+        .login-guid-box {
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+          width: 100%;
+          text-align: center;
+
+          p {
+            display: block;
+            font-family: Yekan-Bakh-Regular;
+
+            a {
+
+              font-family: Yekan-Bakh-Medium;
+              font-size: 14px;
+              padding: 7px;
+              border-radius: 10px;
+              background-color: rgba(67, 71, 71, 0.1);
+              transition:border 2s ease;
+
+
+            }
+            a:hover {
+
+              border: 2px solid rgba(67, 71, 71, 0.6);
+
+            }
+          }
+
+        }
+
+        .forget-password-guid-box {
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+          width: 100%;
+          text-align: center;
+
+          p {
+            display: block;
+            font-family: Yekan-Bakh-Regular;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .register-img {
+
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      order: 1;
+      width: 100%;
+      height: 300px;
+      background-image: url(../../images/Register-Illustration-BG-MB.svg);
+      background-repeat: no-repeat;
+      background-size:cover;
+
+      @media #{$laptop} {
+
+        width: 55%;
+        height: 100vh;
+        background-image: url(../../images/Login-Illustration-BG.svg);
+        background-size:cover;
+        background-repeat: no-repeat;
+      }
+
+      img {
+
+        position: absolute;
+        top: 50px;
+        width: 200px;
+        margin-right: 0;
+
+
+
+        @media #{$laptop} {
+
+          position: static;
+          width: 380px;
+          margin-right: -50px;
+
+  
+        }
+
+      }
+
+    }
+
+  }
+
+}

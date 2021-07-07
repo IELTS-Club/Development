@@ -1,342 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>پنل دانشجویان | پیشخوان</title>
+  <title>پنل اساتید | پیشخوان</title>
   <link rel="icon" type="image/png" sizes="94x94" href="../../images/Favicon/ICDRN-Favicon-(94x94).png">
   <link rel="manifest" href="../../images/Favicon/manifest.json">
   <link rel="stylesheet" href="../../dist/css/main.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  
+
   <style>
 
+    body {
+
+      background-color: #F4F4F8 !important;
+
+    }
 
     .swiper-container {
-   width: 100%;
-   height: 100%;
- }
 
- .swiper-slide {
-   text-align: center;
-   font-size: 18px;
-   background: #fff;
+      width: 100%;
+      height: 100%;
 
-   /* Center slide text vertically */
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: -webkit-flex;
-   display: flex;
-   -webkit-box-pack: center;
-   -ms-flex-pack: center;
-   -webkit-justify-content: center;
-   justify-content: center;
-   -webkit-box-align: center;
-   -ms-flex-align: center;
-   -webkit-align-items: center;
-   align-items: center;
- }
+    }
 
-#loader-wrapper {
-position:fixed;
-display: flex;
-justify-content: center;
-align-items: center;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:1000;
-}
-
-#loader-wrapper .loader {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-z-index: 10001;
-width:300px;
-height:150px;
-}
-
-#loader-wrapper .loader h2 {
-
-font-size: 30px;
-font-family: Kalameh-Black;
-color: #fff;
-
-
-}
-
-
-@-webkit-keyframes spin {
-0%   {
- -webkit-transform: rotate(0deg);
-   -ms-transform: rotate(0deg);
-       transform: rotate(0deg);
-}
-100% {
- -webkit-transform: rotate(360deg);
-   -ms-transform: rotate(360deg);
-       transform: rotate(360deg);
-}
-}
-@keyframes spin {
-0%   {
- -webkit-transform: rotate(0deg);
-   -ms-transform: rotate(0deg);
-       transform: rotate(0deg);
-}
-100% {
- -webkit-transform: rotate(360deg);
-   -ms-transform: rotate(360deg);
-       transform: rotate(360deg);
-}
-}
-
-#loader-wrapper .loader-section {
-position:fixed;
-top:0;
-background-image: linear-gradient(#258c93,#1D3C4E);
-width:51%;
-height:100%;
-z-index:1000;
-}
-
-#loader-wrapper .loader-section.section-left {
-left:0
-}
-#loader-wrapper .loader-section.section-right {
-right:0;
-}
-
-/* Loaded Styles */
-.loaded #loader-wrapper .loader-section.section-left {
-transform: translateX(-100%);
-transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-}
-.loaded #loader-wrapper .loader-section.section-right {
-transform: translateX(100%);
-transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-}
-.loaded #loader {
-opacity: 0;
-transition: all 0.3s ease-out;
-}
-.loaded #loader-wrapper {
-visibility: hidden;
-transform:translateY(-100%);
-transition: all 0.3s 1s ease-out;
-}
-
-</style>
-
-
-  <style>
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
 
     #loader-wrapper {
-      position:fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      z-index:1000;
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
     }
-    
+
     #loader-wrapper .loader {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 10001;
-      width:300px;
-      height:150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+    width:300px;
+    height:150px;
     }
-    
+
     #loader-wrapper .loader h2 {
-    
-      font-size: 30px;
-      font-family: Kalameh-Black;
-      color: #fff;
-    
-    
+
+    font-size: 30px;
+    font-family: Kalameh-Black;
+    color: #fff;
+
+
     }
-    
-    
+
+
     @-webkit-keyframes spin {
-      0%   { 
-        -webkit-transform: rotate(0deg); 
-          -ms-transform: rotate(0deg); 
-              transform: rotate(0deg);
-      }
-      100% { 
-        -webkit-transform: rotate(360deg); 
-          -ms-transform: rotate(360deg); 
-              transform: rotate(360deg);
-      }
+    0%   {
+    -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
     }
+    100% {
+    -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+    }
+    }
+
     @keyframes spin {
-      0%   { 
-        -webkit-transform: rotate(0deg); 
-          -ms-transform: rotate(0deg); 
-              transform: rotate(0deg);
-      }
-      100% { 
-        -webkit-transform: rotate(360deg); 
-          -ms-transform: rotate(360deg); 
-              transform: rotate(360deg);
-      }
+    0%   {
+    -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
     }
-    
+    100% {
+    -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+    }
+    }
+
     #loader-wrapper .loader-section {
-      position:fixed;
-      top:0;
-      background-image: linear-gradient(#258c93,#1D3C4E);
-      width:51%;
-      height:100%;
-      z-index:1000;
+    position:fixed;
+    top:0;
+    background-image: linear-gradient(#258c93,#1D3C4E);
+    width:51%;
+    height:100%;
+    z-index:1000;
     }
-    
+
     #loader-wrapper .loader-section.section-left {
-      left:0
+    left:0
     }
+
     #loader-wrapper .loader-section.section-right {
-      right:0;
+    right:0;
     }
-    
-    /* Loaded Styles */
+
     .loaded #loader-wrapper .loader-section.section-left {
-      transform: translateX(-100%);
-      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    transform: translateX(-100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
     }
+
     .loaded #loader-wrapper .loader-section.section-right {
-      transform: translateX(100%);
-      transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    transform: translateX(100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
     }
+
     .loaded #loader {
-      opacity: 0;
-      transition: all 0.3s ease-out;
+    opacity: 0;
+    transition: all 0.3s ease-out;
     }
+
     .loaded #loader-wrapper {
-      visibility: hidden;
-      transform:translateY(-100%);
-      transition: all 0.3s 1s ease-out;
+    visibility: hidden;
+    transform:translateY(-100%);
+    transition: all 0.3s 1s ease-out;
     }
-    
-      </style>
 
-
+  </style>
 
 </head>
+
 <body>
 
-  
 
-  <div class="container-panel container-panel-dashboard">
+  <div class="container-teacher-panel   container-teacher-panel-dashboard">
 
     <div class="panel-overlay hide-for-desktop">
 
-     <nav class="panel-overlay-menu">
+      <nav class="panel-overlay-menu">
 
-      <img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo">
-
-      <div class="panel-menu-item active">
+        <div class="panel-logo">
+      
+          <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+          <div class="panel-logo-title">
+            <h2>
+              آیلتس کلاب
+            </h2>
+            <div>
+              دکتر پژمان نورزاد
+            </div>
+          </div>
+  
+        </div>
+        <div class="panel-menu-item">
+      
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+  
+  
+          <a href="/dashboard">
+            
     
-        <img src="../../images/Panel-Home-Icon.svg" alt="">
-
-
-        <a href="/dashboard">
-  
-  
-          پیشخوان
-        
-        </a>
-
-      </div>
-
-  
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Classes-Icon.svg" alt="">
-
-
-        <a href="/panel/class-list">
-  
-  
-          لیست کلاس ها
-        
-        </a>
-
-      </div>
-
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
-
-
-        <a href="/panel/class-registration">
-  
-  
-          کلاس جدید
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
-
-
-        <a href="/panel/placement-test-history">
-  
-  
-          تعیین سطح ها
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-
-
-        <a href="/panel/profile-edit">
-  
-  
-          ویرایش اطلاعات
-        </a>
-
-      </div>
-
-      <div class="panel-exit-box">
     
-        <img src="../../images/Panel-Exit.svg" alt="">
+            پیشخوان
+          
+          </a>
   
-      </div>
-
-     </nav>
+        </div>
+  
+    
+  
+        <div class="panel-menu-item active">
+  
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
+  
+  
+          <a href="/panel/class-list">
+    
+    
+            لیست کلاس ها
+          
+          </a>
+  
+        </div>
+  
+  
+        <div class="panel-menu-item">
+  
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+  
+  
+          <a href="/panel/class-registration">
+    
+    
+            کلاس جدید
+          
+          </a>
+  
+        </div>
+  
+        
+        <div class="panel-menu-item">
+      
+          <img src="../../images/Panel-report-card-icon.svg" alt="">
+  
+  
+          <a href="/panel/reports" style="display:flex; align-items: center;">
+    
+    
+            کارنامه ها 
+  
+            <span class="new-feature">
+              جدید!
+            </span>
+          
+          </a>
+  
+        </div>
+  
+        <div class="panel-menu-item">
+  
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+  
+  
+          <a href="/panel/placement-test-history">
+    
+    
+            تعیین سطح ها
+          
+          </a>
+  
+        </div>
+  
+        <div class="panel-menu-item">
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+  
+  
+          <a href="/panel/profile-edit">
+    
+            
+            ویرایش اطلاعات
+          
+          </a>
+  
+        </div>
+  
+        <div class="panel-exit-box">
+      
+          <img src="../../images/Panel-Exit.svg" alt="">
+    
+        </div>
+  
+       </nav>
 
     </div>
 
-    <div class="navbar">
+    <div class="navbar teacher-ct">
 
       <div class="navbar-search">
 
         <div class="searchbox">
 
-          <div class="search-input-box">
-            <input type="text" class="search-input" placeholder="بین کلاس ها جستجو کن">
-            <button class="search-btn" type="submit">
-              جستجو
-            </button> 
-          </div>
+          <form method="POST" action="/teachers/users">
+            <div class="search-input-box">
+              <input type="text" class="search-input" placeholder="جستجو بین کاربران" name="name">
+              <!-- <i class="fas fa-search"></i> -->
+              <button class="search-btn" type="submit">
+                جستجو
+              </button>
+            </div>
+          </form>
         </div>
 
       </div>
@@ -345,14 +290,13 @@ transition: all 0.3s 1s ease-out;
 
         <div class="panel-status-bar">
 
-         <div class="status-icons">
+          <div class="status-icons">
 
-          <div class="bells">
-    
-            <a href="/"> <img src="../../images/Panel-home.svg" 
-              alt=""></a>
+            <div class="bells">
 
-            <!-- <div class="bells-dropdown">
+              <a href="/"> <img src="../../images/Panel-home.svg" alt=""></a>
+
+              <!-- <div class="bells-dropdown">
               <h3>
                 <span>|</span>
                   پیام های سیستمی آیلتس کلاب
@@ -415,20 +359,19 @@ transition: all 0.3s 1s ease-out;
                 </p>
               </div>
              </div> -->
-    
-          </div>
-    
-          <div class="message">
-    
-            <img src="../../images/Panel-Messsage.svg" 
-            alt="">
 
-         <div class="message-dropdown">
-              <h3>
-                <span>|</span>
+            </div>
+
+            <div class="message">
+
+              <img src="../../images/Panel-Messsage.svg" alt="">
+
+              <div class="message-dropdown">
+                <h3>
+                  <span>|</span>
                   لیست ایمیل های شما
-              </h3>
-              <!-- <div class="email-list">
+                </h3>
+                <!-- <div class="email-list">
                 <p>
 
                   <img src="../../images/Email-Blob.svg" alt="">
@@ -485,152 +428,531 @@ transition: all 0.3s 1s ease-out;
 
                 </p>
               </div> -->
-             </div>  
-    
-          </div>
-    
-          <div class="profile">
-    
-            <img src="../../images/Panel-Profile.svg" alt="">
-    
+              </div>
 
-            <div class="profile-dropdown">
-             <h3>
-               <span>|</span>
-               <%= userName  %>  خوش اومدی :)
-             </h3>
-             <form action="/logout" method="GET">
-              <div class="exit-btn">
-               <input type="image" src="../../images/Logout-Icon.svg" width="40px"/>
-              <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
-              </div></form>
             </div>
 
+            <div class="profile">
+
+              <img src="../../images/Panel-Profile.svg" alt="">
+
+
+              <div class="profile-dropdown">
+                <h3>
+                  <span>|</span>
+                  <%= userName %> عزیز خوش اومدی :)
+                </h3>
+                <form action="/logout" method="GET">
+                  <div class="exit-btn">
+                    <input type="image" src="../../images/Logout-Icon.svg" width="40px" />
+                    <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+
+
           </div>
-
-    
-
-         </div>
 
           <div class="panel-humburger hide-for-desktop">
-    
+
             <img src="../../images/Panel-Burger.svg" alt="">
-    
+
           </div>
-          
-    
+
+
         </div>
 
       </div>
 
     </div>
 
-    <div class="main">
+    <div class="main teacher-ct">
+
+      <div class="dashboard-frame">
+
+        <div class="dashboard-title">
+
+          <h2>
+            <span>
+              |
+            </span>
+            پیشخوان
+          </h2>
+
+        </div>
+
+        <div class="dashboard-full-access">
+
+          <div class="dashboard-welcome-box">
+
+            <div class="welcome-box-title">
+
+              <h2>
+                <span class="name">
+                  <%= userName%>
+                </span>
+                عزیز،
+                <br />
+                <span id="nowTimeZone">
+                  عصرت
+                </span>
+                بخیر
+                <br>
+                به آیلتس کلاب خوش اومدی!
+              </h2>
+
+              <div class="btn-row">
+                <button type="button" onclick="window.location.href='/'" class="icdrn-btn">
+                  بازگشت به خانه
+                </button>
+                <button type="button" onclick="window.location.href='https://guide.ieltsdrn.com'" class="icdrn-btn">
+                  راهنمای استفاده
+                </button>
+              </div>
+
+            </div>
+
+            <div class="welcome-box-illustration">
+
+              <img src="../images/dashboard-welcome-illustration.svg" alt="">
+
+            </div>
+
+          </div>
+
+          <div class="dashboard-actions-box">
+
+            <div class="action-row">
+
+              <a class="new-class-action" href="/contact">
+
+                <h3>
+                  ثبت نام در کلاس‌های
+                  <br>
+                  تابستانه آیلتس کلاب
+                </h3>
+
+                <img src="../../images/class-registration-action-illustration.svg" alt="">
+
+              </a>
+
+              <a class="change-pass-action">
+
+                <img src="../../images/change-passt-action-illustration.svg" alt="">
+
+                <h4>
+                  «تغییر پسورد»
+                </h4>
+
+              </a>
+
+            </div>
+
+            <div class="action-row">
+
+              <a class="change-profile-action" href="/panel/profile-edit">
+
+                <img src="../../images/change-profile-action-illustration.svg" alt="">
+
+                <h4>
+                  «ویرایش پروفایل»
+                </h4>
+
+
+              </a>
+
+
+              <a class="new-test-action" >
+
+
+                <h3>
+              شرکت در تعیین سطح 
+                  <br>
+                 آنلاین آیلتس کلاب
+                </h3>
+
+                <img src="../../images/placementtest-action-illustration.svg" alt="">
+
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="dashboard-activity-insight">
+
+          <div class="insight-item">
+
+            <div class="insight-item-title">
+
+              <h2>
+                <span>
+                  |
+                </span>
+                کلاس های جاری
+              </h2>
+
+            </div>
+
+            <ul class="insight-item-list">
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+
+
+
+            </ul>
+
+          </div>
+
+          <div class="insight-item">
+
+            <div class="insight-item-title">
+
+              <h2>
+                <span>
+                  |
+                </span>
+                آزمون ها
+              </h2>
+
+            </div>
+
+            <ul class="insight-item-list">
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+
+
+
+            </ul>
+
+
+          </div>
+
+          <div class="insight-item">
+
+            <div class="insight-item-title">
+
+              <h2>
+                <span>
+                  |
+                </span>
+                کارنامه ها
+              </h2>
+
+            </div>
+
+
+
+            <ul class="insight-item-list">
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+              <li>
+
+                <span>
+                  کلاس مکالمه
+                </span>
+
+                |
+
+                <span>
+                  دکتر پژمان نورزاد
+                </span>
+
+                <button type="button" class="icdrn-btn">
+                  ورود
+                </button>
+
+              </li>
+
+
+
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
     <div class="side-menu hide-for-phone">
 
-        <nav class="panel-menu-list">
+      <nav class="panel-menu-list">
     
-          <div class="panel-logo">
-    
-            <img src="../../images/ICDRN-Navbar-Logo.png" alt="">
-    
+        <div class="panel-logo">
+  
+          <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+          <div class="panel-logo-title">
+            <h2>
+              آیلتس کلاب
+            </h2>
+            <div>
+              دکتر پژمان نورزاد
+            </div>
           </div>
-    
-          <div class="panel-menu-item active">
-    
-            <img src="../../images/Panel-Home-Icon.svg" alt="">
-    
-    
-            <a href="/dashboard">
-      
-      
-              پیشخوان
-            
-            </a>
-    
-          </div>
-    
-      
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Classes-Icon.svg" alt="">
-    
-    
-            <a href="/panel/class-list">
-      
-      
-              لیست کلاس ها
-            
-            </a>
-    
-          </div>
-    
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
-    
-    
-            <a href="/panel/class-registration">
-      
-      
-              کلاس جدید
-            
-            </a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
-    
-    
-            <a href="/panel/placement-test-history">
-      
-      
-              تعیین سطح ها
-            
-            </a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-    
-    
-            <a href="/panel/profile-edit">
-      
-      
-              ویرایش اطلاعات
-            
-            </a>
-    
-          </div>
-    
-        </nav>
-    
-        <div class="panel-exit-box">
-    
-          <img src="../../images/Panel-Exit.svg" alt="">
-    
+
         </div>
+  
+        <div class="panel-menu-item active">
+  
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+  
+  
+          <a href="/dashboard">
     
+    
+            پیشخوان
+          
+          </a>
+  
+        </div>
+  
+    
+  
+        <div class="panel-menu-item ">
+  
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
+  
+  
+          <a href="/panel/class-list">
+    
+    
+            لیست کلاس ها
+          
+          </a>
+  
+        </div>
+  
+  
+        <div class="panel-menu-item">
+  
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+  
+  
+          <a href="/panel/class-registration">
+    
+    
+            کلاس جدید
+          
+          </a>
+  
+        </div>
+
+        <div class="panel-menu-item">
+  
+          <img src="../../images/Panel-report-card-icon.svg" alt="">
+  
+  
+          <a href="/panel/reports" style="display:flex; align-items: center;">
+
+    
+    
+            کارنامه ها 
+
+            <span class="new-feature">
+              جدید!
+            </span>
+          
+          </a>
+  
+        </div>
+  
+        <div class="panel-menu-item">
+  
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+  
+  
+          <a href="/panel/placement-test-history">
+    
+    
+            تعیین سطح ها
+          
+          </a>
+  
+        </div>
+  
+        <div class="panel-menu-item">
+  
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+  
+  
+          <a href="/panel/profile-edit">
+    
+    
+            ویرایش اطلاعات
+          
+          </a>
+  
+        </div>
+  
+      </nav>
+
+      <div class="panel-exit-box">
+
+        <img src="../../images/Teachers-Illustration.svg" alt="">
+
+      </div>
+
 
     </div>
 
   </div>
 
 
-
   <div id="loader-wrapper">
     <div id="loader"></div>
     <div class="loader-section section-left">
-  
+
     </div>
     <div class="loader-section section-right"></div>
     <div class="loader">
@@ -638,26 +960,44 @@ transition: all 0.3s 1s ease-out;
       <h2>سایت در حال بارگذاریه!</h2>
     </div>
   </div>
-  
-  
-    <script src="app/js/app.js"></script>
-    <script src="app/js/placementTestModal.js"></script>
-    <script src="app/js/mockQuizModal.js"></script>
-  
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-  
-  
-    <script>
-  
-      //For Live Projects
-          window.addEventListener('load',function(){
-            document.querySelector('body').classList.add("loaded")  
-          });
-      
-      
-        </script>
+
+
+  <script src="app/js/app.js"></script>
+  <script src="app/js/placementTestModal.js"></script>
+  <script src="app/js/mockQuizModal.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+
+  <script>
+    //For Live Projects
+    window.addEventListener('load', function () {
+      document.querySelector('body').classList.add("loaded")
+    });
+
+
+
+    var myDate = new Date();
+    var currentHour = myDate.getHours();
+
+    var msg;
+
+    if (currentHour < 12)
+      msg = 'صبحت';
+    else if (currentHour == 12)
+      msg = 'ظهرت';
+    else if (currentHour >= 12 && currentHour <= 17)
+      msg = 'بعد از ظهرت';
+    else if (currentHour >= 17 && currentHour <= 20)
+      msg = 'عصرت';
+    else if (currentHour >= 20 && currentHour <= 24)
+      msg = 'شبت';
+
+    document.getElementById('nowTimeZone').innerHTML = msg;
+  </script>
   <script src="../../app/js/app.js"></script>
   <script src="../../app/js/PanelMenuToggle.js"></script>
- 
+
 </body>
+
 </html>

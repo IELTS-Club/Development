@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایجاد آزمون</title>
+    <link rel="icon" type="image/png" sizes="94x94" href="../../images/Favicon/ICDRN-Favicon-(94x94).png">
+    <link rel="manifest" href="../../images/Favicon/manifest.json">
+    <link rel="stylesheet" href="../dist/css/main.min.css">
+
+    <style>
+
+        ::-webkit-scrollbar {
+
+            width: 20px;
+
+        }
+
+        ::-webkit-scrollbar-track {
+
+            box-shadow: inset 0 0 5px rgba(46, 46, 46, 0.11); 
+            border-radius: 20px;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+
+            background:   linear-gradient(145deg, rgba(37,140,147,1) 0%, rgba(70,174,181,1) 100%);
+            border-radius: 20px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="conatiner teacher-quiz-page">
+
+        <nav class="teacher-quiz-nav m-quiz-container">
+
+            <div class="teacher-quiz-nav-logo" >
+
+                <img src="../images/ICDRN-Navbar-Logo.png" alt="">
+               
+                <h3>
+                    آزمون هوشمند
+                </h3>
+
+            </div>
+
+            <div class="teacher-quiz-nav-avatar">
+
+                <img src="../images/Quiz-Avatar.svg" alt="">
+
+                <h3>
+
+                    <span>
+                        استاد 
+                    </span>
+
+                    <%= selectClassTeacher() %>
+
+                </h3>
+
+            </div>
+
+        </nav>
+        
+        <main class="teacher-quiz-body  m-quiz-container">
+
+            <section class="teacher-quiz-questions  m-quiz-container" id="mainSection">
+            <% for(let i=1;i<=QuestionsNumber;i++){ %>  
+                <article class="section-box category-question-box" id="article<%= `${i}` %>">
+
+                    <div class="question-setting-row">
+
+
+                        <input type="text" value="<%= `QN-${i}` %>" class="question-id-input" style="background-color: white;" disabled >
+
+
+                        <div class="question-type-box">
+          
+                            <div class="select">
+                              <select class="standard-select" name="questionType" id="QT<%= `${i}` %>">
+                                <option value="questionTypeLabel" disabled selected>Quesstion Type</option>
+                                <option value="questionTypeGrammer">Grammer</option>
+                                <option value="questionTypeVocabulary">Vocabulary</option>
+                                <option value="questionTypeListening">Listening</option>
+                                <option value="questionTypeReading">Reading</option>
+                                <option value="questionTypeWriting">Writing</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+    
+                        <div class="q-structure">
+
+                            
+                        <div class="question-structure-box" id="defaultStructure<%= `${i}` %>">
+              
+                            <div class="select">
+                              <select class="standard-select" name="questionStructure" id="QS">
+                                <option value="questionStructureLabel" disabled selected>Quesstion Sturucture</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <div class="question-structure-box" id="GvlStructure<%= `${i}` %>" style="display: none;">
+              
+                            <div class="select">
+                              <select class="standard-select" name="questionStructure" id="glvQS<%= `${i}` %>">
+                                <option value="glvQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
+                                <option value="glvQuestionStructureMultiple">Multiple Choice</option>
+                                <option value="glvQuestionStructureFilling">Filling</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <div class="question-structure-box" id="readingStructure<%= `${i}` %>" style="display: none;">
+              
+                            <div class="select">
+                              <select class="standard-select" name="questionStructure" id="rQS<%= `${i}` %>">
+                                <option value="rQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
+                                <option value="rQuestionStructureReadingBody">Reading Body</option>
+                                <option value="rQuestionStructureMultiple">Multiple Choice</option>
+                                <option value="rQuestionStructureFilling">Filling</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        <div class="question-structure-box" id="writingStructure<%= `${i}` %>" style="display: none;">
+              
+                            <div class="select">
+                              <select class="standard-select" name="questionStructure" id="wQS<%= `${i}` %>">
+                                <option value="wQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
+                                <option value="wQuestionStructureWritingBody">Writing Body</option>
+                              </select>
+                              <span class="icon"></span>
+                            </div>
+                        </div>
+
+                        </div>
+
+                        <button type="button" class="generate-question-btn" id="del<%= `${i}` %>">
+                            Delete Box 
+                        </button>
+
+                    </div>
+
+                    <div class="multiple-structure" id="multiple-structure<%= `${i}` %>">
+
+                        <div class="question-form-row">
+
+                            <input type="text" class="question-body" id="multipleBodyInput<%= `${i}` %>" placeholder="Enter Your Question Form Here...">
+    
+                            <button type="button" class="generate-options-btn" id="addOption<%= `${i}` %>">
+                                Add Option
+                            </button>
+    
+                        </div>
+    
+                        <div class="question-options-row" id="creatInput<%= `${i}` %>">
+    
+                            <!-- <input type="text" class="question-option-input" placeholder="option A">
+                            <input type="text" class="question-option-input" placeholder="option B">
+                            <input type="text" class="question-option-input" placeholder="option C">
+                            <input type="text" class="question-option-input" placeholder="option D">  -->
+    
+                            <div class="right-option-box">
+                  
+                                <div class="select">
+                                  <select id="standard-select" name="classType">
+                                    <option value="Private" disabled selected>Key </option>
+                                    <!-- <option value="Public">A</option>
+                                    <option value="Public">B</option>
+                                    <option value="Public">C</option>
+                                    <option value="Public">D</option> -->
+                                  </select>
+                                  <span class="icon"></span>
+                                </div>
+                            </div>
+    
+    
+                            <button type="button" class="generate-options-btn" id="resetMultiple<%= `${i}` %>">
+                                Reset
+                            </button>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="filling-structure" id="filling-structure<%= `${i}` %>">
+
+                        <div class="question-form-row">
+
+                            <input type="text" class="question-body" id="fillingBodyInput<%= `${i}` %>" placeholder="Enter Your Question Form Here...">
+    
+                            <button type="button" class="generate-options-btn" id="resetFilling<%= `${i}` %>">
+                                Reset
+                            </button>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="reading-box-structure" id="reading-box-structure<%= `${i}` %>">
+
+                        <div class="question-form-row">
+
+                            <textarea name="" class="question-body" id="readingInput<%= `${i}` %>" cols="30" rows="10">Start Typing Reading Body!</textarea>
+    
+                            <button type="button" class="generate-options-btn" id="resetReading<%= `${i}` %>">
+                               Reset
+                            </button>
+    
+                        </div>
+    
+    
+
+                    </div>
+
+                    <div class="writing-box-structure" id="writing-box-structure<%= `${i}` %>">
+
+                        <div class="question-form-row">
+
+                            <textarea name="" id="writtingBodyInput<%= `${i}` %>" class="question-body" cols="30" rows="10">Start Typing Writing Body!</textarea>
+    
+                            <button type="button" class="generate-options-btn" id="resetWriting<%= `${i}` %>">
+                                Reset
+                            </button>
+    
+                        </div>
+    
+
+                    </div>
+
+                </article> 
+            <% } %> 
+
+                <!-- <article class="writing-body-box"  style="white-space: pre-line" id="readingPlaceHolder">
+                </article>   -->
+
+            </section>
+
+            <aside class="teacher-quiz-sidebar  m-quiz-container">
+
+                <div class="teacher-quiz-sidebar-cover">
+                   
+                    <img src="../images/Quiz-pic.svg" alt="">
+
+                </div>
+
+                
+                <h3 class="teacher-quiz-sidebar-title">
+                   <%= Title %>
+                </h3>
+
+                <div class="teacher-quiz-sidebar-info">
+
+                    <div class="teacher-quiz-sidebar-info-teacher">
+
+                   
+                        <img src="../images/Quiz_Teacher-Icon.svg" alt="">
+                        
+                        <h3>
+                            <span>
+                                مدرس دوره
+                            </span>
+                            <% function selectClassTeacher(){
+                                if(Teacher=="Noorzad")
+                                return  "دکتر پژمان نورزاد";
+                              
+                              if(Teacher=="Bahrami")
+                                return "خانم هانیه بهرامی"
+                              
+                              if(Teacher=="Mohebiii")
+                                return "خانم عاطفه محبی"
+                              
+                              if(Teacher=="Nouri")
+                                return "خانم مینا نوری"
+                              
+                              if(Teacher=="Zolfaghari")
+                                return "خانم آرزو ‌‌ذولفقاری"
+                              
+                              if(Teacher=="Jadidi")
+                              return "اقای جواد جدیدی"
+                              if(Teacher=="Asi")
+                              return "خانم نیکتا عاصی‌ شاد"
+                  
+                              if(Teacher=="Fallah")
+                              return "اقای مهرشاد فلاح"
+                  
+                              if(Teacher=="Hadavi")
+                              return "خانم مریم هادوی"
+                              
+                              if(Teacher=="Keshtkar")
+                              return "خانم زهرا کشتکار"
+                              } %> 
+                            <%= selectClassTeacher();  %>
+                        </h3>
+    
+                    </div>
+
+                    <div class="teacher-quiz-sidebar-info-questions">
+
+                        <img src="../images/Quiz_Questions-Icon.svg" alt="">
+                        
+                        <h3>
+                            <span>
+                               تعداد سوالات
+                            </span>
+
+                            <div>
+                                <span id="questionAmount"><%= QuestionsNumber %></span> <span>سوال</span>
+                            </div>
+                        </h3>  
+
+                    </div>
+
+                </div>
+           
+                <div class="teacher-quiz-sidebar-time">
+
+                    <button type="button" onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')" >
+                        
+                        بازگشت به صفحه لیست آزمون‌ها
+
+                    </button>
+
+                </div>
+
+                <button type="button" class="record-quiz-btn" id="Finalize">
+
+                    نهایی سازی آزمون
+
+                </button>
+
+
+            </aside>
+
+        </main>
+
+
+       
+       
+       
+       
+       <!-- moadl  -->
+       
+        <section class="icdrn-modal" dir="ltr" id="nullQuestion">
+
+            <div class="icdrn-modal-content">
+        
+              <span class="modal-close" id="modalClose">
+                &times;
+              </span>
+        
+              <img src="../images/null-question-illustration.svg" class="modal-img" alt="">
+        
+        
+              <h3 id="errorText" >
+              </h3>
+        
+              <p>
+        
+                please make sure you have
+                <br>
+                filled all the questions :(
+        
+              </p>
+        
+              <button type="submit" class="icdrn-btn" id="checkAgain">
+        
+                check again!
+        
+              </button>
+        
+            </div>
+          </section>
+
+
+          <section class="icdrn-modal" dir="ltr" id="successfull">
+
+            <div class="icdrn-modal-content">
+        
+              
+        
+              <img src="../images/succuesfull-quiz.svg" class="modal-img" alt="">
+        
+        
+        
+              <h3>
+                  Successfull!
+              </h3>
+        
+              <p>
+        
+                You'r Quiz has been Created Successfully :)
+        
+              </p>
+        
+              <button type="submit" class="icdrn-btn" onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')">
+        
+                Back to Quizlist!
+        
+              </button>
+        
+            </div>
+          </section>
+
+    </div>
+    <script>
+        let QuestionsNumber=Number("<%= QuestionsNumber %>")
+        
+    </script>
+    <script src="../app/js/structureIdentifier.js"></script>
+</body>
+</html>

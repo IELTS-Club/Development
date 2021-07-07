@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,900;1,600&display=swap');
+
+@import "utilities/variables";
+@import "utilities/mixins";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "components/heading";
+@import "components/animations";
+@import "components/searchbox";
+@import "components/buttons";
+@import "components/newsletterBox";
+@import "components/forms";
+@import "components/modals";
+
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+
+@import "pages/home";
+@import "pages/contact";
+@import "pages/about";
+@import "pages/privacyPolicy";
+
+@import "pages/register";
+@import "pages/login";
+@import "pages/forgetPassword";
+@import "pages/newPassword";
+
+@import "pages/teachersLogin";
+
+@import "pages/course/ieltsCourse";
+@import "pages/course/toeflCourse";
+@import "pages/course/conversationCourse";
+@import "pages/course/pteCourse";
+@import "pages/course/greCourse";
+@import "pages/course/emigrationCourse";
+@import "pages/course/duolingoCourse";
+
+@import "pages/onlineClass";
+
+@import "pages/packages/packages";
+
+@import "pages/placementTestQuiz";
+
+@import "pages/error/searchResult";
+@import "pages/error/confirmationFaild";
+
+@import "layout/studentLayout";
+@import "pages/panel/students/dashboard";
+@import "pages/panel/students/classList";
+@import "pages/panel/students/classRegistration";
+@import "pages/panel/students/placementTestHistory";
+@import "pages/panel/students/profileEdit";
+@import "pages/panel/students/reportCard";
+
+
+@import "pages/blog/blogOne";
+
+@import "layout/teacherPanel";
+@import "pages/panel/teachers/dashboard";
+@import "pages/panel/teachers/classList";
+@import "pages/panel/teachers/addClass";
+@import "pages/panel/teachers/editClass";
+@import "pages/panel/teachers/editQuiz";
+@import "pages/panel/teachers/studentList";
+@import "pages/panel/teachers/editProfile";
+@import "pages/panel/teachers/placementtestList";
+@import "pages/panel/teachers/usersLists";
+@import "pages/panel/teachers/quizList";
+@import "pages/panel/teachers/noQuizErr";
+
+@import "pages/quiz/teacherQuizPage";
+@import "pages/quiz/studentQuizPage";
+
+
+@import "pages/placementTestQuiz";
+
+
+
+
+
+

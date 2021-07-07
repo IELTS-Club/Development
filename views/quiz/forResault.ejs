@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>آزمون | دانشجو</title>
+
+    <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+    <link rel="manifest" href="/en/images/Favicon/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/main.min.css">
+
+    <style>
+        ::-webkit-scrollbar {
+
+            width: 20px;
+
+        }
+
+        ::-webkit-scrollbar-track {
+
+            box-shadow: inset 0 0 5px rgba(46, 46, 46, 0.11);
+            border-radius: 20px;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+
+            background: linear-gradient(145deg, rgba(37, 140, 147, 1) 0%, rgba(70, 174, 181, 1) 100%);
+            border-radius: 20px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="conatiner student-quiz-page">
+
+        <nav class="student-quiz-nav m-quiz-container">
+
+            <div class="student-quiz-nav-logo">
+
+                <img src="/images/ICDRN-Navbar-Logo.png" alt="">
+
+                <h3>
+                    آزمون هوشمند
+                </h3>
+
+            </div>
+
+            <div class="student-quiz-nav-avatar">
+
+                <img src="/images/Quiz-Avatar.svg" alt="">
+
+                <h3>
+
+                    <span>
+                        دانش آموز
+                    </span>
+
+                    <%= Student  %>
+
+                </h3>
+
+            </div>
+
+        </nav>
+
+
+
+
+
+        <main class="teacher-quiz-body  m-quiz-container">
+
+
+
+            <section class="student-quiz-questions  m-quiz-container">
+
+
+
+
+                <% const questionsList=exam.QuestionsList
+               
+                questionsList.forEach( (element,index) => {
+                    
+                
+                
+                %>
+                <article class="section-box category-question-box" id="<%= element.questionId%>">
+
+                    <div class="question-form-row">
+
+                        <% if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureFilling"){ %>
+                        <span>
+                            <%= element.questionBody%> </span>
+                        <% } %>
+                    </div>
+
+                    <%  if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureMultiple" ){ 
+                            let f=1 %>
+                    <div class="mutiple-options-structure" id="mutiple-options-structure<%= element.questionId%>">
+                        <% element.questionChoices.forEach(element1 => {
+                                f=f+1;
+                                %>
+
+                        <div class="mutiple-option-item" id="multipleOption<%= element.questionId%>">
+
+                            <input type="radio" id="option<%= element.questionId%><%= f %>"
+                                name="option<%= element.questionId %>" value="<%= element1 %>"
+                                <% if(autoSaveAnswers!=""){ if(element1==autoSaveAnswers[index].answerKey){%> checked
+                                <%}}%>>
+                            <label for="option<%= element.questionId%><%= f%>"><%= element1 %></label>
+
+                        </div>
+
+                        <% }); %>
+
+
+
+                    </div>
+                    <% }%>
+                    <%  if(element.questionStructure=="glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureFilling" ){ %>
+                    <div class=" filling-options-structure" id="filling-options-structure<%= element.questionId%>">
+
+                        <div class="filling-option-item">
+
+                            <input type="text" class="filling-answer-body" value="<% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%>"
+                                        placeholder="Enter Your Question Form Here..."
+                                        id="fillingKey<%= element.questionId%>">
+
+                        </div>
+
+
+                    </div>
+                    <% }%>
+                    <%  if(element.questionStructure=="rQuestionStructureReadingBody" ){ %>
+                    <div class="reading-options-structure" id="reading-options-structure<%= element.questionId%>">
+
+                        <div class="reading-option-item" style="white-space: pre-line">
+
+                            <%= element.questionBody %>
+
+
+                        </div>
+
+
+                    </div>
+                    <% }%>
+                    <%  if(element.questionStructure=="wQuestionStructureWritingBody" ){ %>
+                    <div class="writing-options-structure" id="writing-options-structure<%= element.questionId%>">
+
+
+                        <div class="writing-option-box" style="white-space: pre-line">
+
+                            <%= element.questionBody %>
+
+
+                        </div>
+
+                        <textarea class="writing-option-answer-box" id="writtingKey<%= element.questionId%>"
+                            style="white-space: pre-line"><% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%></textarea>
+
+
+                    </div>
+                    <% }%>
+                </article>
+
+                <% }); %>
+
+
+            </section>
+
+            <aside class="student-quiz-sidebar  m-quiz-container">
+
+                <div class="student-quiz-sidebar-cover">
+
+                    <img src="/images/Quiz-pic.svg" alt="">
+
+                </div>
+
+
+                <h3 class="student-quiz-sidebar-title">
+                    آزمون میان ترم آیلتس | IELTS
+                </h3>
+
+                <div class="student-quiz-sidebar-info">
+
+                    <div class="student-quiz-sidebar-info-teacher">
+
+
+                        <img src="/images/Quiz_Teacher-Icon.svg" alt="">
+
+                        <h3>
+                            <span>
+                                مدرس دوره
+                            </span>
+                            <% function selectClassTeacher(){
+                                if(Teacher=="Noorzad")
+                                return  "دکتر پژمان نورزاد";
+                              
+                              if(Teacher=="Bahrami")
+                                return "خانم هانیه بهرامی"
+                              
+                              if(Teacher=="Mohebiii")
+                                return "خانم عاطفه محبی"
+                              
+                              if(Teacher=="Nouri")
+                                return "خانم مینا نوری"
+                              
+                              if(Teacher=="Zolfaghari")
+                                return "خانم آرزو ‌‌ذولفقاری"
+                              
+                              if(Teacher=="Jadidi")
+                              return "اقای جواد جدیدی"
+                              if(Teacher=="Asi")
+                              return "خانم نیکتا عاصی‌ شاد"
+                  
+                              if(Teacher=="Fallah")
+                              return "اقای مهرشاد فلاح"
+                  
+                              if(Teacher=="Hadavi")
+                              return "خانم مریم هادوی"
+
+                              if(Teacher=="Keshtkar")
+                              return "خانم زهرا کشتکار"
+                              } %>
+                            <%= selectClassTeacher();  %>
+
+                        </h3>
+
+                    </div>
+
+                    <div class="student-quiz-sidebar-info-questions">
+
+                        <img src="/images/Quiz_Questions-Icon.svg" alt="">
+
+                        <h3>
+                            <span>
+                                تعداد سوالات
+                            </span>
+                            <%= exam.QuestionsNumber %> سوال
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div class="student-quiz-sidebar-time"
+                    onclick="window.location.href='/teachers/manage-exam/<%=exam._id%>'">
+
+                    <span>
+                        بازگشت به مدیریت آزمون
+
+                    </span>
+
+                </div>
+
+                <button type="button" id="submitReport" class="record-quiz-btn">
+
+                    ثبت کارنامه
+
+                </button>
+
+
+            </aside>
+
+        </main>
+
+    </div>
+
+    <!-- Record Report Card (Choose Type) Step.1 -->
+
+    <section class="icdrn-modal" id="recordReportCard">
+        <div class="icdrn-modal-content">
+
+            <span class="modal-close" id="modalCloseA" class="studentNoQuizModalClose">
+                &times;
+            </span>
+
+            <img src="/images/record-report-card.svg" class="modal-img" alt="">
+
+
+
+            <h3 style="font-size:30px;margin-top:-10px">
+                نوع کارنامه رو انتخاب کن:
+            </h3>
+
+
+
+            <div class="btn-row" style="display: flex; justify-content: center;align-items: center;">
+
+                <button type="button" class="icdrn-btn studentNoQuizModalClose" id="Common" style="margin-top:-7px">
+
+                    کارنامه عادی
+
+                </button>
+                <button type="button" class="icdrn-btn studentNoQuizModalClose" id="Mock" style="margin-top:-7px">
+
+                    کارنامه ماک
+
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    
+    <section class="icdrn-modal-lg record-mock-report-card" id="recordMockReportCard">
+
+        <span class="modal-close" id="modalCloseB">&times;</span>
+
+        <div class="icdrn-modal-grid">
+
+            <div class="modal-content">
+
+                <h3 id="newMockError">
+                    کارنامه جدید (ماک)
+                </h3>
+
+
+                <div class="modal-form" id="input-mock">
+
+                    <div class="input-row">
+
+                        <input type="number" class="icdrn-input" placeholder="Listening">
+                        <input type="number" class="icdrn-input" placeholder="Reading">
+
+                    </div>
+
+                    <div class="input-row">
+
+                        <input type="number" class="icdrn-input" placeholder="Writing">
+                        <input type="number" class="icdrn-input" placeholder="Speaking">
+
+                    </div>
+
+                    <input type="number" class="icdrn-input" placeholder="Overal Score">
+
+
+                    <button type="button" class="icdrn-btn" id="fetchMock">
+                        ثبت نهایی کارنامه
+                    </button>
+
+
+                </div>
+
+            </div>
+
+            <div class="modal-img">
+
+                <img src="/images/record-new-report-card.svg" alt="">
+
+                <div class="modal-img-subtitle hide-for-phone">
+                    <span>
+                        مدرس محترم
+                    </span>
+                    لطفا پــارامتر های مختلف کــارنامه را طبق اصول
+                    <br>
+                    از پیش تعیین شده وارد کنید تا اعتراضات نسبت به
+                    تصمیمات
+                    <br>
+                    گــرفته شده شما به حــداقل ممکن برسد. مچکریــم!
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Record Common Report Step.2 Rep-Type.A -->
+
+    <section class="icdrn-modal-lg record-common-report-card" id="recordCommonReportCard">
+
+        <span class="modal-close" id="modalCloseC">&times;</span>
+
+        <div class="icdrn-modal-grid">
+
+            <div class="modal-content">
+
+                <h3 id="newCommonError">
+                    کارنامه جدید (عادی)
+                </h3>
+
+
+                <div class="modal-form" id="input-common">
+
+                    <div class="input-row">
+
+                        <input type="number" class="icdrn-input" placeholder="Class Attendance">
+                        <input type="number" class="icdrn-input" placeholder="Class Activity">
+
+                    </div>
+
+                    <input type="number" class="icdrn-input" placeholder="Midterm Score">
+
+
+                    <div class="input-row">
+
+                        <input type="number" class="icdrn-input" placeholder="Final Oral">
+                        <input type="number" class="icdrn-input" placeholder="Final Written">
+
+                    </div>
+
+                    <button type="button" class="icdrn-btn" id="fetchCommon">
+                        ثبت نهایی کارنامه
+                    </button>
+
+
+                </div>
+
+            </div>
+
+            <div class="modal-img">
+
+                <img src="/images/record-new-report-card.svg" alt="">
+
+                <div class="modal-img-subtitle hide-for-phone">
+                    <span>
+                        مدرس محترم
+                    </span>
+                    لطفا پــارامتر های مختلف کــارنامه را طبق اصول
+                    <br>
+                    از پیش تعیین شده وارد کنید تا اعتراضات نسبت به
+                    تصمیمات
+                    <br>
+                    گــرفته شده شما به حــداقل ممکن برسد. مچکریــم!
+                </div>
+            </div>
+
+
+    </section>
+
+    <script type="text/javascript">
+        //show modals
+        document.getElementById("submitReport").addEventListener("click", () => {
+            document.querySelector('.student-quiz-page').style.filter = 'blur(7px)';
+            document.getElementById("recordReportCard").style.display = "flex";
+        })
+
+        let examType = "";
+        document.getElementById("Mock").addEventListener("click", () => {
+            examType = "Mock";
+            document.getElementById("recordReportCard").style.display = "none";
+            document.getElementById("recordMockReportCard").style.display = "flex";
+
+        })
+
+
+        document.getElementById("Common").addEventListener("click", () => {
+            examType = "Common";
+            document.getElementById("recordReportCard").style.display = "none";
+            document.getElementById("recordCommonReportCard").style.display = "flex";
+        })
+
+        //close modals
+        document.getElementById("modalCloseA").addEventListener("click", () => {
+            document.querySelector('.student-quiz-page').style.filter = 'blur(0px)';
+            document.getElementById("recordReportCard").style.display = "none";
+        })
+
+        document.getElementById("modalCloseB").addEventListener("click", () => {
+            document.querySelector('.student-quiz-page').style.filter = 'blur(0px)';
+            document.getElementById("recordMockReportCard").style.display = "none";
+        })
+
+        document.getElementById("modalCloseC").addEventListener("click", () => {
+            document.querySelector('.student-quiz-page').style.filter = 'blur(0px)';
+            document.getElementById("recordCommonReportCard").style.display = "none";
+        })
+
+
+        //get data and send to nodejs
+
+        document.getElementById("fetchMock").addEventListener("click", () => {
+            const mockInputs = document.getElementById("input-mock").getElementsByTagName('input');
+            if (mockInputs[0].value == '' || mockInputs[1].value == '' || mockInputs[2].value == '' ||
+                mockInputs[3].value == '' || mockInputs[4].value == '' ) {
+                document.getElementById('newMockError').innerHTML = "لطفا تمامی فیلد ها را پر کنید";
+                document.getElementById('newMockError').style.color = "#ff0033";
+
+            } else {
+                const ReportData = {
+                    Type: "Mock",
+                    StudentID: '<%=StudentID%>',
+                    classTime:'<%=classTime%>',
+                    classTeacher:'<%= selectClassTeacher(); %>',
+                    Listening: mockInputs[0].value,
+                    Reading: mockInputs[1].value,
+                    Writing: mockInputs[2].value,
+                    Speaking: mockInputs[3].value,
+                    OveralScore: mockInputs[4].value,
+                }
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(ReportData)
+                }
+
+                fetch('/teachers/submit-report/', options);
+                document.getElementById('newMockError').innerHTML = "کارنامه دانش آموز با موفقیت ثبت شد ";
+                document.getElementById('newMockError').style.color = "#4BB543";
+            }
+
+        })
+
+        document.getElementById("fetchCommon").addEventListener("click", () => {
+            const commonInputs = document.getElementById("input-common").getElementsByTagName('input');
+            if (commonInputs[0].value == '' || commonInputs[1].value == '' || commonInputs[2].value == '' ||
+                commonInputs[3].value == '' || commonInputs[4].value == '') {
+                document.getElementById('newCommonError').innerHTML = "لطفا تمامی فیلد ها را پر کنید";
+                document.getElementById('newCommonError').style.color = "#ff0033";
+
+            } else {
+                const ReportData = {
+                    Type: "Common",
+                    StudentID: '<%=StudentID%>',
+                    classTime:'<%=classTime%>',
+                    classTeacher:'<%= selectClassTeacher();%>',
+                    ClassAttendance: commonInputs[0].value,
+                    ClassActivity: commonInputs[1].value,
+                    MidtermScore: commonInputs[2].value,
+                    FinalOral: commonInputs[3].value,
+                    FinalWritten: commonInputs[4].value,
+                    OveralScore: Number(commonInputs[0].value) + Number(commonInputs[1].value) + Number(
+                        commonInputs[2].value) + Number(commonInputs[3].value) + Number(commonInputs[4]
+                        .value)
+                }
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(ReportData)
+                }
+
+                fetch('/teachers/submit-report/', options);
+                document.getElementById('newCommonError').innerHTML = "کارنامه دانش آموز با موفقیت ثبت شد";
+                document.getElementById('newCommonError').style.color = "#4BB543";
+            }
+        })
+    </script>
+</body>
+
+</html>

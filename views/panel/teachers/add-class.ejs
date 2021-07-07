@@ -12,138 +12,159 @@
 
   <style>
 
+    body {
+
+      background-color: #F4F4F8 !important;
+
+    }
 
     .swiper-container {
-   width: 100%;
-   height: 100%;
- }
 
- .swiper-slide {
-   text-align: center;
-   font-size: 18px;
-   background: #fff;
+      width: 100%;
+      height: 100%;
 
-   /* Center slide text vertically */
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: -webkit-flex;
-   display: flex;
-   -webkit-box-pack: center;
-   -ms-flex-pack: center;
-   -webkit-justify-content: center;
-   justify-content: center;
-   -webkit-box-align: center;
-   -ms-flex-align: center;
-   -webkit-align-items: center;
-   align-items: center;
- }
+    }
 
-#loader-wrapper {
-position:fixed;
-display: flex;
-justify-content: center;
-align-items: center;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:1000;
-}
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
 
-#loader-wrapper .loader {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-z-index: 10001;
-width:300px;
-height:150px;
-}
+    #loader-wrapper {
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    }
 
-#loader-wrapper .loader h2 {
+    #loader-wrapper .loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+    width:300px;
+    height:150px;
+    }
 
-font-size: 30px;
-font-family: Kalameh-Black;
-color: #fff;
+    #loader-wrapper .loader h2 {
 
-
-}
+    font-size: 30px;
+    font-family: Kalameh-Black;
+    color: #fff;
 
 
-@-webkit-keyframes spin {
-0%   {
- -webkit-transform: rotate(0deg);
-   -ms-transform: rotate(0deg);
-       transform: rotate(0deg);
-}
-100% {
- -webkit-transform: rotate(360deg);
-   -ms-transform: rotate(360deg);
-       transform: rotate(360deg);
-}
-}
-@keyframes spin {
-0%   {
- -webkit-transform: rotate(0deg);
-   -ms-transform: rotate(0deg);
-       transform: rotate(0deg);
-}
-100% {
- -webkit-transform: rotate(360deg);
-   -ms-transform: rotate(360deg);
-       transform: rotate(360deg);
-}
-}
+    }
 
-#loader-wrapper .loader-section {
-position:fixed;
-top:0;
-background-image: linear-gradient(#258c93,#1D3C4E);
-width:51%;
-height:100%;
-z-index:1000;
-}
 
-#loader-wrapper .loader-section.section-left {
-left:0
-}
-#loader-wrapper .loader-section.section-right {
-right:0;
-}
+    @-webkit-keyframes spin {
+    0%   {
+    -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+    }
+    100% {
+    -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+    }
+    }
 
-/* Loaded Styles */
-.loaded #loader-wrapper .loader-section.section-left {
-transform: translateX(-100%);
-transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-}
-.loaded #loader-wrapper .loader-section.section-right {
-transform: translateX(100%);
-transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
-}
-.loaded #loader {
-opacity: 0;
-transition: all 0.3s ease-out;
-}
-.loaded #loader-wrapper {
-visibility: hidden;
-transform:translateY(-100%);
-transition: all 0.3s 1s ease-out;
-}
+    @keyframes spin {
+    0%   {
+    -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+    }
+    100% {
+    -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+    }
+    }
 
-</style>
+    #loader-wrapper .loader-section {
+    position:fixed;
+    top:0;
+    background-image: linear-gradient(#258c93,#1D3C4E);
+    width:51%;
+    height:100%;
+    z-index:1000;
+    }
+
+    #loader-wrapper .loader-section.section-left {
+    left:0
+    }
+
+    #loader-wrapper .loader-section.section-right {
+    right:0;
+    }
+
+    .loaded #loader-wrapper .loader-section.section-left {
+    transform: translateX(-100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+
+    .loaded #loader-wrapper .loader-section.section-right {
+    transform: translateX(100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+    }
+
+    .loaded #loader {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    }
+
+    .loaded #loader-wrapper {
+    visibility: hidden;
+    transform:translateY(-100%);
+    transition: all 0.3s 1s ease-out;
+    }
+
+  </style>
 
 
 </head>
 <body>
 
   
-  <div class="container-panel   container-teacher-panel-addclass">
+  <div class="container-teacher-panel container-teacher-panel-addclass">
 
     <div class="panel-overlay hide-for-desktop">
 
      <nav class="panel-overlay-menu">
 
-      <a href="/"><img src="../../images/ICDRN-Navbar-Logo.png" alt="" class="logo"></a>
+      <div class="panel-logo">
+    
+        <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+        <div class="panel-logo-title">
+          <h2>
+            آیلتس کلاب
+          </h2>
+          <div>
+            دکتر پژمان نورزاد
+          </div>
+        </div>
+
+      </div>
 
       <div class="panel-menu-item">
     
@@ -242,7 +263,7 @@ transition: all 0.3s 1s ease-out;
 
     </div>
 
-    <div class="navbar">
+    <div class="navbar teacher-ct">
 
       <div class="navbar-search">
 
@@ -272,70 +293,6 @@ transition: all 0.3s 1s ease-out;
             <a href="/"> <img src="../../images/Panel-home.svg" 
               alt=""></a>
 
-            <!-- <div class="bells-dropdown">
-              <h3>
-                <span>|</span>
-                  پیام های سیستمی آیلتس کلاب
-              </h3>
-              <div class="email-list">
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    فراموزشی رمز عبور
-                  </span>
-
-                  روی لینک زیر کلیک کنید...!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    تخفیف ویژه مهاجرت
-                  </span>
-
-                  اطلاعات بیشتر مطالعه...
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    در دوران کرونا آنلاین بیاموزید
-                  </span>
-
-                 به راحتی آب..!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    شبکه های اجتماعی ما
-                  </span>
-
-                 در کنار هم پیشرفت..!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    صورت حساب دوره جدید 
-                  </span>
-
-                 تجربه ای کاملا امن.!
-
-                </p>
-              </div>
-             </div>
-     -->
           </div>
     
           <div class="message">
@@ -348,63 +305,6 @@ transition: all 0.3s 1s ease-out;
                 <span>|</span>
                   لیست ایمیل های شما
               </h3>
-              <!-- <div class="email-list">
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    فراموزشی رمز عبور
-                  </span>
-
-                  روی لینک زیر کلیک کنید...!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    تخفیف ویژه مهاجرت
-                  </span>
-
-                  اطلاعات بیشتر مطالعه...
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    در دوران کرونا آنلاین بیاموزید
-                  </span>
-
-                 به راحتی آب..!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    شبکه های اجتماعی ما
-                  </span>
-
-                 در کنار هم پیشرفت..!
-
-                </p>
-                <p>
-
-                  <img src="../../images/Email-Blob.svg" alt="">
-
-                  <span class="email-title">
-                    صورت حساب دوره جدید 
-                  </span>
-
-                 تجربه ای کاملا امن.!
-
-                </p>
-              </div> -->
              </div>
     
           </div>
@@ -445,7 +345,7 @@ transition: all 0.3s 1s ease-out;
 
     </div>
 
-    <div class="main">
+    <div class="main teacher-ct">
 
       <div class="class-registration">
 
@@ -462,6 +362,7 @@ transition: all 0.3s 1s ease-out;
 
           <div class="class-registration-form">
             <form action="/teachers/add-class" method="POST">
+       
             <div class="coursename-box">
 
               <label for="" class="icdrn-label">
@@ -496,6 +397,7 @@ transition: all 0.3s 1s ease-out;
 
 
             <div class="row">
+              
               <div class="coursemode-box">
 
                 <label for="" class="icdrn-label">
@@ -546,6 +448,9 @@ transition: all 0.3s 1s ease-out;
                     </option>
                     <option value="Hadavi">
                       خانم مریم هادوی
+                    </option>
+                    <option value="Keshtkar">
+                     خانم زهرا کشتکار
                     </option>
                   </select>
                   <span class="icon"></span>
@@ -637,10 +542,19 @@ transition: all 0.3s 1s ease-out;
 
         <nav class="panel-menu-list">
     
+        
           <div class="panel-logo">
     
-            <a href="/"><img src="../../images/ICDRN-Navbar-Logo.png" alt="" ></a>
-    
+            <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+            <div class="panel-logo-title">
+              <h2>
+                آیلتس کلاب
+              </h2>
+              <div>
+                دکتر پژمان نورزاد
+              </div>
+            </div>
+
           </div>
     
           <div class="panel-menu-item">
@@ -705,7 +619,7 @@ transition: all 0.3s 1s ease-out;
           
           <div class="panel-menu-item">
 
-            <img class="panel-menu-item-students" src="../../images/Panel-Students-list.svg" alt="">
+            <img class="panel-menu-item-students special-icon" src="../../images/Panel-Students-list.svg" alt="">
 
 
             <a href="/teachers/student-list">

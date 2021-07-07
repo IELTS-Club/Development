@@ -1,0 +1,73 @@
+button.icdrn-btn {
+  box-sizing: border-box;
+  font-family: Yekan-Bakh-Medium;
+  width: 120px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: $richyPrimaryColor;
+  color:$richySecondaryColor;
+  transition: all ease-in-out .2s;
+  cursor: pointer;
+
+}
+
+button.icdrn-btn:hover {
+  outline: 0;
+  background-color: $richyPrimaryColor;
+}
+
+button.icdrn-btn:focus{
+  outline: none;
+  border:3px solid $primaryColor;
+}
+
+button.icdrn-btn {
+  box-sizing: border-box;
+  font-family: Yekan-Bakh-Medium;
+  width: 120px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: $richyPrimaryColor;
+  color:$richySecondaryColor;
+  transition: all ease-in-out .2s;
+  cursor: pointer;
+
+}
+
+button.icdrn-btn:hover {
+  outline: 0;
+  background-color: $richyPrimaryColor;
+}
+
+button.icdrn-btn:focus{
+  outline: none;
+  border:3px solid $primaryColor;
+}
+
+.btn-row {
+
+  display: flex;
+  align-self: start;
+  width: 80%; 
+  margin: 0 auto;
+  margin-bottom: 5px;
+
+  button {
+
+    height: 35px!important;
+
+  }
+
+  button:nth-child(2) {
+
+    margin-right:3px;
+
+  }
+  
+
+}
+

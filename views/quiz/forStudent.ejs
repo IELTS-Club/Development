@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>آزمون | دانشجو</title>
+
+    <link rel="icon" type="image/png" sizes="94x94" href="/en/images/Favicon/ICDRN-Favicon-(94x94).png">
+    <link rel="manifest" href="/en/images/Favicon/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../dist/css/main.min.css">
+
+    <style>
+
+        ::-webkit-scrollbar {
+
+            width: 20px;
+
+        }
+
+        ::-webkit-scrollbar-track {
+
+            box-shadow: inset 0 0 5px rgba(46, 46, 46, 0.11); 
+            border-radius: 20px;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+
+            background:   linear-gradient(145deg, rgba(37,140,147,1) 0%, rgba(70,174,181,1) 100%);
+            border-radius: 20px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="conatiner student-quiz-page">
+
+        <nav class="student-quiz-nav m-quiz-container">
+
+            <div class="student-quiz-nav-logo">
+
+                <img src="../../images/ICDRN-Navbar-Logo.png" alt="">
+
+                <h3>
+                    آزمون هوشمند
+                </h3>
+
+            </div>
+
+            <div class="student-quiz-nav-avatar">
+
+                <img src="../../images/Quiz-Avatar.svg" alt="">
+
+                <h3>
+
+                    <span>
+                        دانش آموز
+                    </span>
+
+                    <%= Student  %>
+
+                </h3>
+
+            </div>
+
+        </nav>
+
+
+
+
+
+        <main class="teacher-quiz-body  m-quiz-container">
+
+
+
+            <section class="student-quiz-questions  m-quiz-container">
+
+
+
+
+                <% const questionsList=exam.QuestionsList
+               
+                questionsList.forEach( (element,index) => {
+                    
+                
+                
+                %>
+                <article class="section-box category-question-box" id="<%= element.questionId%>">
+                   
+                    <div class="question-form-row">
+
+                        <% if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureFilling"){ %>
+                        <span>
+                            <%= element.questionBody%> </span>
+                        <% } %>
+                    </div>
+
+                    <%  if(element.questionStructure=="glvQuestionStructureMultiple" || element.questionStructure== "rQuestionStructureMultiple" ){ 
+                            let f=1 %>
+                    <div class="mutiple-options-structure" id="mutiple-options-structure<%= element.questionId%>">
+                        <% element.questionChoices.forEach(element1 => {
+                                f=f+1;
+                                %>
+
+                        <div class="mutiple-option-item" id="multipleOption<%= element.questionId%>">
+
+                            <input type="radio" id="option<%= element.questionId%><%= f %>" name="option<%= element.questionId %>"
+                                value="<%= element1 %>" <% if(autoSaveAnswers!=""){ if(element1==autoSaveAnswers[index].answerKey){%> checked <%}}%> >
+                            <label for="option<%= element.questionId%><%= f%>"><%= element1 %></label>
+
+                            </div>
+                        
+                        <% }); %>
+
+                        
+
+                        </div>
+                        <% }%>
+                        <%  if(element.questionStructure=="glvQuestionStructureFilling" || element.questionStructure== "rQuestionStructureFilling" ){ %>
+                        <div class=" filling-options-structure" id="filling-options-structure<%= element.questionId%>">
+
+                                <div class="filling-option-item">
+
+                                    <input type="text" class="filling-answer-body" value="<% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%>"
+                                        placeholder="Enter Your Question Form Here..."
+                                        id="fillingKey<%= element.questionId%>">
+
+                                </div>
+
+
+                        </div>
+                        <% }%>
+                        <%  if(element.questionStructure=="rQuestionStructureReadingBody" ){ %>
+                        <div class="reading-options-structure" id="reading-options-structure<%= element.questionId%>">
+
+                            <div class="reading-option-item" style="white-space: pre-line">
+
+                                <%= element.questionBody %>
+
+
+                            </div>
+
+
+                        </div>
+                        <% }%>
+                        <%  if(element.questionStructure=="wQuestionStructureWritingBody" ){ %>
+                        <div class="writing-options-structure" id="writing-options-structure<%= element.questionId%>">
+
+
+                            <div class="writing-option-box" style="white-space: pre-line">
+
+                                <%= element.questionBody %>
+
+
+                            </div>
+
+                            <textarea class="writing-option-answer-box" id="writtingKey<%= element.questionId%>"
+                                style="white-space: pre-line"><% if(autoSaveAnswers!=""){%><%= autoSaveAnswers[index].answerKey  %><%}%></textarea>
+
+
+                        </div>
+                        <% }%>
+                </article>
+
+                <% }); %>
+
+
+            </section>
+
+            <aside class="student-quiz-sidebar  m-quiz-container">
+
+                <div class="student-quiz-sidebar-cover">
+
+                    <img src="../../images/Quiz-pic.svg" alt="">
+
+                </div>
+
+
+                <h3 class="student-quiz-sidebar-title">
+                    آزمون میان ترم آیلتس | IELTS
+                </h3>
+
+                <div class="student-quiz-sidebar-info">
+
+                    <div class="student-quiz-sidebar-info-teacher">
+
+
+                        <img src="../../images/Quiz_Teacher-Icon.svg" alt="">
+
+                        <h3>
+                            <span>
+                                مدرس دوره
+                            </span>
+                            <% function selectClassTeacher(){
+                                if(Teacher=="Noorzad")
+                                return  "دکتر پژمان نورزاد";
+                              
+                              if(Teacher=="Bahrami")
+                                return "خانم هانیه بهرامی"
+                              
+                              if(Teacher=="Mohebiii")
+                                return "خانم عاطفه محبی"
+                              
+                              if(Teacher=="Nouri")
+                                return "خانم مینا نوری"
+                              
+                              if(Teacher=="Zolfaghari")
+                                return "خانم آرزو ‌‌ذولفقاری"
+                              
+                              if(Teacher=="Jadidi")
+                              return "اقای جواد جدیدی"
+                              if(Teacher=="Asi")
+                              return "خانم نیکتا عاصی‌ شاد"
+                  
+                              if(Teacher=="Fallah")
+                              return "اقای مهرشاد فلاح"
+                  
+                              if(Teacher=="Hadavi")
+                              return "خانم مریم هادوی"
+
+                              if(Teacher=="Keshtkar")
+                              return "خانم زهرا کشتکار"
+                              } %>
+                            <%= selectClassTeacher();  %>
+
+                        </h3>
+
+                    </div>
+
+                    <div class="student-quiz-sidebar-info-questions">
+
+                        <img src="../../images/Quiz_Questions-Icon.svg" alt="">
+
+                        <h3>
+                            <span>
+                                تعداد سوالات
+                            </span>
+                            <%= exam.QuestionsNumber %> سوال
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div class="student-quiz-sidebar-time">
+
+                    <span>
+                        زمان باقی مانده
+                        <span id="time">
+
+                        </span>
+
+                    </span>
+
+                </div>
+
+                <button type="button" id="finishExam" class="record-quiz-btn">
+
+                    نهایی سازی آزمون
+
+                </button>
+
+
+            </aside>
+
+        </main>
+
+        <section class="icdrn-modal" id="successfull">
+
+            <div class="icdrn-modal-content">
+
+
+
+                <img src="/images/succuesfull-quiz.svg" class="modal-img" alt="">
+
+
+
+                <h3>
+                    ازمون شما ثبت شد :)
+                </h3>
+
+                <p>
+
+                    دانش آموز گرامی آزمون شما با موفقیت ثبت شد :)
+
+                </p>
+
+                <button type="submit" class="icdrn-btn" onclick="window.location.href='/panel/class-list'">
+
+                    لیست کلاس ها
+
+                </button>
+
+            </div>
+        </section>
+
+        <section class="icdrn-modal" dir="ltr" id="timeDone">
+
+            <div class="icdrn-modal-content">
+
+
+                <img src="/images/null-question-illustration.svg" class="modal-img" alt="">
+
+
+                <h3 id="errorText">
+                    پایان زمان
+                </h3>
+
+                <p>
+
+                   دانش آموز گرامی زمان آزمون شما پایان یافت
+                    <br>
+                   و جواب های شما ذخیره گردید :(
+
+                </p>
+
+                <button type="submit" class="icdrn-btn"  onclick="window.location.href='/panel/class-list'">
+
+                    لیست کلاس ها
+
+                </button>
+
+            </div>
+        </section>
+
+        <section class="icdrn-modal" dir="ltr" id="finishWarning" >
+
+            <div class="icdrn-modal-content">
+
+
+                <img src="/images/null-question-illustration.svg" class="modal-img" alt="">
+
+
+                <h3 id="errorText">
+                    پایان زمان
+                </h3>
+
+                <p>
+
+                   دانش آموز گرامی زمان آزمون شما پایان یافت
+                    <br>
+                   و جواب های شما ذخیره گردید :(
+
+                </p>
+
+                <button type="submit" class="icdrn-btn"  onclick="window.location.href='/panel/class-list'">
+
+                    لیست کلاس ها
+
+                </button>
+
+            </div>
+        </section>
+
+
+
+
+  <section class="icdrn-modal" id="areYouSure">
+    <div class="icdrn-modal-content">
+
+      
+
+      <img src="../../images/warning-illustration.svg" class="modal-img" alt="">
+
+
+
+      <h3 style="font-size:30px;margin-top:-10px">
+        برای پایان آزمون مطمئنی ؟
+        </h3>
+
+
+      <div class="btn-row" style="display: flex; justify-content: center;">
+
+        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="imSure"  onclick="window.location.href='/panel/class-list'" style="margin-top:-7px">
+          بله، کاملا
+        </button>
+  
+        
+        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="imNotSure" style="margin-top:-7px">
+          انصراف
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+
+    </div>
+    <script>
+        const reminingtime = Number("<%= reaminigTime %>");
+        const QuestionsNumber = Number("<%= exam.QuestionsNumber%>");
+        const examId = "<%= exam._id%>";
+    </script>
+    <script src="../../app/js/runExam.js"></script>
+</body>
+
+</html>
