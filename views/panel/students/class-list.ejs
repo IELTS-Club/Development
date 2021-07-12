@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,10 @@
   <link rel="manifest" href="../../images/Favicon/manifest.json">
   <link rel="stylesheet" href="../../dist/css/main.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  
-  
+
+
 
   <style>
-
     body {
 
       background-color: #F4F4F8 !important;
@@ -45,101 +45,102 @@
     }
 
     #loader-wrapper {
-    position:fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:1000;
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
     }
 
     #loader-wrapper .loader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10001;
-    width:300px;
-    height:150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      width: 300px;
+      height: 150px;
     }
 
     #loader-wrapper .loader h2 {
 
-    font-size: 30px;
-    font-family: Kalameh-Black;
-    color: #fff;
+      font-size: 30px;
+      font-family: Kalameh-Black;
+      color: #fff;
 
 
     }
 
 
     @-webkit-keyframes spin {
-    0%   {
-    -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-    }
-    100% {
-    -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-    }
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes spin {
-    0%   {
-    -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-    }
-    100% {
-    -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-    }
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
     }
 
     #loader-wrapper .loader-section {
-    position:fixed;
-    top:0;
-    background-image: linear-gradient(#258c93,#1D3C4E);
-    width:51%;
-    height:100%;
-    z-index:1000;
+      position: fixed;
+      top: 0;
+      background-image: linear-gradient(#258c93, #1D3C4E);
+      width: 51%;
+      height: 100%;
+      z-index: 1000;
     }
 
     #loader-wrapper .loader-section.section-left {
-    left:0
+      left: 0
     }
 
     #loader-wrapper .loader-section.section-right {
-    right:0;
+      right: 0;
     }
 
     .loaded #loader-wrapper .loader-section.section-left {
-    transform: translateX(-100%);
-    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+      transform: translateX(-100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
     }
 
     .loaded #loader-wrapper .loader-section.section-right {
-    transform: translateX(100%);
-    transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+      transform: translateX(100%);
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
     }
 
     .loaded #loader {
-    opacity: 0;
-    transition: all 0.3s ease-out;
+      opacity: 0;
+      transition: all 0.3s ease-out;
     }
 
     .loaded #loader-wrapper {
-    visibility: hidden;
-    transform:translateY(-100%);
-    transition: all 0.3s 1s ease-out;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: all 0.3s 1s ease-out;
     }
-
   </style>
 
 
@@ -147,125 +148,125 @@
 
 <body>
 
-  
+
   <div class="container-student-panel container-panel-classlist">
 
     <div class="panel-overlay hide-for-desktop">
 
-     <nav class="panel-overlay-menu">
+      <nav class="panel-overlay-menu">
 
-      <div class="panel-logo">
-    
-        <img src="../../images/ICDRN-Panel-Logo.png" alt="">
-        <div class="panel-logo-title">
-          <h2>
-            آیلتس کلاب
-          </h2>
-          <div>
-            دکتر پژمان نورزاد
+        <div class="panel-logo">
+
+          <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+          <div class="panel-logo-title">
+            <h2>
+              آیلتس کلاب
+            </h2>
+            <div>
+              دکتر پژمان نورزاد
+            </div>
           </div>
+
+        </div>
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+
+
+          <a href="/dashboard">
+
+
+
+            پیشخوان
+
+          </a>
+
         </div>
 
-      </div>
-      <div class="panel-menu-item">
-    
-        <img src="../../images/Panel-Home-Icon.svg" alt="">
 
 
-        <a href="/dashboard">
-          
-  
-  
-          پیشخوان
-        
-        </a>
+        <div class="panel-menu-item active">
 
-      </div>
-
-  
-
-      <div class="panel-menu-item active">
-
-        <img src="../../images/Panel-Classes-Icon.svg" alt="">
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
 
 
-        <a href="/panel/class-list">
-  
-  
-          لیست کلاس ها
-        
-        </a>
-
-      </div>
+          <a href="/panel/class-list">
 
 
-      <div class="panel-menu-item">
+            لیست کلاس ها
 
-        <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+          </a>
 
-
-        <a href="/panel/class-registration">
-  
-  
-          کلاس جدید
-        
-        </a>
-
-      </div>
-
-      
-      <div class="panel-menu-item">
-    
-        <img src="../../images/Panel-report-card-icon.svg" alt="">
+        </div>
 
 
-        <a href="/panel/reports" style="display:flex; align-items: center;">
-  
-  
-          کارنامه ها 
+        <div class="panel-menu-item">
 
-          <span class="new-feature">
-            جدید!
-          </span>
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-
-        <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
 
 
-        <a href="/panel/placement-test-history">
-  
-  
-          تعیین سطح ها
-        
-        </a>
-
-      </div>
-
-      <div class="panel-menu-item">
-        <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+          <a href="/panel/class-registration">
 
 
-        <a href="/panel/profile-edit">
-  
-          
-          ویرایش اطلاعات
-        
-        </a>
+            کلاس جدید
 
-      </div>
+          </a>
 
-      <div class="panel-exit-box">
-    
-        <img src="../../images/Panel-Exit.svg" alt="">
-  
-      </div>
+        </div>
 
-     </nav>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-report-card-icon.svg" alt="">
+
+
+          <a href="/panel/reports" style="display:flex; align-items: center;">
+
+
+            کارنامه ها
+
+            <span class="new-feature">
+              جدید!
+            </span>
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+          <a href="/panel/placement-test-history">
+
+
+            تعیین سطح ها
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+          <a href="/panel/profile-edit">
+
+
+            ویرایش اطلاعات
+
+          </a>
+
+        </div>
+
+        <div class="panel-exit-box">
+
+          <img src="../../images/Panel-Exit.svg" alt="">
+
+        </div>
+
+      </nav>
 
     </div>
 
@@ -280,7 +281,7 @@
             <!-- <i class="fas fa-search"></i> -->
             <button class="search-btn" type="submit">
               جستجو
-            </button> 
+            </button>
           </div>
         </div>
 
@@ -290,59 +291,58 @@
 
         <div class="panel-status-bar">
 
-         <div class="status-icons">
+          <div class="status-icons">
 
-          <div class="bells">
-    
-            <a href="/"> <img src="../../images/Panel-home.svg" 
-              alt=""></a>
-    
-          </div>
-    
-          <div class="message">
-    
-            <img src="../../images/Panel-Messsage.svg" 
-            alt="">
-            <div class="message-dropdown">
-              <h3>
-                <span>|</span>
-                  لیست ایمیل های شما
-              </h3>
+            <div class="bells">
 
-             </div> 
-    
-          </div>
-    
-          <div class="profile">
-    
-            <img src="../../images/Panel-Profile.svg" alt="">
-    
+              <a href="/"> <img src="../../images/Panel-home.svg" alt=""></a>
 
-            <div class="profile-dropdown">
-             <h3>
-               <span>|</span>
-                <%= userName  %>  خوش اومدی :)
-             </h3>
-             <form action="/logout" method="GET">
-              <div class="exit-btn">
-               <input type="image" src="../../images/Logout-Icon.svg" width="40px"/>
-              <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
-              </div></form>
             </div>
 
+            <div class="message">
+
+              <img src="../../images/Panel-Messsage.svg" alt="">
+              <div class="message-dropdown">
+                <h3>
+                  <span>|</span>
+                  لیست ایمیل های شما
+                </h3>
+
+              </div>
+
+            </div>
+
+            <div class="profile">
+
+              <img src="../../images/Panel-Profile.svg" alt="">
+
+
+              <div class="profile-dropdown">
+                <h3>
+                  <span>|</span>
+                  <%= userName  %> خوش اومدی :)
+                </h3>
+                <form action="/logout" method="GET">
+                  <div class="exit-btn">
+                    <input type="image" src="../../images/Logout-Icon.svg" width="40px" />
+                    <!-- <img src="../../images/Logout-Icon.svg" alt="" onclick=""> -->
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+
+
           </div>
-
-    
-
-         </div>
 
           <div class="panel-humburger hide-for-desktop">
-    
+
             <img src="../../images/Panel-Burger.svg" alt="">
-    
+
           </div>
-          
-    
+
+
         </div>
 
       </div>
@@ -358,15 +358,15 @@
             <span>
               |
             </span>
-            لیست کلاس های  شما
+            لیست کلاس های شما
           </h2>
           <form action="/panel/class-registration" method="GET">
-          <button type="submit" class="icdrn-btn" >
-       ثبت نام در کلاس ها    +
+            <button type="submit" class="icdrn-btn">
+              ثبت نام در کلاس ها +
 
-          </button></form> 
+            </button></form>
         </div>
-     
+
         <div class="class-list-cards">
           <% if(classes.length != 0){
           classes.forEach(element => {
@@ -416,6 +416,9 @@
 
             if(element.classTeacher=="Keshtkar")
             return "خانم زهرا کشتکار"
+
+            if (element.classTeacher=="Mehr")
+            return "خانم مریم مهر نژاد"
             }
 
             function selectTeacherImage(){
@@ -449,6 +452,9 @@
             if(element.classTeacher=="Keshtkar")
             return "../../images/Master-Pic-10.png"
 
+            if (element.classTeacher=="Mehr")
+            return "../../images/Master-Pic-11.png"
+
             }
             
             function selectClassType(){
@@ -461,7 +467,7 @@
             
             
                   
-                 %> 
+                 %>
           <div class="class-card">
 
             <div class="class-detail">
@@ -476,370 +482,374 @@
                   مدرس: <%= selectClassTeacher(); %>
                 </li>
                 <li>
-                 <%= selectClassType(); %>
+                  <%= selectClassType(); %>
 
                 </li>
 
                 <li>
-                 اطلاعات  :  <%= element.classDeatails || element.classTime %>
+                  اطلاعات : <%= element.classDeatails || element.classTime %>
                 </li>
 
               </ul>
               <% if(element.proccess == "inProccess")  { %>
-                <button type="submit" class="icdrn-btn" disabled>
-                  در حال انتظار
-                  </button>
-                  
+              <button type="submit" class="icdrn-btn" disabled>
+                در حال انتظار
+              </button>
+
               <% }else{ %>
-                <div class="btn-row">
-                  <button type="button" class="icdrn-btn" onclick="window.location.href='<%=element.classLink%>'">
+              <div class="btn-row">
+                <button type="button" class="icdrn-btn" onclick="window.location.href='<%=element.classLink%>'">
                   ورود
-                  </button>
-                  
-                  <button type="button" class="icdrn-btn" onclick="window.location.href='/panel/quiz-list/<%=element._id%>'">
-                    آزمون ها
-                    </button>
-                  </div>
-                
-                  <% } %>
+                </button>
+
+                <button type="button" class="icdrn-btn"
+                  onclick="window.location.href='/panel/quiz-list/<%=element._id%>'">
+                  آزمون ها
+                </button>
+              </div>
+
+              <% } %>
             </div>
 
             <div class="class-pic">
 
               <img src="<%= selectTeacherImage(); %>" alt="">
-              
+
             </div>
 
           </div>
 
-          
+
           <%
       });
           }
-          %>      
+          %>
         </div>
-    
+
       </div>
 
     </div>
 
     <div class="side-menu hide-for-phone">
 
-        <nav class="panel-menu-list">
-    
-          <div class="panel-logo">
-    
-            <img src="../../images/ICDRN-Panel-Logo.png" alt="">
-            <div class="panel-logo-title">
-              <h2>
-                آیلتس کلاب
-              </h2>
-              <div>
-                دکتر پژمان نورزاد
-              </div>
+      <nav class="panel-menu-list">
+
+        <div class="panel-logo">
+
+          <img src="../../images/ICDRN-Panel-Logo.png" alt="">
+          <div class="panel-logo-title">
+            <h2>
+              آیلتس کلاب
+            </h2>
+            <div>
+              دکتر پژمان نورزاد
             </div>
-
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Home-Icon.svg" alt="">
-    
-    
-            <a href="/dashboard">
-      
-      
-              پیشخوان
-            
-            </a>
-    
-          </div>
-    
-      
-    
-          <div class="panel-menu-item active">
-    
-            <img src="../../images/Panel-Classes-Icon.svg" alt="">
-    
-    
-            <a href="/panel/class-list">
-      
-      
-              لیست کلاس ها
-            
-            </a>
-    
-          </div>
-    
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
-    
-    
-            <a href="/panel/class-registration">
-      
-      
-              کلاس جدید
-            
-            </a>
-    
           </div>
 
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-report-card-icon.svg" alt="">
-    
-    
-            <a href="/panel/reports" style="display:flex; align-items: center;">
-  
-      
-      
-              کارنامه ها 
-
-              <span class="new-feature">
-                جدید!
-              </span>
-            
-            </a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
-    
-    
-            <a href="/panel/placement-test-history">
-      
-      
-              تعیین سطح ها
-            
-            </a>
-    
-          </div>
-    
-          <div class="panel-menu-item">
-    
-            <img src="../../images/Panel-edit-profile-icon.svg" alt="">
-    
-    
-            <a href="/panel/profile-edit">
-      
-      
-              ویرایش اطلاعات
-            
-            </a>
-    
-          </div>
-    
-        </nav>
-    
-        <div class="panel-exit-box">
-    
-          <img src="../../images/Panel-Exit.svg" alt="">
-    
         </div>
-    
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Home-Icon.svg" alt="">
+
+
+          <a href="/dashboard">
+
+
+            پیشخوان
+
+          </a>
+
+        </div>
+
+
+
+        <div class="panel-menu-item active">
+
+          <img src="../../images/Panel-Classes-Icon.svg" alt="">
+
+
+          <a href="/panel/class-list">
+
+
+            لیست کلاس ها
+
+          </a>
+
+        </div>
+
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Classes-Registration-icon.svg" alt="">
+
+
+          <a href="/panel/class-registration">
+
+
+            کلاس جدید
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-report-card-icon.svg" alt="">
+
+
+          <a href="/panel/reports" style="display:flex; align-items: center;">
+
+
+
+            کارنامه ها
+
+            <span class="new-feature">
+              جدید!
+            </span>
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-Placemennt-list-icon.svg" alt="">
+
+
+          <a href="/panel/placement-test-history">
+
+
+            تعیین سطح ها
+
+          </a>
+
+        </div>
+
+        <div class="panel-menu-item">
+
+          <img src="../../images/Panel-edit-profile-icon.svg" alt="">
+
+
+          <a href="/panel/profile-edit">
+
+
+            ویرایش اطلاعات
+
+          </a>
+
+        </div>
+
+      </nav>
+
+      <div class="panel-exit-box">
+
+        <img src="../../images/Panel-Exit.svg" alt="">
+
+      </div>
+
 
     </div>
 
   </div>
 
-    <!-- No Quiz Modal -->
+  <!-- No Quiz Modal -->
 
-    <section class="icdrn-modal" id="studentNoQuizModal">
-      <div class="icdrn-modal-content">
-  
-        <span class="modal-close" class="studentNoQuizModalClose" id="modal-closeA">
-          &times;
-        </span>
-  
-        <img src="../../images/no-quiz.svg" class="modal-img" alt="">
-  
-  
-  
-        <h3>
-         هنوز برات آزمونی ایجاد نشده !
-        </h3>
-  
-        <p>
-          لطفا بعدا دوباره امتحان کن
-        </p>
-  
-        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain">
-  
-          بازگشت
-  
-        </button>
-  
-      </div>
-    </section>
-  
-    <!-- Quiz List Modal  -->
-  
-    <section class="icdrn-modal-lg student-quiz-list-modal" id="studentQuizListModal">
-  
-      <span class="modal-close" id="modal-close">
-      &times;
+  <section class="icdrn-modal" id="studentNoQuizModal">
+    <div class="icdrn-modal-content">
+
+      <span class="modal-close" class="studentNoQuizModalClose" id="modal-closeA">
+        &times;
       </span>
-  
-      <div class="icdrn-modal-grid">
-  
-         <div class="modal-content">
-  
-            <h3>
-               آزمون های فعال تو
-            </h3>
-  
-            <div class="quiz-list">
-  
-              <% if(showData!=null){ 
+
+      <img src="../../images/no-quiz.svg" class="modal-img" alt="">
+
+
+
+      <h3>
+        هنوز برات آزمونی ایجاد نشده !
+      </h3>
+
+      <p>
+        لطفا بعدا دوباره امتحان کن
+      </p>
+
+      <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain">
+
+        بازگشت
+
+      </button>
+
+    </div>
+  </section>
+
+  <!-- Quiz List Modal  -->
+
+  <section class="icdrn-modal-lg student-quiz-list-modal" id="studentQuizListModal">
+
+    <span class="modal-close" id="modal-close">
+      &times;
+    </span>
+
+    <div class="icdrn-modal-grid">
+
+      <div class="modal-content">
+
+        <h3>
+          آزمون های فعال تو
+        </h3>
+
+        <div class="quiz-list">
+
+          <% if(showData!=null){ 
               showData.forEach(element => {
                 
                %>
 
-              <div class="quiz-item">
-  
-               <div class="quiz-item-title">
-                <span>
-                 <%= element.Type %>
-                </span>
-              </div> 
-  
-               <div class="quiz-item-date">
-                <span>
-                 <%= element.StartDate %> | <%= element.StartHour %>
-                </span>
-              </div> 
-  
-              
-  
-              <div class="quiz-item-btn">
-  
-                <button type="button" class="icdrn-btn" onclick="window.location.href='/students/run-exam/<%=element._id %>'">
-                  شروع آزمون
-                </button>
-                
-              </div> 
-  
-              </div>
-  
-            <% });} %> 
-  
+          <div class="quiz-item">
+
+            <div class="quiz-item-title">
+              <span>
+                <%= element.Type %>
+              </span>
             </div>
-  
-  
-         </div>
-  
-         <div class="modal-img">
-  
-            <img src="../../images/student-quiz-list.svg" alt="">
-  
-            <div class="modal-img-subtitle hide-for-phone">
-  
-               <span>
-               لطفا
-               </span>
-  
-               اطلاعات حساب کاربری خود را در پنل کاربری
-  
-               <br>
-  
-               به درستی وارد کنید تا در صورت برقراری کلاس ها، 
-  
-               <br>
-  
-               امکان تماس با شما دوست عزیز فراهم باشد.
-  
+
+            <div class="quiz-item-date">
+              <span>
+                <%= element.StartDate %> | <%= element.StartHour %>
+              </span>
             </div>
-  
-         </div>
-  
+
+
+
+            <div class="quiz-item-btn">
+
+              <button type="button" class="icdrn-btn"
+                onclick="window.location.href='/students/run-exam/<%=element._id %>'">
+                شروع آزمون
+              </button>
+
+            </div>
+
+          </div>
+
+          <% });} %>
+
+        </div>
+
+
       </div>
-  
-   </section>
-  
-     <!-- TimeOut Quiz Modal -->
-  
-     <section class="icdrn-modal" id="timeOutQuizModal">
+
+      <div class="modal-img">
+
+        <img src="../../images/student-quiz-list.svg" alt="">
+
+        <div class="modal-img-subtitle hide-for-phone">
+
+          <span>
+            لطفا
+          </span>
+
+          اطلاعات حساب کاربری خود را در پنل کاربری
+
+          <br>
+
+          به درستی وارد کنید تا در صورت برقراری کلاس ها،
+
+          <br>
+
+          امکان تماس با شما دوست عزیز فراهم باشد.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TimeOut Quiz Modal -->
+
+  <section class="icdrn-modal" id="timeOutQuizModal">
+    <div class="icdrn-modal-content">
+
+      <span class="modal-close" id="modal-closeB" class="studentNoQuizModalClose">
+        &times;
+      </span>
+
+      <img src="../../images/time-out-quiz.svg" class="modal-img" alt="">
+
+
+
+      <h3 style="font-size:30px;margin-top:-10px">
+        یکم دیگه باید صبر کنی رفیق :)
+      </h3>
+
+      <p style="margin-top:-5px">
+        هنوز زمان آزمون نرسیده!
+
+        <span style="background-color: #258c9321;color: #1D3C4E; border-radius: 10px;
+          padding: 4px; font-size:14px">
+          یکم دیگه برگرد پیشمون
+        </span>
+
+      </p>
+
+      <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"
+        onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
+
+        بازگشت
+
+      </button>
+
+    </div>
+  </section>
+
+
+
+  <!-orgnized Before modal -->
+
+    <section class="icdrn-modal" id="orgnizedBefore">
       <div class="icdrn-modal-content">
-  
-        <span class="modal-close" id="modal-closeB" class="studentNoQuizModalClose">
+
+        <span class="modal-close" id="modal-closeF" class="studentNoQuizModalClose">
           &times;
         </span>
-  
+
         <img src="../../images/time-out-quiz.svg" class="modal-img" alt="">
-  
-  
-  
+
+
+
         <h3 style="font-size:30px;margin-top:-10px">
-         یکم دیگه باید صبر کنی رفیق :)
+          قبلا توی این آزمون شرکت کردی رفیق :)
         </h3>
-  
-        <p  style="margin-top:-5px">
-          هنوز زمان آزمون نرسیده! 
-          
+
+        <p style="margin-top:-5px">
+          منتظر باش تا کارنامه
+
           <span style="background-color: #258c9321;color: #1D3C4E; border-radius: 10px;
-          padding: 4px; font-size:14px">
-           یکم دیگه برگرد پیشمون
+       padding: 4px; font-size:14px">
+            به دسستت برسه
           </span>
-  
+
         </p>
-  
-        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"  onclick="window.Location.href='/panel/class-list'" style="margin-top:-7px">
-  
+
+        <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"
+          onclick="window.location.href='/panel/class-list'" style="margin-top:-7px">
+
           بازگشت
-  
+
         </button>
-  
+
       </div>
     </section>
 
 
 
-    <!-orgnized Before modal -->
-  
-  <section class="icdrn-modal" id="orgnizedBefore">
-   <div class="icdrn-modal-content">
-
-     <span class="modal-close" id="modal-closeF" class="studentNoQuizModalClose">
-       &times;
-     </span>
-
-     <img src="../../images/time-out-quiz.svg" class="modal-img" alt="">
-
-
-
-     <h3 style="font-size:30px;margin-top:-10px">
-      قبلا توی این آزمون شرکت کردی رفیق :)
-     </h3>
-
-     <p  style="margin-top:-5px">
-       منتظر باش تا کارنامه 
-       
-       <span style="background-color: #258c9321;color: #1D3C4E; border-radius: 10px;
-       padding: 4px; font-size:14px">
-        به دسستت برسه
-       </span>
-
-     </p>
-
-     <button type="button" class="icdrn-btn studentNoQuizModalClose" id="checkAgain"  onclick="window.location.href='/panel/class-list'" style="margin-top:-7px">
-
-       بازگشت
-
-     </button>
-
-   </div>
- </section>
-
-
-
-  <div id="loader-wrapper">
+    <div id="loader-wrapper">
       <div id="loader"></div>
       <div class="loader-section section-left">
-    
+
       </div>
       <div class="loader-section section-right"></div>
       <div class="loader">
@@ -850,66 +860,59 @@
 
 
 
-    
-    
-    
-      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-    
-    
-      <script >
-    
-        //For Live Projects
-            window.addEventListener('load',function(){
-              document.querySelector('body').classList.add("loaded")  
-            });
-        
-            
-        
-          </script>
-         <% if(showData) {%>
-          <script>
-            
-            const examShowModal=document.querySelector("#studentQuizListModal");
-            examShowModal.style.display="flex";
-            document.querySelector("#modal-close").addEventListener("click",(e)=>{
-              examShowModal.style.display="none";
-            })
-          </script>
-          <% } %>
-          <% if(isNull) {%>
-          <script>
-            
-            const examNullModal=document.querySelector("#studentNoQuizModal");
-            examNullModal.style.display="flex";
-            document.querySelector("#modal-closeA").addEventListener("click",(e)=>{
-              examNullModal.style.display="none";
-            })
-          </script>
-          <% } %>
-          <% if(timeError) {%>
-          <script>
-            
-            const timeError=document.querySelector("#timeOutQuizModal");
-            timeError.style.display="flex";
-            document.querySelector("#modal-closeB").addEventListener("click",(e)=>{
-              timeError.style.display="none";
-            })
-          </script>
-          <% } %>
-          <% if(orgnizedBefore) {%>
-          <script>
-            
-            const orgnizedBefore=document.querySelector("#orgnizedBefore");
-            orgnizedBefore.style.display="flex";
-            document.querySelector("#modal-closeF").addEventListener("click",(e)=>{
-              orgnizedBefore.style.display="none";
-            })
-          </script>
 
-          
-          <% } %>
-  <script src="../../app/js/app.js"></script>
-  <script src="../../app/js/PanelMenuToggle.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+
+    <script>
+      //For Live Projects
+      window.addEventListener('load', function () {
+        document.querySelector('body').classList.add("loaded")
+      });
+    </script>
+    <% if(showData) {%>
+    <script>
+      const examShowModal = document.querySelector("#studentQuizListModal");
+      examShowModal.style.display = "flex";
+      document.querySelector("#modal-close").addEventListener("click", (e) => {
+        examShowModal.style.display = "none";
+      })
+    </script>
+    <% } %>
+    <% if(isNull) {%>
+    <script>
+      const examNullModal = document.querySelector("#studentNoQuizModal");
+      examNullModal.style.display = "flex";
+      document.querySelector("#modal-closeA").addEventListener("click", (e) => {
+        examNullModal.style.display = "none";
+      })
+    </script>
+    <% } %>
+    <% if(timeError) {%>
+    <script>
+      const timeError = document.querySelector("#timeOutQuizModal");
+      timeError.style.display = "flex";
+      document.querySelector("#modal-closeB").addEventListener("click", (e) => {
+        timeError.style.display = "none";
+      })
+    </script>
+    <% } %>
+    <% if(orgnizedBefore) {%>
+    <script>
+      const orgnizedBefore = document.querySelector("#orgnizedBefore");
+      orgnizedBefore.style.display = "flex";
+      document.querySelector("#modal-closeF").addEventListener("click", (e) => {
+        orgnizedBefore.style.display = "none";
+      })
+    </script>
+
+
+    <% } %>
+    <script src="../../app/js/app.js"></script>
+    <script src="../../app/js/PanelMenuToggle.js"></script>
 
 </body>
+
 </html>

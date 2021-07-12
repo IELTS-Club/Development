@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,6 @@
     <link rel="stylesheet" href="/dist/css/main.min.css">
 
     <style>
-
         ::-webkit-scrollbar {
 
             width: 20px;
@@ -19,31 +19,31 @@
 
         ::-webkit-scrollbar-track {
 
-            box-shadow: inset 0 0 5px rgba(46, 46, 46, 0.11); 
+            box-shadow: inset 0 0 5px rgba(46, 46, 46, 0.11);
             border-radius: 20px;
 
         }
 
         ::-webkit-scrollbar-thumb {
 
-            background:   linear-gradient(145deg, rgba(37,140,147,1) 0%, rgba(70,174,181,1) 100%);
+            background: linear-gradient(145deg, rgba(37, 140, 147, 1) 0%, rgba(70, 174, 181, 1) 100%);
             border-radius: 20px;
 
         }
-
     </style>
 
 </head>
+
 <body>
-    
+
     <div class="conatiner teacher-quiz-page">
 
         <nav class="teacher-quiz-nav m-quiz-container">
 
-            <div class="teacher-quiz-nav-logo" >
+            <div class="teacher-quiz-nav-logo">
 
                 <img src="/images/ICDRN-Navbar-Logo.png" alt="">
-               
+
                 <h3>
                     آزمون هوشمند
                 </h3>
@@ -57,7 +57,7 @@
                 <h3>
 
                     <span>
-                        استاد 
+                        استاد
                     </span>
 
                     <%= selectClassTeacher() %>
@@ -67,79 +67,115 @@
             </div>
 
         </nav>
-        
+
         <main class="teacher-quiz-body  m-quiz-container">
 
             <section class="teacher-quiz-questions  m-quiz-container" id="mainSection">
-            <% for(let i=1;i<=QuestionsNumber;i++){ 
-               const questionDetails=examQuestions[i-1] %>  
+                <% for(let i=1;i<=QuestionsNumber;i++){ 
+               const questionDetails=examQuestions[i-1] %>
                 <article class="section-box category-question-box" id="article<%= `${i}` %>">
 
                     <div class="question-setting-row">
 
 
-                        <input type="text" value="<%=examQuestions[i-1].questionId%>" class="question-id-input" style="background-color: white;" disabled >
+                        <input type="text" value="<%=examQuestions[i-1].questionId%>" class="question-id-input"
+                            style="background-color: white;" disabled>
 
 
                         <div class="question-type-box">
-                            
+
                             <div class="select">
-                              <select class="standard-select" name="questionType" id="QT<%= `${i}` %>">
-                                <option value="questionTypeLabel" disabled>Quesstion Type</option>
-                                <option value="questionTypeGrammer" <%if(questionDetails.questionType=="questionTypeGrammer"){%> selected <% } %> >Grammer</option>
-                                <option value="questionTypeVocabulary"<%if(questionDetails.questionType=="questionTypeVocabulary"){%> selected <% } %> >Vocabulary</option>
-                                <option value="questionTypeListening" <%if(questionDetails.questionType=="questionTypeListening"){%> selected <% } %> >Listening</option>
-                                <option value="questionTypeReading"  <%if(questionDetails.questionType=="questionTypeReading"){%> selected <% } %> >Reading</option>
-                                <option value="questionTypeWriting" <%if(questionDetails.questionType=="questionTypeWriting"){%> selected <% } %> >Writing</option>
-                              </select>
-                              <span class="icon"></span>
+                                <select class="standard-select" name="questionType" id="QT<%= `${i}` %>">
+                                    <option value="questionTypeLabel" disabled>Quesstion Type</option>
+                                    <option value="questionTypeGrammer"
+                                        <%if(questionDetails.questionType=="questionTypeGrammer"){%> selected <% } %>>
+                                        Grammer</option>
+                                    <option value="questionTypeVocabulary"
+                                        <%if(questionDetails.questionType=="questionTypeVocabulary"){%> selected
+                                        <% } %>>Vocabulary</option>
+                                    <option value="questionTypeListening"
+                                        <%if(questionDetails.questionType=="questionTypeListening"){%> selected <% } %>>
+                                        Listening</option>
+                                    <option value="questionTypeReading"
+                                        <%if(questionDetails.questionType=="questionTypeReading"){%> selected <% } %>>
+                                        Reading</option>
+                                    <option value="questionTypeWriting"
+                                        <%if(questionDetails.questionType=="questionTypeWriting"){%> selected <% } %>>
+                                        Writing</option>
+                                </select>
+                                <span class="icon"></span>
                             </div>
                         </div>
-    
+
                         <div class="q-structure">
 
-                            
-                        <div class="question-structure-box" id="defaultStructure<%= `${i}` %>" style="display: none;">
-              
-                            <div class="select">
-                              <select class="standard-select" name="questionStructure" id="QS">
-                                <option value="questionStructureLabel" selected disabled >Quesstion Sturucture</option>
+
+                            <div class="question-structure-box" id="defaultStructure<%= `${i}` %>"
+                                style="display: none;">
+
+                                <div class="select">
+                                    <select class="standard-select" name="questionStructure" id="QS">
+                                        <option value="questionStructureLabel" selected disabled>Quesstion Sturucture
+                                        </option>
+                                    </select>
+                                    <span class="icon"></span>
+                                </div>
+                            </div>
+
+                            <div class="question-structure-box" id="GvlStructure<%= `${i}` %>"
+                                <%if(questionDetails.questionType=="questionTypeGrammer" || questionDetails.questionType=="questionTypeVocabulary" || questionDetails.questionType=="questionTypeListening"){%>
+                                style="display: block;" <% }else{ %> style="display: none;" <% }%>>
+
+                                <div class="select">
+                                    <select class="standard-select" name="questionStructure" id="glvQS<%= `${i}` %>">
+                                        <option value="glvQuestionStructureLabel" disabled>Quesstion Sturucture</option>
+                                        <option value="glvQuestionStructureMultiple"
+                                            <%if(questionDetails.questionStructure=="glvQuestionStructureMultiple"){%>
+                                            selected
+                                            <%}%>>Multiple Choice</option>
+                                <option value="glvQuestionStructureFilling" <%if(questionDetails.questionStructure=="glvQuestionStructureFilling"){%>
+                                            selected <%}%> >Filling</option>
                               </select>
                               <span class="icon"></span>
                             </div>
                         </div>
 
-                        <div class="question-structure-box" id="GvlStructure<%= `${i}` %>"  <%if(questionDetails.questionType=="questionTypeGrammer" || questionDetails.questionType=="questionTypeVocabulary" || questionDetails.questionType=="questionTypeListening"){%> style="display: block;" <% }else{ %> style="display: none;" <% }%> >
-              
-                            <div class="select"  >
-                              <select class="standard-select" name="questionStructure" id="glvQS<%= `${i}` %>">
-                                <option value="glvQuestionStructureLabel" disabled >Quesstion Sturucture</option>
-                                <option value="glvQuestionStructureMultiple" <%if(questionDetails.questionStructure=="glvQuestionStructureMultiple"){%> selected <%}%>>Multiple Choice</option>
-                                <option value="glvQuestionStructureFilling" <%if(questionDetails.questionStructure=="glvQuestionStructureFilling"){%> selected <%}%> >Filling</option>
+                        <div class="question-structure-box" id="readingStructure<%= `${i}` %>"
+                                            <%if(questionDetails.questionType=="questionTypeReading"){%>
+                                            style="display: block;" <% }else{ %> style="display: none;" <% }%>>
+
+                                            <div class="select">
+                                                <select class="standard-select" name="questionStructure"
+                                                    id="rQS<%= `${i}` %>">
+                                                    <option value="rQuestionStructureLabel" disabled selected>Quesstion
+                                                        Sturucture</option>
+                                                    <option value="rQuestionStructureReadingBody"
+                                                        <%if(questionDetails.questionStructure=="rQuestionStructureReadingBody"){%>
+                                                        selected
+                                                        <%}%> >Reading Body</option>
+                                <option value="rQuestionStructureMultiple"  <%if(questionDetails.questionStructure=="rQuestionStructureMultiple"){%>
+                                                        selected
+                                                        <%}%> >Multiple Choice</option>
+                                <option value="rQuestionStructureFilling"  <%if(questionDetails.questionStructure=="rQuestionStructureFilling"){%>
+                                                        selected <%}%> >Filling</option>
                               </select>
                               <span class="icon"></span>
                             </div>
                         </div>
 
-                        <div class="question-structure-box" id="readingStructure<%= `${i}` %>" <%if(questionDetails.questionType=="questionTypeReading"){%> style="display: block;" <% }else{ %> style="display: none;" <% }%> >
-              
-                            <div class="select" >
-                              <select class="standard-select" name="questionStructure" id="rQS<%= `${i}` %>" >
-                                <option value="rQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
-                                <option value="rQuestionStructureReadingBody"  <%if(questionDetails.questionStructure=="rQuestionStructureReadingBody"){%> selected <%}%> >Reading Body</option>
-                                <option value="rQuestionStructureMultiple"  <%if(questionDetails.questionStructure=="rQuestionStructureMultiple"){%> selected <%}%> >Multiple Choice</option>
-                                <option value="rQuestionStructureFilling"  <%if(questionDetails.questionStructure=="rQuestionStructureFilling"){%> selected <%}%> >Filling</option>
-                              </select>
-                              <span class="icon"></span>
-                            </div>
-                        </div>
+                        <div class="question-structure-box" id="writingStructure<%= `${i}` %>"
+                                                        <%if(questionDetails.questionType=="questionTypeWriting"){%>
+                                                        style="display: block;" <% }else{ %> style="display: none;"
+                                                        <% }%>>
 
-                        <div class="question-structure-box" id="writingStructure<%= `${i}` %>" <%if(questionDetails.questionType=="questionTypeWriting"){%> style="display: block;" <% }else{ %> style="display: none;" <% }%> >
-              
-                            <div class="select">
-                              <select class="standard-select" name="questionStructure" id="wQS<%= `${i}` %>">
-                                <option value="wQuestionStructureLabel" disabled selected>Quesstion Sturucture</option>
-                                <option value="wQuestionStructureWritingBody"  <%if(questionDetails.questionStructure=="wQuestionStructureWritingBody"){%> selected <%}%> >Writing Body</option>
+                                                        <div class="select">
+                                                            <select class="standard-select" name="questionStructure"
+                                                                id="wQS<%= `${i}` %>">
+                                                                <option value="wQuestionStructureLabel" disabled
+                                                                    selected>Quesstion Sturucture</option>
+                                                                <option value="wQuestionStructureWritingBody"
+                                                                    <%if(questionDetails.questionStructure=="wQuestionStructureWritingBody"){%>
+                                                                    selected <%}%> >Writing Body</option>
                               </select>
                               <span class="icon"></span>
                             </div>
@@ -148,129 +184,149 @@
                         </div>
 
                         <button type="button" class="generate-question-btn" id="del<%= `${i}` %>">
-                            Delete Box 
-                        </button>
+                                                                    Delete Box
+                                                                    </button>
 
-                    </div>
+                                                        </div>
 
-                    <div class="multiple-structure" id="multiple-structure<%= `${i}` %>" <% if(questionDetails.questionStructure=="glvQuestionStructureMultiple" || questionDetails.questionStructure=="rQuestionStructureMultiple"){%> style="display:block;" <% }else{%>style="display:none;"<%}%> >
+                                                        <div class="multiple-structure"
+                                                            id="multiple-structure<%= `${i}` %>"
+                                                            <% if(questionDetails.questionStructure=="glvQuestionStructureMultiple" || questionDetails.questionStructure=="rQuestionStructureMultiple"){%>
+                                                            style="display:block;" <% }else{%>style="display:none;" <%}%> >
 
                         <div class="question-form-row">
 
-                            <input type="text" class="question-body" id="multipleBodyInput<%= `${i}` %>" value="<%=questionDetails.questionBody%>" placeholder="Enter Your Question Form Here...">
-    
-                            <button type="button" class="generate-options-btn" id="addOption<%= `${i}` %>">
-                                Add Option
-                            </button>
-    
-                        </div>
-    
-                        <div class="question-options-row" id="creatInput<%= `${i}` %>" >
-                            
-                            <!-- <input type="text" class="question-option-input" placeholder="option A">
+                            <input type="text" class="question-body" id="multipleBodyInput<%= `${i}` %>"
+                                                            value="<%=questionDetails.questionBody%>"
+                                                            placeholder="Enter Your Question Form Here...">
+
+                                                            <button type="button" class="generate-options-btn"
+                                                                id="addOption<%= `${i}` %>">
+                                                                Add Option
+                                                            </button>
+
+                                                        </div>
+
+                                                        <div class="question-options-row" id="creatInput<%= `${i}` %>">
+
+                                                            <!-- <input type="text" class="question-option-input" placeholder="option A">
                             <input type="text" class="question-option-input" placeholder="option B">
                             <input type="text" class="question-option-input" placeholder="option C">
                             <input type="text" class="question-option-input" placeholder="option D">  -->
-                                <%questionDetails.questionChoices.forEach(element => { %>
-                                    <input type="text" class="question-option-input" value="<%= element%>" placeholder="<%= element%>">
-                               
-                                
-                                <%});%>
-                            <div class="right-option-box">
-                  
-                                <div class="select">
-                                  <select id="standard-select" name="classType">
-                                    <option value="Private" disabled selected>Key </option>
-                                    <!-- <option value="Public">A</option>
+                                                            <%questionDetails.questionChoices.forEach(element => { %>
+                                                            <input type="text" class="question-option-input"
+                                                                value="<%= element%>" placeholder="<%= element%>">
+
+
+                                                            <%});%>
+                                                            <div class="right-option-box">
+
+                                                                <div class="select">
+                                                                    <select id="standard-select" name="classType">
+                                                                        <option value="Private" disabled selected>Key
+                                                                        </option>
+                                                                        <!-- <option value="Public">A</option>
                                     <option value="Public">B</option>
                                     <option value="Public">C</option>
                                     <option value="Public">D</option> -->
-                                  </select>
-                                  <span class="icon"></span>
+                                                                    </select>
+                                                                    <span class="icon"></span>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <button type="button" class="generate-options-btn"
+                                                                id="resetMultiple<%= `${i}` %>">
+                                                                Reset
+                                                            </button>
+
+                                                        </div>
+
+                                            </div>
+
+                                            <div class="filling-structure" id="filling-structure<%= `${i}` %>"
+                                                <% if(questionDetails.questionStructure=="glvQuestionStructureFilling" || questionDetails.questionStructure=="rQuestionStructureFilling"){%>
+                                                style="display:block;" <% }else{%>style="display:none;" <%}%> >
+
+                        <div class="question-form-row">
+
+                            <input type="text" class="question-body" id="fillingBodyInput<%= `${i}` %>"
+                                                value="<%=questionDetails.questionBody%>"
+                                                placeholder="Enter Your Question Form Here...">
+
+                                                <button type="button" class="generate-options-btn"
+                                                    id="resetFilling<%= `${i}` %>">
+                                                    Reset
+                                                </button>
+
+                                            </div>
+
                                 </div>
+
+                                <div class="reading-box-structure" id="reading-box-structure<%= `${i}` %>"
+                                    <% if(questionDetails.questionStructure=="rQuestionStructureReadingBody"){%>
+                                    style="display:block;" <% }else{%>style="display:none;" <%}%> >
+
+                        <div class="question-form-row">
+
+                            <textarea name="" class="question-body" id="readingInput<%= `${i}` %>" cols="30" rows="10">
+                                    <%=questionDetails.questionBody%></textarea>
+
+                                    <button type="button" class="generate-options-btn" id="resetReading<%= `${i}` %>">
+                                        Reset
+                                    </button>
+
+                                </div>
+
+
+
                             </div>
-    
-    
-                            <button type="button" class="generate-options-btn" id="resetMultiple<%= `${i}` %>">
-                                Reset
-                            </button>
-    
-                        </div>
 
-                    </div>
-
-                    <div class="filling-structure" id="filling-structure<%= `${i}` %>" <% if(questionDetails.questionStructure=="glvQuestionStructureFilling" || questionDetails.questionStructure=="rQuestionStructureFilling"){%> style="display:block;" <% }else{%>style="display:none;"<%}%> >
+                            <div class="writing-box-structure" id="writing-box-structure<%= `${i}` %>"
+                                <% if(questionDetails.questionStructure=="wQuestionStructureWritingBody"){%>
+                                style="display:block;" <% }else{%>style="display:none;" <%}%> >
 
                         <div class="question-form-row">
 
-                            <input type="text" class="question-body" id="fillingBodyInput<%= `${i}` %>" value="<%=questionDetails.questionBody%>" placeholder="Enter Your Question Form Here...">
-    
-                            <button type="button" class="generate-options-btn" id="resetFilling<%= `${i}` %>">
-                                Reset
-                            </button>
-    
+                            <textarea name="" id="writtingBodyInput<%= `${i}` %>" class="question-body" cols="30"
+                                rows="10"><%=questionDetails.questionBody%></textarea>
+
+                                <button type="button" class="generate-options-btn" id="resetWriting<%= `${i}` %>">
+                                    Reset
+                                </button>
+
+                            </div>
+
+
                         </div>
 
-                    </div>
+                </article>
+                <% } %>
 
-                    <div class="reading-box-structure" id="reading-box-structure<%= `${i}` %>"  <% if(questionDetails.questionStructure=="rQuestionStructureReadingBody"){%> style="display:block;" <% }else{%>style="display:none;"<%}%> >
 
-                        <div class="question-form-row">
-
-                            <textarea name="" class="question-body" id="readingInput<%= `${i}` %>" cols="30" rows="10"><%=questionDetails.questionBody%></textarea>
-    
-                            <button type="button" class="generate-options-btn" id="resetReading<%= `${i}` %>">
-                               Reset
-                            </button>
-    
-                        </div>
-    
-    
-
-                    </div>
-
-                    <div class="writing-box-structure" id="writing-box-structure<%= `${i}` %>" <% if(questionDetails.questionStructure=="wQuestionStructureWritingBody"){%> style="display:block;" <% }else{%>style="display:none;"<%}%> >
-
-                        <div class="question-form-row">
-
-                            <textarea name="" id="writtingBodyInput<%= `${i}` %>" class="question-body" cols="30" rows="10"><%=questionDetails.questionBody%></textarea>
-    
-                            <button type="button" class="generate-options-btn" id="resetWriting<%= `${i}` %>">
-                                Reset
-                            </button>
-    
-                        </div>
-    
-
-                    </div>
-
-                </article> 
-            <% } %> 
-
-              
 
             </section>
 
             <aside class="teacher-quiz-sidebar  m-quiz-container">
 
                 <div class="teacher-quiz-sidebar-cover">
-                   
+
                     <img src="/images/Quiz-pic.svg" alt="">
 
                 </div>
 
-                
+
                 <h3 class="teacher-quiz-sidebar-title">
-                   <%= Title %>
+                    <%= Title %>
                 </h3>
 
                 <div class="teacher-quiz-sidebar-info">
 
                     <div class="teacher-quiz-sidebar-info-teacher">
 
-                   
+
                         <img src="/images/Quiz_Teacher-Icon.svg" alt="">
-                        
+
                         <h3>
                             <span>
                                 مدرس دوره
@@ -304,34 +360,37 @@
                               
                               if(Teacher=="Keshtkar")
                               return "خانم زهرا کشتکار"
-                              } %> 
+
+                              if (ُTeacher=="Mehr")
+                              return "خانم مریم مهر نژاد"
+                              } %>
                             <%= selectClassTeacher();  %>
                         </h3>
-    
+
                     </div>
 
                     <div class="teacher-quiz-sidebar-info-questions">
 
                         <img src="/images/Quiz_Questions-Icon.svg" alt="">
-                        
+
                         <h3>
                             <span>
-                               تعداد سوالات
+                                تعداد سوالات
                             </span>
 
                             <div>
                                 <span id="questionAmount"><%= QuestionsNumber %></span> <span>سوال</span>
                             </div>
-                        </h3>  
+                        </h3>
 
                     </div>
 
                 </div>
-           
+
                 <div class="teacher-quiz-sidebar-time">
 
-                    <button type="button" onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')" >
-                        
+                    <button type="button" onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')">
+
                         بازگشت به صفحه لیست آزمون‌ها
 
                     </button>
@@ -350,79 +409,80 @@
         </main>
 
 
-       
-       
-       
-       
-       <!-- moadl  -->
-       
+
+
+
+
+        <!-- moadl  -->
+
         <section class="icdrn-modal" dir="ltr" id="nullQuestion">
 
             <div class="icdrn-modal-content">
-        
-              <span class="modal-close" id="modalClose">
-                &times;
-              </span>
-        
-              <img src="/images/null-question-illustration.svg" class="modal-img" alt="">
-        
-        
-              <h3 id="errorText" >
-              </h3>
-        
-              <p>
-        
-                please make sure you have
-                <br>
-                filled all the questions :(
-        
-              </p>
-        
-              <button type="submit" class="icdrn-btn" id="checkAgain">
-        
-                check again!
-        
-              </button>
-        
+
+                <span class="modal-close" id="modalClose">
+                    &times;
+                </span>
+
+                <img src="/images/null-question-illustration.svg" class="modal-img" alt="">
+
+
+                <h3 id="errorText">
+                </h3>
+
+                <p>
+
+                    please make sure you have
+                    <br>
+                    filled all the questions :(
+
+                </p>
+
+                <button type="submit" class="icdrn-btn" id="checkAgain">
+
+                    check again!
+
+                </button>
+
             </div>
-          </section>
+        </section>
 
 
-          <section class="icdrn-modal" dir="ltr" id="successfull">
+        <section class="icdrn-modal" dir="ltr" id="successfull">
 
             <div class="icdrn-modal-content">
-        
-              
-        
-              <img src="/images/succuesfull-quiz.svg" class="modal-img" alt="">
-        
-        
-        
-              <h3>
-                  Successfull!
-              </h3>
-        
-              <p>
-        
-                You'r Quiz has been Created Successfully :)
-        
-              </p>
-        
-              <button type="submit" class="icdrn-btn" onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')">
-        
-                Back to Quizlist!
-        
-              </button>
-        
+
+
+
+                <img src="/images/succuesfull-quiz.svg" class="modal-img" alt="">
+
+
+
+                <h3>
+                    Successfull!
+                </h3>
+
+                <p>
+
+                    You'r Quiz has been Created Successfully :)
+
+                </p>
+
+                <button type="submit" class="icdrn-btn"
+                    onclick="window.location.replace('/teachers/quiz-list/<%= classId %>')">
+
+                    Back to Quizlist!
+
+                </button>
+
             </div>
-          </section>
+        </section>
 
     </div>
     <script>
-        let QuestionsNumber=Number("<%= QuestionsNumber %>")
-        let examID="<%=examId%>"
-        
+        let QuestionsNumber = Number("<%= QuestionsNumber %>")
+        let examID = "<%=examId%>"
     </script>
     <script src="/app/js/structureIdentifier1.js"></script>
 </body>
+
 </html>
