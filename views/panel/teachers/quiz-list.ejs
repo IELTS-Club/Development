@@ -868,7 +868,12 @@
         body: JSON.stringify(quizInfo)
       }
       fetch("/teachers/quiz-list/<%= classId%>", options);
-      window.location.href="/teachers/create-exam"
+      modalform.getElementsByTagName("button")[0].innerHTML="در حال ساخت آزمون"
+      modalform.getElementsByTagName("button")[0].disabled;
+      setInterval(() => {
+        window.location.href="/teachers/create-exam"
+      }, 3000);
+      
     }
     })
   </script>
