@@ -11,7 +11,7 @@ const flash=require("connect-flash");
 const {winstonLog,winstonConfig}=require("./setting/winston");
 const error=require("./middleware/error");
 
-app.use(express.json({limit:"1mb"}));
+app.use(express.json({limit:"10mb"}));
 
 const store = new MongoDBStore(
     {
