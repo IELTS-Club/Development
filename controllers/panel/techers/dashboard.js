@@ -10,10 +10,14 @@ const {Report,Class,Exam}= require("../../../models/mongoose");
 
 
 panel.get("/teachers/dashboard",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
-    req.user.email="pnoorzad@yahoo.com"
+    
     function selectTeacher(){
         if (req.user.email=="jadidijavad031@gmail.com")
         return "Jadidi";
+        if(req.user.email=="asjn3e@gmail.com")
+        return "Noorzad";
+        if(req.user.email=="miladmohamadi.ir@gmail.com")
+        return "Noorzad"
         if (req.user.email=="mina.englishmaster.4n@gmail.com")
         return "Nouri";
         if (req.user.email=="pnoorzad@yahoo.com")
