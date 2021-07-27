@@ -599,62 +599,62 @@
 
             <ul class="insight-item-list">
 
+              <% classes.forEach(element => { %>
+                  
+              <% function selectClassTeacher(){
+                if(element.classTeacher=="Noorzad")
+                return  "دکتر پژمان نورزاد";
+              
+              if(element.classTeacher=="Bahrami")
+                return "خانم هانیه بهرامی"
+              
+              if(element.classTeacher=="Mohebiii")
+                return "خانم عاطفه محبی"
+              
+              if(element.classTeacher=="Nouri")
+                return "خانم مینا نوری"
+              
+              if(element.classTeacher=="Zolfaghari")
+                return "خانم آرزو ‌‌ذولفقاری"
+              
+              if(element.classTeacher=="Jadidi")
+              return "اقای جواد جدیدی"
+              if(element.classTeacher=="Asi")
+              return "خانم نیکتا عاصی‌ شاد"
+  
+              if(element.classTeacher=="Fallah")
+              return "اقای مهرشاد فلاح"
+  
+              if(element.classTeacher=="Hadavi")
+              return "خانم مریم هادوی"
+              
+              if(element.classTeacher=="Keshtkar")
+              return "خانم زهرا کشتکار"
+
+              if (element.classTeacher=="Mehr")
+              return "خانم مریم مهر نژاد"
+              } %> 
+
+         
               <li>
 
                 <span>
-                  کلاس مکالمه
+                <%= element.className %> 
                 </span>
 
                 |
 
                 <span>
-                  دکتر پژمان نورزاد
+                 <%= selectClassTeacher() %>
                 </span>
 
-                <button type="button" class="icdrn-btn">
-                  ورود
+                <button type="button" class="icdrn-btn" onclick="window.location.href='<%= element.classLink%>'">
+                ورود
                 </button>
 
               </li>
 
-              <li>
-
-                <span>
-                  کلاس مکالمه
-                </span>
-
-                |
-
-                <span>
-                  دکتر پژمان نورزاد
-                </span>
-
-                <button type="button" class="icdrn-btn">
-                  ورود
-                </button>
-
-              </li>
-
-              <li>
-
-                <span>
-                  کلاس مکالمه
-                </span>
-
-                |
-
-                <span>
-                  دکتر پژمان نورزاد
-                </span>
-
-                <button type="button" class="icdrn-btn">
-                  ورود
-                </button>
-
-              </li>
-
-
-
+              <%    }); %> 
 
             </ul>
 
