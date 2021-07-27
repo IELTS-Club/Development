@@ -6,11 +6,11 @@ const isTeacher=require("../../../middleware/isTeacher");
 const isLogedInEN=require("../../../middleware/isLogedin.en");
 const isConfirmedEN=require("../../../middleware/isconfirmed.en");
 const isTeacherEN=require("../../../middleware/isTeacher")
-const {Report,Class}= require("../../../models/mongoose");
+const {Report,Class,Exam}= require("../../../models/mongoose");
 
 
 panel.get("/teachers/dashboard",[isLogedIn,isConfirmed,isTeacher],async(req,res)=>{
-    req.user.email="arezoozolfaghari.hope@yahoo.com"
+    req.user.email="pnoorzad@yahoo.com"
     function selectTeacher(){
         if (req.user.email=="jadidijavad031@gmail.com")
         return "Jadidi";
@@ -36,13 +36,24 @@ panel.get("/teachers/dashboard",[isLogedIn,isConfirmed,isTeacher],async(req,res)
         return "Mehr";
 
         }
-   const classes=await Class.find({classTeacher:selectTeacher()}).limit(3)
-   console.log(classes);
-    
+   const classes=await Class.find({classTeacher:selectTeacher()}).limit(3).populate('classStudents','name email')
    
+   let finalExams=[];
+   
+   const exams=await Exam.find().populate('ClassID','classTeacher');
+   for(let n=0;n < exams.length;n++){
+    
+       if(exams[n].ClassID.classTeacher==selectTeacher()){
+           
+           finalExams.push(exams[n]);
+        }
+    }
+    
     res.render("panel/teachers/dashboard",{
         userName:req.user.name,
-        classes:classes
+        classes:classes,
+        exams:finalExams,
+        lastStudents:classes[0].classStudents
     })
 });
 
