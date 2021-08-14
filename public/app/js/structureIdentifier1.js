@@ -1,6 +1,6 @@
 
 //let QuestionsNumbers=QuestionsNumber
-for (let i = 1; i <= QuestionsNumber; i++) {
+for (let i = 0; i < QuestionsNumber; i++) {
 
 
     //choose correct options for select
@@ -296,7 +296,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         console.log(SelectQuestionNumber);
 
         //question type
-        question.questionType=allArticles[i].querySelector(`#QT${i+1}`).value;
+        question.questionType=allArticles[i].querySelector(`#QT${i}`).value;
         if(question.questionType=="questionTypeLabel"){
             document.querySelector("#errorText").innerHTML=`please fill question (${question.questionId})`
             return document.querySelector("#nullQuestion").style.display="flex"
@@ -305,7 +305,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         //question structure
 
         if(question.questionType=="questionTypeGrammer" || question.questionType=="questionTypeVocabulary" ||question.questionType=="questionTypeListening"){
-            question.questionStructure=allArticles[i].querySelector(`#glvQS${i+1}`).value;
+            question.questionStructure=allArticles[i].querySelector(`#glvQS${i}`).value;
             //validation
             if(question.questionStructure=="glvQuestionStructureLabel"){
                 document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
@@ -314,7 +314,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
 
          }
         else if(question.questionType=="questionTypeReading"){
-            question.questionStructure=allArticles[i].querySelector(`#rQS${i+1}`).value;
+            question.questionStructure=allArticles[i].querySelector(`#rQS${i}`).value;
             //validation
             if(question.questionStructure=="rQuestionStructureLabel"){
                 document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
@@ -323,7 +323,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
 
         }
         else{
-            question.questionStructure=allArticles[i].querySelector(`#wQS${i+1}`).value;
+            question.questionStructure=allArticles[i].querySelector(`#wQS${i}`).value;
             //validation
             if(question.questionStructure=="wQuestionStructureLabel"){
                 document.querySelector("#errorText").innerHTML=`please select Structure of question (${question.questionId})`
@@ -334,7 +334,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
 
         //question body
         if(question.questionStructure=="glvQuestionStructureMultiple" || question.questionStructure=="rQuestionStructureMultiple"){
-            question.questionBody=allArticles[i].querySelector(`#multipleBodyInput${i+1}`).value;
+            question.questionBody=allArticles[i].querySelector(`#multipleBodyInput${i}`).value;
             //validation
             if(question.questionBody==""){
                 document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
@@ -344,7 +344,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         }
 
         if(question.questionStructure=="glvQuestionStructureFilling" || question.questionStructure=="rQuestionStructureFilling"){
-            question.questionBody=allArticles[i].querySelector(`#fillingBodyInput${i+1}`).value;
+            question.questionBody=allArticles[i].querySelector(`#fillingBodyInput${i}`).value;
             //validation
             if(question.questionBody==""){
                 document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
@@ -354,7 +354,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         }
 
         if(question.questionStructure=="rQuestionStructureReadingBody" ){
-            question.questionBody=allArticles[i].querySelector(`#readingInput${i+1}`).value;
+            question.questionBody=allArticles[i].querySelector(`#readingInput${i}`).value;
             //validation
             if(question.questionBody=="Start Typing Reading Body!"){
                 document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
@@ -364,7 +364,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         }
 
         if(question.questionStructure=="wQuestionStructureWritingBody" ){
-            question.questionBody=allArticles[i].querySelector(`#writtingBodyInput${i+1}`).value;
+            question.questionBody=allArticles[i].querySelector(`#writtingBodyInput${i}`).value;
             //validation
             if(question.questionBody=="Start Typing Writing Body!"){
                 document.querySelector("#errorText").innerHTML=`please fill the body of question (${question.questionId})`
@@ -375,7 +375,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
 
         //questionChoices for multiple choices
         if(question.questionStructure=="glvQuestionStructureMultiple" || question.questionStructure=="rQuestionStructureMultiple"){
-            let inputs=allArticles[i].querySelector(`#creatInput${i+1}`).getElementsByTagName("input");
+            let inputs=allArticles[i].querySelector(`#creatInput${i}`).getElementsByTagName("input");
             //validation
             
             if(inputs.length<1){
@@ -395,7 +395,7 @@ document.querySelector("#Finalize").addEventListener("click",(e)=>{
         //true answer
 
         if(question.questionStructure=="glvQuestionStructureMultiple" || question.questionStructure=="rQuestionStructureMultiple"){
-            let selectTag=allArticles[i].querySelector(`#creatInput${i+1}`).getElementsByTagName("select")[0];
+            let selectTag=allArticles[i].querySelector(`#creatInput${i}`).getElementsByTagName("select")[0];
             let options=selectTag.getElementsByTagName("option");
             //validation
             

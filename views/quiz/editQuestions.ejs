@@ -71,14 +71,14 @@
         <main class="teacher-quiz-body  m-quiz-container">
 
             <section class="teacher-quiz-questions  m-quiz-container" id="mainSection">
-                <% for(let i=1;i<=QuestionsNumber;i++){ 
-               const questionDetails=examQuestions[i-1] %>
+                <% for(let i=0;i<QuestionsNumber;i++){ 
+               const questionDetails=examQuestions[i] %>
                 <article class="section-box category-question-box" id="article<%= `${i}` %>">
 
                     <div class="question-setting-row">
 
 
-                        <input type="text" value="<%=examQuestions[i-1].questionId%>" class="question-id-input"
+                        <input type="text" value="<%=examQuestions[i].questionId%>" class="question-id-input"
                             style="background-color: white;" disabled>
 
 
