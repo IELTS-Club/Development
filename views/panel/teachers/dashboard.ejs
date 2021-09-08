@@ -505,7 +505,7 @@
                   بازگشت به خانه
                 </button>
                 <button type="button" onclick="window.location.href='/logout'" class="icdrn-btn">
-                 خروج از پنل
+                  خروج از پنل
                 </button>
               </div>
 
@@ -600,7 +600,7 @@
             <ul class="insight-item-list">
 
               <% classes.forEach(element => { %>
-                  
+
               <% function selectClassTeacher(){
                 if(element.classTeacher=="Noorzad")
                 return  "دکتر پژمان نورزاد";
@@ -633,28 +633,34 @@
 
               if (element.classTeacher=="Mehr")
               return "خانم مریم مهر نژاد"
-              } %> 
 
-         
+              if (element.classTeacher=="Farahani")
+              return "خانم دریا فرهانی";
+
+              if (element.classTeacher=="Siavash")
+              return "اقای عرفان سیاوشی";
+              } %>
+
+
               <li>
 
                 <span>
-                <%= element.className %> 
+                  <%= element.className %>
                 </span>
 
                 |
 
                 <span>
-                 <%= selectClassTeacher() %>
+                  <%= selectClassTeacher() %>
                 </span>
 
                 <button type="button" class="icdrn-btn" onclick="window.location.href='<%= element.classLink%>'">
-                ورود
+                  ورود
                 </button>
 
               </li>
 
-              <%    }); %> 
+              <%    }); %>
 
             </ul>
 
@@ -675,8 +681,8 @@
 
             <ul class="insight-item-list">
 
-             <% exams.forEach(element => { %>
-               
+              <% exams.forEach(element => { %>
+
               <% function selectClassTeacher(){
                 if(element.ClassID.classTeacher=="Noorzad")
                 return  "دکتر پژمان نورزاد";
@@ -709,20 +715,27 @@
 
               if (element.ClassID.classTeacher=="Mehr")
               return "خانم مریم مهر نژاد"
-              } %> 
+
+              if (element.ClassID.classTeacher=="Farahani")
+              return "خانم دریا فرهانی";
+
+              if (element.ClassID.classTeacher=="Siavash")
+              return "اقای عرفان سیاوشی";
+              } %>
               <li>
 
                 <span>
-                  <%= element.Title %> 
+                  <%= element.Title %>
                 </span>
 
                 |
 
                 <span>
-                  <%= selectClassTeacher() %> 
+                  <%= selectClassTeacher() %>
                 </span>
 
-                <button type="button" class="icdrn-btn" onclick="window.location.href='/teachers/manage-exam/<%= element._id%>'">
+                <button type="button" class="icdrn-btn"
+                  onclick="window.location.href='/teachers/manage-exam/<%= element._id%>'">
                   مدیریت
                 </button>
 
@@ -745,7 +758,7 @@
                 <span>
                   |
                 </span>
-              لیست آخرین دانش آموزان
+                لیست آخرین دانش آموزان
               </h2>
 
             </div>
@@ -761,20 +774,20 @@
                for (let index = 0; index < nuum ; index++) {
                 const element = lastStudents[index];
                 %>
-                   <li>          
+              <li>
                 <span>
                   <%= element.name  %>
                 </span>
-                
+
                 |
-                
+
                 <span>
                   <%= element.email  %>
                 </span>
-                
-                
+
+
               </li>
-              
+
               <% } %>
 
 

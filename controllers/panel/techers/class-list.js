@@ -88,6 +88,10 @@ panel.get("/teachers/class-list",[isLogedIn,isConfirmed,isTeacher],async(req,res
         return "Bahrami";
         if (req.user.email=="m.mehrnejad70@gmail.com")
         return "Mehr";
+        if (req.user.email=="frhnidrya23@gmail.com")
+        return "Farahani";
+        if (req.user.email=="erfanerfsia@gmail.com")
+        return "Siavash";
 
         }
         const teacher=selectTeacher();
@@ -140,6 +144,10 @@ panel.get("/en/teachers/class-list",[isLogedInEN,isConfirmedEN,isTeacherEN],asyn
         return "Bahrami";
         if (req.user.email=="m.mehrnejad70@gmail.com")
         return "Mehr";
+        if (req.user.email=="frhnidrya23@gmail.com")
+        return "Farahani";
+        if (req.user.email=="erfanerfsia@gmail.com")
+        return "Siavash";
         
         }
         const teacher=selectTeacher();
